@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Ampayer;
 use Illuminate\Support\Facades\Route;
 
 /*
