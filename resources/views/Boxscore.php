@@ -56,14 +56,14 @@
     .float-left {
         float: left;
         margin-left: 200px;
-		height: 70px;
+        height: 70px;
         width: 70px;
     }
 
     .float-right {
         float: right;
         margin-right: 200px;
-		height: 70px;
+        height: 70px;
         width: 70px;
     }
     </style>
@@ -95,18 +95,66 @@
         font-weight: bold;
         margin-bottom: 1rem;
     }
+
+    h1 {
+        font-size: 4vw;
+        /* Tamaño de fuente responsivo */
+        text-align: center;
+        /* Alineación centrada */
+    }
+    .marker{
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        border: 1px solid ;
+        width: 40px;
+        float: left;
+        margin-left: 25%;
+    }
+    .marker2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        margin-right: 25%;
+        border: 1px solid ;
+        width: 40px;
+    
+        float: right;
+    }
+    .h2{
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        margin-right: 25%;
+        border: 1px solid ;
+        width: 40px;
+        height: 40px;
+        float: right;
+    }
+
     </style>
 </head>
 
 <body>
     <div>
-
-       
-        <table>
-		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/St._Louis_Cardinals_insignia_logo.svg/1200px-St._Louis_Cardinals_insignia_logo.svg.pngg"
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/St._Louis_Cardinals_insignia_logo.svg/1200px-St._Louis_Cardinals_insignia_logo.svg.pngg"
             class="float-left">
         <img src="https://www.bing.com/ck/a?!&&p=241b89bbd6c510e2JmltdHM9MTY3Nzk3NDQwMCZpZ3VpZD0yOTg3YzFiOS0zYWIxLTZlYjgtMTY4NS1kMzEzM2JkYTZmMWQmaW5zaWQ9NTU1NQ&ptn=3&hsh=3&fclid=2987c1b9-3ab1-6eb8-1685-d3133bda6f1d&u=a1L2ltYWdlcy9zZWFyY2g_cT1ZYW5rZWVzJTIwTG9nbyZGT1JNPUlRRlJCQSZpZD0wRkZCQjlENDlFM0RENDY2REIwMDY0Mjk2NEUyMUNEQzE3MTJFNDFD&ntb=1"
             class="float-right">
+        <h1>BoxScore</h1>
+    </div>
+
+    <br>
+
+    <div>
+        <div class="marker">
+           <h2>0</h2>
+        </div>
+        <div class="marker2">
+            <h2>0</h2>
+        </div>
+        <table>
+
             <thead>
                 <tr>
                     <th>Equipo</th>
@@ -157,7 +205,9 @@
                 </tr>
             </tbody>
         </table>
+
     </div>
+
     <div class="container">
         <div class="cuadro1">
 
