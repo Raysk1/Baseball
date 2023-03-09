@@ -20,8 +20,11 @@ Route::get('/Boxscore', function () {
 Route::get('/B', function () {
     return view('B');
 });
+Route::get('/Resultados', function () {
+    return view('Resultados');
+});
 
 Route::get('/Abcjugadores', function () {
-    return view('Abcjugadores');
-});
+    return view('/Abcjugadores/Abcjugadores');
+}); 
     ?>
