@@ -20,4 +20,8 @@ Route::get('/Boxscore', function () {
 Route::get('/B', function () {
     return view('B');
 });
+
+Route::get('/Abcjugadores', function () {
+    return view('Abcjugadores');
+});
     ?>

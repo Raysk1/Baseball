@@ -122,14 +122,11 @@
         float: right;
     }
     .h2{
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        margin-right: 25%;
+      text-align: center;
         border: 1px solid ;
         width: 40px;
         height: 40px;
-        float: right;
+       
     }
 
     </style>
