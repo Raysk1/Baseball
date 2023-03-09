@@ -28,3 +28,8 @@ Route::get('/Abcjugadores', function () {
     return view('/Abcjugadores/Abcjugadores');
 }); 
     ?>
+<<<<<<< HEAD
+=======
+    
+    
+>>>>>>> a6e18cebe276891b59d05ddd36ab94a5ad84aa49
