@@ -24,8 +24,18 @@ Route::get('/Resultados', function () {
     return view('Resultados');
 });
 
-Route::get('/Abcjugadores', function () {
-    return view('/Abcjugadores/Abcjugadores');
+Route::get('/altajugadores', function () {
+    return view('/Abcjugadores/altajugadores');
+}); 
+Route::get('/bajajugadores', function () {
+    return view('/Abcjugadores/bajajugadores');
+}); 
+Route::get('/cambiojugadores', function () {
+    return view('/Abcjugadores/cambiojugadores');
+}); 
+
+Route::get('/inicio', function () {
+    return view('/inicio/inicio');
 }); 
     ?>
     
