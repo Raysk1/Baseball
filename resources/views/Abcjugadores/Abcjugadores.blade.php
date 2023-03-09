@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Formulario de Afiliación</title>
+    <title>Formulario de AbcJugadores</title>
     <style type="text/css">
         form {
             display: grid;
@@ -13,6 +13,7 @@
 
         label {
             font-weight: bold;
+            color: aliceblue
         }
 
         input,
@@ -34,12 +35,24 @@
         button:hover {
             background-color: #3e8e41;
         }
+
+        body {
+            background-image: url('https://i.etsystatic.com/21060982/r/il/9f8ce2/2668916552/il_794xN.2668916552_jyiv.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        h1{
+            color: aliceblue;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Formulario de Afiliación</h1>
+    
+    <h1>JUGADORES</h1>
     <form method="post" action="procesar.php">
+        
         <label for="idAfiliacion">ID de Afiliación:</label>
         <input type="text" name="idAfiliacion" id="idAfiliacion" required>
 
@@ -93,11 +106,14 @@
         </select>
 
         <label for="rama">Rama:</label>
-        <input type="text" name="rama" id="rama" required>
+        <select name="status" id="status" required>
+            <option value="">Seleccione una opción</option>
+            <option value="Activo">Femenil</option>
+            <option value="Inactivo">Varonil</option>
+        </select>
 
         <button type="submit">Enviar</button>
     </form>
 </body>
 
 </html>
-```
