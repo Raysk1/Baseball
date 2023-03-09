@@ -71,13 +71,18 @@
         <label for="posicion">Posición:</label>
         <select name="posicion" id="posicion" required>
             <option value="">Seleccione una opción</option>
-            <option value="Delantero">Delantero</option>
-            <option value="Mediocampista">Mediocampista</option>
-            <option value="Defensa">Defensa</option>
-            <option value="Portero">Portero</option>
+            <option value="Delantero">Pitcher</option>
+            <option value="Mediocampista">Receptor</option>
+            <option value="Defensa">1ra Base</option>
+            <option value="Defensa">2da Base</option>
+            <option value="Defensa">3ra Base</option>
+            <option value="Defensa">Short Stop</option>
+            <option value="Defensa">Jardinero Izquierdo</option>
+            <option value="Defensa">Jardinero Central </option>
+            <option value="Defensa">Jardinero Derecho</option>
         </select>
 
-        <label for="golpea">Pie Dominante:</label>
+        <label for="golpea">Bateo Dominante:</label>
         <select name="golpea" id="golpea" required>
             <option value="">Seleccione una opción</option>
             <option value="Derecho">Derecho</option>
@@ -85,11 +90,12 @@
             <option value="Ambidiestro">Ambidiestro</option>
         </select>
 
-        <label for="tira">Lateralidad:</label>
+        <label for="tira">Lanza Dominante:</label>
         <select name="tira" id="tira" required>
             <option value="">Seleccione una opción</option>
             <option value="Derecho">Derecho</option>
             <option value="Izquierdo">Izquierdo</option>
+            <option value="Ambidiestro">Ambidiestro</option>
         </select>
 
         <label for="pagina">Página Web:</label>
