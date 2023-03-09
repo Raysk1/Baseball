@@ -5,22 +5,35 @@
     <title>Formulario de AbcJugadores</title>
     <style type="text/css">
         form {
-            display: grid;
+            
+           /* display: grid;*/
             grid-template-columns: 150px 1fr;
             grid-row-gap: 10px;
             margin: 20px;
+           display: flex;
+            flex-direction: column;
+           justify-content: center;
+           align-items: center;
+            
+            
+           
         }
 
-        label {
+        label{
             font-weight: bold;
             color: aliceblue
         }
 
         input,
         select {
-            width: 100%;
+            width: 25%;
             padding: 5px;
             box-sizing: border-box;
+            border-top-left-radius: 100px 200px;
+            border-top-right-radius: 100px 200px ;
+            
+           
+            
         }
 
         button {
@@ -51,7 +64,7 @@
 <body>
     
     <h1>JUGADORES</h1>
-    <form method="post" action="procesar.php">
+    <form method="post" action="procesar.php"  >
         
         <label for="idAfiliacion">ID de Afiliación:</label>
         <input type="text" name="idAfiliacion" id="idAfiliacion" required>
