@@ -24,7 +24,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @package App\Models
  */
-class Bateadore extends Model
+class Bateador extends Model
 {
 	protected $table = 'bateadores';
 	public $incrementing = false;
