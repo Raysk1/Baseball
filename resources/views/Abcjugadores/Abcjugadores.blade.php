@@ -50,7 +50,7 @@
 
 <body>
     
-    <h1>Jugadores</h1>
+    <h1>JUGADORES</h1>
     <form method="post" action="procesar.php">
         
         <label for="idAfiliacion">ID de Afiliación:</label>
