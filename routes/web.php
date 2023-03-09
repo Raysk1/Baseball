@@ -22,6 +22,6 @@ Route::get('/B', function () {
 });
 
 Route::get('/Abcjugadores', function () {
-    return view('Abcjugadores');
+    return view('Abcjugadores/Abcjugadores');
 });
     ?>
