@@ -37,4 +37,11 @@ Route::get('/cambiojugadores', function () {
 Route::get('/inicio', function () {
     return view('/inicio/inicio');
 }); 
+Route::get('/inicio', function () {
+    return view('/inicio/inicio');
+}); 
+
+Route::get('tablajugadores', function () {
+    return view('/tablajugadores/tablajugadores');
+});
 ?>
