@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @package App\Models
  */
-class Jugadore extends Model
+class Jugador extends Model
 {
 	protected $table = 'jugadores';
 	protected $primaryKey = 'idAfiliacion';

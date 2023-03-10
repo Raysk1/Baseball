@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @package App\Models
  */
-class Manejadore extends Model
+class Manejador extends Model
 {
 	protected $table = 'manejadores';
 	protected $primaryKey = 'idTecnico';
