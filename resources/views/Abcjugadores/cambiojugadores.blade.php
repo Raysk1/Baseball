@@ -2,53 +2,6 @@
 <html>
 
 <head>
-    <header class="header">
-		<div class="dropdown">
-			<a href="#" class="dropdown-item">Jugadores</a>
-			<div class="dropdown-content">
-				<a href="/altajugadores" class="dropdown-item">altajugadores</a>
-				<a href="/bajajugadores" class="dropdown-item">bajajugadores</a>
-				<a href="/cambiojugadores" class="dropdown-item">cambiojugadores</a>
-			</div>
-		</div>
-		<div class="dropdown">
-			<a href="#" class="dropdown-item">tabla</a>
-		
-			<div class="dropdown-content">
-				<a href="#" class="dropdown-item">Inicio</a>
-				<a href="#" class="dropdown-item">Boxscore</a>
-				<a href="#" class="dropdown-item">Ampayers</a>
-			</div>
-		</div>
-		<div class="dropdown">
-			<a href="#" class="dropdown-item">tabla</a>
-		
-			<div class="dropdown-content">
-				<a href="#" class="dropdown-item">Inicio</a>
-				<a href="#" class="dropdown-item">Boxscore</a>
-				<a href="#" class="dropdown-item">Ampayers</a>
-			</div>
-		</div>
-		<div class="dropdown">
-			<a href="#" class="dropdown-item">tabla</a>
-		
-			<div class="dropdown-content">
-				<a href="#" class="dropdown-item">Inicio</a>
-				<a href="#" class="dropdown-item">Boxscore</a>
-				<a href="#" class="dropdown-item">Ampayers</a>
-			</div>
-		</div>
-		<div class="dropdown">
-			<a href="#" class="dropdown-item">tabla</a>
-		
-			<div class="dropdown-content">
-				<a href="#" class="dropdown-item">Inicio</a>
-				<a href="#" class="dropdown-item">Boxscore</a>
-				<a href="#" class="dropdown-item">Ampayers</a>
-			</div>
-		</div>
-		
-	</header>
     <title>Formulario de AbcJugadores</title>
     <style type="text/css">
         form {
@@ -105,52 +58,16 @@
             color: aliceblue;
             text-align: center;
         }
-        /* Estilos para el header */
-		.header {
-			background-color: #ad8622;
-			color: white;
-			padding: 10px;
-			text-align: center;
-		}
-
-		/* Estilos para el menú desplegable */
-		.dropdown {
-			position: relative;
-			display: inline-block;
-		}
-
-		.dropdown-content {
-			display: none;
-			position: absolute;
-			z-index: 1;
-		}
-
-		.dropdown:hover .dropdown-content {
-			display: block;
-		}
-
-		.dropdown-item {
-			color: black;
-			padding: 12px 16px;
-			text-decoration: none;
-			display: block;
-			background-color: #eb8d00;
-			font-size: 14px;
-		}
-
-		.dropdown-item:hover {
-			background-color: #ea5c3c;
-		}
     </style>
 </head>
 
 <body>
     
     <h1>JUGADORES</h1>
-    <form method="post" action={{ route('jugadoresForm' )}}  >
-        @csrf
+    <form method="post" action="procesar.php"  >
+        
         <label for="idAfiliacion">ID de Afiliación:</label>
-        <input type="text" name="idAfiliacion" id="idAfiliacion" required value={{$lastId}} readonly>
+        <input type="text" name="idAfiliacion" id="idAfiliacion" required>
 
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" id="nombre" required>
@@ -167,16 +84,15 @@
         <label for="posicion">Posición:</label>
         <select name="posicion" id="posicion" required>
             <option value="">Seleccione una opción</option>
-            <option value="1">Pitcher</option>
-            <option value="2">Receptor</option>
-            <option value="3">1ra Base</option>
-            <option value="4">2da Base</option>
-            <option value="6">3ra Base</option>
-            <option value="5">Short Stop</option>
-            <option value="7">Jardinero Izquierdo</option>
-            <option value="8">Jardinero Central </option>
-            <option value="9">Jardinero Derecho</option>
-            <option value="10">Bateador designado</option>
+            <option value="Delantero">Pitcher</option>
+            <option value="Mediocampista">Receptor</option>
+            <option value="Defensa">1ra Base</option>
+            <option value="Defensa">2da Base</option>
+            <option value="Defensa">3ra Base</option>
+            <option value="Defensa">Short Stop</option>
+            <option value="Defensa">Jardinero Izquierdo</option>
+            <option value="Defensa">Jardinero Central </option>
+            <option value="Defensa">Jardinero Derecho</option>
         </select>
 
         <label for="golpea">Bateo Dominante:</label>
@@ -204,18 +120,18 @@
         <label for="status">Estatus:</label>
         <select name="status" id="status" required>
             <option value="">Seleccione una opción</option>
-            <option value="1">Activo</option>
-            <option value="0">Inactivo</option>
+            <option value="Activo">Activo</option>
+            <option value="Inactivo">Inactivo</option>
         </select>
 
         <label for="rama">Rama:</label>
-        <select name="rama" id="rama" required>
+        <select name="status" id="status" required>
             <option value="">Seleccione una opción</option>
-            <option value="Femenil">Femenil</option>
-            <option value="Varonil">Varonil</option>
+            <option value="Activo">Femenil</option>
+            <option value="Inactivo">Varonil</option>
         </select>
 
-        <button type="submit">Alta</button>
+        <button type="submit">Cambio</button>
     </form>
 </body>
 

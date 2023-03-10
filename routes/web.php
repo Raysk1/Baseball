@@ -31,4 +31,11 @@ Route::post('/abc/jugadores/create', [JugadorControlador::class,'create']);
 Route::get('/inicio', function () {
     return view('/inicio/inicio');
 }); 
+Route::get('/inicio', function () {
+    return view('/inicio/inicio');
+}); 
+
+Route::get('tablajugadores', function () {
+    return view('/tablajugadores/tablajugadores');
+});
 ?>
