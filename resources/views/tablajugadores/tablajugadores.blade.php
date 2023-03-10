@@ -7,7 +7,7 @@
     <style>
         table {
             border-collapse: collapse;
-            width: auto;
+            width: 100%;
         }
 
         thead {
@@ -71,10 +71,13 @@
     </form>
     <br>
     <table>
+        <td class="titulo">TABLA DE JUGADORES</td>
+    </table>
+    <table>
     
         <thead>
             
-            <td class="titulo">TABLA DE JUGADORES</td>
+          
       
             <tr>
                 

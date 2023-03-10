@@ -46,7 +46,7 @@
 		<div class="dropdown">
 			<a href="#" class="dropdown-item">Jugadores</a>
 			<div class="dropdown-content">
-				<a href="/altajugadores" class="dropdown-item">altajugadores</a>
+				<a href="/tablajugadores" class="dropdown-item">tablajugadores</a>
 				<a href="/bajajugadores" class="dropdown-item">bajajugadores</a>
 				<a href="/cambiojugadores" class="dropdown-item">cambiojugadores</a>
 			</div>
