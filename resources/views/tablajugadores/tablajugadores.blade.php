@@ -71,6 +71,7 @@
     
     </form>
     <br>
+<<<<<<< HEAD
     <table >
         <thead>
             <td class="titulo">TABLA DE JUGADORES</td> <br>
@@ -81,6 +82,17 @@
         
         <thead>
          
+=======
+    <table>
+        <td class="titulo">TABLA DE JUGADORES</td>
+    </table>
+    <table>
+    
+        <thead>
+            
+          
+      
+>>>>>>> 60bfc6395f5200d55191182d59ac5460d2d2d20e
             <tr>
                 
                 

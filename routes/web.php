@@ -24,7 +24,7 @@ Route::get('/Resultados', function () {
     return view('Resultados');
 });
 
-Route::get('/abc/jugadores/create', [JugadorControlador::class,'vistaForm']) -> name('jugadoresForm'); 
+Route::get('/abc/jugadores/create', [JugadorControlador::class,'vistaFormAlta']) -> name('jugadoresForm'); 
 Route::post('/abc/jugadores/create', [JugadorControlador::class,'create']); 
  
 
