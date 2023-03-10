@@ -1,12 +1,16 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Jugador;
+use App\Http\Controllers\Controller;
 
 class JugadorControlador extends Controller
 {
+    public function vistaForm(){
+        return view('/Jugadores/formJugadoresAlta');
+    }
+
     public function create(Request $request){
         $j = new Jugador();
         $j -> nombre = $request -> nombre;
@@ -20,5 +24,6 @@ class JugadorControlador extends Controller
         $j -> abreviacion = $request -> abreviacion;
         $j -> status = $request -> status;
         $j -> save();
+        return view('/Jugadores/formJugadoresAlta');
     }
 }

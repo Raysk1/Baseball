@@ -5,22 +5,35 @@
     <title>Formulario de AbcJugadores</title>
     <style type="text/css">
         form {
-            display: grid;
+            
+           /* display: grid;*/
             grid-template-columns: 150px 1fr;
             grid-row-gap: 10px;
             margin: 20px;
+           display: flex;
+            flex-direction: column;
+           justify-content: center;
+           align-items: center;
+            
+            
+           
         }
 
-        label {
+        label{
             font-weight: bold;
             color: aliceblue
         }
 
         input,
         select {
-            width: 100%;
+            width: 25%;
             padding: 5px;
             box-sizing: border-box;
+            border-top-left-radius: 100px 200px;
+            border-top-right-radius: 100px 200px ;
+            
+           
+            
         }
 
         button {
@@ -51,8 +64,8 @@
 <body>
     
     <h1>JUGADORES</h1>
-    <form method="post" action="procesar.php">
-        
+    <form method="post" action={{ route('jugadoresForm' )}}  >
+        @csrf
         <label for="idAfiliacion">ID de Afiliación:</label>
         <input type="text" name="idAfiliacion" id="idAfiliacion" required>
 
@@ -71,15 +84,16 @@
         <label for="posicion">Posición:</label>
         <select name="posicion" id="posicion" required>
             <option value="">Seleccione una opción</option>
-            <option value="Delantero">Pitcher</option>
-            <option value="Mediocampista">Receptor</option>
-            <option value="Defensa">1ra Base</option>
-            <option value="Defensa">2da Base</option>
-            <option value="Defensa">3ra Base</option>
-            <option value="Defensa">Short Stop</option>
-            <option value="Defensa">Jardinero Izquierdo</option>
-            <option value="Defensa">Jardinero Central </option>
-            <option value="Defensa">Jardinero Derecho</option>
+            <option value="1">Pitcher</option>
+            <option value="2">Receptor</option>
+            <option value="3">1ra Base</option>
+            <option value="4">2da Base</option>
+            <option value="6">3ra Base</option>
+            <option value="5">Short Stop</option>
+            <option value="7">Jardinero Izquierdo</option>
+            <option value="8">Jardinero Central </option>
+            <option value="9">Jardinero Derecho</option>
+            <option value="10">Bateador designado</option>
         </select>
 
         <label for="golpea">Bateo Dominante:</label>
@@ -107,18 +121,18 @@
         <label for="status">Estatus:</label>
         <select name="status" id="status" required>
             <option value="">Seleccione una opción</option>
-            <option value="Activo">Activo</option>
-            <option value="Inactivo">Inactivo</option>
+            <option value="1">Activo</option>
+            <option value="0">Inactivo</option>
         </select>
 
         <label for="rama">Rama:</label>
-        <select name="status" id="status" required>
+        <select name="rama" id="rama" required>
             <option value="">Seleccione una opción</option>
-            <option value="Activo">Femenil</option>
-            <option value="Inactivo">Varonil</option>
+            <option value="Femenil">Femenil</option>
+            <option value="Varonil">Varonil</option>
         </select>
 
-        <button type="submit">Borrar</button>
+        <button type="submit">Enviar</button>
     </form>
 </body>
 
