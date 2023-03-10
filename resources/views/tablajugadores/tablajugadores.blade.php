@@ -7,7 +7,7 @@
     <style>
         table {
             border-collapse: collapse;
-            width: auto;
+            width: 100%;
         }
 
         thead {
@@ -67,16 +67,22 @@
         <br>
         <label for="busqueda">Buscar:</label>
         <input type="text" id="busqueda" name="busqueda">
-        <button type="submit">Buscar</button>
+        <button type="submit">Buscar</button> 
+    
     </form>
     <br>
-    <table>
-    
+    <table >
         <thead>
-            
-            <td class="titulo">TABLA DE JUGADORES</td>
-      
+            <td class="titulo">TABLA DE JUGADORES</td> <br>
+        </thead>
+        
+    </table>
+    <table >
+        
+        <thead>
+         
             <tr>
+                
                 
                 <th>idAfiliacion</th>
                 <th>nombre</th>
