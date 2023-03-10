@@ -9,50 +9,50 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Lanzadore
+ * Class Bateadore
  * 
  * @property int $idJuego
  * @property int $idAfiliacion
- * @property float|null $IP
- * @property int|null $BA
+ * @property int|null $AB
  * @property int|null $C
  * @property int|null $H
+ * @property int|null $CP
  * @property int|null $BB
  * @property int|null $K
- * @property float|null $PCA
- * @property float|null $POP
+ * @property float|null $PJE
+ * @property float|null $OBP
  *
  * @package App\Models
  */
-class Lanzadore extends Model
+class Bateador extends Model
 {
-	protected $table = 'lanzadores';
+	protected $table = 'bateadores';
 	public $incrementing = false;
 	public $timestamps = false;
 
 	protected $casts = [
 		'idJuego' => 'int',
 		'idAfiliacion' => 'int',
-		'IP' => 'float',
-		'BA' => 'int',
+		'AB' => 'int',
 		'C' => 'int',
 		'H' => 'int',
+		'CP' => 'int',
 		'BB' => 'int',
 		'K' => 'int',
-		'PCA' => 'float',
-		'POP' => 'float'
+		'PJE' => 'float',
+		'OBP' => 'float'
 	];
 
 	protected $fillable = [
 		'idJuego',
 		'idAfiliacion',
-		'IP',
-		'BA',
+		'AB',
 		'C',
 		'H',
+		'CP',
 		'BB',
 		'K',
-		'PCA',
-		'POP'
+		'PJE',
+		'OBP'
 	];
 }

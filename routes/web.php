@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JugadorControlador;
 use App\Models\Ampayer;
 use Illuminate\Support\Facades\Route;
 
@@ -13,26 +14,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::redirect("/","/inicio");
 
 Route::get('/Boxscore', function () {
     return view('Boxscore');
 });
-Route::get('/B', function () {
-    return view('B');
-});
+
 Route::get('/Resultados', function () {
     return view('Resultados');
 });
 
-Route::get('/altajugadores', function () {
-    return view('/Abcjugadores/altajugadores');
-}); 
-Route::get('/bajajugadores', function () {
-    return view('/Abcjugadores/bajajugadores');
-}); 
-Route::get('/cambiojugadores', function () {
-    return view('/Abcjugadores/cambiojugadores');
-}); 
+Route::get('/abc/jugadores/create', [JugadorControlador::class,'vistaForm']) -> name('jugadoresForm'); 
+Route::post('/abc/jugadores/create', [JugadorControlador::class,'create']); 
+ 
 
 Route::get('/inicio', function () {
     return view('/inicio/inicio');
