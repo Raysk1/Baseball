@@ -67,7 +67,7 @@
     <form method="post" action={{ route('jugadoresForm' )}}  >
         @csrf
         <label for="idAfiliacion">ID de Afiliación:</label>
-        <input type="text" name="idAfiliacion" id="idAfiliacion" required>
+        <input type="text" name="idAfiliacion" id="idAfiliacion" required value={{$lastId}} readonly>
 
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" id="nombre" required>
