@@ -14,8 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/Boxscore', function () {
+    return view('Boxscore');
+});
+Route::get('/B', function () {
+    return view('B');
 });
 
 
+
+Route::get('/Abcjugadores', function () {
+    return view('Abcjugadores');
+});
+    ?>
