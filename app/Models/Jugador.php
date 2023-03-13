@@ -10,7 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Jugadore
+ * Class Jugador
  * 
  * @property int $idAfiliacion
  * @property string|null $nombre
@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $pagina
  * @property string|null $abreviacion
  * @property bool|null $status
+ * @property string $rama
  *
  * @package App\Models
  */
@@ -30,9 +31,11 @@ class Jugador extends Model
 {
 	protected $table = 'jugadores';
 	protected $primaryKey = 'idAfiliacion';
+	public $incrementing = false;
 	public $timestamps = false;
 
 	protected $casts = [
+		'idAfiliacion' => 'int',
 		'posicion' => 'int',
 		'status' => 'bool'
 	];
@@ -51,6 +54,7 @@ class Jugador extends Model
 		'tira',
 		'pagina',
 		'abreviacion',
-		'status'
+		'status',
+		'rama'
 	];
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\JugadorControlador;
 use App\Models\Ampayer;
+use App\Models\Jugador;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,9 +25,12 @@ Route::get('/Resultados', function () {
     return view('Resultados');
 });
 
-Route::get('/abc/jugadores/create', [JugadorControlador::class,'vistaFormAlta']) -> name('jugadoresForm'); 
-Route::post('/abc/jugadores/create', [JugadorControlador::class,'create']); 
- 
+/** Jugadores routes */
+Route::get('/abc/jugadores/create', [JugadorControlador::class,'create']) -> name('jugadoresCreate'); 
+Route::post('/abc/jugadores/store', [JugadorControlador::class,'store'])->name("jugadoresStore"); 
+Route::get("/abc/jugadores",[JugadorControlador::class,"index"])->name("jugadoresIndex");
+Route::get("/abc/jugadores/edit/{id}",[JugadorControlador::class,"edit"])->name("jugadoresEdit");
+Route::post("/abc/jugadores/update",[JugadorControlador::class,"update"]) -> name("jugadoresUpdate");
 
 Route::get('/inicio', function () {
     return view('/inicio/inicio');

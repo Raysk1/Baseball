@@ -14,8 +14,10 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
+        "kitloong/laravel-migrations-generator": "^6.8",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
+        "mbezhanov/laravel-faker-provider-collection": "^2.2",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
         "phpunit/phpunit": "^10.0",
