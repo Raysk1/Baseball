@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\JugadorControlador;
+use App\Http\Controllers\AmpayerControlador;
+use App\Http\Controllers\JuegoControlador;
 use App\Models\Ampayer;
 use App\Models\Jugador;
 use Illuminate\Support\Facades\Route;

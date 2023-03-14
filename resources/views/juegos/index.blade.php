@@ -17,9 +17,10 @@
         <th scope="col">Fecha</th>
         <th scope="col">Hora</th>
         <th scope="col">Clima</th>
-        <th scope="col">Identificador del Equipo Visitante</th>
-        <th scope="col">Identificador del Equipo Local</th>
+        <th scope="col">Equipo Visitante</th>
+        <th scope="col">Equipo Local</th>
         <th scope="col">Final</th>
+        <th scope="col">Status</th>
         <th scope="col" class="text-center" colspan="2">Accion</th>
 
     </tr>
