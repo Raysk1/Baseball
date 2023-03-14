@@ -13,7 +13,7 @@ class AmpayerControlador extends Controller
      */
     public function index() {
 
-        $datos = Ampayer::all();
+        $datos = Ampayer::all(["idAmpayer","nombre","apellidos","fechaNacimiento","curp","abreviacion","activo"]);
         return response(view("Ampayers.index", compact("datos")));
     }
     /** 
@@ -24,7 +24,7 @@ class AmpayerControlador extends Controller
     public function create() {
         $j = Ampayer::orderBy('idAmpayer', 'DESC')->first();
         $lastId = $j->idAmpayer;
-        return response(view('Apayers.create', compact('lastId')));
+        return response(view('Ampayers.create', compact('lastId')));
     }
     /** 
      * Store a newly created resource in storage. 
@@ -65,6 +65,7 @@ class AmpayerControlador extends Controller
         $datos = Ampayer::find($id);
         return response(view("Ampayers.edit", compact("datos")));
     }
+    
     /** 
      * Update the specified resource in storage. 
      * @param  \Illuminate\Http\Request   $request 
