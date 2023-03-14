@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\JugadorControlador;
+
+use App\Http\Controllers\JuegoControlador;
 use App\Models\Ampayer;
 use App\Models\Jugador;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +33,13 @@ Route::post('/abc/jugadores/store', [JugadorControlador::class,'store'])->name("
 Route::get("/abc/jugadores",[JugadorControlador::class,"index"])->name("jugadoresIndex");
 Route::get("/abc/jugadores/edit/{id}",[JugadorControlador::class,"edit"])->name("jugadoresEdit");
 Route::post("/abc/jugadores/update",[JugadorControlador::class,"update"]) -> name("jugadoresUpdate");
+
+/**juegos */
+Route::get('/abc/juegos/create', [JuegoControlador::class,'create']) -> name('juegosCreate'); 
+Route::post('/abc/juegos/store', [JuegoControlador::class,'store'])->name("juegosStore"); 
+Route::get("/abc/juegos",[JuegoControlador::class,"index"])->name("jugadoresIndex");
+Route::get("/abc/juegos/edit/{id}",[JuegoControlador::class,"edit"])->name("jugadoresEdit");
+Route::post("/abc/juegos/update",[JuegoControlador::class,"update"]) -> name("juegosUpdate");
 
 Route::get('/inicio', function () {
     return view('/inicio/inicio');
