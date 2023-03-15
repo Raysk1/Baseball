@@ -49,7 +49,7 @@ class JuegoControlador extends Controller {
         $j->idCuerpo = $request->idCuerpo;
         $j->save();
         return response()->redirectTo(route("juegosIndex"))
-            ->with(["success" => "Actulizado exitosamente"])
+            ->with(["success" => "Creado exitosamente"])
             ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
 
     }

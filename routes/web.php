@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\JugadorControlador;
-
+use App\Http\Controllers\AmpayerControlador;
 use App\Http\Controllers\JuegoControlador;
 use App\Models\Ampayer;
 use App\Models\Jugador;
@@ -28,7 +28,7 @@ Route::get('/Resultados', function () {
 });
 
 /** Jugadores routes */
-Route::get('/abc/jugadores/create', [JugadorControlador::class,'create']) -> name('jugadoresCreate'); 
+Route::get('/abc/jugadores/create', [JugadorControlado::class,'create']) -> name('jugadoresCreate'); 
 Route::post('/abc/jugadores/store', [JugadorControlador::class,'store'])->name("jugadoresStore"); 
 Route::get("/abc/jugadores",[JugadorControlador::class,"index"])->name("jugadoresIndex");
 Route::get("/abc/jugadores/edit/{id}",[JugadorControlador::class,"edit"])->name("jugadoresEdit");
@@ -47,14 +47,15 @@ Route::get("/abc/Entrada",[JuegoControlador::class,"index"])->name("jugadoresInd
 Route::get("/abc/Entrada/edit/{id}",[JuegoControlador::class,"edit"])->name("jugadoresEdit");
 Route::post("/abc/Entrada/update",[JuegoControlador::class,"update"]) -> name("EntradaUpdate");
 
-Route::get('/inicio', function () {
-    return view('/inicio/inicio');
-}); 
+/** Ampayers routes */
+Route::get('/abc/Ampayers/create', [AmpayerControlador::class,'create']) -> name('AmpayersCreate'); 
+Route::post('/abc/Ampayers/store', [AmpayerControlador::class,'store'])->name("AmpayersStore"); 
+Route::get("/abc/Ampayers",[AmpayerControlador::class,"index"])->name("AmpayersIndex");
+Route::get("/abc/Ampayers/edit/{id}",[AmpayerControlador::class,"edit"])->name("AmpayersEdit");
+Route::post("/abc/Ampayers/update",[AmpayerControlador::class,"update"]) -> name("AmpayersUpdate");
 Route::get('/inicio', function () {
     return view('/inicio/inicio');
 }); 
 
-Route::get('tablajugadores', function () {
-    return view('/tablajugadores/tablajugadores');
-});
+
 ?>

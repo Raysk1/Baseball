@@ -35,7 +35,7 @@
 
 @section('content')
     <div class="d-flex justify-content-center">
-        <div class="w-75 mt-1">
+        <div class=" mt-1">
             <a href="@yield('createRoute')" class="btn btn-primary mb-3 w-100">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-plus"
                     viewBox="0 0 16 16">

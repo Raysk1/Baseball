@@ -1,25 +1,21 @@
 @extends('table')
 
 @section('title')
-    Juegos
+    Ampayers
 @endsection
 
 @section('createRoute')
-    {{ route('juegosCreate') }}
+    {{ route('AmpayersCreate') }}
 @endsection
 
 @section('thead')
     <tr>
-        <th scope="col">id del juego</th>
-        <th scope="col">id temportada</th>
-        <th scope="col">Jornada</th>
-        <th scope="col">idCampo</th>
-        <th scope="col">Fecha</th>
-        <th scope="col">Hora</th>
-        <th scope="col">Clima</th>
-        <th scope="col">Equipo Visitante</th>
-        <th scope="col">Equipo Local</th>
-        <th scope="col">Final</th>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Fecha Nacimiento</th>
+        <th scope="col">CURP</th>
+        <th scope="col">Abreviación</th>
         <th scope="col">Status</th>
         <th scope="col" class="text-center" colspan="2">Accion</th>
 
@@ -28,19 +24,14 @@
 
 @section('tbody')
     @foreach ($datos as $dato)
-        <tr class="align-middle" >
-            <td  scope="row">{{ $dato->idJuego }}</td>
-            <td>{{ $dato->idTemporada}}</td>
-            <td>{{ $dato->jornada}}</td>
-            <td>{{ $dato->idCampo }}</td>
-            <td>{{ $dato->fecha}}</td>
-            <td>{{ $dato->hora}}</td>
-            <td>{{ $dato->clima}}</td>
-            <td>{{ $dato->idEquipoVisitante}}</td>
-            <td>{{ $dato->idEquipoLocal}}</td>
-            <td>{{ $dato->final}}</td>
-           
-
+        <tr class="align-middle">
+            <td scope="row">{{ $dato->idAmpayer }}</td>
+            <td>{{ $dato->nombre }}</td>
+            <td>{{ $dato->apellidos }}</td>
+            <td>{{ $dato->fechaNacimiento }}</td>
+            <td>{{ $dato->curp }}</td>
+            <td>{{ $dato->abreviacion }}</td>
+            
             <td>
                 @if ($dato->status == 1)
                     Activo
@@ -50,7 +41,7 @@
             </td>
             <td colspan="2">
                 <div class="d-flex justify-content-evenly">
-                    <a href={{ route('jugadoresEdit', ['id' => $dato->idJuego]) }} class="btn btn-primary  ">
+                    <a href={{ route('AmpayersEdit', ['id' => $dato->idAmpayer]) }} class="btn btn-primary  ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-pencil-fill" viewBox="0 0 16 16">
                             <path
