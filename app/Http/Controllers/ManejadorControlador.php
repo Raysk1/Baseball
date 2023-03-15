@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Equipo;
+use App\Models\Manejador;
 use Illuminate\Http\Request;
 
-class EquipoControlador extends Controller
+class ManejadorControlador extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $datos = Equipo::all();
-        return response(view("Equipos.index", compact("datos")));
+        $datos = Manejador::all();
+        return response(view("Manejadores.index", compact("datos")));
     }
 
     /**
@@ -21,9 +21,9 @@ class EquipoControlador extends Controller
      */
     public function create()
     {
-        $j = Equipo::orderBy('idEquipo', 'DESC')->first();
-        $lastId = $j->idEquipo;
-        return response(view('Equipos.create', compact('lastId')));
+        $m = Manejador::orderBy('idTecnico', 'DESC')->first();
+        $lastId = $m->idTecnico;
+        return response(view('Manejadores.create', compact('lastId')));
     }
 
     /**
@@ -31,14 +31,11 @@ class EquipoControlador extends Controller
      */
     public function store(Request $request)
     {
-        $e = new Equipo();
-        $e -> idEquipo = $request->idEquipo;
-        $e ->nombre = $request->nombre;
-        $e ->idLogo = $request->idLogo;
-        $e ->ciudad = $request->ciudad;
-        $e ->idTecnico = $request -> idTecnico;
-        $e -> save();
-        return response()->redirectTo(route("equiposIndex"))
+        $m = new Manejador();
+        $m -> nombre = $request->nombre;
+        $m ->tipo = $request->tipo;
+        $m->save();
+        return response()->redirectTo(route("manejadoresIndex"))
         ->with(["success" => "Creado exitosamente"])
         ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
     }
@@ -56,8 +53,8 @@ class EquipoControlador extends Controller
      */
     public function edit(string $id)
     {
-        $datos = Equipo::find($id);
-        return response(view("Equipos.edit", compact("datos")));
+        $datos = Manejador::find($id);
+        return response(view("Manejadores.edit", compact("datos")));
     }
 
     /**
@@ -65,14 +62,11 @@ class EquipoControlador extends Controller
      */
     public function update(Request $request)
     {
-        $e = Equipo::find($request->idEquipo);
-        $e -> idEquipo = $request->idEquipo;
-        $e ->nombre = $request->nombre;
-        $e ->idLogo = $request->idLogo;
-        $e ->ciudad = $request->ciudad;
-        $e ->idTecnico = $request -> idTecnico;
-        $e -> save();
-        return response()->redirectTo(route("equiposIndex"))
+        $m = Manejador::find($request->idTecnico);
+        $m -> nombre = $request->nombre;
+        $m ->tipo = $request->tipo;
+        $m->save();
+        return response()->redirectTo(route("manejadoresIndex"))
         ->with(["success" => "Actualizado exitosamente"])
         ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
     }
