@@ -5,22 +5,16 @@
 @endsection
 
 @section('createRoute')
-    {{ route('juegosCreate') }}
+    {{ route('EntradaCreate') }}
 @endsection
 
 @section('thead')
     <tr>
         <th scope="col">id del juego</th>
-        <th scope="col">id temportada</th>
-        <th scope="col">Jornada</th>
-        <th scope="col">idCampo</th>
-        <th scope="col">Fecha</th>
-        <th scope="col">Hora</th>
-        <th scope="col">Clima</th>
-        <th scope="col">Equipo Visitante</th>
-        <th scope="col">Equipo Local</th>
-        <th scope="col">Final</th>
-        <th scope="col">Status</th>
+        <th scope="col">Entrada Alta</th>
+        <th scope="col">Entrada Baja</th>
+        <th scope="col">Alta de Carreras</th>
+        <th scope="col">Baja de Carreras</th>
         <th scope="col" class="text-center" colspan="2">Accion</th>
 
     </tr>
@@ -30,17 +24,11 @@
     @foreach ($datos as $dato)
         <tr class="align-middle" >
             <td  scope="row">{{ $dato->idJuego }}</td>
-            <td>{{ $dato->idTemporada}}</td>
-            <td>{{ $dato->jornada}}</td>
-            <td>{{ $dato->idCampo }}</td>
-            <td>{{ $dato->fecha}}</td>
-            <td>{{ $dato->hora}}</td>
-            <td>{{ $dato->clima}}</td>
-            <td>{{ $dato->idEquipoVisitante}}</td>
-            <td>{{ $dato->idEquipoLocal}}</td>
-            <td>{{ $dato->final}}</td>
-           
-
+            <td>{{ $dato->entradaAlta}}</td>
+            <td>{{ $dato->entradaBaja}}</td>
+            <td>{{ $dato->carrerasAlta}}</td>
+            <td>{{ $dato->carrerasBaja}}</td>
+          
             <td>
                 @if ($dato->status == 1)
                     Activo
