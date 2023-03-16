@@ -68,8 +68,8 @@ Route::get('/abc/equipos/edit/{id}', [EquipoControlador::class,'edit']) -> name(
 Route::post('/abc/equipos/update', [EquipoControlador::class,'update']) -> name('equiposUpdate'); 
 
 Route::get('/abc/Temporadas/create', [TemporadaControlador::class,'create']) -> name('TemporadasCreate'); 
-Route::get('/abc/Temporadas/store', [TemporadaControlador::class,'store']) -> name('TemporadasStore'); 
-Route::get('/abc/Temporadas', [TemporadaControlador::class,'index']) -> name('TemporadasIndex'); 
+Route::post('/abc/Temporadas/store', [TemporadaControlador::class,'store']) -> name('TemporadasStore'); 
+Route::get('/abc/Temporadas', [TemporadaControlador::class,'index']) -> name('temporadasIndex'); 
 Route::get('/abc/Temporadas/edit/{id}', [TemporadaControlador::class,'edit']) -> name('TemporadasEdit'); 
-Route::get('/abc/Temporadas/update', [TemporadaControlador::class,'update']) -> name('TemporadasUpdate'); 
+Route::post('/abc/Temporadas/update', [TemporadaControlador::class,'update']) -> name('TemporadasUpdate'); 
 ?>
