@@ -29,7 +29,7 @@ Route::get('/Resultados', function () {
 });
 
 /** Jugadores routes */
-Route::get('/abc/jugadores/create', [JugadorControlado::class,'create']) -> name('jugadoresCreate'); 
+Route::get('/abc/jugadores/create', [JugadorControlador::class,'create']) -> name('jugadoresCreate'); 
 Route::post('/abc/jugadores/store', [JugadorControlador::class,'store'])->name("jugadoresStore"); 
 Route::get("/abc/jugadores",[JugadorControlador::class,"index"])->name("jugadoresIndex");
 Route::get("/abc/jugadores/edit/{id}",[JugadorControlador::class,"edit"])->name("jugadoresEdit");
@@ -38,16 +38,10 @@ Route::post("/abc/jugadores/update",[JugadorControlador::class,"update"]) -> nam
 /**juegos */
 Route::get('/abc/juegos/create', [JuegoControlador::class,'create']) -> name('juegosCreate'); 
 Route::post('/abc/juegos/store', [JuegoControlador::class,'store'])->name("juegosStore"); 
-Route::get("/abc/juegos",[JuegoControlador::class,"index"])->name("jugadoresIndex");
-Route::get("/abc/juegos/edit/{id}",[JuegoControlador::class,"edit"])->name("jugadoresEdit");
+Route::get("/abc/juegos",[JuegoControlador::class,"index"])->name("juegosIndex");
+Route::get("/abc/juegos/edit/{id}",[JuegoControlador::class,"edit"])->name("juegosEdit");
 Route::post("/abc/juegos/update",[JuegoControlador::class,"update"]) -> name("juegosUpdate");
 
-/**Entradas */
-Route::get('/abc/Entrada/create', [JuegoControlador::class,'create']) -> name('EntradaCreate'); 
-Route::post('/abc/Entrada/store', [JuegoControlador::class,'store'])->name("EntradaStore"); 
-Route::get("/abc/Entrada",[JuegoControlador::class,"index"])->name("jugadoresIndex");
-Route::get("/abc/Entrada/edit/{id}",[JuegoControlador::class,"edit"])->name("jugadoresEdit");
-Route::post("/abc/Entrada/update",[JuegoControlador::class,"update"]) -> name("EntradaUpdate");
 
 /** Ampayers routes */
 Route::get('/abc/Ampayers/create', [AmpayerControlador::class,'create']) -> name('AmpayersCreate'); 

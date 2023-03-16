@@ -44,9 +44,9 @@
                 </svg>
                 Agregar
             </a>
-            <div class="table-responsive">
+            <div class="table-responsive text-center">
                 <table class="table">
-                    <thead class="bg-white border-white">
+                    <thead class="bg-white border-white ">
                         @yield('thead')
                     </thead>
                     <tbody>

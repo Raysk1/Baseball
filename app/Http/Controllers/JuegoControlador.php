@@ -24,7 +24,7 @@ class JuegoControlador extends Controller {
     */
     public function create() {
         $j = Juego::orderBy('idJuego', 'DESC')->first();
-        $lastId = $j->idJuego;
+        $lastId = $j->idJuego + 1;
         return response(view('Juegos.create', compact('lastId')));
     }
     /** 
