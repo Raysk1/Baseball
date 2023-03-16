@@ -53,6 +53,12 @@ Route::post("/abc/Ampayers/update",[AmpayerControlador::class,"update"]) -> name
 Route::get('/inicio', function () {
     return view('/inicio/inicio');
 }); 
+/**Equipo routes */
+Route::get('/abc/equipos/create', [EquipoControlador::class,'create']) -> name('EquiposCreate'); 
+Route::get('/abc/equipos/store', [EquipoControlador::class,'store']) -> name('EquiposStore'); 
+Route::get('/abc/equipos', [EquipoControlador::class,'index']) -> name('EquiposIndex'); 
+Route::get('/abc/equipos/edit/{id}', [EquipoControlador::class,'edit']) -> name('EquiposEdit'); 
+Route::get('/abc/equipos/update', [EquipoControlador::class,'update']) -> name('equiposUpdate'); 
 
 
 ?>

@@ -6,7 +6,7 @@
 @section('content')
     <div class="d-flex justify-content-center">
         <div class="w-75 mt-4">
-            <form action={{ route('jugadoresStore') }} method="post">
+            <form action={{ route('EquiposStore') }} method="post">
                 @csrf
                 <div class="row">
                     <div class="mb-3">
