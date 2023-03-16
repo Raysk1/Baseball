@@ -29,7 +29,7 @@ Route::get('/Resultados', function () {
 });
 
 /** Jugadores routes */
-Route::get('/abc/jugadores/create', [JugadorControlado::class,'create']) -> name('jugadoresCreate'); 
+Route::get('/abc/jugadores/create', [JugadorControlador::class,'create']) -> name('jugadoresCreate'); 
 Route::post('/abc/jugadores/store', [JugadorControlador::class,'store'])->name("jugadoresStore"); 
 Route::get("/abc/jugadores",[JugadorControlador::class,"index"])->name("jugadoresIndex");
 Route::get("/abc/jugadores/edit/{id}",[JugadorControlador::class,"edit"])->name("jugadoresEdit");
@@ -57,6 +57,12 @@ Route::post("/abc/Ampayers/update",[AmpayerControlador::class,"update"]) -> name
 Route::get('/inicio', function () {
     return view('/inicio/inicio');
 }); 
+/**Equipo routes */
+Route::get('/abc/equipos/create', [EquipoControlador::class,'create']) -> name('EquiposCreate'); 
+Route::get('/abc/equipos/store', [EquipoControlador::class,'store']) -> name('EquiposStore'); 
+Route::get('/abc/equipos', [EquipoControlador::class,'index']) -> name('EquiposIndex'); 
+Route::get('/abc/equipos/edit/{id}', [EquipoControlador::class,'edit']) -> name('EquiposEdit'); 
+Route::get('/abc/equipos/update', [EquipoControlador::class,'update']) -> name('equiposUpdate'); 
 
 
 ?>
