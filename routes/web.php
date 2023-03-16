@@ -41,6 +41,7 @@ Route::post('/abc/juegos/store', [JuegoControlador::class,'store'])->name("juego
 Route::get("/abc/juegos",[JuegoControlador::class,"index"])->name("jugadoresIndex");
 Route::get("/abc/juegos/edit/{id}",[JuegoControlador::class,"edit"])->name("jugadoresEdit");
 Route::post("/abc/juegos/update",[JuegoControlador::class,"update"]) -> name("juegosUpdate");
+
 /**Entradas */
 Route::get('/abc/Entrada/create', [JuegoControlador::class,'create']) -> name('EntradaCreate'); 
 Route::post('/abc/Entrada/store', [JuegoControlador::class,'store'])->name("EntradaStore"); 
@@ -54,6 +55,7 @@ Route::post('/abc/Ampayers/store', [AmpayerControlador::class,'store'])->name("A
 Route::get("/abc/Ampayers",[AmpayerControlador::class,"index"])->name("AmpayersIndex");
 Route::get("/abc/Ampayers/edit/{id}",[AmpayerControlador::class,"edit"])->name("AmpayersEdit");
 Route::post("/abc/Ampayers/update",[AmpayerControlador::class,"update"]) -> name("AmpayersUpdate");
+
 Route::get('/inicio', function () {
     return view('/inicio/inicio');
 }); 

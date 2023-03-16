@@ -32,6 +32,7 @@ class TemporadaControlador extends Controller {
         $t->grupo = $request->grupo;
         $t->categoria = $request->categoria;
         $t->momento = $request->momento;
+        $t->nombre = $request ->nombre;
         $t->temporada;
         $t->save();
         return response()->redirectTo(route("temporadasIndex"))
@@ -64,6 +65,7 @@ class TemporadaControlador extends Controller {
         $t->categoria = $request->categoria;
         $t->momento = $request->momento;
         $t->temporada;
+        $t->nombre = $request -> nombre;
         $t->save();
         return response()->redirectTo(route("temporadasIndex"))
             ->with(["success" => "Actualizado exitosamente"])
