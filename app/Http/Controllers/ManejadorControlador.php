@@ -22,7 +22,7 @@ class ManejadorControlador extends Controller
     public function create()
     {
         $m = Manejador::orderBy('idTecnico', 'DESC')->first();
-        $lastId = $m->idTecnico;
+        $lastId = $m->idTecnico + 1;
         return response(view('Manejadores.create', compact('lastId')));
     }
 
