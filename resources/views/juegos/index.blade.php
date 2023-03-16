@@ -4,23 +4,23 @@
     Juegos
 @endsection
 
+
 @section('createRoute')
     {{ route('juegosCreate') }}
 @endsection
 
 @section('thead')
     <tr>
-        <th scope="col">id del juego</th>
-        <th scope="col">id temportada</th>
+        <th scope="col">ID</th>
+        <th scope="col">Temportada</th>
         <th scope="col">Jornada</th>
-        <th scope="col">idCampo</th>
+        <th scope="col">Campo</th>
         <th scope="col">Fecha</th>
         <th scope="col">Hora</th>
         <th scope="col">Clima</th>
         <th scope="col">Equipo Visitante</th>
         <th scope="col">Equipo Local</th>
         <th scope="col">Final</th>
-        <th scope="col">Status</th>
         <th scope="col" class="text-center" colspan="2">Accion</th>
 
     </tr>
@@ -39,15 +39,6 @@
             <td>{{ $dato->idEquipoVisitante}}</td>
             <td>{{ $dato->idEquipoLocal}}</td>
             <td>{{ $dato->final}}</td>
-           
-
-            <td>
-                @if ($dato->status == 1)
-                    Activo
-                @else
-                    Inactivo
-                @endif
-            </td>
             <td colspan="2">
                 <div class="d-flex justify-content-evenly">
                     <a href={{ route('jugadoresEdit', ['id' => $dato->idJuego]) }} class="btn btn-primary  ">

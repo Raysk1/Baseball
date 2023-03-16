@@ -23,7 +23,7 @@ class AmpayerControlador extends Controller
     */
     public function create() {
         $j = Ampayer::orderBy('idAmpayer', 'DESC')->first();
-        $lastId = $j->idAmpayer;
+        $lastId = $j->idAmpayer + 1;
         return response(view('Ampayers.create', compact('lastId')));
     }
     /** 
