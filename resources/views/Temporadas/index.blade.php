@@ -1,7 +1,7 @@
 @extends('table')
 
 @section('title')
-    Jugadores
+    Temporada
 @endsection
 
 @section('createRoute')

@@ -4,6 +4,8 @@ use App\Http\Controllers\JugadorControlador;
 use App\Http\Controllers\AmpayerControlador;
 use App\Http\Controllers\EquipoControlador;
 use App\Http\Controllers\JuegoControlador;
+use App\Http\Controllers\TemporadaControlador;
+
 use App\Models\Ampayer;
 use App\Models\Jugador;
 use Illuminate\Support\Facades\Route;
@@ -29,7 +31,7 @@ Route::get('/Resultados', function () {
 });
 
 /** Jugadores routes */
-Route::get('/abc/jugadores/create', [JugadorControlado::class,'create']) -> name('jugadoresCreate'); 
+Route::get('/abc/jugadores/create', [JugadorControlador::class,'create']) -> name('jugadoresCreate'); 
 Route::post('/abc/jugadores/store', [JugadorControlador::class,'store'])->name("jugadoresStore"); 
 Route::get("/abc/jugadores",[JugadorControlador::class,"index"])->name("jugadoresIndex");
 Route::get("/abc/jugadores/edit/{id}",[JugadorControlador::class,"edit"])->name("jugadoresEdit");
@@ -44,8 +46,8 @@ Route::post("/abc/juegos/update",[JuegoControlador::class,"update"]) -> name("ju
 /**Entradas */
 Route::get('/abc/Entrada/create', [JuegoControlador::class,'create']) -> name('EntradaCreate'); 
 Route::post('/abc/Entrada/store', [JuegoControlador::class,'store'])->name("EntradaStore"); 
-Route::get("/abc/Entrada",[JuegoControlador::class,"index"])->name("jugadoresIndex");
-Route::get("/abc/Entrada/edit/{id}",[JuegoControlador::class,"edit"])->name("jugadoresEdit");
+Route::get("/abc/Entrada",[JuegoControlador::class,"index"])->name("EntradaIndex");
+Route::get("/abc/Entrada/edit/{id}",[JuegoControlador::class,"edit"])->name("EntradaEdit");
 Route::post("/abc/Entrada/update",[JuegoControlador::class,"update"]) -> name("EntradaUpdate");
 
 /** Ampayers routes */
@@ -54,6 +56,15 @@ Route::post('/abc/Ampayers/store', [AmpayerControlador::class,'store'])->name("A
 Route::get("/abc/Ampayers",[AmpayerControlador::class,"index"])->name("AmpayersIndex");
 Route::get("/abc/Ampayers/edit/{id}",[AmpayerControlador::class,"edit"])->name("AmpayersEdit");
 Route::post("/abc/Ampayers/update",[AmpayerControlador::class,"update"]) -> name("AmpayersUpdate");
+
+
+/** Temporada */
+Route::get('/abc/Temporadas/create', [TemporadaControlador::class,'create']) -> name('TemporadasCreate'); 
+Route::post('/abc/Temporadas/store', [TemporadaControlador::class,'store'])->name("TemporadasStore"); 
+Route::get("/abc/Temporadas",[TemporadaControlador::class,"index"])->name("temporadasIndex");
+Route::get("/abc/Temporadas/edit/{id}",[TemporadaControlador::class,"edit"])->name("TemporadasEdit");
+Route::post("/abc/Temporadas/update",[TemporadaControlador::class,"update"]) -> name("TemporadasUpdate");
+
 Route::get('/inicio', function () {
     return view('/inicio/inicio');
 }); 
