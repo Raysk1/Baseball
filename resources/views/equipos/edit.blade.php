@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="mb-3">
                         <label for="idEquipo" class="form-label">ID de Equipo:</label>
-                        <input type="text" class="form-control" name="idAmpayer" id="idAmpayer" required
+                        <input type="text" class="form-control" name="idEquipo" id="idEquipo" required
                             value={{ $datos->idEquipo }} readonly>
                     </div>
                 </div>

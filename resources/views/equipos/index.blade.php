@@ -12,7 +12,6 @@
     <tr>
         <th scope="col">ID</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Apellidos</th>
         <th scope="col">id logo</th>
         <th scope="col">Ciudad</th>
         <th scope="col">Tecnico</th>

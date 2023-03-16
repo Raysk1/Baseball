@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\JugadorControlador;
 use App\Http\Controllers\AmpayerControlador;
-
+use App\Http\Controllers\EquipoControlador;
 use App\Http\Controllers\JuegoControlador;
 
 use App\Models\Ampayer;
@@ -59,11 +59,11 @@ Route::get('/inicio', function () {
     return view('/inicio/inicio');
 }); 
 /** Equipos routes */
-Route::get('/abc/equipos/create', [equiposControlador::class,'create']) -> name('equiposCreate'); 
-Route::post('/abc/equipos/store', [equiposControlador::class,'store'])->name("equiposStore"); 
-Route::get("/abc/equipos",[equiposControlador::class,"index"])->name("equiposIndex");
-Route::get("/abc/equipos/edit/{id}",[equiposControlador::class,"edit"])->name("equiposEdit");
-Route::post("/abc/equipos/update",[equiposControlador::class,"update"]) -> name("equiposUpdate");
+Route::get('/abc/equipos/create', [EquipoControlador::class,'create']) -> name('equiposcreate'); 
+Route::post('/abc/equipos/store', [EquipoControlador::class,'store'])->name("equiposStore"); 
+Route::get("/abc/equipos",[EquipoControlador::class,"index"])->name("equiposIndex");
+Route::get("/abc/equipos/edit/{id}",[EquipoControlador::class,"edit"])->name("equiposEdit");
+Route::post("/abc/equipos/update",[EquipoControlador::class,"update"]) -> name("equiposUpdate");
 Route::get('/inicio', function () {
     return view('/inicio/inicio');
 }); 
