@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $categoria
  * @property string|null $momento
  * @property string|null $temporada
+ * @property string|null $nombre
  *
  * @package App\Models
  */
@@ -35,6 +36,7 @@ class Temporada extends Model
 		'grupo',
 		'categoria',
 		'momento',
-		'temporada'
+		'temporada',
+		'nombre'
 	];
 }
