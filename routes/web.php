@@ -4,6 +4,7 @@ use App\Http\Controllers\JugadorControlador;
 use App\Http\Controllers\AmpayerControlador;
 use App\Http\Controllers\EquipoControlador;
 use App\Http\Controllers\JuegoControlador;
+
 use App\Http\Controllers\TemporadaControlador;
 
 use App\Models\Ampayer;
@@ -66,5 +67,9 @@ Route::get('/abc/equipos', [EquipoControlador::class,'index']) -> name('EquiposI
 Route::get('/abc/equipos/edit/{id}', [EquipoControlador::class,'edit']) -> name('EquiposEdit'); 
 Route::get('/abc/equipos/update', [EquipoControlador::class,'update']) -> name('equiposUpdate'); 
 
-
+Route::get('/abc/Temporadas/create', [TemporadaControlador::class,'create']) -> name('TemporadasCreate'); 
+Route::get('/abc/Temporadas/store', [TemporadaControlador::class,'store']) -> name('TemporadasStore'); 
+Route::get('/abc/Temporadas', [TemporadaControlador::class,'index']) -> name('TemporadasIndex'); 
+Route::get('/abc/Temporadas/edit/{id}', [TemporadaControlador::class,'edit']) -> name('TemporadasEdit'); 
+Route::get('/abc/Temporadas/update', [TemporadaControlador::class,'update']) -> name('TemporadasUpdate'); 
 ?>
