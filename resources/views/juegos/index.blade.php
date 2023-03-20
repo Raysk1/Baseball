@@ -30,18 +30,18 @@
     @foreach ($datos as $dato)
         <tr class="align-middle" >
             <td  scope="row">{{ $dato->idJuego }}</td>
-            <td>{{ $dato->idTemporada}}</td>
+            <td>{{ $dato->temporada}}</td>
             <td>{{ $dato->jornada}}</td>
-            <td>{{ $dato->idCampo }}</td>
+            <td>{{ $dato->parque }}</td>
             <td>{{ $dato->fecha}}</td>
             <td>{{ $dato->hora}}</td>
             <td>{{ $dato->clima}}</td>
-            <td>{{ $dato->idEquipoVisitante}}</td>
-            <td>{{ $dato->idEquipoLocal}}</td>
+            <td>{{ $dato->equipoVisitante}}</td>
+            <td>{{ $dato->equipoLocal}}</td>
             <td>{{ $dato->final}}</td>
             <td colspan="2">
                 <div class="d-flex justify-content-evenly">
-                    <a href={{ route('jugadoresEdit', ['id' => $dato->idJuego]) }} class="btn btn-primary  ">
+                    <a href={{ route('juegosEdit', ['id' => $dato->idJuego]) }} class="btn btn-primary  ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-pencil-fill" viewBox="0 0 16 16">
                             <path

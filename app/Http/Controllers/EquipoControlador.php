@@ -22,7 +22,7 @@ class EquipoControlador extends Controller
     public function create()
     {
         $j = Equipo::orderBy('idEquipo', 'DESC')->first();
-        $lastId = $j->idEquipo + 1; 
+        $lastId = $j == null ? 0 : $j->idEquipo + 1; 
         return response(view('Equipos.create', compact('lastId')));
     }
 

@@ -55,10 +55,10 @@ Route::get('/inicio', function () {
 }); 
 /**Equipo routes */
 Route::get('/abc/equipos/create', [EquipoControlador::class,'create']) -> name('EquiposCreate'); 
-Route::get('/abc/equipos/store', [EquipoControlador::class,'store']) -> name('EquiposStore'); 
-Route::get('/abc/equipos', [EquipoControlador::class,'index']) -> name('EquiposIndex'); 
+Route::post('/abc/equipos/store', [EquipoControlador::class,'store']) -> name('EquiposStore'); 
+Route::get('/abc/equipos', [EquipoControlador::class,'index']) -> name('equiposIndex'); 
 Route::get('/abc/equipos/edit/{id}', [EquipoControlador::class,'edit']) -> name('EquiposEdit'); 
-Route::get('/abc/equipos/update', [EquipoControlador::class,'update']) -> name('equiposUpdate'); 
+Route::post('/abc/equipos/update', [EquipoControlador::class,'update']) -> name('equiposUpdate'); 
 
 
 ?>

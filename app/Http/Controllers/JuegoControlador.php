@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipo;
+use App\Models\Temporada;
 use Illuminate\Http\Request;
 use App\Models\Juego;
+use App\Models\Parque;
+use Illuminate\Support\Facades\DB;
 
 class JuegoControlador extends Controller {
 
@@ -14,7 +18,24 @@ class JuegoControlador extends Controller {
      */
     public function index() {
 
-        $datos = Juego::all();
+        $datos = DB::table("juegos")
+            ->select(array(
+                "juegos.idJuego",
+                "temporadas.temporada",
+                "juegos.jornada",
+                "parques.descripcion as parque",
+                "juegos.fecha",
+                "juegos.hora",
+                "juegos.clima",
+                "e1.nombre as equipoLocal",
+                "e2.nombre as equipoVisitante",
+                "juegos.final"
+            ))
+            ->join("equipos as e1", "e1.idEquipo", "=", "juegos.idEquipoLocal")
+            ->join("equipos as e2", "e2.idEquipo", "=", "juegos.idEquipoVisitante")
+            ->join("parques", "parques.idCampo", "=", "juegos.idCampo")
+            ->join("temporadas", "temporadas.idTemporada", "=", "juegos.idTemporada")
+            ->get();
         return response(view("Juegos.index", compact("datos")));
     }
     /** 
@@ -24,8 +45,13 @@ class JuegoControlador extends Controller {
     */
     public function create() {
         $j = Juego::orderBy('idJuego', 'DESC')->first();
-        $lastId = $j->idJuego + 1;
-        return response(view('Juegos.create', compact('lastId')));
+        $lastId = $j != null ? $j->idJuego + 1 : 0;
+        $datos = array(
+            "lastId" => $lastId, 
+            "equipos" => Equipo::all(["idEquipo", "nombre"]),
+            "temporadas" =>  Temporada::all(["idTemporada","nombre"]),
+            "campos" => Parque::all());
+        return response(view('Juegos.create', compact('datos')));
     }
     /** 
      * Store a newly created resource in storage. 
@@ -68,7 +94,11 @@ class JuegoControlador extends Controller {
      * @return  \Illuminate\Http\Response 
      */
     public function edit($id) {
-        $datos = Juego::find($id);
+        $datos = array(
+           "juego" => Juego::find($id), 
+            "equipos" => Equipo::all(["idEquipo", "nombre"]),
+            "temporadas" =>  Temporada::all(["idTemporada","nombre"]),
+            "campos" => Parque::all());
         return response(view("Juegos.edit", compact("datos")));
     }
     /** 
@@ -91,9 +121,9 @@ class JuegoControlador extends Controller {
         $j->idAviso = $request->idAviso;
         $j->idCuerpo = $request->idCuerpo;
         $j->save();
-        return response() ->redirectTo(route("juegosIndex"))
-        ->with(["success" => "Actulizado exitosamente"])
-        ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
+        return response()->redirectTo(route("juegosIndex"))
+            ->with(["success" => "Actulizado exitosamente"])
+            ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
 
     }
     /** 
