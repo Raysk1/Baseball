@@ -6,6 +6,7 @@ use App\Http\Controllers\EquipoControlador;
 use App\Http\Controllers\JuegoControlador;
 use App\Http\Controllers\LigaControlador;
 
+use App\Http\Controllers\ManejadorControlador;
 use App\Http\Controllers\TemporadaControlador;
 
 use App\Models\Ampayer;
@@ -80,4 +81,9 @@ Route::get('/abc/liga', [LigaControlador::class,'index']) -> name('ligasIndex');
 Route::get('/abc/liga/edit/{id}', [LigaControlador::class,'edit']) -> name('ligasEdit'); 
 Route::post('/abc/liga/update', [LigaControlador::class,'update']) -> name('ligasUpdate'); 
 
+Route::get('/abc/manejadores/create', [ManejadorControlador::class,'create']) -> name('manejadoresCreate'); 
+Route::post('/abc/manejadores/store', [ManejadorControlador::class,'store']) -> name('manejadoresStore'); 
+Route::get('/abc/manejadores', [ManejadorControlador::class,'index']) -> name('temporadasIndex'); 
+Route::get('/abc/manejadores/edit/{id}', [ManejadorControlador::class,'edit']) -> name('manejadoresEdit'); 
+Route::post('/abc/manejadores/update', [ManejadorControlador::class,'update']) -> name('manejadoresUpdate'); 
 ?>
