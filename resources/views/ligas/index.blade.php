@@ -1,22 +1,23 @@
 @extends('table')
 
 @section('title')
-    Temporada
+    ligas
 @endsection
 
 @section('createRoute')
-    {{ route('TemporadasCreate') }}
+    {{ route('ligasCreate') }}
 @endsection
 
 @section('thead')
     <tr>
         <th scope="col">ID</th>
-        <th scope="col">Liga</th>
-        <th scope="col">Grupo</th>
-        <th scope="col">Categoria</th>
-        <th scope="col">Momento</th>
-        <th scope="col">temporada</th>
-        <th scope="col">nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Presidente</th>
+        <th scope="col">Cordinador</th>
+        <th scope="col">Mapa</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Telefonos</th>
+        <th scope="col">Redes</th>
         <th scope="col" class="text-center" colspan="2">Accion</th>
 
     </tr>
@@ -25,16 +26,18 @@
 @section('tbody')
     @foreach ($datos as $dato)
         <tr class="align-middle">
-            <td scope="row">{{ $dato->idTemporada}}</td>
-            <td>{{ $dato->idLiga }}</td>
-            <td>{{ $dato->grupo }}</td>
-            <td>{{ $dato->categoria }}</td>
-            <td>{{ $dato->momento }}</td>
-            <td>{{ $dato->temporada}}</td>
-            <td>{{ $dato->nombre}}</td>
+            <td scope="row">{{ $dato->idLiga }}</td>
+            <td>{{ $dato->descripcion }}</td>
+            <td>{{ $dato->presidente }}</td>
+            <td>{{ $dato->coordinador }}</td>
+            <td>{{ $dato->mapa }}</td>
+            <td>{{ $dato->direccion}}</td>
+            <td>{{ $dato->telefono}}</td>
+            <td>{{ $dato->redes}}</td>
+            
             <td colspan="2">
                 <div class="d-flex justify-content-evenly">
-                    <a href={{ route('TemporadasEdit', ['id' => $dato->idTemporada]) }} class="btn btn-primary  ">
+                    <a href={{ route('ligasEdit', ['id' => $dato->idLiga]) }} class="btn btn-primary  ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-pencil-fill" viewBox="0 0 16 16">
                             <path

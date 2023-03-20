@@ -32,11 +32,15 @@
                 <div class="row mb-3">
                     <div class="col">
                         <label for="momento" class="form-label">Momento:</label>
-                        <input type="date" name="momento" class="form-control" id="momento" required>
+                        <input type="text" name="momento" class="form-control" id="momento" required>
                     </div>
                     <div class="col">
                         <label for="temporada" class="form-label">Temporada:</label>
                         <input type="text" name="temporada" class="form-control" id="temporada" required>
+                    </div>
+                    <div class="col">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" name="nombre" class="form-control" id="nombre" required>
                     </div>
                 </div>
                 

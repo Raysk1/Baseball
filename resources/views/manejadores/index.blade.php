@@ -1,22 +1,18 @@
 @extends('table')
 
 @section('title')
-    Temporada
+    Equipos
 @endsection
 
 @section('createRoute')
-    {{ route('TemporadasCreate') }}
+    {{ route('manejadoresCreate') }}
 @endsection
 
 @section('thead')
     <tr>
         <th scope="col">ID</th>
-        <th scope="col">Liga</th>
-        <th scope="col">Grupo</th>
-        <th scope="col">Categoria</th>
-        <th scope="col">Momento</th>
-        <th scope="col">temporada</th>
-        <th scope="col">nombre</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Tipo</th>
         <th scope="col" class="text-center" colspan="2">Accion</th>
 
     </tr>
@@ -25,16 +21,13 @@
 @section('tbody')
     @foreach ($datos as $dato)
         <tr class="align-middle">
-            <td scope="row">{{ $dato->idTemporada}}</td>
-            <td>{{ $dato->idLiga }}</td>
-            <td>{{ $dato->grupo }}</td>
-            <td>{{ $dato->categoria }}</td>
-            <td>{{ $dato->momento }}</td>
-            <td>{{ $dato->temporada}}</td>
-            <td>{{ $dato->nombre}}</td>
+            <td scope="row">{{ $dato->idTecnico }}</td>
+            <td>{{ $dato->nombre }}</td>
+            <td>{{ $dato->tipo }}</td>
+            
             <td colspan="2">
                 <div class="d-flex justify-content-evenly">
-                    <a href={{ route('TemporadasEdit', ['id' => $dato->idTemporada]) }} class="btn btn-primary  ">
+                    <a href={{ route('manejadoresEdit', ['id' => $dato->idTecnico]) }} class="btn btn-primary  ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-pencil-fill" viewBox="0 0 16 16">
                             <path
