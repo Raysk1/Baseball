@@ -38,4 +38,12 @@ Route::get('/inicio', function () {
 Route::get('tablajugadores', function () {
     return view('/tablajugadores/tablajugadores');
 });
+
+Route::get('/informacion', function () {
+    return view('/Luis/informacion');
+});
+
+Route::get('/pagina', function () {
+    return view('/Luis/pagina');
+});
 ?>
