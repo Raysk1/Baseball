@@ -85,7 +85,7 @@ Route::post('/abc/liga/update', [LigaControlador::class,'update']) -> name('liga
 
 Route::get('/abc/manejadores/create', [ManejadorControlador::class,'create']) -> name('manejadoresCreate'); 
 Route::post('/abc/manejadores/store', [ManejadorControlador::class,'store']) -> name('manejadoresStore'); 
-Route::get('/abc/manejadores', [ManejadorControlador::class,'index']) -> name('temporadasIndex'); 
+Route::get('/abc/manejadores', [ManejadorControlador::class,'index']) -> name('manejadoresIndex'); 
 Route::get('/abc/manejadores/edit/{id}', [ManejadorControlador::class,'edit']) -> name('manejadoresEdit'); 
 Route::post('/abc/manejadores/update', [ManejadorControlador::class,'update']) -> name('manejadoresUpdate'); 
 ?>
