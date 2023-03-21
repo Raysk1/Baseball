@@ -46,4 +46,9 @@ Route::get('/informacion', function () {
 Route::get('/pagina', function () {
     return view('/Luis/pagina');
 });
+
+
+Route::get('/iniciio', function () {
+    return view('/Luis/iniciio');
+});
 ?>
