@@ -20,9 +20,7 @@
         <!-- place navbar here -->
     </header>
     <main>
-        <div class="container">
-            @yield('content')
-        </div>
+        @yield('content')
     </main>
     <footer>
         <!-- place footer here -->
