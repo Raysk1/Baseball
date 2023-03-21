@@ -25,9 +25,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::redirect("/","/inicio");
 
-Route::get('/Boxscore', function () {
-    return view('Boxscore');
-});
+
 
 Route::get('/Resultados', function () {
     return view('Resultados');
@@ -86,4 +84,6 @@ Route::post('/abc/manejadores/store', [ManejadorControlador::class,'store']) -> 
 Route::get('/abc/manejadores', [ManejadorControlador::class,'index']) -> name('temporadasIndex'); 
 Route::get('/abc/manejadores/edit/{id}', [ManejadorControlador::class,'edit']) -> name('manejadoresEdit'); 
 Route::post('/abc/manejadores/update', [ManejadorControlador::class,'update']) -> name('manejadoresUpdate'); 
+
+
 ?>
