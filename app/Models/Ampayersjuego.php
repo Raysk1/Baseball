@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property int $idJuego
  * @property int $idAmpayer
+ * @property int $idCuerpo
  * @property string|null $ubicacion
  *
  * @package App\Models
@@ -20,6 +21,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ampayersjuego extends Model
 {
 	protected $table = 'ampayersjuego';
+	protected $primaryKey = 'idCuerpo';
 	public $incrementing = false;
 	public $timestamps = false;
 
