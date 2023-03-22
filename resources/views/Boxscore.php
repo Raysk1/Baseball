@@ -1,540 +1,632 @@
+
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Marcador de Béisbol por Entradas</title>
     <style type="text/css">
-    table {
-        border-collapse: collapse;
-        margin: 0 auto;
-    }
+        #general, #general2, #general3{
+            flex-direction: row;
+            display: flex;
+        }
+        #contenedor1, #contenedor3{
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+        }
+        #div1{
+            width: 100%;
+        }
+        #div2{
+            margin: 10px;
+            margin-right: 20%;
+            bottom: 0px;
+        }
+        #div3{
+            margin: 10px;
+            margin-left: 20%;
+        }
+        #div5, #div6{
+            width: 25%;
+            margin: 5px;
+        }
+        #div4, #div7{
+            width: 75%;
+            height: 50%;
+            bottom: 0px;
+        }
 
-    th,
-    td {
-        border: 1px solid black;
-        padding: 10px;
-        text-align: center;
-        font-weight: bold;
-    }
+        #img{
+            width: 75px;;
+            height: 75px;
+            float: right;
+        }
+        #img3{
+            width: 75px;;
+            height: 75px;
+            float: left;
+        }
+        #img2, #img4{
+            width: 75px;
+            height: 75px;
+        }
+        #img5{
+            width: 50px;
+            height: 50px;
+            float: right;
+        }
+        #img6{
+            width: 50px;
+            height: 50px;
+            float: left;
+        }
+        #img7{
+            width:20px;
+            height:20px;
+        }
+        #fondoRojo{
+            background-color: #6d0001;
+            color: white;
+            font-size: 10px;
+            border: 2px solid #530001;
+        }
 
-    th {
-        background-color: lightgray;
-    }
+        #contenedor2, #contenedor5{
+            width: 60%;
+        }
+        #contenedor4, #contenedor6{
+            width: 20%;
+            display: flex;
+            flex-direction: row;
+        }
+        #contenedor7, #contenedor8{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 50%;
+        }
+        table {
+            border-collapse: collapse;
+            /*border-spacing: 30px;*/
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        th, td{
+            text-align: center;
+        }
+        .borde{
+            border: 2px solid gray;
+        }
+        .bordeAzul{
+            border: 2px solid #64adf3;
+        }
+        .bordeNegro{
+            border: 2px solid #000000;
+        }
+        #amarillo{
+            background-color: #ad9a1d;
+        }
+        .azul{
+            color: #304f9e;
+        }
+        .rojo{
+            color: red;
+        }
+        #izq{
+            text-align: left;
+        }
+        #der{
+            text-align: right;
+        }
+        .fondoRojo{
+            background-color: #6d0001;
+            color: white;
+        }
+        .fondoAzul{
+            background-color: #304f9e;
+            color: white;
+        }
+        .container {
+            display: flex;
+        }
+        .cuadro1,  .cuadro2 {
+            width: 100%;
+            height: 100%;
+            border: 1px solid;
+        }
 
-    td {
-        background-color: white;
-    }
-
-    .team-name {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-    }
-
-    .container {
-        text-align: center;
-        margin-top: 15px;
-    }
-
-    .cuadro1,
-    .cuadro2 {
-        display: inline-block;
-        width: auto;
-        height: auto;
-        background-color: gray;
-        margin: 10px;
-
-    }
-
-    img {
-        height: 30px;
-        width: 30px;
-    }
-    </style>
-    <title>Imágenes flotantes</title>
-    <style type="text/css">
-    .float-left {
-        float: left;
-        margin-left: 200px;
-        height: 70px;
-        width: 70px;
-    }
-
-    .float-right {
-        float: right;
-        margin-right: 200px;
-        height: 70px;
-        width: 70px;
-    }
-    </style>
-    <title>Lista de Jugadores y Posiciones</title>
-    <style type="text/css">
-    table {
-        border-collapse: collapse;
-        margin: 0 auto;
-    }
-
-    th,
-    td {
-        border: 1px solid black;
-        padding: 10px;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    th {
-        background-color: lightgray;
-    }
-
-    td {
-        background-color: white;
-    }
-
-    .team-name {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-    }
-
-    h1 {
-        font-size: 4vw;
-        /* Tamaño de fuente responsivo */
-        text-align: center;
-        /* Alineación centrada */
-    }
-    .marker{
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        border: 1px solid ;
-        width: 40px;
-        float: left;
-        margin-left: 25%;
-    }
-    .marker2 {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        margin-right: 25%;
-        border: 1px solid ;
-        width: 40px;
-    
-        float: right;
-    }
-    .h2{
-      text-align: center;
-        border: 1px solid ;
-        width: 40px;
-        height: 40px;
-       
-    }
 
     </style>
 </head>
-
 <body>
-    <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/St._Louis_Cardinals_insignia_logo.svg/1200px-St._Louis_Cardinals_insignia_logo.svg.pngg"
-            class="float-left">
-        <img src="https://www.bing.com/ck/a?!&&p=241b89bbd6c510e2JmltdHM9MTY3Nzk3NDQwMCZpZ3VpZD0yOTg3YzFiOS0zYWIxLTZlYjgtMTY4NS1kMzEzM2JkYTZmMWQmaW5zaWQ9NTU1NQ&ptn=3&hsh=3&fclid=2987c1b9-3ab1-6eb8-1685-d3133bda6f1d&u=a1L2ltYWdlcy9zZWFyY2g_cT1ZYW5rZWVzJTIwTG9nbyZGT1JNPUlRRlJCQSZpZD0wRkZCQjlENDlFM0RENDY2REIwMDY0Mjk2NEUyMUNEQzE3MTJFNDFD&ntb=1"
-            class="float-right">
-        <h1>BoxScore</h1>
-    </div>
-
-    <br>
-
-    <div>
-        <div class="marker">
-           <h2>0</h2>
+    <div id = "general">
+        <div id ="contenedor1">
+            <div id = "div1">
+                <img src = "https://i.pinimg.com/originals/e1/43/56/e14356aa2c697bb8bd9b22a333949c24.gif" id ="img">
+            </div>
+            <div id = "div2">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" id = "fondoRojo">...</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src = "https://i.pinimg.com/originals/e1/43/56/e14356aa2c697bb8bd9b22a333949c24.gif" id ="img2"></td>
+                            <td class = "borde"><h1>0</h1></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="marker2">
-            <h2>0</h2>
-        </div>
-        <table>
-
-            <thead>
-                <tr>
-                    <th>Equipo</th>
-                    <th>1</th>
-                    <th>2</th>
-                    <th>3</th>
-                    <th>4</th>
-                    <th>5</th>
-                    <th>6</th>
-                    <th>7</th>
-                    <th>8</th>
-                    <th>9</th>
-                    <th>R</th>
-                    <th>H</th>
-                    <th>E</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Equipo 1</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>3</td>
-                    <td>5</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Equipo 2</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>1</td>
-                </tr>
-            </tbody>
-        </table>
-
-    </div>
-
-    <div class="container">
-        <div class="cuadro1">
-
+        <div id = "contenedor2">
             <table>
                 <thead>
                     <tr>
-                        <th></th>
-                        <th>No.</th>
-                        <th>Nombre</th>
-                        <th>Posición</th>
-                        <th>AB</th>
-                        <th>C</th>
-                        <th>H</th>
-                        <th>CP</th>
-                        <th>BB </th>
-                        <th>K</th>
-                        <th>PJE</th>
-                        <th>OBP</th>
+                        <th colspan ="16"><h1><B>BOXSCORE</B></h1></th>
+                    </tr>
+                    <tr>
+                        <td colspan = "16">LIGA DE SOFTBOL</td>
+                    </tr>
+                    <tr>
+                        <td colspan = "16">grupo elite</td>
+                    </tr>
+                    <tr>
+                        <th class = "bordeAzul" colspan = "16">Juego lanzado sin hit ni carrera de GARCIA</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="" alt=""></td>
+                        <td></td>
                         <td>1</td>
-                        <td>John Smith</td>
-                        <td>Pitcher</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-
-                    </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
                         <td>2</td>
-                        <td>Jane Doe</td>
-                        <td>Catcher</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
                         <td>3</td>
-                        <td>Mike Johnson</td>
-                        <td>First Base</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
                         <td>4</td>
-                        <td>Lisa Davis</td>
-                        <td>Second Base</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
                         <td>5</td>
-                        <td>David Lee</td>
-                        <td>Third Base</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
                         <td>6</td>
-                        <td>Mary Brown</td>
-                        <td>Shortstop</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
                         <td>7</td>
-                        <td>Tom Smith</td>
-                        <td>Left Field</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
                         <td>8</td>
-                        <td>Emily Jones</td>
-                        <td>Center Field</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
                         <td>9</td>
-                        <td>Chris Taylor</td>
-                        <td>Right Field</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>C</td>
+                        <td>H</td>
+                        <td>E</td>
                     </tr>
                     <tr>
-                        <td><img src="" alt=""></td>
-                        <td>10</td>
-                        <td>Chris Taylor</td>
-                        <td>Right Field</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
+                        <td id ="izq">AUTOS ABC</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td id ="izq">LA JAURIA COMASIN</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>X</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>8</td>
+                        <td>13</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td colspan="24" height = "15px"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <div class="cuadro2">
+        <div id = "contenedor3">
+            <div id = "div1">
+                <img src = "https://i.pinimg.com/originals/e1/43/56/e14356aa2c697bb8bd9b22a333949c24.gif" id ="img3">
+            </div>
+            <div id = "div3">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" id = "fondoRojo">JUEGO SIN HIT NI CARRERA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class = "borde" ><h1>8</h1></td>
+                            <td><img src = "https://i.pinimg.com/originals/e1/43/56/e14356aa2c697bb8bd9b22a333949c24.gif" id ="img4"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id = "general2">
+        <div id="contenedor4">
+            <div id = "div4">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>AUTOS ABC</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td >Record [1,1] Cuarto</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id = "div5">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Zack_Greinke_on_July_29%2C_2009.jpg/280px-Zack_Greinke_on_July_29%2C_2009.jpg" id = "img5">
+            </div>
+        </div>
+        <div id="contenedor5">
             <table>
                 <thead>
                     <tr>
-                        <th></th>
-                        <th>No.</th>
-                        <th>Nombre</th>
-                        <th>Posición</th>
-                        <th>AB</th>
-                        <th>C</th>
-                        <th>H</th>
-                        <th>CP</th>
-                        <th>BB </th>
-                        <th>K</th>
-                        <th>PJE</th>
-                        <th>OBP</th>
+                        <th class = "bordeNegro" id = "izq">Derrotado</th>
+                        <th class = "bordeNegro" id = "der">Ganador</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="" alt=""></td>
-                        <td>1</td>
-                        <td>John Smith</td>
-                        <td>Pitcher</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-
+                <tbody >
+                    <tr class = "azul">
+                        <td id ="izq">Mendoza xxx jose luis</td>
+                        <td id ="der">Garcia xxx eduardo</td>
                     </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
-                        <td>2</td>
-                        <td>Jane Doe</td>
-                        <td>Catcher</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
-                        <td>3</td>
-                        <td>Mike Johnson</td>
-                        <td>First Base</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
-                        <td>4</td>
-                        <td>Lisa Davis</td>
-                        <td>Second Base</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
-                        <td>5</td>
-                        <td>David Lee</td>
-                        <td>Third Base</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
-                        <td>6</td>
-                        <td>Mary Brown</td>
-                        <td>Shortstop</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/St._Louis_Cardinals_insignia_logo.svg/1200px-St._Louis_Cardinals_insignia_logo.svg.png"
-                                alt=""></td>
-                        <td>7</td>
-                        <td>Tom Smith</td>
-                        <td>Left Field</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
-                        <td>8</td>
-                        <td>Emily Jones</td>
-                        <td>Center Field</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
-                        <td>9</td>
-                        <td>Chris Taylor</td>
-                        <td>Right Field</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><img src="" alt=""></td>
-                        <td>10</td>
-                        <td>Chris Taylor</td>
-                        <td>Right Field</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
+                    <tr class = "rojo">
+                        <td id = "izq">Record</td>
+                        <td id = "der">Record</td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        <div id="contenedor6">
+            <div id = "div6">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Zack_Greinke_on_July_29%2C_2009.jpg/280px-Zack_Greinke_on_July_29%2C_2009.jpg" id = "img6">
+            </div>
+            <div id = "div7">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>AUTOS ABC</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Record [1,1] Cuarto</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
+    <div id = "general3">
+        <div id="contenedor7">
+            <div class="cuadro1">
+                <table>
+                    <thead>
+                        <tr class ="fondoRojo">
+                            <th></th>
+                            <th colspan = "1" id = "izq" >Bateadores - NombreEquipo</th>
+                            <th>POS</th>
+                            <th>AB</th>
+                            <th>C</th>
+                            <th>H</th>
+                            <th>CP</th>
+                            <th>BB </th>
+                            <th>K</th>
+                            <th>PJE</th>
+                            <th>OBP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">John Smith</td>
+                            <td>Pitcher</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">Jane Doe</td>
+                            <td>Catcher</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">Mike Johnson</td>
+                            <td>First Base</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">Lisa Davis</td>
+                            <td>Second Base</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">David Lee</td>
+                            <td>Third Base</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">Mary Brown</td>
+                            <td>Shortstop</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">Tom Smith</td>
+                            <td>Left Field</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">Emily Jones</td>
+                            <td>Center Field</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">Chris Taylor</td>
+                            <td>Right Field</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">Chris Taylor</td>
+                            <td>Right Field</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="contenedor8">
+            <div class="cuadro2">
+                <table>
+                    <thead>
+                    <tr class = "fondoAzul">
+                            <th></th>
+                            <th colspan = "1" id = "izq">Bateadores - NombreEquipo</th>
+                            <th>POS</th>
+                            <th>AB</th>
+                            <th>C</th>
+                            <th>H</th>
+                            <th>CP</th>
+                            <th>BB </th>
+                            <th>K</th>
+                            <th>PJE</th>
+                            <th>OBP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">John Smith</td>
+                            <td>CF</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                        <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">Jane Doe</td>
+                            <td>CF</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                        <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">Mike Johnson</td>
+                            <td>CF</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                        <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">Lisa Davis</td>
+                            <td>Second Base</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                        <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">David Lee</td>
+                            <td>Third Base</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                        <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">Mary Brown</td>
+                            <td>Shortstop</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/St._Louis_Cardinals_insignia_logo.svg/1200px-St._Louis_Cardinals_insignia_logo.svg.png" id = "img7"></td>
+                            <td id = "izq">Tom Smith</td>
+                            <td>Left Field</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                        <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">Emily Jones</td>
+                            <td>Center Field</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                        <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">Chris Taylor</td>
+                            <td>Right Field</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                        <td><img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?size=626&ext=jpg" id = "img7"></td>
+                            <td id = "izq">Chris Taylor</td>
+                            <td>Right Field</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 </body>
-
 </html>
