@@ -91,4 +91,8 @@ Route::post('/abc/manejadores/update', [ManejadorControlador::class,'update']) -
 Route::get('/abc/turnos/edit/{id}', [TurnoControlador::class,'edit'])->name("turnoEdit"); 
 Route::post('/abc/turnos/store', [TurnoControlador::class,'store']) -> name('turnoStore');
 
+Route::get('/pagina', function () {
+    return view('luis/pagina');
+});
+
 ?>
