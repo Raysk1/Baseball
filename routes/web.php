@@ -88,4 +88,9 @@ Route::post('/abc/manejadores/store', [ManejadorControlador::class,'store']) -> 
 Route::get('/abc/manejadores', [ManejadorControlador::class,'index']) -> name('temporadasIndex'); 
 Route::get('/abc/manejadores/edit/{id}', [ManejadorControlador::class,'edit']) -> name('manejadoresEdit'); 
 Route::post('/abc/manejadores/update', [ManejadorControlador::class,'update']) -> name('manejadoresUpdate'); 
+
+/**Routes de Turnos */
+Route::get('/abc/turnos/edit/{id}', [TurnoControlador::class,'edit'])->name("turnoEdit"); 
+Route::post('/abc/turnos/store', [TurnoControlador::class,'store']) -> name('turnoStore');
+
 ?>
