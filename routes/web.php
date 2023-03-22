@@ -49,8 +49,8 @@ Route::get("/abc/juegos/details/{id}",[JuegoControlador::class,"details"]) ->nam
 /**Entradas */
 Route::get('/abc/Entrada/create', [JuegoControlador::class,'create']) -> name('EntradaCreate'); 
 Route::post('/abc/Entrada/store', [JuegoControlador::class,'store'])->name("EntradaStore"); 
-Route::get("/abc/Entrada",[JuegoControlador::class,"index"])->name("jugadoresIndex");
-Route::get("/abc/Entrada/edit/{id}",[JuegoControlador::class,"edit"])->name("jugadoresEdit");
+Route::get("/abc/Entrada",[JuegoControlador::class,"index"])->name("EntradaIndex");
+Route::get("/abc/Entrada/edit/{id}",[JuegoControlador::class,"edit"])->name("EntradaEdit");
 Route::post("/abc/Entrada/update",[JuegoControlador::class,"update"]) -> name("EntradaUpdate");
 
 /** Ampayers routes */
