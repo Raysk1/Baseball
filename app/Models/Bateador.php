@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $CP
  * @property int|null $BB
  * @property int|null $K
+ * @property int|null $idBateadores
  * @property float|null $PJE
  * @property float|null $OBP
  *
@@ -26,6 +27,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Bateador extends Model
 {
+	protected $primaryKey = 'idBateadores';
 	protected $table = 'bateadores';
 	public $incrementing = false;
 	public $timestamps = false;
