@@ -27,12 +27,12 @@
             Consultas
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Resultados</a></li>
-            <li><a class="dropdown-item" href="#">Boxcores</a></li>
+            <li><a class="dropdown-item" href={{route("manejadoresIndex")}}>Manejadores</a></li>
+            <li><a class="dropdown-item" href={{route("temporadasIndex")}}>Temporadas</a></li>
 			<li><a class="dropdown-item" href="#">Standing</a></li>
             <li><a class="dropdown-item" href="#">Lideres</a></li>
 			<li><a class="dropdown-item" href="#">Estadisticas</a></li>
-            <li><a class="dropdown-item" href="#">Roster</a></li>
+            <li><a class="dropdown-item" href="">Rooster</a></li>
           </ul>
         </li>
 
@@ -41,12 +41,11 @@
             Capturas
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Jugadores</a></li>
-            <li><a class="dropdown-item" href="#">Equipos</a></li>
-			      <li><a class="dropdown-item" href="#">Ligas</a></li>
-            <li><a class="dropdown-item" href="#">Ampayer</a></li>
-			      <li><a class="dropdown-item" href="#">Parques</a></li>
-            <li><a class="dropdown-item" href="#">Avisos</a></li>
+            <li><a class="dropdown-item" href={{route("jugadoresIndex")}}>Jugadores</a></li>
+            <li><a class="dropdown-item" href={{route("equiposIndex")}}>Equipos</a></li>
+			      <li><a class="dropdown-item" href={{route("juegosIndex")}}>Juegos</a></li>
+            <li><a class="dropdown-item" href={{route("AmpayersIndex")}}>Ampayer</a></li>
+			      <li><a class="dropdown-item" href={{route("ligasIndex")}}>Ligas</a></li>
           </ul>
         </li>
 
