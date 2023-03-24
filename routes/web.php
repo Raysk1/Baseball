@@ -69,8 +69,10 @@ Route::get('/inicio', function () {
 });
 
 /** AmpayersJuego routes */
-Route::get('/abc/AmpayersJuego/create', [AmpayerJuegoControlador::class,'create']) -> name('AmpayersJuegoCreate');
-Route::post('/abc/AmpayersJuego/store', [AmpayerJuegoControlador::class,'store']) -> name('AmpayersJuegoStore');
+Route::get('/abc/AmpayersJuego/create', [AmpayersJuegoControlador::class,'create']) -> name('AmpayersJuegoCreate');
+Route::post('/abc/AmpayersJuego/store', [AmpayersJuegoControlador::class,'store']) -> name('AmpayersJuegoStore');
+Route::get("/abc/AmpayersJuego/edit/{id}",[AmpayersJuegoControlador::class,"edit"])->name("AmpayersJuegoEdit");
+Route::post("/abc/AmpayersJuego/update",[AmpayersJuegoControlador::class,"update"]) -> name("AmpayersJuegoUpdate");
 
 /**Equipo routes */
 Route::get('/abc/equipos/create', [EquipoControlador::class,'create']) -> name('EquiposCreate'); 
