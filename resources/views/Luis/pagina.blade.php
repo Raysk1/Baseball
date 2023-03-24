@@ -29,13 +29,10 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href={{route("manejadoresIndex")}}>Manejadores</a></li>
             <li><a class="dropdown-item" href={{route("temporadasIndex")}}>Temporadas</a></li>
-			<li><a class="dropdown-item" href="#">Standing</a></li>
-            <li><a class="dropdown-item" href="#">Lideres</a></li>
-			<li><a class="dropdown-item" href="#">Estadisticas</a></li>
-            <li><a class="dropdown-item" href="">Rooster</a></li>
+			      <li><a class="dropdown-item" href={{route("turnoCreate")}}>Turnos</a></li>
           </ul>
         </li>
-
+        
 		<li class="nav-item dropdown" >
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
             Capturas
@@ -50,7 +47,7 @@
         </li>
 
 		<li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/informacion" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Informacion
           </a>
           <ul class="dropdown-menu">
@@ -74,7 +71,7 @@
     </div>
   </div>
 </nav>
-
+<img src="/img/imagenlogo.jpg" width="100%" height="100%">
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

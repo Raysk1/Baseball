@@ -63,7 +63,6 @@
 <body>
 		<h1><center>Directorio </center></h1><hr>
 	<div class="conten">
-	<body background="/img/pasto.jpg">
 		<div class="caja2" img src="/img/fondo.jpg" width="100%" height="100%">
 			<img src="/img/personaas.jpg" width="100%" height="100%">
 			<h3><center>Lic. Mario Guadalupe Santana Lopez
