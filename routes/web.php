@@ -111,4 +111,10 @@ Route::get('/pagina', function () {
     return view('luis/pagina');
 });
 
+Route::get('/loing', function () {
+    return view('sesion/loing');
+});
+Route::get('/registroloing', function () {
+    return view('sesion/registroloing');
+});
 ?>
