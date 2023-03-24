@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\JugadorControlador;
 use App\Http\Controllers\AmpayerControlador;
+use App\Http\Controllers\AmpayersJuegoControlador;
 use App\Http\Controllers\EquipoControlador;
 use App\Http\Controllers\JuegoControlador;
 use App\Http\Controllers\LigaControlador;
@@ -13,6 +14,7 @@ use App\Http\Controllers\TemporadaControlador;
 
 use App\Models\Ampayer;
 use App\Models\Jugador;
+use App\Models\Ampayersjuego;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +34,7 @@ Route::redirect("/","/inicio");
 Route::get('/Resultados', function () {
     return view('Resultados');
 });
+
 
 /** Jugadores routes */
 Route::get('/abc/jugadores/create', [JugadorControlador::class,'create']) -> name('jugadoresCreate'); 
@@ -63,7 +66,12 @@ Route::get("/abc/Ampayers/edit/{id}",[AmpayerControlador::class,"edit"])->name("
 Route::post("/abc/Ampayers/update",[AmpayerControlador::class,"update"]) -> name("AmpayersUpdate");
 Route::get('/inicio', function () {
     return view('/inicio/inicio');
-}); 
+});
+
+/** AmpayersJuego routes */
+Route::get('/abc/AmpayersJuego/create', [AmpayerJuegoControlador::class,'create']) -> name('AmpayersJuegoCreate');
+Route::post('/abc/AmpayersJuego/store', [AmpayerJuegoControlador::class,'store']) -> name('AmpayersJuegoStore');
+
 /**Equipo routes */
 Route::get('/abc/equipos/create', [EquipoControlador::class,'create']) -> name('EquiposCreate'); 
 Route::post('/abc/equipos/store', [EquipoControlador::class,'store']) -> name('EquiposStore'); 
