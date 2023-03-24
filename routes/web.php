@@ -119,10 +119,10 @@ Route::get('/pagina', function () {
     return view('luis/pagina');
 });
 
-Route::get('/loing', function () {
-    return view('sesion/loing');
+Route::get('/login', function () {
+    return view('sesion/login');
 });
-Route::get('/registroloing', function () {
-    return view('sesion/registroloing');
+Route::get('/registrologin', function () {
+    return view('sesion/registrologin');
 });
 ?>
