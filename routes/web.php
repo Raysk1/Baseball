@@ -123,8 +123,8 @@ Route::get('/informacion', function () {
     return view('luis/informacion');
 });
 
-Route::get('/pagina', function () {
-    return view('luis/pagina');
+Route::get('/inicio', function () {
+    return view('inicio');
 });
 
 Route::get('/login', function () {

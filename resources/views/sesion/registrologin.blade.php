@@ -84,7 +84,7 @@
         <h1>Iniciar Sesión</h1>
         <input type="email" placeholder="Ingrese su Correo">
         <input type="password" placeholder="Ingrese su contraseña">
-        <button><a href="/pagina">Iniciar Sesion</a> </button>
+       <a href="/login"> <button>Iniciar Sesion </button></a> 
         <p class="link"><a href="/login">¿Aun no tienes cuenta?</a></p>
     </form>
 </body>
