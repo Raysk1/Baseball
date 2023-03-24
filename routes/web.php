@@ -6,6 +6,8 @@ use App\Http\Controllers\AmpayersJuegoControlador;
 use App\Http\Controllers\EquipoControlador;
 use App\Http\Controllers\JuegoControlador;
 use App\Http\Controllers\LigaControlador;
+use App\Http\Controllers\TurnoControlador;
+//use App\Http\Controllers\InformacionControlador;
 
 use App\Http\Controllers\ManejadorControlador;
 use App\Http\Controllers\TemporadaControlador;
@@ -27,9 +29,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::redirect("/","/inicio");
 
-Route::get('/Boxscore', function () {
-    return view('Boxscore');
-});
+
 
 Route::get('/Resultados', function () {
     return view('Resultados');
@@ -54,8 +54,8 @@ Route::get("/abc/juegos/details/{id}",[JuegoControlador::class,"details"]) ->nam
 /**Entradas */
 Route::get('/abc/Entrada/create', [JuegoControlador::class,'create']) -> name('EntradaCreate'); 
 Route::post('/abc/Entrada/store', [JuegoControlador::class,'store'])->name("EntradaStore"); 
-Route::get("/abc/Entrada",[JuegoControlador::class,"index"])->name("jugadoresIndex");
-Route::get("/abc/Entrada/edit/{id}",[JuegoControlador::class,"edit"])->name("jugadoresEdit");
+Route::get("/abc/Entrada",[JuegoControlador::class,"index"])->name("EntradaIndex");
+Route::get("/abc/Entrada/edit/{id}",[JuegoControlador::class,"edit"])->name("EntradaEdit");
 Route::post("/abc/Entrada/update",[JuegoControlador::class,"update"]) -> name("EntradaUpdate");
 
 /** Ampayers routes */
@@ -93,7 +93,30 @@ Route::post('/abc/liga/update', [LigaControlador::class,'update']) -> name('liga
 
 Route::get('/abc/manejadores/create', [ManejadorControlador::class,'create']) -> name('manejadoresCreate'); 
 Route::post('/abc/manejadores/store', [ManejadorControlador::class,'store']) -> name('manejadoresStore'); 
-Route::get('/abc/manejadores', [ManejadorControlador::class,'index']) -> name('temporadasIndex'); 
+Route::get('/abc/manejadores', [ManejadorControlador::class,'index']) -> name('manejadoresIndex'); 
 Route::get('/abc/manejadores/edit/{id}', [ManejadorControlador::class,'edit']) -> name('manejadoresEdit'); 
 Route::post('/abc/manejadores/update', [ManejadorControlador::class,'update']) -> name('manejadoresUpdate'); 
+
+/**Routes de Turnos */
+Route::get('/abc/turnos/create', [TurnoControlador::class,'create']) -> name('turnoCreate'); 
+Route::post('/abc/turnos/store', [TurnoControlador::class,'store']) -> name('turnoStore');
+Route::get('/abc/turnos', [TurnoControlador::class,'index']) -> name('turnoIndex'); 
+Route::get('/abc/turnos/edit/{id}', [TurnoControlador::class,'edit'])->name("turnoEdit"); 
+Route::post('/abc/turnos/update', [TurnoControlador::class,'update']) -> name('turnoUpdate'); 
+
+/**Routes de informacion 
+Route::get('/abc/informacion/create', [InformacionControlador::class,'create']) -> name('turnoCreate'); 
+Route::post('/abc/informacion/store', [InformacionControlador::class,'store']) -> name('turnoStore');
+Route::get('/Luis/informacion', [InformacionControlador::class,'index']) -> name('informacionIndex'); 
+Route::get('/abc/informacion/edit/{id}', [InformacionControlador::class,'edit'])->name("turnoEdit"); 
+Route::post('/abc/informacion/update', [InformacionControlador::class,'update']) -> name('turnoUpdate'); */
+
+Route::get('/informacion', function () {
+    return view('luis/informacion');
+});
+
+Route::get('/pagina', function () {
+    return view('luis/pagina');
+});
+
 ?>

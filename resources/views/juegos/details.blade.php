@@ -19,7 +19,7 @@
 @endsection
 
 @section('content')
-    <div class="container text-center">
+    <div class="container text-center" >
         <div class="row mt-1">
             <h3>Datos generales del juego</h3>
             <div class="table-responsive">

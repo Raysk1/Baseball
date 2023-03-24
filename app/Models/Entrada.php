@@ -16,12 +16,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $entradaBaja
  * @property int|null $carrerasAlta
  * @property int|null $carrerasBaja
- *
+ * @property int|null $idCarrera
+ * @property int|null $idEntrada
+ * 
  * @package App\Models
  */
 class Entrada extends Model
 {
 	protected $table = 'entradas';
+	protected $primaryKey = 'idEntrada';
 	public $incrementing = false;
 	public $timestamps = false;
 
