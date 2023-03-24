@@ -7,6 +7,7 @@ use App\Http\Controllers\EquipoControlador;
 use App\Http\Controllers\JuegoControlador;
 use App\Http\Controllers\LigaControlador;
 use App\Http\Controllers\TurnoControlador;
+use App\Http\Controllers\BateadorControlador;
 //use App\Http\Controllers\InformacionControlador;
 
 use App\Http\Controllers\ManejadorControlador;
@@ -111,6 +112,13 @@ Route::post('/abc/turnos/store', [TurnoControlador::class,'store']) -> name('tur
 Route::get('/abc/turnos', [TurnoControlador::class,'index']) -> name('turnoIndex'); 
 Route::get('/abc/turnos/edit/{id}', [TurnoControlador::class,'edit'])->name("turnoEdit"); 
 Route::post('/abc/turnos/update', [TurnoControlador::class,'update']) -> name('turnoUpdate'); 
+
+/**BATEADORES*/
+Route::get('/abc/bateadores/create', [BateadorControlador::class,'create']) -> name('bateadoresCreate'); 
+Route::post('/abc/bateadores/store', [BateadorControlador::class,'store']) -> name('bateadoresStore');
+Route::get('/abc/bateadores', [BateadorControlador::class,'index']) -> name('bateadoresIndex'); 
+Route::get('/abc/bateadores/edit/{id}', [BateadorControlador::class,'edit'])->name("bateadoresEdit"); 
+Route::post('/abc/bateadores/update', [BateadorControlador::class,'update']) -> name('bateadoresUpdate'); 
 
 /**Routes de informacion 
 Route::get('/abc/informacion/create', [InformacionControlador::class,'create']) -> name('turnoCreate'); 
