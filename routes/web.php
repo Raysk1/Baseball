@@ -59,9 +59,17 @@ Route::post('/abc/Ampayers/store', [AmpayerControlador::class,'store'])->name("A
 Route::get("/abc/Ampayers",[AmpayerControlador::class,"index"])->name("AmpayersIndex");
 Route::get("/abc/Ampayers/edit/{id}",[AmpayerControlador::class,"edit"])->name("AmpayersEdit");
 Route::post("/abc/Ampayers/update",[AmpayerControlador::class,"update"]) -> name("AmpayersUpdate");
+
+//inicio
 Route::get('/inicio', function () {
-    return view('/inicio/inicio');
-}); 
+    return view('inicio.inicio');
+}) ->name("inicio"); 
+//informacion
+Route::get('/contacto', function () {
+    return view('contacto');
+}) ->name("contacto"); 
+
+
 /**Equipo routes */
 Route::get('/abc/equipos/create', [EquipoControlador::class,'create']) -> name('EquiposCreate'); 
 Route::post('/abc/equipos/store', [EquipoControlador::class,'store']) -> name('EquiposStore'); 
