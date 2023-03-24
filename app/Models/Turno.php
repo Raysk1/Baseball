@@ -23,12 +23,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $producciones
  * @property string|null $detalles
  * @property int $idLanzador
+ * @property int $idTurno
  *
  * @package App\Models
  */
 class Turno extends Model
 {
 	protected $table = 'turnos';
+	protected $primaryKey = 'idTurno';
 	public $incrementing = false;
 	public $timestamps = false;
 
