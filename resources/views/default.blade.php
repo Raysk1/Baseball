@@ -18,6 +18,69 @@
 <body>
     <header class="sticky-top ">
         <!-- place navbar here -->
+        <nav class="navbar navbar-expand-lg bg-info">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">BASEBALL</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href={{route("inicio")}}>Inicio</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Consultas
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href={{route("manejadoresIndex")}}>Manejadores</a></li>
+                      <li><a class="dropdown-item" href={{route("temporadasIndex")}}>Temporadas</a></li>
+                      <li><a class="dropdown-item" href="#">Standing</a></li>
+                      <li><a class="dropdown-item" href="#">Lideres</a></li>
+                      <li><a class="dropdown-item" href="#">Estadisticas</a></li>
+                      <li><a class="dropdown-item" href="">Rooster</a></li>
+                    </ul>
+                  </li>
+          
+                  <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                      Capturas
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href={{route("jugadoresIndex")}}>Jugadores</a></li>
+                      <li><a class="dropdown-item" href={{route("equiposIndex")}}>Equipos</a></li>
+                            <li><a class="dropdown-item" href={{route("juegosIndex")}}>Juegos</a></li>
+                      <li><a class="dropdown-item" href={{route("AmpayersIndex")}}>Ampayer</a></li>
+                            <li><a class="dropdown-item" href={{route("ligasIndex")}}>Ligas</a></li>
+                    </ul>
+                  </li>
+          
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Informacion
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href={{route("contacto")}}>Contactos</a></li>
+                    </ul>
+                  </li>
+          
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Registros
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Jugadores</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
     </header>
     <main>
         @yield('content')
