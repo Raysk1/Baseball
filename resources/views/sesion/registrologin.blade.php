@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style2.css">
-    <title>Iniciar Sesion</title>
+    <title>Formulario de Registro</title>
     <style>*{
         padding: 0;
         margin: 0;
         box-sizing: border-box;
-        font-family: 'Roboto', sans-serif;
+       
     }
     body {
         width: 100%;
         height: 100vh;
-        background: #009FFF;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #ec2F4B, #009FFF);  
+        background: #009FFF;  
+        background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF); 
+        background: linear-gradient(to right, #ec2F4B, #009FFF);
+        font-family: 'Roboto', sans-serif;  
     }
     form{
         position: absolute;
@@ -62,6 +63,11 @@
         border-radius: 1px;
     }
     
+    .acuerdo{
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
     button{
         display: block;
         margin: auto;
@@ -81,11 +87,14 @@
 </head>
 <body>
     <form action="">
-        <h1>Iniciar Sesión</h1>
+        <h1>Formulario de Registro </h1>
+        <input type="text" placeholder="Ingrese su nombre">
+        <input type="text" placeholder="Ingrese su Apellido">
         <input type="email" placeholder="Ingrese su Correo">
         <input type="password" placeholder="Ingrese su contraseña">
-       <a href="/login"> <button>Iniciar Sesion </button></a> 
-        <p class="link"><a href="/login">¿Aun no tienes cuenta?</a></p>
+        <p class="acuerdo">Estoy de acuerdo con terminos y condiciones</p>
+        <button>Registrarse</button>
+        <p class="link"><a href="/login">¿Ya tienes cuenta?</a></p>
     </form>
 </body>
 </html>
