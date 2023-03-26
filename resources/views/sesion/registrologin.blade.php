@@ -94,7 +94,7 @@
         <input type="password" placeholder="Ingrese su contraseña">
         <p class="acuerdo">Estoy de acuerdo con terminos y condiciones</p>
         <button>Registrarse</button>
-        <p class="link"><a href="/registroloing">¿Ya tienes cuenta?</a></p>
+        <p class="link"><a href="/login">¿Ya tienes cuenta?</a></p>
     </form>
 </body>
 </html>

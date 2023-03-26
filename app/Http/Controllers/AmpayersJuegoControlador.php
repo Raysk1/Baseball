@@ -31,7 +31,6 @@ class AmpayersJuegoControlador extends Controller {
      * @return \Illuminate\Http\Response 
      */
     public function store(Request $request) {
-
         $a = new Ampayersjuego();
         $a->idCuerpo = $request->idCuerpo;
         $a->idJuego = $request->idJuego;

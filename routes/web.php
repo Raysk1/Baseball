@@ -7,6 +7,7 @@ use App\Http\Controllers\EquipoControlador;
 use App\Http\Controllers\JuegoControlador;
 use App\Http\Controllers\LigaControlador;
 use App\Http\Controllers\TurnoControlador;
+use App\Http\Controllers\BateadorControlador;
 //use App\Http\Controllers\InformacionControlador;
 
 use App\Http\Controllers\ManejadorControlador;
@@ -79,7 +80,8 @@ Route::get('/contacto', function () {
 /** AmpayersJuego routes */
 Route::get('/abc/AmpayersJuego/create', [AmpayersJuegoControlador::class,'create']) -> name('AmpayersJuegoCreate');
 Route::post('/abc/AmpayersJuego/store', [AmpayersJuegoControlador::class,'store']) -> name('AmpayersJuegoStore');
-Route::get('/abc/AmpayersJuego/edit/{id}', [AmpayersJuegoControlador::class,'edit']) -> name('AmpayersJuegoEdit'); 
+Route::get("/abc/AmpayersJuego/edit/{id}",[AmpayersJuegoControlador::class,"edit"])->name("AmpayersJuegoEdit");
+Route::post("/abc/AmpayersJuego/update",[AmpayersJuegoControlador::class,"update"]) -> name("AmpayersJuegoUpdate");
 
 /**Equipo routes */
 Route::get('/abc/equipos/create', [EquipoControlador::class,'create']) -> name('EquiposCreate'); 
@@ -113,6 +115,13 @@ Route::get('/abc/turnos', [TurnoControlador::class,'index']) -> name('turnoIndex
 Route::get('/abc/turnos/edit/{id}', [TurnoControlador::class,'edit'])->name("turnoEdit"); 
 Route::post('/abc/turnos/update', [TurnoControlador::class,'update']) -> name('turnoUpdate'); 
 
+/**BATEADORES*/
+Route::get('/abc/bateadores/create', [BateadorControlador::class,'create']) -> name('bateadoresCreate'); 
+Route::post('/abc/bateadores/store', [BateadorControlador::class,'store']) -> name('bateadoresStore');
+Route::get('/abc/bateadores', [BateadorControlador::class,'index']) -> name('bateadoresIndex'); 
+Route::get('/abc/bateadores/edit/{id}', [BateadorControlador::class,'edit'])->name("bateadoresEdit"); 
+Route::post('/abc/bateadores/update', [BateadorControlador::class,'update']) -> name('bateadoresUpdate'); 
+
 /**Routes de informacion 
 Route::get('/abc/informacion/create', [InformacionControlador::class,'create']) -> name('turnoCreate'); 
 Route::post('/abc/informacion/store', [InformacionControlador::class,'store']) -> name('turnoStore');
@@ -124,14 +133,14 @@ Route::get('/informacion', function () {
     return view('luis/informacion');
 });
 
-Route::get('/pagina', function () {
-    return view('luis/pagina');
+Route::get('/default', function () {
+    return view('default');
 });
 
-Route::get('/loing', function () {
-    return view('sesion/loing');
+Route::get('/login', function () {
+    return view('sesion/login');
 });
-Route::get('/registroloing', function () {
-    return view('sesion/registroloing');
+Route::get('/registrologin', function () {
+    return view('sesion/registrologin');
 });
 ?>
