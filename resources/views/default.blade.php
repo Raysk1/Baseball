@@ -74,10 +74,8 @@
                     </ul>
                   </li>
                 </ul>
-                <form class="d-flex" role="search">
-                
-                  <button type="button" class="btn btn-outline-light me-2">Login</button>
-                  <button type="button" class="btn btn-warning">Sign-up</button>
+                <form class="d-flex" role="search"> 
+                  <button type="button" class="btn btn-warning">logout</button>
                 </form>
               </div>
             </div>
