@@ -133,9 +133,7 @@ Route::get('/informacion', function () {
     return view('luis/informacion');
 });
 
-Route::get('/default', function () {
-    return view('default');
-});
+
 
 Route::get('/login', function () {
     return view('sesion/login');

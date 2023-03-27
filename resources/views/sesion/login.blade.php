@@ -96,7 +96,7 @@
         <h1>Iniciar Sesión</h1>
         <input type="email" placeholder="Ingrese su Correo">
         <input type="password" placeholder="Ingrese su contraseña">
-        <a href="/default"> <button> Iniciar Sesion </button></a>
+        <a href={{route("inicio")}}> <button> Iniciar Sesion </button></a>
         <p class="link"><a href="/registrologin">¿Aun no tienes cuenta?</a></p>
     </form>
 </body>
