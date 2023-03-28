@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
+@extends('default')
+@section('title')
+    Alta de juegos
+@endsection
 
-<head>
-    <title>Baseball</title>
-    <style>
-
-    </style>
-</head>
-
-<body>
+@section('content')
     <h1><mark> JUEGOS DE BASEBALL 2023</mark></h1>
 
     <div class="contenedor">
@@ -25,6 +20,4 @@
     </div>
     <img src="/img/imagenlogo.jpg" width="50%" height="50%">
 
-</body>
-
-</html>
+@endsection
