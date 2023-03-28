@@ -132,9 +132,6 @@ Route::post('/abc/informacion/update', [InformacionControlador::class,'update'])
 Route::get('/informacion', function () {
     return view('luis/informacion');
 });
-
-
-
 Route::get('/login', function () {
     return view('sesion/login');
 });
