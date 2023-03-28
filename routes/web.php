@@ -133,4 +133,7 @@ Route::get('/login', function () {
 Route::get('/registrologin', function () {
     return view('sesion/registrologin');
 });
+Route::get('/header', function () {
+    return view('pantalla/header');
+});
 ?>
