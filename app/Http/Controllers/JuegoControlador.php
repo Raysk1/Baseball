@@ -108,7 +108,7 @@ class JuegoControlador extends Controller {
         ->where("idJuego", "=", $id)
         ->get();
         
-        $lanzadores =DB::table("lanzadores as l")
+        $lanzadores = DB::table("lanzadores as l")
         ->select(array(
             "l.ip",
             "l.ba",

@@ -31,7 +31,6 @@ class AmpayersJuegoControlador extends Controller {
      * @return \Illuminate\Http\Response 
      */
     public function store(Request $request) {
-
         $a = new Ampayersjuego();
         $a->idCuerpo = $request->idCuerpo;
         $a->idJuego = $request->idJuego;
@@ -59,7 +58,7 @@ class AmpayersJuegoControlador extends Controller {
      */
     public function edit($id) {
         $datos = Ampayersjuego::find($id);
-        return response(view("AmpayersJuego.edit", compact("datos")));
+        return response(view("AmpayersJuegos.edit", compact("datos")));
     }
 
     /** 
