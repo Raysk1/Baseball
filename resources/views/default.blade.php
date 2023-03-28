@@ -75,7 +75,7 @@
                   </li>
                 </ul>
                 <form class="d-flex" role="search"> 
-                  <button type="button" class="btn btn-warning">logout</button>
+                  <a type="button" href="/inicio" class="btn btn-warning">logout</a>
                 </form>
               </div>
             </div>
