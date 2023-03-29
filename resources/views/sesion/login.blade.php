@@ -35,6 +35,8 @@
             background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
             /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(to right, #ec2F4B, #009FFF);
+            background-image: url("https://www.apple.com/newsroom/images/product/apple-tv-plus/standard/Apple-TV-plus-MLB-Friday-Night-Baseball-hero_big.jpg.slideshow-xlarge_2x.jpg");
+
         }
 
         form {

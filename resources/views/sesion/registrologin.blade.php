@@ -1,100 +1,86 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <title>Formulario de Registro</title>
-    <style>*{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-       
-    }
-    body {
-        width: 100%;
-        height: 100vh;
-        background: #009FFF;  
-        background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF); 
-        background: linear-gradient(to right, #ec2F4B, #009FFF);
-        font-family: 'Roboto', sans-serif;  
-    }
-    form{
-        position: absolute;
-        min-width: 280px;
-        max-width: 25%;
-        width: 25%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        padding: 15px;
-        box-shadow: 0 1rem 1rem  rgba(0, 0, 0, 0.3);
-        background-color: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(1rem);
-        border-radius: 5px;
-        color: #fff;
-    }
-    h1{
-        position: relative;
-        font-size: 18px;
-        margin-bottom: 15px;
-        padding-bottom: 7px;
-    }
-    h1::after{
-        content: "";
-        position: absolute;
-        height: 3px;
-        border-radius: 3px;
-        background-color: #fff;
-        width: 120px;
-        left: 0;
-        bottom: 0;    
-    }
-    input{
-        display: block;
-        width: 100%;
-        height: 40px;
-        padding: 5px 6px;
-        margin-bottom: 15px;
-        border: none;
-        outline: none;
-        border-radius: 1px;
-    }
-    
-    .acuerdo{
-        text-align: center;
-        margin-bottom: 15px;
-        font-size: 15px;
-    }
-    button{
-        display: block;
-        margin: auto;
-        width: 100%;
-        height:40px ;
-        background-color: #5d5b5b96;
-        border: none;
-        cursor: pointer;
-        border-radius: 20px;
-        color: #fff;
-    }
-    .link{
-        text-align: center;
-        margin-top: 15px;
-        font-weight: bolder;
-    }</style>
+    <title>My Awesome Login Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ 'assets/estilos.css' }}">
 </head>
+<!--Coded with love by Mutiullah Samim-->
+
 <body>
-    <form method="POST" action="">
-        <h1>Formulario de Registro </h1>
-        <input type="text" placeholder="Ingrese su nombre">
-        <input type="text" placeholder="Ingrese su Apellido">
-        <input type="email" placeholder="Ingrese su Correo">
-        <input type="password" placeholder="Ingrese su contraseña">
-        <p class="acuerdo">Estoy de acuerdo con terminos y condiciones</p>
-        <button>Registrarse</button>
-        <p class="link"><a href="/login">¿Ya tienes cuenta?</a></p>
-    </form>
+    <div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+            <div class="user_card">
+                <div class="d-flex justify-content-center">
+                    <div class="brand_logo_container">
+                        <img src="http://cdn.shopify.com/s/files/1/0164/9206/8918/products/pelota-practicas-beisbol-rawlings-fsr100-up-sports-zona-948409.jpg?v=1620306787"
+                            class="brand_logo" alt="Logo">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center form_container">
+                    <form method="get" action="/registrologin">
+                        @csrf
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" name="name" class="form-control input_user" value=""
+                                placeholder="Nombre">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="email" name="email" class="form-control input_user" value=""
+                                placeholder="Correo">
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" name="password" class="form-control input_pass" value=""
+                                placeholder="password">
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" name="password_confirmation" class="form-control input_pass"
+                                value="" placeholder="ConfirmPassword">
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                <label class="custom-control-label" for="customControlInline">Remember me</label>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center mt-3 login_container">
+                            <button type="submit" name="button" class="btn login_btn">Login</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="mt-4">
+                    <div class="d-flex justify-content-center links">
+                        Don't have an account? <a href="/login" class="ml-2">Sign Up</a>
+                    </div>
+                    <div class="d-flex justify-content-center links">
+                        <a href="#">Forgot your password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
