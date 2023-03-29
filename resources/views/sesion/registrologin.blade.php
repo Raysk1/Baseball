@@ -86,7 +86,7 @@
     }</style>
 </head>
 <body>
-    <form action="">
+    <form method="POST" action="">
         <h1>Formulario de Registro </h1>
         <input type="text" placeholder="Ingrese su nombre">
         <input type="text" placeholder="Ingrese su Apellido">

@@ -52,8 +52,8 @@
                   
                 </ul>
                 <form class="d-flex" role="search">
-                  <button class="btn btn-outline-success" type="submit">Sing-Up</button> 
-                  <button class="btn btn-outline-success" type="submit">Login</button>
+                  <a type="button" class="btn btn-outline-success" type="button" href= "/registrologin">Sing-Up</a> 
+                  <a class="btn btn-outline-success" type="button"  href= "/login">Login</a>
                 </form>
               </div>
             </div>

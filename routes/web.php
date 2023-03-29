@@ -9,6 +9,7 @@ use App\Http\Controllers\LanzadorControlador;
 use App\Http\Controllers\LigaControlador;
 use App\Http\Controllers\TurnoControlador;
 use App\Http\Controllers\BateadorControlador;
+use App\Http\Controllers\EntradaControlador;
 //use App\Http\Controllers\InformacionControlador;
 
 use App\Http\Controllers\ManejadorControlador;
@@ -55,11 +56,11 @@ Route::post("/abc/juegos/update",[JuegoControlador::class,"update"]) -> name("ju
 Route::get("/abc/juegos/details/{id}",[JuegoControlador::class,"details"]) ->name("juegosDetails");
 
 /**Entradas */
-Route::get('/abc/Entrada/create', [JuegoControlador::class,'create']) -> name('EntradaCreate'); 
-Route::post('/abc/Entrada/store', [JuegoControlador::class,'store'])->name("EntradaStore"); 
-Route::get("/abc/Entrada",[JuegoControlador::class,"index"])->name("EntradaIndex");
-Route::get("/abc/Entrada/edit/{id}",[JuegoControlador::class,"edit"])->name("EntradaEdit");
-Route::post("/abc/Entrada/update",[JuegoControlador::class,"update"]) -> name("EntradaUpdate");
+Route::get('/abc/Entrada/create', [EntradaControlador::class,'create']) -> name('EntradaCreate'); 
+Route::post('/abc/Entrada/store', [EntradaControlador::class,'store'])->name("EntradaStore"); 
+Route::get("/abc/Entrada",[EntradaControlador::class,"index"])->name("EntradaIndex");
+Route::get("/abc/Entrada/edit/{id}",[EntradaControlador::class,"edit"])->name("EntradaEdit");
+Route::post("/abc/Entrada/update",[EntradaControlador::class,"update"]) -> name("EntradaUpdate");
 
 /** Ampayers routes */
 Route::get('/abc/Ampayers/create', [AmpayerControlador::class,'create']) -> name('AmpayersCreate'); 

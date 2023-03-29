@@ -10,6 +10,12 @@
                 @csrf
                 <div class="row">
                     <div class="mb-3">
+                        <label for="idJuego" class="form-label">ID:</label>
+                        <input type="text" class="form-control" name="idEntrada" id="idEntrada" value="{{$lastId}}" readonly required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3">
                         <label for="idJuego" class="form-label">ID de Juego:</label>
                         <input type="text" class="form-control" name="idJuego" id="idJuego" required>
                     </div>
@@ -33,10 +39,10 @@
                         <label for="carrerasBaja" class="form-label">Baja de Carreras:</label>
                         <input type="date" name="Fecha" class="form-control" id="carrerasBaja" required>
                     </div>
-                    
+
                 </div>
 
-             
+
                 <div class="row">
                     <div class="col justify-content-center">
                         <button type="submit" class="btn btn-primary w-100">guardar</button>
