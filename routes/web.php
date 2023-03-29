@@ -5,6 +5,7 @@ use App\Http\Controllers\AmpayerControlador;
 use App\Http\Controllers\AmpayersJuegoControlador;
 use App\Http\Controllers\EquipoControlador;
 use App\Http\Controllers\JuegoControlador;
+use App\Http\Controllers\LanzadorControlador;
 use App\Http\Controllers\LigaControlador;
 use App\Http\Controllers\TurnoControlador;
 use App\Http\Controllers\BateadorControlador;
@@ -17,6 +18,7 @@ use App\Http\Controllers\TemporadaControlador;
 use App\Models\Ampayer;
 use App\Models\Jugador;
 use App\Models\Ampayersjuego;
+use App\Models\Lanzador;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -77,12 +79,17 @@ Route::get('/contacto', function () {
 }) ->name("contacto");
 
 
-
 /** AmpayersJuego routes */
 Route::get('/abc/AmpayersJuego/create', [AmpayersJuegoControlador::class,'create']) -> name('AmpayersJuegoCreate');
 Route::post('/abc/AmpayersJuego/store', [AmpayersJuegoControlador::class,'store']) -> name('AmpayersJuegoStore');
 Route::get("/abc/AmpayersJuego/edit/{id}",[AmpayersJuegoControlador::class,"edit"])->name("AmpayersJuegoEdit");
 Route::post("/abc/AmpayersJuego/update",[AmpayersJuegoControlador::class,"update"]) -> name("AmpayersJuegoUpdate");
+
+/* Lanzadores routes */
+Route::get('/abc/Lanzadores/create', [LanzadorControlador::class,'create']) -> name('LanzadorCreate');
+Route::post('/abc/Lanzadores/store', [LanzadorControlador::class,'store']) -> name('LanzadorStore');
+Route::get("/abc/Lanzadores/edit/{id}", [LanzadorControlador::class,"edit"])->name("LanzadorEdit");
+Route::post("/abc/Lanzadores/update", [LanzadorControlador::class,"update"]) -> name("LanzadorUpdate");
 
 /**Equipo routes */
 Route::get('/abc/equipos/create', [EquipoControlador::class,'create']) -> name('EquiposCreate'); 
