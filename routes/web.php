@@ -149,4 +149,8 @@ Route::get('/registrologin', function () {
 Route::get('/header', function () {
     return view('pantalla/header');
 });
+//
+
+Route::get('/abc/sesion/registrologin', [UsersControlador::class,'create']) -> name('RegistroCreate');
+Route::post('/abc/sesion/store', [UsersControlador::class,'store']) -> name('RegistroStore');
 ?>
