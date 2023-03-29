@@ -70,7 +70,7 @@ class JuegoControlador extends Controller {
                 "ampayers.idAmpayer",
                 "ampayers.nombre",
                 "ampayers.apellidos",
-                "ampayersJuego.ubicacion"
+                "ampayersJuego.*"
             ))
             ->join("ampayers", "ampayersJuego.idAmpayer", "=", "ampayers.idAmpayer")
             ->where("idJuego", "=", $id)

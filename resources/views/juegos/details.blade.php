@@ -102,13 +102,13 @@
                                 <tbody>
                                     @foreach ($datos['ampayers'] as $ampayer)
                                         <tr>
-                                            <td>{{ $ampayer->idAmpayer }}</td>
+                                            <td>{{ $ampayer->idCuerpo }}</td>
                                             <td>{{ $ampayer->nombre . ' ' . $ampayer->apellidos }}</td>
                                             <td>{{ $ampayer->ubicacion }}</td>
                                             <td colspan="2" style="width: 12%">
                                                 <div class="d-flex justify-content-evenly">
                                                     <a class="btn btn-primary"
-                                                        href={{ route('AmpayersJuegoEdit', ['id' => $datos['juego']->idJuego]) }}>
+                                                        href={{ route('AmpayersJuegoEdit', ['id' => $ampayer->idCuerpo]) }}>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                             height="16" fill="currentColor" class="bi bi-pencil-fill"
                                                             viewBox="0 0 16 16">
@@ -170,7 +170,7 @@
                                             <td colspan="2" style="width: 12%">
                                                 <div class="d-flex justify-content-evenly">
                                                     <a class="btn btn-primary  "
-                                                        href={{ route('EntradaEdit', ['id' => $datos['juego']->idJuego]) }}>
+                                                        href={{ route('EntradaEdit', ['id' =>$entrada->idCarrera]) }}>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                             height="16" fill="currentColor" class="bi bi-pencil-fill"
                                                             viewBox="0 0 16 16">
@@ -268,7 +268,7 @@
                 <h3>Bateadores</h3>
                 <div class="justify-content-center">
                     <div class=" mt-1">
-                        <a href={{ route('bateadoresCreate') }} class="btn btn-primary mb-3 w-100">
+                        <a href="" class="btn btn-primary mb-3 w-100">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                 class="bi bi-plus" viewBox="0 0 16 16">
                                 <path
@@ -306,7 +306,7 @@
                                             <td colspan="2" style="width: 12%">
                                                 <div class="d-flex justify-content-evenly">
                                                     <a class="btn btn-primary  "
-                                                        href={{ route('bateadoresEdit', ['id' => $datos['juego']->idJuego]) }}>
+                                                        href="">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                             height="16" fill="currentColor" class="bi bi-pencil-fill"
                                                             viewBox="0 0 16 16">
@@ -338,7 +338,7 @@
                 <h3>Lanzadores</h3>
                 <div class="justify-content-center">
                     <div class=" mt-1">
-                        <a href="" class="btn btn-primary mb-3 w-100" href={{ route('lanzadoresCreate') }}>
+                        <a href="" class="btn btn-primary mb-3 w-100" href="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                 class="bi bi-plus" viewBox="0 0 16 16">
                                 <path
@@ -378,7 +378,7 @@
                                             <td colspan="2" style="width: 12%">
                                                 <div class="d-flex justify-content-evenly">
                                                     <a class="btn btn-primary  "
-                                                        href={{ route('lanzadoresEdit', ['id' => $datos['juego']->idJuego]) }}>
+                                                        href="">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                             height="16" fill="currentColor" class="bi bi-pencil-fill"
                                                             viewBox="0 0 16 16">
