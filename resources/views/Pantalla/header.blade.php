@@ -34,28 +34,12 @@
                       Consultas
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href={{route("manejadoresIndex")}}>Manejadores</a></li>
-                      <li><a class="dropdown-item" href={{route("temporadasIndex")}}>Temporadas</a></li>
-                      <li><a class="dropdown-item" href="#">Standing</a></li>
                       <li><a class="dropdown-item" href="#">Lideres</a></li>
                       <li><a class="dropdown-item" href="#">Estadisticas</a></li>
                       <li><a class="dropdown-item" href="">Rooster</a></li>
                     </ul>
                   </li>
-          
-                  <li class="nav-item dropdown" >
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                      Capturas
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href={{route("jugadoresIndex")}}>Jugadores</a></li>
-                      <li><a class="dropdown-item" href={{route("equiposIndex")}}>Equipos</a></li>
-                            <li><a class="dropdown-item" href={{route("juegosIndex")}}>Juegos</a></li>
-                      <li><a class="dropdown-item" href={{route("AmpayersIndex")}}>Ampayer</a></li>
-                            <li><a class="dropdown-item" href={{route("ligasIndex")}}>Ligas</a></li>
-                    </ul>
-                  </li>
-          
+        
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Informacion
@@ -65,17 +49,11 @@
                     </ul>
                   </li>
           
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Registros
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Jugadores</a></li>
-                    </ul>
-                  </li>
+                  
                 </ul>
-                <form class="d-flex" role="search"> 
-                  <a type="button" href="/header" class="btn btn-warning">logout</a>
+                <form class="d-flex" role="search">
+                  <a type="button" class="btn btn-outline-success" type="button" href= "/registrologin">Sing-Up</a> 
+                  <a class="btn btn-outline-success" type="button"  href= "/login">Login</a>
                 </form>
               </div>
             </div>

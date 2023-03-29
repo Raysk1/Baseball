@@ -1,6 +1,6 @@
 @extends('default')
 @section('title')
-    Inicio 
+    Alta de juegos
 @endsection
 
 @section('content')
@@ -19,6 +19,5 @@
         <img src="/img/pelota.jpg" width="10%" height="10%" class="img-responsive">
     </div>
     <img src="/img/imagenlogo.jpg" width="50%" height="50%">
-
 
 @endsection

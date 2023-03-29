@@ -133,15 +133,13 @@ Route::post('/abc/informacion/update', [InformacionControlador::class,'update'])
 Route::get('/informacion', function () {
     return view('luis/informacion');
 });
-
-Route::get('/default', function () {
-    return view('default');
-});
-
 Route::get('/login', function () {
     return view('sesion/login');
 });
 Route::get('/registrologin', function () {
     return view('sesion/registrologin');
+});
+Route::get('/header', function () {
+    return view('pantalla/header');
 });
 ?>
