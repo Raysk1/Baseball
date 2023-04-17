@@ -33,7 +33,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::redirect("/","/inicio");
 
-
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/Resultados', function () {
     return view('Resultados');
@@ -147,8 +149,9 @@ Route::get('/registrologin', function () {
     return view('sesion/registrologin');
 });
 Route::get('/header', function () {
-    return view('pantalla/header');
-});
+    return view('pantalla.header');
+})->name("header");
+
 //
 
 Route::get('/abc/sesion/registrologin', [UsersControlador::class,'create']) -> name('RegistroCreate');
