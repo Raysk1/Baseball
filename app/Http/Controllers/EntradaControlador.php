@@ -18,8 +18,8 @@ class EntradaControlador extends Controller {
      * Show the form for creating a new resource.
      */
     public function create() {
-        $e = Entrada::orderBy('idEntrada', 'DESC')->first();
-        $lastId = $e->idEntrada + 1;
+        $e = Entrada::orderBy('idCarrera', 'DESC')->first();
+        $lastId = $e->idCarrera + 1;
         return response(view('Entradas.create', compact('lastId')));
     }
 
@@ -33,7 +33,7 @@ class EntradaControlador extends Controller {
         $e->entradaBaja = $request->entradaBaja;
         $e->carrerasAlta = $request->carrerasAlta;
         $e->carrerasBaja = $request->carrerasBaja;
-        $e->idEntrada = $request->idEntrada;
+        $e->idCarrera = $request->idCarrera;
         $e->save();
         return response()->redirectTo(route("juegosDetails", ["id" => $e->idJuego]))
             ->with(["success" => "Actulizado exitosamente"])
@@ -59,15 +59,15 @@ class EntradaControlador extends Controller {
      * Update the specified resource in storage.
      */
     public function update(Request $request) {
-        $e = Entrada::find($request->idEntrada);
+        $e = Entrada::find($request->idCarrera);
         $e->idJuego = $request->idJuego;
         $e->entradaAlta = $request->entradaAlta;
         $e->entradaBaja = $request->entradaBaja;
         $e->carrerasAlta = $request->carrerasAlta;
         $e->carrerasBaja = $request->carrerasBaja;
-        $e->idEntrada = $request->idEntrada;
+        $e->idCarrera = $request->idCarrera;
         $e->save();
-        return response()->redirectTo(route("juegosDetails", ["id" => $e->idEntrada]))
+        return response()->redirectTo(route("juegosDetails", ["id" => $e->idCarrera]))
             ->with(["success" => "Actulizado exitosamente"])
             ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
     }

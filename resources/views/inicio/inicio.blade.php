@@ -1,5 +1,8 @@
-<!DOCTYPE html>
-<html>
+@extends('default')
+@section('title')
+    Alta de juegos
+@endsection
+
 
 <head>
     <title>Baseball</title>
@@ -9,6 +12,8 @@
 </head>
 
 <body>
+@section('content')
+ 
 
     <div class="contenedor">
 
@@ -20,6 +25,4 @@
     </div>
     
 
-</body>
-
-</html>
+@endsection

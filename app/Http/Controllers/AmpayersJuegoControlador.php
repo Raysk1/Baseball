@@ -22,7 +22,7 @@ class AmpayersJuegoControlador extends Controller {
     public function create() {
         $j = Ampayersjuego::orderBy('idCuerpo', 'DESC')->first();
         $lastId = $j->idCuerpo + 1;
-        return response(view('AmpayersJuegos.create'));
+        return response(view('AmpayersJuegos.create', compact("lastId")));
     }
     /** 
      * Store a newly created resource in storage. 
