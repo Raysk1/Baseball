@@ -17,10 +17,10 @@ class EntradaControlador extends Controller {
     /**
      * Show the form for creating a new resource.
      */
-    public function create() {
+    public function create($juegoId) {
         $e = Entrada::orderBy('idCarrera', 'DESC')->first();
-        $lastId = $e->idCarrera + 1;
-        return response(view('Entradas.create', compact('lastId')));
+        $datos = ["lastId" => $e->idCarrera + 1, "juegoId" => $juegoId];
+        return response(view('Entradas.create', compact('datos')));
     }
 
     /**

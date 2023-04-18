@@ -18,10 +18,10 @@ class TurnoControlador extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create() {
+    public function create($juegoId) {
         $t = Turno::orderBy('idTurno', 'DESC')->first();
-        $lastId = $t->idTurno + 1;
-        return response(view('Turnos.create', compact('lastId')));
+        $datos = ["lastId" => $t->idTurno + 1, "juegoId" => $juegoId];
+        return response(view('Turnos.create', compact('datos')));
     }
 
     /**
