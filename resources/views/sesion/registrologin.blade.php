@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-center form_container">
-                    <form method="get" action="/registrologin">
+                    <form action={{ route('RegistroStore') }} method="post" >
                         @csrf
                         <div class="input-group mb-3">
                             <div class="input-group-append">
@@ -58,24 +58,16 @@
                             <input type="password" name="password_confirmation" class="form-control input_pass"
                                 value="" placeholder="ConfirmPassword">
                         </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customControlInline">
-                                <label class="custom-control-label" for="customControlInline">Remember me</label>
-                            </div>
-                        </div>
+                     
                         <div class="d-flex justify-content-center mt-3 login_container">
-                            <button type="submit" name="button" class="btn login_btn">Login</button>
+                            <button type="submit" name="button" class="btn login_btn">Registrarse</button>
                         </div>
                     </form>
                 </div>
 
                 <div class="mt-4">
                     <div class="d-flex justify-content-center links">
-                        Don't have an account? <a href="/login" class="ml-2">Sign Up</a>
-                    </div>
-                    <div class="d-flex justify-content-center links">
-                        <a href="#">Forgot your password?</a>
+                        ¿Ya tienes una cuenta? <a href="/login" class="ml-2">Sign Up</a>
                     </div>
                 </div>
             </div>

@@ -11,13 +11,13 @@
                 <div class="row">
                     <div class="mb-3">
                         <label for="idJuego" class="form-label">ID:</label>
-                        <input type="text" class="form-control" name="idEntrada" id="idEntrada" value="{{$lastId}}" readonly required>
+                        <input type="text" class="form-control" name="idEntrada" id="idEntrada" value={{$datos["lastId"]}} readonly required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3">
                         <label for="idJuego" class="form-label">ID de Juego:</label>
-                        <input type="text" class="form-control" name="idJuego" id="idJuego" required>
+                        <input type="text" class="form-control" name="idJuego" id="idJuego" value={{$datos["juegoId"]}} readonly required>
                     </div>
                 </div>
                 <div class="row mb-3">

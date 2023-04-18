@@ -79,10 +79,7 @@ class JuegoControlador extends Controller {
 
         $turnos = DB::table("turnos as t")
             ->select(array(
-                "t.turno",
-                "t.inning",
-                "t.carrera",
-                "t.resultado",
+                "t.*",
                 "l.abreviacion as lanzador",
                 "j.abreviacion as jugador",
                 "e.nombre as equipo"
@@ -94,14 +91,7 @@ class JuegoControlador extends Controller {
             ->get();
         $bateadores = DB::table("bateadores as b")
         ->select(array(
-            "b.ab",
-            "b.c",
-            "b.h",
-            "b.cp",
-            "b.bb",
-            "b.k",
-            "b.pje",
-            "b.obp",
+            "b.*",
             "j.abreviacion as jugador",
         ))
         ->join("jugadores as j","j.idAfiliacion","=","b.idAfiliacion")
@@ -110,15 +100,7 @@ class JuegoControlador extends Controller {
         
         $lanzadores = DB::table("lanzadores as l")
         ->select(array(
-            "l.ip",
-            "l.ba",
-            "l.c",
-            "l.h",
-            "l.bb",
-            "l.k",
-            "l.pca",
-            "l.pop",
-
+            "l.*",
             "j.abreviacion as jugador",
         ))
         ->join("jugadores as j","j.idAfiliacion","=","l.idAfiliacion")

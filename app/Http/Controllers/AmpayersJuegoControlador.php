@@ -19,10 +19,10 @@ class AmpayersJuegoControlador extends Controller {
     * @return \Illuminate\Http\Response 
     
     */
-    public function create() {
+    public function create($juegoId) {
         $j = Ampayersjuego::orderBy('idCuerpo', 'DESC')->first();
-        $lastId = $j->idCuerpo + 1;
-        return response(view('AmpayersJuegos.create', compact("lastId")));
+        $datos = ["lastId" => $j->idCuerpo + 1, "juegoId" => $juegoId];
+        return response(view('AmpayersJuegos.create', compact("datos")));
     }
     /** 
      * Store a newly created resource in storage. 

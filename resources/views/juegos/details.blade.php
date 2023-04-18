@@ -82,7 +82,7 @@
                 <h3>Ampayers en el juego</h3>
                 <div class="justify-content-center">
                     <div class=" mt-1">
-                        <a href={{ route('AmpayersJuegoCreate') }} class="btn btn-primary mb-3 w-100">
+                        <a href={{ route('AmpayersJuegoCreate',["juegoId" => $datos["juego"]->idJuego]) }} class="btn btn-primary mb-3 w-100">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                 class="bi bi-plus" viewBox="0 0 16 16">
                                 <path
@@ -141,7 +141,7 @@
                 <h3>Entradas</h3>
                 <div class="justify-content-center">
                     <div class=" mt-1">
-                        <a href={{ route('EntradaCreate') }} class="btn btn-primary mb-3 w-100">
+                        <a href={{ route('EntradaCreate',["juegoId" => $datos["juego"]->idJuego])}} class="btn btn-primary mb-3 w-100">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                 class="bi bi-plus" viewBox="0 0 16 16">
                                 <path
@@ -202,7 +202,7 @@
                 <h3>Turnos</h3>
                 <div class="justify-content-center">
                     <div class=" mt-1">
-                        <a href{{ route('turnoCreate') }} class="btn btn-primary mb-3 w-100">
+                        <a href{{ route('turnoCreate',["juegoId" => $datos["juego"]->idJuego]) }} class="btn btn-primary mb-3 w-100">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                 class="bi bi-plus" viewBox="0 0 16 16">
                                 <path
@@ -295,14 +295,14 @@
                                     @foreach ($datos['bateadores'] as $bateador)
                                         <tr>
                                             <td>{{ $bateador->jugador }}</td>
-                                            <td>{{ $bateador->ab }}</td>
-                                            <td>{{ $bateador->c }}</td>
-                                            <td>{{ $bateador->h }}</td>
-                                            <td>{{ $bateador->cp }}</td>
-                                            <td>{{ $bateador->bb }}</td>
-                                            <td>{{ $bateador->k }}</td>
-                                            <td>{{ $bateador->pje }}</td>
-                                            <td>{{ $bateador->obp }}</td>
+                                            <td>{{ $bateador->AB }}</td>
+                                            <td>{{ $bateador->C }}</td>
+                                            <td>{{ $bateador->H }}</td>
+                                            <td>{{ $bateador->CP }}</td>
+                                            <td>{{ $bateador->BB }}</td>
+                                            <td>{{ $bateador->K }}</td>
+                                            <td>{{ $bateador->PJE }}</td>
+                                            <td>{{ $bateador->OBP }}</td>
                                             <td colspan="2" style="width: 12%">
                                                 <div class="d-flex justify-content-evenly">
                                                     <a class="btn btn-primary  "
@@ -367,14 +367,14 @@
                                         <tr>
 
                                             <td>{{ $lanzador->jugador }}</td>
-                                            <td>{{ $lanzador->ip }}</td>
-                                            <td>{{ $lanzador->ba }}</td>
-                                            <td>{{ $lanzador->c }}</td>
-                                            <td>{{ $lanzador->h }}</td>
-                                            <td>{{ $lanzador->bb }}</td>
-                                            <td>{{ $lanzador->k }}</td>
-                                            <td>{{ $lanzador->pca }}</td>
-                                            <td>{{ $lanzador->pop }}</td>
+                                            <td>{{ $lanzador->IP }}</td>
+                                            <td>{{ $lanzador->BA }}</td>
+                                            <td>{{ $lanzador->C }}</td>
+                                            <td>{{ $lanzador->H }}</td>
+                                            <td>{{ $lanzador->BB }}</td>
+                                            <td>{{ $lanzador->K }}</td>
+                                            <td>{{ $lanzador->PCA }}</td>
+                                            <td>{{ $lanzador->POP }}</td>
                                             <td colspan="2" style="width: 12%">
                                                 <div class="d-flex justify-content-evenly">
                                                     <a class="btn btn-primary  "
