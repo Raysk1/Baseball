@@ -154,6 +154,6 @@ Route::get('/header', function () {
 
 //
 
-Route::get('/abc/sesion/registrologin', [UsersControlador::class,'create']) -> name('RegistroCreate');
-Route::post('/abc/sesion/store', [UsersControlador::class,'store']) -> name('RegistroStore');
+Route::get('/sesion/registrologin', [UserControlador::class,'create']) -> name('RegistroCreate');
+Route::post('/sesion/store', [UserControlador::class,'store']) -> name('RegistroStore');
 ?>
