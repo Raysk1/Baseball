@@ -10,9 +10,16 @@
                 @csrf
                 <div class="row">
                     <div class="mb-3">
+                        <label for="idTurno" class="form-label">ID:</label>
+                        <input type="text" class="form-control" name="idTurno" id="idTurno" readonly required
+                            value={{ $datos["lastId"] }} readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3">
                         <label for="idEquipo" class="form-label">ID de Equipo:</label>
                         <input type="text" class="form-control" name="idEquipo" id="idEquipo" required
-                            value={{ $lastId }} readonly>
+                            value={{ $datos["lastId"] }} readonly>
                     </div>
                 </div>
                 <div class="row mb-3">

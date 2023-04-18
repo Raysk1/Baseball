@@ -18,14 +18,14 @@
                         <div class="col">
                             <label for="idCuerpo" class="form-label">ID:</label>
                             <input type="text" class="form-control" name="idCuerpo" id="idCuerpo" required
-                                @readonly(true) value="{{$lastId}}">
+                                @readonly(true) value={{ $datos['lastId'] }}>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label for="idJuego" class="form-label">ID Juego:</label>
-                            <input type="text" class="form-control" name="idJuego" id="idJuego" required
-                                @readonly(true)>
+                            <input type="text" class="form-control" name="idJuego" id="idJuego"
+                                value={{ $datos['juegoId'] }} required @readonly(true)>
                         </div>
                     </div>
                     <div class="row">
