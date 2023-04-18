@@ -118,8 +118,10 @@
 <body>
     <form action="">
         <h1>Iniciar Sesión</h1>
-        <input type="email" placeholder="Ingrese su Correo">
-        <input type="password" placeholder="Ingrese su contraseña">
+        <input type="email" name="email" class="form-control input_user" value=""
+        placeholder="Ingrese su Correo">
+        <input type="password" name="password" class="form-control input_pass" value=""
+        placeholder="Ingrese su contraseña">
         <a type="button" href="/inicio" class="btn btn-danger btn-flat" > Iniciar Sesion </a>
         <p class="link"><a href="/registrologin">¿Aun no tienes cuenta?</a></p>
     </form>
