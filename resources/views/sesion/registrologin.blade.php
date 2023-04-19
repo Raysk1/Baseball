@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-center form_container">
-                    <form action={{ route('RegistroStore') }} method="post" >
+                    <form action={{ route('RegistroStore') }} method="POST" >
                         @csrf
                         <div class="input-group mb-3">
                             <div class="input-group-append">
@@ -60,7 +60,7 @@
                         </div>
                      
                         <div class="d-flex justify-content-center mt-3 login_container">
-                            <button type="submit" name="button" class="btn login_btn">Registrarse</button>
+                            <button type="submit"  class="btn login_btn">Registrarse</button>
                         </div>
                     </form>
                 </div>
