@@ -38,4 +38,8 @@ class UserControlador extends Controller
             ->with(["success" => "Actualizado exitosamente"]);
 
     }
+
+
+
+    
 }
