@@ -4,19 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
 /**
- * Class Jugador
+ * Class Turno
  * 
- * @property int $id
- * @property string|null $nombre
+ * 
+ * @property string|null $name
  * @property string|null $email
+ * 
  * @property string|null $password
- 
  *
  * @package App\Models
  */
+
 class Users extends Model
 {
+    protected $table = 'Users';
+	protected $primaryKey = 'id';
+	public $incrementing = false;
+	public $timestamps = false;
     use HasFactory;
 }

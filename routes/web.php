@@ -10,15 +10,18 @@ use App\Http\Controllers\LigaControlador;
 use App\Http\Controllers\TurnoControlador;
 use App\Http\Controllers\BateadorControlador;
 use App\Http\Controllers\EntradaControlador;
+
+
 //use App\Http\Controllers\InformacionControlador;
 
 use App\Http\Controllers\ManejadorControlador;
 use App\Http\Controllers\TemporadaControlador;
-
+use App\Http\Controllers\UserControlador;
 use App\Models\Ampayer;
 use App\Models\Jugador;
 use App\Models\Ampayersjuego;
 use App\Models\Lanzador;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -154,6 +157,8 @@ Route::get('/header', function () {
 
 //
 
-Route::get('/abc/sesion/registrologin', [UsersControlador::class,'create']) -> name('RegistroCreate');
-Route::post('/abc/sesion/store', [UsersControlador::class,'store']) -> name('RegistroStore');
+Route::get('/sesion/registrologin', [UserControlador::class,'create']) -> name('RegistroCreate');
+Route::post('/sesion/store', [UserControlador::class,'store']) -> name('RegistroStore');
+
+
 ?>

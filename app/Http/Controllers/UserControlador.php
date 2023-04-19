@@ -2,20 +2,24 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Models\User;
+use App\Models\Users;
 
 use Illuminate\Http\Request;
 
 /**
  * Summary of UserController
  */
-class UserController extends Controller
+class UserControlador extends Controller
 {
     //
- 
+   /** 
+    * Show the form for creating a new resource. 
+    * @return \Illuminate\Http\Response 
+    
+    */
     public function create(Request $request){
        
-        $j = User::orderBy('id', 'DESC')->first();
+        $j = Users::orderBy('id', 'DESC')->first();
         $lastId = $j->id + 1;
         return response(view('sesion.registrologin', compact('lastId')));
     }
@@ -25,15 +29,13 @@ class UserController extends Controller
      * @return \Illuminate\Http\ResponseTrait
      */
     public function store(Request $request) {
-        $a = new User();
-        $a -> nombre = $request -> nombre;
+        $a = new Users();
+        $a -> name = $request -> name;
         $a ->email = $request -> email;
         $a -> password = $request -> password;
        $a -> save();
         return response()->redirectTo(route("RegistroCreate"))
-            ->with(["success" => "Actulizado exitosamente"])
-            ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
+            ->with(["success" => "Actualizado exitosamente"]);
 
     }
 }
-//asi quedo ya me enfade
