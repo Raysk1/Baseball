@@ -18,7 +18,7 @@ class LanzadorControlador extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create() {
+    public function create($juegoId) {
         $t = Lanzador::orderBy('idLanzadores', 'DESC')->first();
         $lastId = $t->idLanzadores + 1;
         return response(view('Lanzadores.create', compact('lastId')));

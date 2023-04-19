@@ -18,7 +18,7 @@ class BateadorControlador extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create() {
+    public function create($idJuego) {
         $t = Bateador::orderBy('idBateadores', 'DESC')->first();
         $lastId = $t->idBateadores + 1;
         return response(view('Bateadores.create', compact('lastId')));

@@ -20,7 +20,8 @@ class TurnoControlador extends Controller
      */
     public function create($juegoId) {
         $t = Turno::orderBy('idTurno', 'DESC')->first();
-        $datos = ["lastId" => $t->idTurno + 1, "juegoId" => $juegoId];
+        $idTurno = $t != null ? $t->idTurno : 0; 
+        $datos = ["lastId" => $idTurno + 1, "juegoId" => $juegoId];
         return response(view('Turnos.create', compact('datos')));
     }
 
