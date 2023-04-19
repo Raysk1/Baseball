@@ -35,28 +35,28 @@
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
                             <input type="text" name="name" class="form-control input_user" value=""
-                                placeholder="Nombre">
+                                placeholder="Nombre" required>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
                             <input type="email" name="email" class="form-control input_user" value=""
-                                placeholder="Correo">
+                                placeholder="Correo" required>
                         </div>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
                             <input type="password" name="password" class="form-control input_pass" value=""
-                                placeholder="password">
+                                placeholder="password" required>
                         </div>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
                             <input type="password" name="password_confirmation" class="form-control input_pass"
-                                value="" placeholder="ConfirmPassword">
+                                value="" placeholder="ConfirmPassword" required>
                         </div>
                      
                         <div class="d-flex justify-content-center mt-3 login_container">

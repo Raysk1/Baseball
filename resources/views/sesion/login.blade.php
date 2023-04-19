@@ -120,10 +120,10 @@
         @csrf
         <h1>Iniciar Sesión</h1>
         <input type="email" name="email" class="form-control input_user" value=""
-        placeholder="Ingrese su Correo">
+        placeholder="Ingrese su Correo" required>
         <input type="password" name="password" class="form-control input_pass" value=""
-        placeholder="Ingrese su contraseña">
-        <a type="submit" class="btn btn-danger btn-flat" > Iniciar Sesion </a>
+        placeholder="Ingrese su contraseña" required>
+        <button type="submit" class="btn btn-danger btn-flat" > Iniciar Sesion </button>
         <p class="link"><a href="/registrologin">¿Aun no tienes cuenta?</a></p>
     </form>
 </body>
