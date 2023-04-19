@@ -116,7 +116,7 @@
 </head>
 
 <body>
-    <form action={{ route('inicio') }} method="POST">
+    <form action='/inicio' method="post">
         @csrf
         <h1>Iniciar Sesión</h1>
         <input type="email" name="email" class="form-control input_user" value=""
