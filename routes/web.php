@@ -87,7 +87,7 @@ Route::get("/abc/AmpayersJuego/edit/{id}",[AmpayersJuegoControlador::class,"edit
 Route::post("/abc/AmpayersJuego/update",[AmpayersJuegoControlador::class,"update"]) -> name("AmpayersJuegoUpdate");
 
 /* Lanzadores routes */
-Route::get('/abc/Lanzadores/create', [LanzadorControlador::class,'create']) -> name('LanzadorCreate');
+Route::get('/abc/Lanzadores/create/{juegoId}', [LanzadorControlador::class,'create']) -> name('LanzadorCreate');
 Route::post('/abc/Lanzadores/store', [LanzadorControlador::class,'store']) -> name('LanzadorStore');
 Route::get("/abc/Lanzadores/edit/{id}", [LanzadorControlador::class,"edit"])->name("LanzadorEdit");
 Route::post("/abc/Lanzadores/update", [LanzadorControlador::class,"update"]) -> name("LanzadorUpdate");
@@ -118,14 +118,14 @@ Route::get('/abc/manejadores/edit/{id}', [ManejadorControlador::class,'edit']) -
 Route::post('/abc/manejadores/update', [ManejadorControlador::class,'update']) -> name('manejadoresUpdate'); 
 
 /**Routes de Turnos */
-Route::get('/abc/turnos/create', [TurnoControlador::class,'create']) -> name('turnoCreate'); 
+Route::get('/abc/turnos/create/{juegoId}', [TurnoControlador::class,'create']) -> name('turnoCreate'); 
 Route::post('/abc/turnos/store', [TurnoControlador::class,'store']) -> name('turnoStore');
 Route::get('/abc/turnos', [TurnoControlador::class,'index']) -> name('turnoIndex'); 
 Route::get('/abc/turnos/edit/{id}', [TurnoControlador::class,'edit'])->name("turnoEdit"); 
 Route::post('/abc/turnos/update', [TurnoControlador::class,'update']) -> name('turnoUpdate'); 
 
 /**BATEADORES*/
-Route::get('/abc/bateadores/create', [BateadorControlador::class,'create']) -> name('bateadoresCreate'); 
+Route::get('/abc/bateadores/create/{juegoId}', [BateadorControlador::class,'create']) -> name('bateadoresCreate'); 
 Route::post('/abc/bateadores/store', [BateadorControlador::class,'store']) -> name('bateadoresStore');
 Route::get('/abc/bateadores', [BateadorControlador::class,'index']) -> name('bateadoresIndex'); 
 Route::get('/abc/bateadores/edit/{id}', [BateadorControlador::class,'edit'])->name("bateadoresEdit"); 
