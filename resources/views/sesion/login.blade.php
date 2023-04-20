@@ -28,15 +28,28 @@
         }
 
         body {
-            width: 100%;
-            height: 100vh;
+            width: auto;
+            height: auto;
             background: #009FFF;
             /* fallback for old browsers */
             background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
             /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(to right, #ec2F4B, #009FFF);
             background-image: url("https://www.apple.com/newsroom/images/product/apple-tv-plus/standard/Apple-TV-plus-MLB-Friday-Night-Baseball-hero_big.jpg.slideshow-xlarge_2x.jpg");
+            background-position: center center;
 
+            /* Para que la imagen de fondo no se repita */
+
+            background-repeat: no-repeat;
+
+            /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+
+            background-attachment: fixed;
+
+            /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+
+            background-size: cover;
+s
         }
 
         form {
@@ -101,7 +114,8 @@
             margin-top: 15px;
             font-weight: bolder;
         }
-        .btn{
+
+        .btn {
             display: block;
             margin: auto;
             width: 100%;
@@ -120,13 +134,12 @@
         @csrf
         <h1>Iniciar Sesión</h1>
         <input type="email" name="email" class="form-control input_user" value=""
-        placeholder="Ingrese su Correo" required>
+            placeholder="Ingrese su Correo" required>
         <input type="password" name="password" class="form-control input_pass" value=""
-        placeholder="Ingrese su contraseña" required>
-        <button type="submit" class="btn btn-danger btn-flat" > Iniciar Sesion </button>
+            placeholder="Ingrese su contraseña" required>
+        <button type="submit" class="btn btn-danger btn-flat"> Iniciar Sesion </button>
         <p class="link"><a href="/registrologin">¿Aun no tienes cuenta?</a></p>
     </form>
 </body>
 
 </html>
-
