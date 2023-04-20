@@ -21,6 +21,7 @@
     <title>Iniciar Sesion</title>
     <style>
         * {
+            
             padding: 0;
             margin: 0;
             box-sizing: border-box;
@@ -28,6 +29,7 @@
         }
 
         body {
+           
             width: 100%;
             height: 100vh;
             background: #009FFF;
