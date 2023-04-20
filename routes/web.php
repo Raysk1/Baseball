@@ -14,10 +14,10 @@ use App\Http\Controllers\EntradaControlador;
 
 use App\Http\Controllers\ManejadorControlador;
 use App\Http\Controllers\TemporadaControlador;
+use App\Http\Controllers\AmpayersJuego;
 
 use App\Models\Ampayer;
 use App\Models\Jugador;
-use App\Models\Ampayersjuego;
 use App\Models\Lanzador;
 use Illuminate\Support\Facades\Route;
 
@@ -131,6 +131,7 @@ Route::post('/abc/bateadores/store', [BateadorControlador::class,'store']) -> na
 Route::get('/abc/bateadores', [BateadorControlador::class,'index']) -> name('bateadoresIndex'); 
 Route::get('/abc/bateadores/edit/{id}', [BateadorControlador::class,'edit'])->name("bateadoresEdit"); 
 Route::post('/abc/bateadores/update', [BateadorControlador::class,'update']) -> name('bateadoresUpdate'); 
+
 
 /**Routes de informacion 
 Route::get('/abc/informacion/create', [InformacionControlador::class,'create']) -> name('turnoCreate'); 
