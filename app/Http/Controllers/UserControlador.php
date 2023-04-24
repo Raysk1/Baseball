@@ -40,6 +40,24 @@ class UserControlador extends Controller
     }
 
 
-
+    public function login(Request $request)
+    {
+        $email = $request->input('email');
+        $password = $request->input('password');
+    
+        $email = str_pad($email, 15);
+        $password = strtoupper($password);
+    
+        $credentials = ['loguse' => $email, 'password' => $password];
+    
+        if (Users::attempt($credentials))
+        {
+            return "Usuario validado exitosamente";
+        }
+        else
+        {
+            return "No se validó el usuario";
+        }
+    }
     
 }
