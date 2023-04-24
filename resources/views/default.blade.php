@@ -62,6 +62,7 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href={{route("contacto")}}>Contactos</a></li>
+                      <li><a class="dropdown-item" href={{route("reglamento")}}>Reglamento</a></li>
                     </ul>
                   </li>
           

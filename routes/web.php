@@ -11,11 +11,9 @@ use App\Http\Controllers\TurnoControlador;
 use App\Http\Controllers\BateadorControlador;
 use App\Http\Controllers\EntradaControlador;
 //use App\Http\Controllers\InformacionControlador;
-
 use App\Http\Controllers\ManejadorControlador;
 use App\Http\Controllers\TemporadaControlador;
 use App\Http\Controllers\AmpayersJuego;
-
 use App\Models\Ampayer;
 use App\Models\Jugador;
 use App\Models\Lanzador;
@@ -79,6 +77,10 @@ Route::get('/inicio', function () {
 Route::get('/contacto', function () {
     return view('contacto');
 }) ->name("contacto");
+//Reglamento
+Route::get('/reglamento', function () {
+    return view('reglamento');
+}) ->name("reglamento");
 
 
 /** AmpayersJuego routes */
