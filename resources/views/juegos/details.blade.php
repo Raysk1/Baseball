@@ -202,7 +202,7 @@
                 <h3>Turnos</h3>
                 <div class="justify-content-center">
                     <div class=" mt-1">
-                        <a href{{ route('turnoCreate',["juegoId" => $datos["juego"]->idJuego]) }} class="btn btn-primary mb-3 w-100">
+                        <a href={{ route('turnoCreate',["juegoId" => $datos["juego"]->idJuego]) }} class="btn btn-primary mb-3 w-100">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                 class="bi bi-plus" viewBox="0 0 16 16">
                                 <path
@@ -268,7 +268,7 @@
                 <h3>Bateadores</h3>
                 <div class="justify-content-center">
                     <div class=" mt-1">
-                        <a href="" class="btn btn-primary mb-3 w-100">
+                        <a href={{ route('bateadoresCreate',["juegoId" => $datos["juego"]->idJuego])}} class="btn btn-primary mb-3 w-100">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                 class="bi bi-plus" viewBox="0 0 16 16">
                                 <path
@@ -338,7 +338,7 @@
                 <h3>Lanzadores</h3>
                 <div class="justify-content-center">
                     <div class=" mt-1">
-                        <a href="" class="btn btn-primary mb-3 w-100" href="">
+                        <a href={{ route('LanzadorCreate',["juegoId" => $datos["juego"]->idJuego])}} class="btn btn-primary mb-3 w-100" href="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                 class="bi bi-plus" viewBox="0 0 16 16">
                                 <path
