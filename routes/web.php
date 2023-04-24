@@ -151,5 +151,5 @@ Route::get('/registrologin', [UserControlador::class,'create']) -> name('Registr
 Route::post('/sesion/store', [UserControlador::class,'store']) -> name('RegistroStore');
 //inicio
 Route::post('/inicio', function () {return view('inicio.inicio');})->name("inicio"); 
-
+//  
 ?>
