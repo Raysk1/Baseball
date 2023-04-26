@@ -154,6 +154,6 @@ Route::post('/inicio', function () {return view('inicio.inicio');})->name("inici
 //  
 
 
-Route::post('/reglamento', function () {return view('reglamento');})->name("reglamento"); 
+Route::get('/reglamento', function () {return view('reglamento');})->name("reglamento"); 
 
 ?>
