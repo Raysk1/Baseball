@@ -152,4 +152,8 @@ Route::post('/sesion/store', [UserControlador::class,'store']) -> name('Registro
 //inicio
 Route::post('/inicio', function () {return view('inicio.inicio');})->name("inicio"); 
 //  
+
+
+Route::post('/reglamento', function () {return view('reglamento');})->name("reglamento"); 
+
 ?>
