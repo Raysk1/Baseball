@@ -13,13 +13,11 @@ use App\Http\Controllers\EntradaControlador;
 
 
 //use App\Http\Controllers\InformacionControlador;
-
 use App\Http\Controllers\ManejadorControlador;
 use App\Http\Controllers\TemporadaControlador;
 use App\Http\Controllers\UserControlador;
 use App\Models\Ampayer;
 use App\Models\Jugador;
-use App\Models\Ampayersjuego;
 use App\Models\Lanzador;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -130,6 +128,7 @@ Route::get('/abc/bateadores', [BateadorControlador::class,'index']) -> name('bat
 Route::get('/abc/bateadores/edit/{id}', [BateadorControlador::class,'edit'])->name("bateadoresEdit"); 
 Route::post('/abc/bateadores/update', [BateadorControlador::class,'update']) -> name('bateadoresUpdate'); 
 
+
 /**Routes de informacion 
 Route::get('/abc/informacion/create', [InformacionControlador::class,'create']) -> name('turnoCreate'); 
 Route::post('/abc/informacion/store', [InformacionControlador::class,'store']) -> name('turnoStore');
@@ -152,5 +151,10 @@ Route::get('/registrologin', [UserControlador::class,'create']) -> name('Registr
 Route::post('/sesion/store', [UserControlador::class,'store']) -> name('RegistroStore');
 //inicio
 Route::post('/inicio', function () {return view('inicio.inicio');})->name("inicio"); 
+//  
+Route::get('/inicio', function () {return view('inicio.inicio');})->name("Noticias"); 
+
+
+Route::get('/reglamento', function () {return view('reglamento');})->name("reglamento"); 
 
 ?>
