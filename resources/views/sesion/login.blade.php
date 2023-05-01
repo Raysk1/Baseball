@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style2.css">
+    <!--<link rel="stylesheet" href="style2.css">-->
     <title>@yield('title')</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -19,21 +19,49 @@
     <link rel="stylesheet" href="{{ 'assets/login.css' }}">
     @yield('styles')
     <title>Iniciar Sesion</title>
-    <style>
-       
-    </style>
+
+
 </head>
 
 <body>
     <form action='/inicio' method="post">
         @csrf
         <h1>Iniciar Sesión</h1>
-        <input type="email" name="email" class="form-control input_user" value=""
+        <input type="email" name="email" id="email" class="form-control input_user" value=""
             placeholder="Ingrese su Correo" required>
-        <input type="password" name="password" class="form-control input_pass" value=""
+        <input type="password" name="password" id="password" class="form-control input_pass" value=""
             placeholder="Ingrese su contraseña" required>
         <button type="submit" class="btn btn-danger btn-flat"> Iniciar Sesion </button>
         <p class="link"><a href="/registrologin">¿Aun no tienes cuenta?</a></p>
+
+
+
+        <script>
+            function validarUsuario() {
+                // Obtener los valores de los campos de usuario y contraseña
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+
+                // Validar que los campos no estén vacíos
+                if (email == "" || password == "") {
+                    alert("Por favor, ingrese usuario y contraseña.");
+                    return false;
+                }
+
+                // Validar que el usuario y la contraseña sean correctos
+                // Aquí podrías hacer una petición AJAX al servidor para validar los datos
+                if (email != "email" || password != "contraseña") {
+                    alert("Usuario o contraseña incorrectos.");
+                    return false;
+                }
+
+                // Si los datos son válidos, redirigir al usuario a la página de inicio
+                return view("/inicio.inicio");
+            }
+        </script>
+
+
+
     </form>
 </body>
 
