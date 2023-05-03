@@ -74,7 +74,7 @@ margin-top: 0.8%;
                                 <li><a class="dropdown-item" href="#">Standing</a></li>
                                 <li><a class="dropdown-item" href="#">Lideres</a></li>
                                 <li><a class="dropdown-item" href="#">Estadisticas</a></li>
-                                <li><a class="dropdown-item" href="">Rooster</a></li>
+                                <li><a class="dropdown-item" href="RoosterIndex">Rooster</a></li>
                             </ul>
                         </li>
 
