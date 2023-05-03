@@ -87,7 +87,7 @@ class JuegoControlador extends Controller {
         $j->idEquipoLocal = $request->idEquipoLocal;
         $j->final = $request->final;
         $j->save();
-        return response()->redirectTo(route("juegosIndex"))
+        return response()->redirectTo(route("juegosDetails",["id" => $j -> idJuego]))
             ->with(["success" => "Creado exitosamente"])
             ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
 

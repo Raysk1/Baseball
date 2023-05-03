@@ -100,10 +100,10 @@
 
                                 </thead>
                                 <tbody>
-                                    @foreach ($datos['juego']->ampayers as $ampayer)
+                                    @foreach ($datos['juego']->ampayersJuego as $ampayer)
                                         <tr>
                                             <td>{{ $ampayer->idCuerpo }}</td>
-                                            <td>{{ $ampayer->nombre . ' ' . $ampayer->apellidos }}</td>
+                                            <td>{{ $ampayer->ampayer->nombre . ' ' . $ampayer->ampayer->apellidos }}</td>
                                             <td>{{ $ampayer->ubicacion }}</td>
                                             <td colspan="2" style="width: 12%">
                                                 <div class="d-flex justify-content-evenly">

@@ -6,11 +6,11 @@
 @section('content')
     <div class="d-flex justify-content-center">
         <div class="w-75 mt-4">
-            <form action={{ route('jugadoresStore') }} method="post">
+            <form action={{ route('AmpayersStore') }} method="post">
                 @csrf
                 <div class="row">
                     <div class="mb-3">
-                        <label for="idAfiliacion" class="form-label">ID de Ampayer:</label>
+                        <label for="idAmpayer" class="form-label">ID de Ampayer:</label>
                         <input type="text" class="form-control" name="idAmpayer" id="idAmpayer" required
                             value={{ $lastId }} readonly>
                     </div>

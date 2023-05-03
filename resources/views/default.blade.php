@@ -18,9 +18,7 @@
             background-image: url("https://www.shutterstock.com/image-vector/vector-baseball-background-600w-593309054.jpg");
 
 
-            /* Para dejar la imagen de fondo centrada, vertical y
-
-horizontalmente */
+            /* Para dejar la imagen de fondo centrada, vertical ynhorizontalmente */
 
             background-position: center center;
 
@@ -43,7 +41,7 @@ horizontalmente */
 <body>
     <header class="sticky-top ">
         <!-- place navbar here -->
-        <nav class="navbar navbar-expand-lg bg-warning">
+        <nav class="navbar navbar-expand bg-warning">
             <div class="container-fluid">
                 <h2>BASEBALL </h2>
 
@@ -55,7 +53,7 @@ horizontalmente */
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href={{ route('Noticias') }}><b> Inicio
+                            <a class="nav-link active" aria-current="page" href={{ route('inicio') }}><b> Inicio
                                 </b></a>
                         </li>
                         <li class="nav-item dropdown">
