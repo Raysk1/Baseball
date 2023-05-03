@@ -12,7 +12,7 @@
 @section('thead')
     <tr>
         <th scope="col">ID</th>
-        <th scope="col">Temportada</th>
+        <th scope="col">Temporada</th>
         <th scope="col">Jornada</th>
         <th scope="col">Campo</th>
         <th scope="col">Fecha</th>

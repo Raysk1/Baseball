@@ -11,10 +11,13 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Ampayersjuego
  * 
+ * @property int $idCuerpo
  * @property int $idJuego
  * @property int $idAmpayer
- * @property int $idCuerpo
  * @property string|null $ubicacion
+ * 
+ * @property Ampayer $ampayer
+ * @property Juego $juego
  *
  * @package App\Models
  */
@@ -22,7 +25,6 @@ class Ampayersjuego extends Model
 {
 	protected $table = 'ampayersjuego';
 	protected $primaryKey = 'idCuerpo';
-	public $incrementing = false;
 	public $timestamps = false;
 
 	protected $casts = [
@@ -35,4 +37,14 @@ class Ampayersjuego extends Model
 		'idAmpayer',
 		'ubicacion'
 	];
+
+	public function ampayer()
+	{
+		return $this->belongsTo(Ampayer::class, 'idAmpayer');
+	}
+
+	public function juego()
+	{
+		return $this->belongsTo(Juego::class, 'idJuego');
+	}
 }

@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Lanzadore
  * 
+ * @property int $idLanzadores
  * @property int $idJuego
  * @property int $idAfiliacion
  * @property float|null $IP
@@ -19,9 +20,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $H
  * @property int|null $BB
  * @property int|null $K
- * @property int|null $idLanzadores
  * @property float|null $PCA
  * @property float|null $POP
+ * 
+ * @property Jugador $jugadore
+ * @property Juego $juego
  *
  * @package App\Models
  */
@@ -29,7 +32,6 @@ class Lanzador extends Model
 {
 	protected $table = 'lanzadores';
 	protected $primaryKey = 'idLanzadores';
-	public $incrementing = false;
 	public $timestamps = false;
 
 	protected $casts = [
@@ -57,4 +59,14 @@ class Lanzador extends Model
 		'PCA',
 		'POP'
 	];
+
+	public function jugador()
+	{
+		return $this->belongsTo(Jugador::class, 'idAfiliacion');
+	}
+
+	public function juego()
+	{
+		return $this->belongsTo(Juego::class, 'idJuego');
+	}
 }

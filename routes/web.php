@@ -34,11 +34,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::redirect("/","/inicio");
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/Resultados', function () {
     return view('Resultados');
@@ -160,5 +157,6 @@ Route::get('/header', function () {
 Route::get('/sesion/registrologin', [UserControlador::class,'create']) -> name('RegistroCreate');
 Route::post('/sesion/store', [UserControlador::class,'store']) -> name('RegistroStore');
 
+Route::redirect("/","/inicio");
 
 ?>

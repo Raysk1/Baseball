@@ -6,6 +6,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -19,6 +20,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $direccion
  * @property int|null $telefono
  * @property string|null $redes
+ * 
+ * @property Collection|Temporada[] $temporadas
  *
  * @package App\Models
  */
@@ -41,4 +44,9 @@ class Liga extends Model
 		'telefono',
 		'redes'
 	];
+
+	public function temporadas()
+	{
+		return $this->hasMany(Temporada::class, 'idLiga');
+	}
 }

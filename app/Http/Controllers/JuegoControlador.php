@@ -45,78 +45,9 @@ class JuegoControlador extends Controller {
     }
 
     public function details($id) {
-        $juego = DB::table("juegos")
-            ->select(array(
-                "juegos.idJuego",
-                "temporadas.temporada",
-                "juegos.jornada",
-                "parques.descripcion as parque",
-                "juegos.fecha",
-                "juegos.hora",
-                "juegos.clima",
-                "e1.nombre as equipoLocal",
-                "e2.nombre as equipoVisitante",
-                "juegos.final"
-            ))
-            ->join("equipos as e1", "e1.idEquipo", "=", "juegos.idEquipoLocal")
-            ->join("equipos as e2", "e2.idEquipo", "=", "juegos.idEquipoVisitante")
-            ->join("parques", "parques.idCampo", "=", "juegos.idCampo")
-            ->join("temporadas", "temporadas.idTemporada", "=", "juegos.idTemporada")
-            ->where("juegos.idJuego", "=", $id)
-            ->get();
+        $juego = Juego::find($id);
 
-        $ampayers = DB::table("ampayersJuego")
-            ->select(array(
-                "ampayers.idAmpayer",
-                "ampayers.nombre",
-                "ampayers.apellidos",
-                "ampayersJuego.*"
-            ))
-            ->join("ampayers", "ampayersJuego.idAmpayer", "=", "ampayers.idAmpayer")
-            ->where("idJuego", "=", $id)
-            ->get();
-        $entradas = Entrada::all()->where("idJuego", "=", $id);
-
-        $turnos = DB::table("turnos as t")
-            ->select(array(
-                "t.*",
-                "l.abreviacion as lanzador",
-                "j.abreviacion as jugador",
-                "e.nombre as equipo"
-            ))
-            ->join("jugadores as l","l.idAfiliacion","=","t.idLanzador")
-            ->join("jugadores as j","j.idAfiliacion","=","t.idAfiliacion")
-            ->join("equipos as e","e.idEquipo","=","t.idEquipo")
-            ->where("t.idJuego", "=", $id)
-            ->get();
-        $bateadores = DB::table("bateadores as b")
-        ->select(array(
-            "b.*",
-            "j.abreviacion as jugador",
-        ))
-        ->join("jugadores as j","j.idAfiliacion","=","b.idAfiliacion")
-        ->where("idJuego", "=", $id)
-        ->get();
-        
-        $lanzadores = DB::table("lanzadores as l")
-        ->select(array(
-            "l.*",
-            "j.abreviacion as jugador",
-        ))
-        ->join("jugadores as j","j.idAfiliacion","=","l.idAfiliacion")
-        ->where("idJuego", "=", $id)
-        ->get();
-
-
-        $juego = $juego->first();
-        $datos = array(
-            "juego" => $juego,
-            "ampayers" => $ampayers,
-            "entradas" => $entradas,
-            "turnos" => $turnos,
-            "bateadores" => $bateadores,
-            "lanzadores" => $lanzadores
-        );
+        $datos = array("juego" => $juego);
         return response(view("juegos.details", compact("datos")));
     }
 
@@ -155,8 +86,6 @@ class JuegoControlador extends Controller {
         $j->idEquipoVisitante = $request->idEquipoVisitante;
         $j->idEquipoLocal = $request->idEquipoLocal;
         $j->final = $request->final;
-        $j->idAviso = $request->idAviso;
-        $j->idCuerpo = $request->idCuerpo;
         $j->save();
         return response()->redirectTo(route("juegosIndex"))
             ->with(["success" => "Creado exitosamente"])
@@ -180,8 +109,8 @@ class JuegoControlador extends Controller {
     public function edit($id) {
         $datos = array(
             "juego" => Juego::find($id),
-            "equipos" => Equipo::all(["idEquipo", "nombre"]),
-            "temporadas" => Temporada::all(["idTemporada", "nombre"]),
+            "equipos" => Equipo::all(),
+            "temporadas" => Temporada::all(),
             "campos" => Parque::all());
         return response(view("Juegos.edit", compact("datos")));
     }

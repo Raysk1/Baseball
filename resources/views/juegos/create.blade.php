@@ -85,15 +85,6 @@
                         <label for="final" class="form-label">Final:</label>
                         <input type="text" name="final" class="form-control" id="final" required>
                     </div>
-                    <div class="col">
-                        <label for="idAviso" class="form-label">Aviso:</label>
-                        <input type="text" name="idAviso" class="form-control" id="idAviso" required>
-
-                    </div>
-                    <div class="col">
-                        <label for="idCuerpo" class="form-label">Cuerpo:</label>
-                        <input type="text" name="idCuerpo" class="form-control" id="idCuerpo" required>
-                    </div>
                 </div>
 
 

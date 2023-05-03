@@ -10,7 +10,7 @@
                 @csrf
                 <div class="row">
                     <div class="mb-3">
-                        <label for="idAmpayer" class="form-label">ID de Ampayer:</label>
+                        <label for="idAfiliacion" class="form-label">ID de Ampayer:</label>
                         <input type="text" class="form-control" name="idAmpayer" id="idAmpayer" required
                             value={{ $lastId }} readonly>
                     </div>

@@ -35,14 +35,17 @@ class JugadorControlador extends Controller {
         $yearId = str_split($year, 2)[1] . "0000";
         $yearId = intval($yearId);
         $lastUser = Jugador::orderBy('idAfiliacion', 'DESC')->first();
-        $lastUserId = $lastUser->idAfiliacion;
         $id = 0;
-        if ($yearId > $lastUserId) {
+        if ($lastUser == null) {
             $id = $yearId;
         } else {
-            $id = $lastUserId + 1;
+            $lastUserId = $lastUser->idAfiliacion;
+            if ($yearId > $lastUserId) {
+                $id = $yearId;
+            } else {
+                $id = $lastUserId + 1;
+            }
         }
-
         $lastId = $id;
 
 
@@ -71,9 +74,9 @@ class JugadorControlador extends Controller {
         $j->status = $request->status;
         $j->rama = $request->rama;
         $j->save();
-        return response() ->redirectTo(route("jugadoresIndex"))
-        ->with(["success" => "Creado exitosamente"])
-        ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
+        return response()->redirectTo(route("jugadoresIndex"))
+            ->with(["success" => "Creado exitosamente"])
+            ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
 
     }
     /** 
@@ -118,9 +121,9 @@ class JugadorControlador extends Controller {
         $j->status = $request->status;
         $j->rama = $request->rama;
         $j->save();
-        return response() ->redirectTo(route("jugadoresIndex"))
-        ->with(["success" => "Actulizado exitosamente"])
-        ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
+        return response()->redirectTo(route("jugadoresIndex"))
+            ->with(["success" => "Actulizado exitosamente"])
+            ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
 
     }
     /** 
