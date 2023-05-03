@@ -98,6 +98,11 @@
                             <option value="Varonil">Varonil</option>
                         </select>
                     </div>
+                    <div class="col">
+                        <label for="imagen" class="form-label">Imagen:</label>
+
+                        <input type="file" name="imagen" class="form-control">
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col justify-content-center">

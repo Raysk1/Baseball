@@ -1,14 +1,17 @@
 <?php
+
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Jugador;
 use App\Http\Controllers\Controller;
 
-class JugadorControlador extends Controller {
+class JugadorControlador extends Controller
+{
 
-    public function vistaJugadoresTabla() {
-
+    public function vistaJugadoresTabla()
+    {
     }
 
 
@@ -16,19 +19,20 @@ class JugadorControlador extends Controller {
      * Display a listing of the resource. 
      * @return \Illuminate\Http\Response 
      */
-    public function index() {
+    public function index()
+    {
 
         //  
         $datos = Jugador::all(["idAfiliacion", "nombre", "apellidos", "posicion", "status", "rama"]);
         return response(view("Jugadores.index", compact("datos")));
-
     }
     /** 
-    * Show the form for creating a new resource. 
-    * @return \Illuminate\Http\Response 
+     * Show the form for creating a new resource. 
+     * @return \Illuminate\Http\Response 
     
-    */
-    public function create() {
+     */
+    public function create()
+    {
 
         //  
         $year = date("Y"); //Obtiene el año actual en formato de 4 dígitos
@@ -47,7 +51,6 @@ class JugadorControlador extends Controller {
 
 
         return response(view('Jugadores.create', compact('lastId')));
-
     }
     /** 
      * Store a newly created resource in storage. 
@@ -55,7 +58,8 @@ class JugadorControlador extends Controller {
      * @param  \Illuminate\Http\Request   $request 
      * @return \Illuminate\Http\Response 
      */
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
 
         $j = new Jugador();
         $j->idAfiliacion = $request->idAfiliacion;
@@ -70,18 +74,45 @@ class JugadorControlador extends Controller {
         $j->abreviacion = $request->abreviacion;
         $j->status = $request->status;
         $j->rama = $request->rama;
-        $j->save();
-        return response() ->redirectTo(route("jugadoresIndex"))
-        ->with(["success" => "Creado exitosamente"])
-        ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
 
+        /* $imagen = $request->file('imagen');
+        $ruta = $imagen->store('public/img');
+        
+        $idAfiliacion = $request->input('idAfiliacion');
+        $jugador = Jugador::find($idAfiliacion);
+        $jugador->imagen = $ruta;
+        $j=$jugador;*/
+
+        /*
+    if ($request->hasFile('imagen')) {
+        $file = $request->file('imagen');
+        $filename = Str::Slug($request->idAfiliacion) .'.' . $file->guessExtension();
+        $ruta = public_path("public/img/jugadores/");
+        $file ->move($ruta,$filename );
+        $j->file= $filename;
+    }*/
+        if ($request->hasFile('imagen')) {
+            $file = $request->file('imagen');
+            $destino= "img/jugadores/";
+            $filename = time().".". $file->getClientOriginalName();
+            $uploadSuccess= $request->file('imagen')->move($destino,$filename);
+            $j->imagen= $destino.$filename;
+            
+        }
+
+
+        $j->save();
+        return response()->redirectTo(route("jugadoresIndex"))
+            ->with(["success" => "Creado exitosamente"])
+            ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
     }
     /** 
      * Display the specified resource. 
      * @param  int  $id 
      * @return \Illuminate\Http\Response 
      */
-    public function show($id) {
+    public function show($id)
+    {
 
         //  
     }
@@ -90,11 +121,11 @@ class JugadorControlador extends Controller {
      * @param  int  $id 
      * @return  \Illuminate\Http\Response 
      */
-    public function edit($id) {
+    public function edit($id)
+    {
 
         $datos = Jugador::find($id);
         return response(view("Jugadores.edit", compact("datos")));
-
     }
     /** 
      * Update the specified resource in storage. 
@@ -102,7 +133,8 @@ class JugadorControlador extends Controller {
      * @param  int  $id 
      * @return \Illuminate\Http\Response 
      */
-    public function update(Request $request) {
+    public function update(Request $request)
+    {
 
         //  
         $j = Jugador::find($request->idAfiliacion);
@@ -118,17 +150,16 @@ class JugadorControlador extends Controller {
         $j->status = $request->status;
         $j->rama = $request->rama;
         $j->save();
-        return response() ->redirectTo(route("jugadoresIndex"))
-        ->with(["success" => "Actulizado exitosamente"])
-        ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
-
+        return response()->redirectTo(route("jugadoresIndex"))
+            ->with(["success" => "Actulizado exitosamente"])
+            ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
     }
     /** 
      * Remove the specified resource from storage. 
      * @param  int  $id 
      * @return  \Illuminate\Http\Response 
      */
-    public function destroy($id) {
-
+    public function destroy($id)
+    {
     }
 }

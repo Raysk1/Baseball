@@ -37,6 +37,10 @@ horizontalmente */
             background-size: cover;
 
         }
+        .d-flex{
+margin-top: 0.8%;
+           text-align: center;
+        }
     </style>
 </head>
 
