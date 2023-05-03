@@ -114,7 +114,7 @@ margin-top: 0.8%;
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
-                        <a type="button" href="/header" class="btn btn-danger">logout</a>
+                        <a class="btn btn-outline-success" type="button" href="/header" >logout</a>
                     </form>
                 </div>
             </div>
