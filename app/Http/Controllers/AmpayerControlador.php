@@ -43,7 +43,7 @@ class AmpayerControlador extends Controller
         $a -> activo = $request -> activo;
         $a -> save();
         return response()->redirectTo(route("ampayersIndex"))
-            ->with(["success" => "Actulizado exitosamente"])
+            ->with(["success" => "Actualizado exitosamente"])
             ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
 
     }
@@ -82,7 +82,7 @@ class AmpayerControlador extends Controller
         $a -> activo = $request -> activo;
         $a -> save();
         return response() ->redirectTo(route("ampayersIndex"))
-        ->with(["success" => "Actulizado exitosamente"])
+        ->with(["success" => "Actualizado exitosamente"])
         ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
 
     }
