@@ -99,7 +99,6 @@ class JugadorControlador extends Controller
             $destino= "img/jugadores/";
             $filename =$j->idAfiliacion.".png";
             $uploadSuccess= $request->file('imagen')->move($destino,$filename);
-            $j->imagen= $filename;
             
         }
 
