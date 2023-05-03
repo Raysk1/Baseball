@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ampayer;
 use App\Models\Ampayersjuego;
+use App\Models\Juego;
 use Illuminate\Http\Request;
 
 class AmpayersJuegoControlador extends Controller {
@@ -21,7 +23,8 @@ class AmpayersJuegoControlador extends Controller {
     */
     public function create($juegoId) {
         $j = Ampayersjuego::orderBy('idCuerpo', 'DESC')->first();
-        $datos = ["lastId" => $j->idCuerpo + 1, "juegoId" => $juegoId];
+        $ampayers = Ampayer::orderBy("nombre")->get();
+        $datos = ["lastId" => $j == null ? 1 :  $j->idCuerpo + 1, "juegoId" => $juegoId,"ampayers" => $ampayers];
         return response(view('AmpayersJuegos.create', compact("datos")));
     }
     /** 
@@ -57,7 +60,8 @@ class AmpayersJuegoControlador extends Controller {
      * @return  \Illuminate\Http\Response 
      */
     public function edit($id) {
-        $datos = Ampayersjuego::find($id);
+        $ampayers = Ampayer::orderBy("nombre")->get();
+        $datos = ["ampayer" => Ampayersjuego::find($id),"ampayers" => $ampayers];
         return response(view("AmpayersJuegos.edit", compact("datos")));
     }
 

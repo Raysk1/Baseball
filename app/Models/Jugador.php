@@ -7,10 +7,11 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Jugador
+ * Class Jugadore
  * 
  * @property int $idAfiliacion
  * @property string|null $nombre
@@ -23,7 +24,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $pagina
  * @property string|null $abreviacion
  * @property bool|null $status
- * @property string $rama
+ * @property string|null $rama
+ * 
+ * @property Collection|Bateador[] $bateadores
+ * @property Collection|Lanzador[] $lanzadores
+ * @property Collection|Roster[] $rosters
+ * @property Collection|Turno[] $turnos
  *
  * @package App\Models
  */
@@ -31,11 +37,9 @@ class Jugador extends Model
 {
 	protected $table = 'jugadores';
 	protected $primaryKey = 'idAfiliacion';
-	public $incrementing = false;
 	public $timestamps = false;
 
 	protected $casts = [
-		'idAfiliacion' => 'int',
 		'posicion' => 'int',
 		'status' => 'bool'
 	];
@@ -58,4 +62,24 @@ class Jugador extends Model
 		'rama',
 		'imagen'
 	];
+
+	public function bateadores()
+	{
+		return $this->hasMany(Bateador::class, 'idAfiliacion');
+	}
+
+	public function lanzadores()
+	{
+		return $this->hasMany(Lanzador::class, 'idAfiliacion');
+	}
+
+	public function rosters()
+	{
+		return $this->hasMany(Roster::class, 'idAfiliacion');
+	}
+
+	public function turnos()
+	{
+		return $this->hasMany(Turno::class, 'idAfiliacion');
+	}
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bateador;
+use App\Models\Equipo;
+use App\Models\Juego;
 use Illuminate\Http\Request;
 
 class BateadorControlador extends Controller
@@ -21,7 +23,11 @@ class BateadorControlador extends Controller
     public function create($idJuego) {
         $t = Bateador::orderBy('idBateadores', 'DESC')->first();
         $lastId = $t->idBateadores + 1;
-        return response(view('Bateadores.create', compact('lastId')));
+        $j = $t->juego;
+        $jugadores = $j->equipoVisitante->jugadores;
+        $jugadores->merge($j->equipoLocal->jugadores);
+        $datos =["lastId" => $lastId, "jugadores" => $jugadores]; 
+        return response(view('Bateadores.create', compact('datos')));
     }
 
     /**
@@ -56,8 +62,12 @@ class BateadorControlador extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id) {
-        $datos = Bateador::find($id);
+    public function edit( $id) {
+        $b = Bateador::find($id);
+        $j = $b->juego;
+        $jugadores = $j->equipoVisitante->jugadores;
+        $jugadores->merge($j->equipoLocal->jugadores);
+        $datos =["bateador"=>$b, "jugadores" => $jugadores];
         return response(view("Bateadores.edit", compact("datos")));
     }
 

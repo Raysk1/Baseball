@@ -34,7 +34,6 @@ class EquipoControlador extends Controller
         $e = new Equipo();
         $e -> idEquipo = $request->idEquipo;
         $e ->nombre = $request->nombre;
-        $e ->idLogo = $request->idLogo;
         $e ->ciudad = $request->ciudad;
         $e ->idTecnico = $request -> idTecnico;
         $e -> save();
@@ -68,7 +67,6 @@ class EquipoControlador extends Controller
         $e = Equipo::find($request->idEquipo);
         $e -> idEquipo = $request->idEquipo;
         $e ->nombre = $request->nombre;
-        $e ->idLogo = $request->idLogo;
         $e ->ciudad = $request->ciudad;
         $e ->idTecnico = $request -> idTecnico;
         $e -> save();

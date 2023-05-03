@@ -19,7 +19,12 @@ class LigaControlador extends Controller {
      */
     public function create() {
         $l = Liga::orderBy('idLiga', 'DESC')->first();
-        $lastId = $l->idLiga + 1;
+        if ($l == null) {
+            $lastId = 1;
+        } else {
+
+            $lastId = $l->idLiga + 1;
+        }
         return response(view('Ligas.create', compact('lastId')));
     }
 

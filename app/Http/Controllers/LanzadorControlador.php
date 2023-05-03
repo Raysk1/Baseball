@@ -21,7 +21,9 @@ class LanzadorControlador extends Controller
     public function create($juegoId) {
         $t = Lanzador::orderBy('idLanzadores', 'DESC')->first();
         $lastId = $t->idLanzadores + 1;
-        return response(view('Lanzadores.create', compact('lastId')));
+        
+        $datos = ["lastId" => $lastId];
+        return response(view('Lanzadores.create', compact('datos')));
     }
 
     /**

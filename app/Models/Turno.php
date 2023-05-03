@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Turno
  * 
+ * @property int $idTurno
  * @property int $idJuego
  * @property int $idEquipo
  * @property int $idAfiliacion
@@ -23,7 +24,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $producciones
  * @property string|null $detalles
  * @property int $idLanzador
- * @property int $idTurno
+ * 
+ * @property Equipo $equipo
+ * @property Jugador $jugadore
+ * @property Juego $juego
  *
  * @package App\Models
  */
@@ -35,6 +39,7 @@ class Turno extends Model
 	public $timestamps = false;
 
 	protected $casts = [
+		'idTurno' => 'int',
 		'idJuego' => 'int',
 		'idEquipo' => 'int',
 		'idAfiliacion' => 'int',
@@ -60,4 +65,19 @@ class Turno extends Model
 		'detalles',
 		'idLanzador'
 	];
+
+	public function equipo()
+	{
+		return $this->belongsTo(Equipo::class, 'idEquipo');
+	}
+
+	public function jugador()
+	{
+		return $this->belongsTo(Jugador::class, 'idAfiliacion');
+	}
+
+	public function juego()
+	{
+		return $this->belongsTo(Juego::class, 'idJuego');
+	}
 }

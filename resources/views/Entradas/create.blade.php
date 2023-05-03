@@ -9,40 +9,35 @@
             <form action={{ route('EntradaStore') }} method="post">
                 @csrf
                 <div class="row">
-                    <div class="mb-3">
+                    <div class="col">
                         <label for="idJuego" class="form-label">ID:</label>
-                        <input type="text" class="form-control" name="idEntrada" id="idEntrada" value={{$datos["lastId"]}} readonly required>
+                        <input type="text" class="form-control" name="idCarrera" id="idCarrera" value={{$datos["lastId"]}} readonly required>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="mb-3">
+                    <div class="col">
                         <label for="idJuego" class="form-label">ID de Juego:</label>
                         <input type="text" class="form-control" name="idJuego" id="idJuego" value={{$datos["juegoId"]}} readonly required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="entradaAlta" class="form-label">Alta de entradas:</label>
-                        <input type="text" class="form-control" name="entradaAlta" id="entradaAlta" required>
+                        <label for="entradaAlta" class="form-label">Entradas Altas:</label>
+                        <input type="number" class="form-control" name="entradaAlta" id="entradaAlta" max="99" min="0" required>
                     </div>
                     <div class="col">
-                        <label for="entradaBaja" class="form-label">Baja de Entradas:</label>
-                        <input type="text" name="entradaBaja" class="form-control" id="entradaBaja" required>
+                        <label for="entradaBaja" class="form-label">Entradas Bajas:</label>
+                        <input type="number" name="entradaBaja" class="form-control" id="entradaBaja" max="99" min="0" required>
                     </div>
                     <div class="col">
-                        <label for="carrerasAlta" class="form-label">Alta de Carrreras:</label>
-                        <input type="text" name="idCampo" class="form-control" id="carrerasAlta">
+                        <label for="carrerasAlta" class="form-label">Carrreras Altas:</label>
+                        <input type="number" name="carrerasAlta"  class="form-control" id="carrerasAlta" max="99" min="0" required>
+                    </div>
+                    <div class="col">
+                        <label for="carrerasBaja" class="form-label">Carreras Bajas:</label>
+                        <input type="number" name="carrerasBaja" class="form-control" id="carrerasBaja" max="99" min="0" required>
                     </div>
                 </div>
-                <div class="row ">
-                    <div class="mb-3">
-                        <label for="carrerasBaja" class="form-label">Baja de Carreras:</label>
-                        <input type="date" name="Fecha" class="form-control" id="carrerasBaja" required>
-                    </div>
-
-                </div>
-
-
                 <div class="row">
                     <div class="col justify-content-center">
                         <button type="submit" class="btn btn-primary w-100">guardar</button>

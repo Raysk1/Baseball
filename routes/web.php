@@ -32,11 +32,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::redirect("/","/inicio");
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/Resultados', function () {
     return view('Resultados');
@@ -154,6 +151,7 @@ Route::post('/inicio', function () {return view('inicio.inicio');})->name("inici
 //  
 Route::get('/inicio', function () {return view('inicio.inicio');})->name("Noticias"); 
 
+Route::redirect("/","/inicio");
 
 Route::get('/reglamento', function () {return view('reglamento');})->name("reglamento"); 
 
