@@ -37,6 +37,8 @@
                       <li><a class="dropdown-item" href="#">Lideres</a></li>
                       <li><a class="dropdown-item" href="#">Estadisticas</a></li>
                       <li><a class="dropdown-item" href="">Rooster</a></li>
+                      <li><a class="dropdown-item" href="">Juego Ampayers</a></li>
+                      <li><a class="dropdown-item" href="">Reglamento</a></li>
                     </ul>
                   </li>
         
@@ -46,6 +48,7 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href={{route("contacto")}}>Contactos</a></li>
+                      <li><a class="dropdown-item" href={{route("reglamento")}}>Reglamento Oficial</a></li>
                     </ul>
                   </li>
           

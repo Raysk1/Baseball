@@ -19,6 +19,10 @@
 @endsection
 
 @section('tbody')
+
+    
+     
+    
     @foreach ($datos as $dato)
         <tr class="align-middle">
             <td scope="row">{{ $dato->idTecnico }}</td>
@@ -44,5 +48,7 @@
                 </div>
             </td>
         </tr>
+     
+    
     @endforeach
 @endsection

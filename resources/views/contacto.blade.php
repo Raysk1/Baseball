@@ -61,6 +61,7 @@
 	</style>
 </head>
 <body>
+	
 		<h1><center>Directorio </center></h1><hr>
 	<div class="conten">
 		<div class="caja2" img src="/img/fondo.jpg" width="100%" height="100%">

@@ -13,13 +13,11 @@ use App\Http\Controllers\EntradaControlador;
 
 
 //use App\Http\Controllers\InformacionControlador;
-
 use App\Http\Controllers\ManejadorControlador;
 use App\Http\Controllers\TemporadaControlador;
 use App\Http\Controllers\UserControlador;
 use App\Models\Ampayer;
 use App\Models\Jugador;
-use App\Models\Ampayersjuego;
 use App\Models\Lanzador;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -71,14 +69,9 @@ Route::get("/abc/Ampayers",[AmpayerControlador::class,"index"])->name("AmpayersI
 Route::get("/abc/Ampayers/edit/{id}",[AmpayerControlador::class,"edit"])->name("AmpayersEdit");
 Route::post("/abc/Ampayers/update",[AmpayerControlador::class,"update"]) -> name("AmpayersUpdate");
 
-//inicio
-Route::get('/inicio', function () {
-    return view('inicio.inicio');
-}) ->name("inicio"); 
+
 //informacion
-Route::get('/contacto', function () {
-    return view('contacto');
-}) ->name("contacto");
+Route::get('/contacto', function () {return view('contacto');}) ->name("contacto");
 
 
 /** AmpayersJuego routes */
@@ -132,6 +125,7 @@ Route::get('/abc/bateadores', [BateadorControlador::class,'index']) -> name('bat
 Route::get('/abc/bateadores/edit/{id}', [BateadorControlador::class,'edit'])->name("bateadoresEdit"); 
 Route::post('/abc/bateadores/update', [BateadorControlador::class,'update']) -> name('bateadoresUpdate'); 
 
+
 /**Routes de informacion 
 Route::get('/abc/informacion/create', [InformacionControlador::class,'create']) -> name('turnoCreate'); 
 Route::post('/abc/informacion/store', [InformacionControlador::class,'store']) -> name('turnoStore');
@@ -139,24 +133,26 @@ Route::get('/Luis/informacion', [InformacionControlador::class,'index']) -> name
 Route::get('/abc/informacion/edit/{id}', [InformacionControlador::class,'edit'])->name("turnoEdit"); 
 Route::post('/abc/informacion/update', [InformacionControlador::class,'update']) -> name('turnoUpdate'); */
 
-Route::get('/informacion', function () {
-    return view('luis/informacion');
-});
-Route::get('/login', function () {
-    return view('sesion/login');
-});
-Route::get('/registrologin', function () {
-    return view('sesion/registrologin');
-});
-Route::get('/header', function () {
-    return view('pantalla.header');
-})->name("header");
+Route::get('/informacion', function () {return view('luis/informacion');});
+
+Route::get('/login', function () {return view('sesion/login');});
+
+Route::get('/registrologin', function () {return view('sesion/registrologin');});
+
+
+Route::get('/header', function () {return view('pantalla.header');})->name("header");
 
 //
 
-Route::get('/sesion/registrologin', [UserControlador::class,'create']) -> name('RegistroCreate');
+Route::get('/registrologin', [UserControlador::class,'create']) -> name('RegistroCreate');
 Route::post('/sesion/store', [UserControlador::class,'store']) -> name('RegistroStore');
+//inicio
+Route::post('/inicio', function () {return view('inicio.inicio');})->name("inicio"); 
+//  
+Route::get('/inicio', function () {return view('inicio.inicio');})->name("Noticias"); 
 
 Route::redirect("/","/inicio");
+
+Route::get('/reglamento', function () {return view('reglamento');})->name("reglamento"); 
 
 ?>
