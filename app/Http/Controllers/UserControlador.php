@@ -7,7 +7,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Controller;
 
 
-use App\Models\Users;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash; //Para que funcione la Validacion de Hash
@@ -27,7 +27,7 @@ class UserControlador extends Controller {
     */
     public function create(Request $request){
        
-        $j = Users::orderBy('id', 'DESC')->first();
+        $j = User::orderBy('id', 'DESC')->first();
         $lastId = $j->id + 1;
         return response(view('sesion.registrologin', compact('lastId')));
     }
@@ -37,7 +37,7 @@ class UserControlador extends Controller {
      * @return \Illuminate\Http\ResponseTrait
      */
     public function store(Request $request) {
-        $a = new Users();
+        $a = new User();
         $a -> name = $request -> name;
         $a ->email = $request -> email;
         $a -> password = $request -> password;

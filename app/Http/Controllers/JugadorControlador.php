@@ -97,9 +97,8 @@ class JugadorControlador extends Controller
         if ($request->hasFile('imagen')) {
             $file = $request->file('imagen');
             $destino= "img/jugadores/";
-            $filename = time().".". $file->getClientOriginalName();
+            $filename =$j->idAfiliacion.".png";
             $uploadSuccess= $request->file('imagen')->move($destino,$filename);
-            $j->imagen= $destino.$filename;
             
         }
 

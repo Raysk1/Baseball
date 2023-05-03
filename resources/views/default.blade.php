@@ -87,7 +87,7 @@ margin-top: 0.8%;
                                 <li><a class="dropdown-item" href={{ route('jugadoresIndex') }}>Jugadores</a></li>
                                 <li><a class="dropdown-item" href={{ route('equiposIndex') }}>Equipos</a></li>
                                 <li><a class="dropdown-item" href={{ route('juegosIndex') }}>Juegos</a></li>
-                                <li><a class="dropdown-item" href={{ route('AmpayersIndex') }}>Ampayer</a></li>
+                                <li><a class="dropdown-item" href={{ route('ampayersIndex') }}>Ampayer</a></li>
                                 <li><a class="dropdown-item" href={{ route('ligasIndex') }}>Ligas</a></li>
                             </ul>
                         </li>
@@ -114,7 +114,7 @@ margin-top: 0.8%;
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
-                        <a type="button" href="/header" class="btn btn-danger">logout</a>
+                        <a class="btn btn-outline-success" type="button" href="/header" >logout</a>
                     </form>
                 </div>
             </div>
