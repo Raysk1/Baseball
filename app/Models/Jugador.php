@@ -59,7 +59,8 @@ class Jugador extends Model
 		'pagina',
 		'abreviacion',
 		'status',
-		'rama'
+		'rama',
+		'imagen'
 	];
 
 	public function bateadores()

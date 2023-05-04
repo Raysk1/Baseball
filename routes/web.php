@@ -65,7 +65,7 @@ Route::post("/abc/Entrada/update",[EntradaControlador::class,"update"]) -> name(
 /** Ampayers routes */
 Route::get('/abc/Ampayers/create', [AmpayerControlador::class,'create']) -> name('AmpayersCreate'); 
 Route::post('/abc/Ampayers/store', [AmpayerControlador::class,'store'])->name("AmpayersStore"); 
-Route::get("/abc/Ampayers",[AmpayerControlador::class,"index"])->name("AmpayersIndex");
+Route::get("/abc/Ampayers",[AmpayerControlador::class,"index"])->name('ampayersIndex');
 Route::get("/abc/Ampayers/edit/{id}",[AmpayerControlador::class,"edit"])->name("AmpayersEdit");
 Route::post("/abc/Ampayers/update",[AmpayerControlador::class,"update"]) -> name("AmpayersUpdate");
 
