@@ -97,6 +97,10 @@ class Juego extends Model {
 		return $this->hasMany(Lanzador::class, 'idJuego');
 	}
 
+	public function ampayersJuego(){
+		return $this->hasMany(Ampayersjuego::class,'idJuego');
+	}
+
 	public function turnos() {
 		return $this->hasMany(Turno::class, 'idJuego');
 	}

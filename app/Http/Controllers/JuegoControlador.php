@@ -87,9 +87,7 @@ class JuegoControlador extends Controller {
         $j->idEquipoLocal = $request->idEquipoLocal;
         $j->final = $request->final;
         $j->save();
-        return response()->redirectTo(route("juegosIndex"))
-            ->with(["success" => "Creado exitosamente"])
-            ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
+        return response()->redirectTo(route("juegosDetails",["id" => $j -> idJuego]));
 
     }
     /** 
@@ -131,12 +129,8 @@ class JuegoControlador extends Controller {
         $j->idEquipoVisitante = $request->idEquipoVisitante;
         $j->idEquipoLocal = $request->idEquipoLocal;
         $j->final = $request->final;
-        $j->idAviso = $request->idAviso;
-        $j->idCuerpo = $request->idCuerpo;
         $j->save();
-        return response()->redirectTo(route("juegosIndex"))
-            ->with(["success" => "Actulizado exitosamente"])
-            ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
+        return response()->redirectTo(route("juegosIndex"));
 
     }
     /** 

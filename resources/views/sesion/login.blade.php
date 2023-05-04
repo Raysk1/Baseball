@@ -35,7 +35,7 @@
         <p class="link"><a href="/registrologin">¿Aun no tienes cuenta?</a></p>
     </form>
 
-    <script >
+    <script>
         function validarUsuario() {
             // Obtener los valores de los campos de usuario y contraseña
             var email = document.getElementById("email").value;
@@ -53,10 +53,9 @@
                 alert("Usuario o contraseña incorrectos.");
                 return false;
 
-            } else {
-                // Si los datos son válidos, redirigir al usuario a la página de inicio
-                window.location.replace("{{ route('inicio') }}");
             }
+            // Si los datos son válidos, redirigir al usuario a la página de inicio
+            window.location.replace("{{ route('inicio') }}");
         }
     </script>
 </body>

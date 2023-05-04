@@ -81,8 +81,8 @@ class AmpayerControlador extends Controller
         $a -> abreviacion = $request -> abreviacion;
         $a -> activo = $request -> activo;
         $a -> save();
-        return response() ->redirectTo(route("ampayersIndex"))
-        ->with(["success" => "Actualizado exitosamente"])
+        return response() ->redirectTo(route("AmpayersIndex"))
+        ->with(["success" => "Actulizado exitosamente"])
         ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
 
     }

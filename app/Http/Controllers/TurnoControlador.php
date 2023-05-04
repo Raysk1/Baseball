@@ -25,7 +25,8 @@ class TurnoControlador extends Controller {
         $t = Turno::orderBy('idTurno', 'DESC')->first();
         $idTurno = $t != null ? $t->idTurno : 0;
         $j = Juego::find($juegoId);
-        $jugadores = Equipo::find($j->idEquipoVisitante)->jugadores;
+        $e = Equipo::find($j->idEquipoVisitante);
+        $jugadores = $e->jugadores;
         $lanzadores = $j->lanzadores;
         $datos = ["lastId" => $idTurno + 1, "juegoId" => $juegoId, "jugadores" => $jugadores, "lanzadores" => $lanzadores];
         return response(view('Turnos.create', compact('datos')));
@@ -37,7 +38,7 @@ class TurnoControlador extends Controller {
     public function store(Request $request) {
         $j = Jugador::find($request->idAfiliacion);
         $juego = Juego::find($request->idJuego);
-        $r = Roster::all()->where("idTemporada", "=", $juego->idTemporada)->where("idAfiliacion", "=", $request->idAfiliacion)->first();
+        $r = $j->rosters->where("idTemporada", "=", $juego->idTemporada)->first();
         $t = new Turno();
         $t->idJuego = $request->idJuego;
         $t->idEquipo = $r->idEquipo;
