@@ -10,6 +10,7 @@ use App\Http\Controllers\LigaControlador;
 use App\Http\Controllers\TurnoControlador;
 use App\Http\Controllers\BateadorControlador;
 use App\Http\Controllers\EntradaControlador;
+use App\Http\Controllers\RoosterControlador;
 
 
 //use App\Http\Controllers\InformacionControlador;
@@ -68,6 +69,13 @@ Route::post('/abc/Ampayers/store', [AmpayerControlador::class,'store'])->name("A
 Route::get("/abc/Ampayers",[AmpayerControlador::class,"index"])->name('ampayersIndex');
 Route::get("/abc/Ampayers/edit/{id}",[AmpayerControlador::class,"edit"])->name("AmpayersEdit");
 Route::post("/abc/Ampayers/update",[AmpayerControlador::class,"update"]) -> name("AmpayersUpdate");
+
+/** Rooster */
+Route::get('/abc/Rooster/create', [RoosterControlador::class,'create']) -> name('RoosterCreate'); 
+Route::post('/abc/Rooster/store', [RoosterControlador::class,'store'])->name("RoosterStore"); 
+Route::get("/abc/Rooster",[RoosterControlador::class,"index"])->name('RoosterIndex');
+Route::get("/abc/Rooster/edit/{id}",[RoosterControlador::class,"edit"])->name("RoosterEdit");
+Route::post("/abc/Rooster/update",[RoosterControlador::class,"update"]) -> name("RoosterUpdate");
 
 
 //informacion
@@ -135,7 +143,7 @@ Route::post('/abc/informacion/update', [InformacionControlador::class,'update'])
 
 Route::get('/informacion', function () {return view('luis/informacion');});
 
-Route::get('/login', function () {return view('sesion/login');});
+Route::get('/login', function () {return view('sesion/login');})->name("login");
 
 Route::get('/registrologin', function () {return view('sesion/registrologin');});
 
