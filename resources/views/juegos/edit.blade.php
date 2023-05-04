@@ -48,8 +48,8 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="Fecha" class="form-label">Fecha:</label>
-                        <input type="date" name="Fecha" class="form-control" id="Fecha" required
+                        <label for="fecha" class="form-label">Fecha:</label>
+                        <input type="date" name="fecha" class="form-control" id="fecha" required
                             value={{ $datos['juego']->fecha }}>
                     </div>
                     <div class="col">

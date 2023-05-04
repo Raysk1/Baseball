@@ -78,28 +78,11 @@ class JugadorControlador extends Controller
         $j->status = $request->status;
         $j->rama = $request->rama;
 
-        /* $imagen = $request->file('imagen');
-        $ruta = $imagen->store('public/img');
-        
-        $idAfiliacion = $request->input('idAfiliacion');
-        $jugador = Jugador::find($idAfiliacion);
-        $jugador->imagen = $ruta;
-        $j=$jugador;*/
-
-        /*
-    if ($request->hasFile('imagen')) {
-        $file = $request->file('imagen');
-        $filename = Str::Slug($request->idAfiliacion) .'.' . $file->guessExtension();
-        $ruta = public_path("public/img/jugadores/");
-        $file ->move($ruta,$filename );
-        $j->file= $filename;
-    }*/
         if ($request->hasFile('imagen')) {
             $file = $request->file('imagen');
             $destino= "img/jugadores/";
             $filename =$j->idAfiliacion.".png";
             $uploadSuccess= $request->file('imagen')->move($destino,$filename);
-            $j->imagen= $filename;
             
         }
 

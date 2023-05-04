@@ -147,7 +147,7 @@ Route::get('/header', function () {return view('pantalla.header');})->name("head
 Route::get('/registrologin', [UserControlador::class,'create']) -> name('RegistroCreate');
 Route::post('/sesion/store', [UserControlador::class,'store']) -> name('RegistroStore');
 //inicio
-Route::post('/inicio', function () {return view('inicio.inicio');})->name("inicio"); 
+Route::get('/inicio', function () {return view('inicio.inicio');})->name("inicio"); 
 
 
 Route::redirect("/","/inicio");

@@ -233,7 +233,7 @@
                                 <tbody>
                                     @foreach ($datos['juego']->bateadores as $bateador)
                                         <tr>
-                                            <td>{{ $bateador->jugador }}</td>
+                                            <td>{{ $bateador->jugador->abreviacion }}</td>
                                             <td>{{ $bateador->AB }}</td>
                                             <td>{{ $bateador->C }}</td>
                                             <td>{{ $bateador->H }}</td>
@@ -305,7 +305,7 @@
                                     @foreach ($datos['juego']->lanzadores as $lanzador)
                                         <tr>
 
-                                            <td>{{ $lanzador->jugador }}</td>
+                                            <td>{{ $lanzador->jugador->abreviacion }}</td>
                                             <td>{{ $lanzador->IP }}</td>
                                             <td>{{ $lanzador->BA }}</td>
                                             <td>{{ $lanzador->C }}</td>
