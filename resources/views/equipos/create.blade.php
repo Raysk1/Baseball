@@ -34,8 +34,12 @@
                         <label for="idTecnico" class="form-label">idTecnico:</label>
                         <input type="text" name="idTecnico" class="form-control" id="idTecnico" required>
                     </div>
+                    <div class="col">
+                        <label for="imagen" class="form-label">Imagen:</label>
+                        <input type="file" name="image" class="form-control">
+                    </div>
                 </div>
-              
+                
                 <div class="row">
                     <div class="col justify-content-center">
                         <button type="submit" class="btn btn-primary w-100">Guardar</button>

@@ -22,7 +22,7 @@
 
 @section('tbody')
     @foreach ($datos as $dato)
-        <tr class="align-middle">
+        <tr class="align-middle table-light">
             <td scope="row">{{ $dato->idEquipo }}</td>
             <td>{{ $dato->nombre }}</td>
             <td>{{ $dato->idLogo }}</td>

@@ -10,7 +10,7 @@
 @endsection
 
 @section('thead')
-    <tr>
+    <tr class="align-middle table-info">
         <th scope="col">ID</th>
         <th scope="col">Temporada</th>
         <th scope="col">Jornada</th>
@@ -28,7 +28,7 @@
 
 @section('tbody')
     @foreach ($datos as $dato)
-        <tr class="align-middle" >
+        <tr class="align-middle table-light" >
             <td  scope="row">{{ $dato->idJuego }}</td>
             <td>{{ $dato->temporada}}</td>
             <td>{{ $dato->jornada}}</td>
