@@ -78,7 +78,6 @@ class JugadorControlador extends Controller
         $j->status = $request->status;
         $j->rama = $request->rama;
 
-   
         if ($request->hasFile('imagen')) {
             $file = $request->file('imagen');
             $destino= "img/jugadores/";

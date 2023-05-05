@@ -22,11 +22,11 @@ class BateadorControlador extends Controller
      */
     public function create($idJuego) {
         $t = Bateador::orderBy('idBateadores', 'DESC')->first();
-        $lastId = $t->idBateadores + 1;
-        $j = $t->juego;
+        $lastId = $t == null ? 1 : $t->idBateadores + 1;
+        $j = Juego::find($idJuego);
         $jugadores = $j->equipoVisitante->jugadores;
         $jugadores->merge($j->equipoLocal->jugadores);
-        $datos =["lastId" => $lastId, "jugadores" => $jugadores]; 
+        $datos =["lastId" => $lastId, "jugadores" => $jugadores,"juegoId" => $idJuego]; 
         return response(view('Bateadores.create', compact('datos')));
     }
 

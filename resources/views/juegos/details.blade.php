@@ -100,10 +100,10 @@
 
                                 </thead>
                                 <tbody>
-                                    @foreach ($datos['juego']->ampayers as $ampayer)
+                                    @foreach ($datos['juego']->ampayersJuego as $ampayer)
                                         <tr>
                                             <td>{{ $ampayer->idCuerpo }}</td>
-                                            <td>{{ $ampayer->nombre . ' ' . $ampayer->apellidos }}</td>
+                                            <td>{{ $ampayer->ampayer->nombre . ' ' . $ampayer->ampayer->apellidos }}</td>
                                             <td>{{ $ampayer->ubicacion }}</td>
                                             <td colspan="2" style="width: 12%">
                                                 <div class="d-flex justify-content-evenly">
@@ -233,7 +233,7 @@
                                 <tbody>
                                     @foreach ($datos['juego']->bateadores as $bateador)
                                         <tr>
-                                            <td>{{ $bateador->jugador }}</td>
+                                            <td>{{ $bateador->jugador->abreviacion }}</td>
                                             <td>{{ $bateador->AB }}</td>
                                             <td>{{ $bateador->C }}</td>
                                             <td>{{ $bateador->H }}</td>
@@ -305,7 +305,7 @@
                                     @foreach ($datos['juego']->lanzadores as $lanzador)
                                         <tr>
 
-                                            <td>{{ $lanzador->jugador }}</td>
+                                            <td>{{ $lanzador->jugador->abreviacion }}</td>
                                             <td>{{ $lanzador->IP }}</td>
                                             <td>{{ $lanzador->BA }}</td>
                                             <td>{{ $lanzador->C }}</td>
