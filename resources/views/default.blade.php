@@ -7,7 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+
     @vite(['resources/js/app.js', 'resources/css/app.scss'])
+
     @yield('styles')
     <style>
         body {
