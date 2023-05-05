@@ -20,10 +20,7 @@
                         <label for="nombre" class="form-label">Nombre:</label>
                         <input type="text" class="form-control" name="nombre" id="nombre" required>
                     </div>
-                    <div class="col">
-                        <label for="idLogo" class="form-label">idLogo:</label>
-                        <input type="text" name="idLogo" class="form-control" id="idLogo" required>
-                    </div>
+                   
                     <div class="col">
                         <label for="ciudad" class="form-label">Ciudad:</label>
                         <input type="text" name="ciudad" class="form-control" id="ciudad">
@@ -36,7 +33,8 @@
                     </div>
                     <div class="col">
                         <label for="imagen" class="form-label">Imagen:</label>
-                        <input type="file" name="image" class="form-control">
+
+                        <input type="file" name="imagen" class="form-control">
                     </div>
                 </div>
                 

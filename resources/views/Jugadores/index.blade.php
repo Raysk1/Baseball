@@ -4,6 +4,7 @@
     Jugadores
 @endsection
 
+
 @section('createRoute')
     {{ route('jugadoresCreate') }}
 @endsection

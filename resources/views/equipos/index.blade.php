@@ -12,7 +12,6 @@
     <tr>
         <th scope="col">ID</th>
         <th scope="col">Nombre</th>
-        <th scope="col">id logo</th>
         <th scope="col">Ciudad</th>
         <th scope="col">Tecnico</th>
         <th scope="col" class="text-center" colspan="2">Accion</th>
@@ -25,7 +24,6 @@
         <tr class="align-middle table-light">
             <td scope="row">{{ $dato->idEquipo }}</td>
             <td>{{ $dato->nombre }}</td>
-            <td>{{ $dato->idLogo }}</td>
             <td>{{ $dato->ciudad }}</td>
             <td>{{ $dato->idTecnico }}</td>
             
