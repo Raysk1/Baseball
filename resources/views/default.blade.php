@@ -37,21 +37,19 @@ horizontalmente */
             background-size: cover;
 
         }
-        .d-flex{
-margin-top: 0.8%;
-           text-align: center;
-        }
+        
+ 
     </style>
 </head>
 
 <body>
     <header class="sticky-top ">
         <!-- place navbar here -->
-        <nav class="navbar navbar-expand-lg bg-warning">
+        <nav class="navbar navbar-expand-lg bg-dark">
             <div class="container-fluid">
-                <h2>BASEBALL </h2>
+                <h2 class="text-white" style="margin-right: 80px" >BASEBALL </h2>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -59,13 +57,13 @@ margin-top: 0.8%;
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href={{ route('Noticias') }}><b> Inicio
+                            <a class="nav-link active" aria-current="page" href={{ route('Noticias') }}><b class="text-warning" > Inicio
                                 </b></a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle text-warning  " href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <b> Consultas </b>
+                                <b > Consultas </b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href={{ route('manejadoresIndex') }}>
@@ -79,9 +77,9 @@ margin-top: 0.8%;
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle text-warning" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <b> Capturas</b>
+                                <b  > Capturas</b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href={{ route('jugadoresIndex') }}>Jugadores</a></li>
@@ -93,20 +91,20 @@ margin-top: 0.8%;
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle text-warning" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <b> Informacion </b>
+                                <b  > Informacion </b>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href={{ route('contacto') }}>Contactos</a></li>
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item " href={{ route('contacto') }}>Contactos</a></li>
                                 <li><a class="dropdown-item" href={{ route('reglamento') }}>Reglamento</a></li>
                             </ul>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle text-warning" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <b> Registros</b>
+                                <b > Registros</b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Jugadores</a></li>
@@ -114,7 +112,7 @@ margin-top: 0.8%;
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
-                        <a class="btn btn-outline-success" type="button" href="/header" >logout</a>
+                        <a class="btn btn-outline-danger " type="button" href="/header" >logout</a>
                     </form>
                 </div>
             </div>
