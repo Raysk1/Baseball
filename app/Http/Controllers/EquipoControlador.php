@@ -37,13 +37,17 @@ class EquipoControlador extends Controller
         $e ->ciudad = $request->ciudad;
         $e ->idTecnico = $request -> idTecnico;
         
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $destino= "img/equipos";
+        if ($request->hasFile('imagen')) {
+            $file = $request->file('imagen');
+            $destino= "img/";
             $filename =$e->idEquipo.".png";
-            $uploadSuccess= $request->file('image')->move($destino,$filename);
+            $uploadSuccess= $request->file('imagen')->move($destino,$filename);
+            
         }
-       
+
+
+
+
 
         $e -> save();
         return response()->redirectTo(route("equiposIndex"))
