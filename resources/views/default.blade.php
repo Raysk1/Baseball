@@ -41,7 +41,10 @@
         <!-- place navbar here -->
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container-fluid">
+<<<<<<< HEAD
                 <h2 class="text-white"> </h2>
+=======
+>>>>>>> a46699d9e8998b716952445b00e44b1516358f4c
 
                 <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -76,7 +79,7 @@
                                 <li><a class="dropdown-item" href={{ route('jugadoresIndex') }}>Jugadores</a></li>
                                 <li><a class="dropdown-item" href={{ route('equiposIndex') }}>Equipos</a></li>
                                 <li><a class="dropdown-item" href={{ route('juegosIndex') }}>Juegos</a></li>
-                                <li><a class="dropdown-item" href={{ route('ampayersIndex') }}>Ampayer</a></li>
+                                <li><a class="dropdown-item" href={{ route('AmpayersIndex') }}>Ampayer</a></li>
                                 <li><a class="dropdown-item" href={{ route('ligasIndex') }}>Ligas</a></li>
                             </ul>
                         </li>

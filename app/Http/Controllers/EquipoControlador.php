@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use App\Models\Equipo;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 class EquipoControlador extends Controller
 {
