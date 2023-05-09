@@ -111,16 +111,6 @@
                         <input type="text" name="final" class="form-control" id="final" required
                             value={{ $datos['juego']->final }}>
                     </div>
-                    <div class="col">
-                        <label for="idAviso" class="form-label">Aviso:</label>
-                        <input type="text" name="idAviso" class="form-control" id="idAviso" required
-                            value={{ $datos['juego']->idAviso }}>
-                    </div>
-                    <div class="col">
-                        <label for="idCuerpo" class="form-label">Cuerpo:</label>
-                        <input type="text" name="idCuerpo" class="form-control" id="idCuerpo" required
-                            value={{ $datos['juego']->idCuerpo }}>
-                    </div>
                 </div>
 
                 <div class="row">

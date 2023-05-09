@@ -38,42 +38,42 @@
                     <div class="row">
                         <div class="col">
                             <label for="IP" class="form-label">IP:</label>
-                            <input type="text" name="IP" class="form-control" id="IP" required
+                            <input type="number" name="IP" class="form-control" id="IP" required
                                 value={{ $datos->IP }}>
                         </div>
                         <div class="col">
                             <label for="BA" class="form-label">BA:</label>
-                            <input type="text" name="BA" class="form-control" id="BA" required
+                            <input type="number" name="BA" class="form-control" id="BA" required
                                 value={{ $datos->BA }}>
                         </div>
                         <div class="col">
                             <label for="C" class="form-label">C:</label>
-                            <input type="text" name="C" class="form-control" id="C" required
+                            <input type="number" name="C" class="form-control" id="C" required
                                 value={{ $datos->C }}>
                         </div>
                         <div class="col">
                             <label for="H" class="form-label">H:</label>
-                            <input type="text" name="H" class="form-control" id="H" required
+                            <input type="number" name="H" class="form-control" id="H" required
                                 value={{ $datos->H }}>
                         </div>
                         <div class="col">
                             <label for="BB" class="form-label">BB:</label>
-                            <input type="text" name="BB" class="form-control" id="BB" required
+                            <input type="number" name="BB" class="form-control" id="BB" required
                                 value={{ $datos->BB }}>
                         </div>
                         <div class="col">
                             <label for="K" class="form-label">K:</label>
-                            <input type="text" name="K" class="form-control" id="K" required
+                            <input type="number" name="K" class="form-control" id="K" required
                                 value={{ $datos->K }}>
                         </div>
                         <div class="col">
                             <label for="PCA" class="form-label">PCA:</label>
-                            <input type="text" name="PCA" class="form-control" id="PCA" required
+                            <input type="number" name="PCA" class="form-control" id="PCA" required
                                 value={{ $datos->PCA }}>
                         </div>
                         <div class="col">
                             <label for="POP" class="form-label">POP:</label>
-                            <input type="text" name="POP" class="form-control" id="POP" required
+                            <input type="number" name="POP" class="form-control" id="POP" required
                                 value={{ $datos->POP }}>
                         </div>
                     </div>
