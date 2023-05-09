@@ -8,7 +8,7 @@
         <div class="w-75 mt-4">
             <h1>Prueba</h1>
 
-            <table border = "1px">
+            <table border="1px">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -16,39 +16,39 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                     @foreach ($jugadores as $jugador)
-                    <tr>
-                        <td>{{$jugador -> idAfiliacion}}</td>
-                        <td>{{$jugador -> nombre}}</td>
-                        <td>{{$jugador -> apellidos}}</td>
-                    </tr>
-        
+                        <tr>
+                            <td>{{ $jugador->idAfiliacion }}</td>
+                            <td>{{ $jugador->nombre }}</td>
+                            <td>{{ $jugador->apellidos }}</td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
 
 
-            <div class = "container">
-                <div class="row justify-content-between">
-                <div class="card" style="width: 18rem;">
-                <img src="/img/personaas.jpg" class="card-img-top" alt="...">
-                <div class="card-body"><br>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <br>
-              </div>
 
-              <div class = "container">
+            <div class="container">
                 <div class="row justify-content-between">
-                <div class="card" style="width: 18rem;">
-                <img src="/img/personaas.jpg" class="card-img-top" alt="...">
-                <div class="card-body"><br>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <br>
-              </div>
 
-        </div>
-    </div>
-@endsection
+
+                    @foreach ($jugadores as $jugador)
+                    <div class="card" style="width: 18rem;">
+                        <img src="../../../public/img/jugadores/230000.png" class="card-img-top" alt="...">
+                        <div class="card-body"><br>
+                            <img src="" alt="">
+                            ID: {{$jugador->idAfiliacion}}
+                            {{$jugador->nombre}} {{$jugador->apellidos}}
+
+
+                        </div>
+                    </div>
+
+                    @endforeach
+                    
+
+
+                </div>
+            </div>
+            @endsection
