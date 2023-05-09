@@ -34,9 +34,20 @@ class EquipoControlador extends Controller
         $e = new Equipo();
         $e -> idEquipo = $request->idEquipo;
         $e ->nombre = $request->nombre;
-        $e ->idLogo = $request->idLogo;
         $e ->ciudad = $request->ciudad;
         $e ->idTecnico = $request -> idTecnico;
+        
+        if ($request->hasFile('imagen')) {
+            $file = $request->file('imagen');
+            $destino= "img/equipos/";
+            $filename =$e->idEquipo.".png";
+            $uploadSuccess= $request->file('imagen')->move($destino,$filename);
+        }
+
+
+
+
+
         $e -> save();
         return response()->redirectTo(route("equiposIndex"))
         ->with(["success" => "Creado exitosamente"])
@@ -68,7 +79,6 @@ class EquipoControlador extends Controller
         $e = Equipo::find($request->idEquipo);
         $e -> idEquipo = $request->idEquipo;
         $e ->nombre = $request->nombre;
-        $e ->idLogo = $request->idLogo;
         $e ->ciudad = $request->ciudad;
         $e ->idTecnico = $request -> idTecnico;
         $e -> save();

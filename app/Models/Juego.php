@@ -7,6 +7,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -22,13 +23,18 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $idEquipoVisitante
  * @property int $idEquipoLocal
  * @property int|null $final
- * @property int $idAviso
- * @property int $idCuerpo
+ * 
+ * @property Temporada $temporada
+ * @property Parque $parque
+ * @property Equipo $equipo
+ * @property Collection|Ampayer[] $ampayers
+ * @property Collection|Bateador[] $bateadores
+ * @property Collection|Lanzador[] $lanzadores
+ * @property Collection|Turno[] $turnos
  *
  * @package App\Models
  */
-class Juego extends Model
-{
+class Juego extends Model {
 	protected $table = 'juegos';
 	protected $primaryKey = 'idJuego';
 	public $timestamps = false;
@@ -39,9 +45,7 @@ class Juego extends Model
 		'idCampo' => 'int',
 		'idEquipoVisitante' => 'int',
 		'idEquipoLocal' => 'int',
-		'final' => 'int',
-		'idAviso' => 'int',
-		'idCuerpo' => 'int'
+		'final' => 'int'
 	];
 
 	protected $dates = [
@@ -58,8 +62,46 @@ class Juego extends Model
 		'clima',
 		'idEquipoVisitante',
 		'idEquipoLocal',
-		'final',
-		'idAviso',
-		'idCuerpo'
+		'final'
 	];
+
+	public function temporada() {
+		return $this->belongsTo(Temporada::class, 'idTemporada');
+	}
+
+	public function parque() {
+		return $this->belongsTo(Parque::class, 'idCampo');
+	}
+
+	public function equipoLocal()
+	{
+		return $this->belongsTo(Equipo::class, 'idEquipoLocal');
+	}
+
+	public function equipoVisitante()
+	{
+		return $this->belongsTo(Equipo::class, 'idEquipoVisitante');
+	}
+
+	public function ampayers()
+	{
+		return $this->belongsToMany(Ampayer::class, 'ampayersjuego', 'idJuego', 'idAmpayer')
+			->withPivot('idCuerpo', 'ubicacion');
+	}
+
+	public function bateadores() {
+		return $this->hasMany(Bateador::class, 'idJuego');
+	}
+
+	public function lanzadores() {
+		return $this->hasMany(Lanzador::class, 'idJuego');
+	}
+
+	public function ampayersJuego(){
+		return $this->hasMany(Ampayersjuego::class,'idJuego');
+	}
+
+	public function turnos() {
+		return $this->hasMany(Turno::class, 'idJuego');
+	}
 }

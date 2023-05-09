@@ -10,6 +10,7 @@ use App\Http\Controllers\LigaControlador;
 use App\Http\Controllers\TurnoControlador;
 use App\Http\Controllers\BateadorControlador;
 use App\Http\Controllers\EntradaControlador;
+use App\Http\Controllers\RosterControlador;
 
 
 //use App\Http\Controllers\InformacionControlador;
@@ -32,11 +33,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::redirect("/","/inicio");
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/Resultados', function () {
     return view('Resultados');
@@ -49,6 +47,7 @@ Route::post('/abc/jugadores/store', [JugadorControlador::class,'store'])->name("
 Route::get("/abc/jugadores",[JugadorControlador::class,"index"])->name("jugadoresIndex");
 Route::get("/abc/jugadores/edit/{id}",[JugadorControlador::class,"edit"])->name("jugadoresEdit");
 Route::post("/abc/jugadores/update",[JugadorControlador::class,"update"]) -> name("jugadoresUpdate");
+Route::get("/abc/jugadores/listado",[JugadorControlador::class,"listado"]) -> name("jugadoresListado");
 
 /**juegos */
 Route::get('/abc/juegos/create', [JuegoControlador::class,'create']) -> name('juegosCreate'); 
@@ -68,9 +67,16 @@ Route::post("/abc/Entrada/update",[EntradaControlador::class,"update"]) -> name(
 /** Ampayers routes */
 Route::get('/abc/Ampayers/create', [AmpayerControlador::class,'create']) -> name('AmpayersCreate'); 
 Route::post('/abc/Ampayers/store', [AmpayerControlador::class,'store'])->name("AmpayersStore"); 
-Route::get("/abc/Ampayers",[AmpayerControlador::class,"index"])->name("AmpayersIndex");
+Route::get("/abc/Ampayers",[AmpayerControlador::class,"index"])->name('ampayersIndex');
 Route::get("/abc/Ampayers/edit/{id}",[AmpayerControlador::class,"edit"])->name("AmpayersEdit");
 Route::post("/abc/Ampayers/update",[AmpayerControlador::class,"update"]) -> name("AmpayersUpdate");
+
+/** Rooster */
+Route::get('/abc/Roster/create', [RosterControlador::class,'create']) -> name('RosterCreate'); 
+Route::post('/abc/Roster/store', [RosterControlador::class,'store'])->name("RosterStore"); 
+Route::get("/abc/Roster",[RosterControlador::class,"index"])->name('RosterIndex');
+Route::get("/abc/Roster/edit/{id}",[RosterControlador::class,"edit"])->name("RosterEdit");
+Route::post("/abc/Roster/update",[RosterControlador::class,"update"]) -> name("RosterUpdate");
 
 
 //informacion
@@ -143,7 +149,7 @@ Route::post('/abc/informacion/update', [InformacionControlador::class,'update'])
 
 Route::get('/informacion', function () {return view('luis/informacion');});
 
-Route::get('/login', function () {return view('sesion/login');});
+Route::get('/login', function () {return view('sesion/login');})->name("login");
 
 Route::get('/registrologin', function () {return view('sesion/registrologin');});
 
@@ -155,15 +161,12 @@ Route::get('/header', function () {return view('pantalla.header');})->name("head
 Route::get('/registrologin', [UserControlador::class,'create']) -> name('RegistroCreate');
 Route::post('/sesion/store', [UserControlador::class,'store']) -> name('RegistroStore');
 //inicio
-Route::post('/inicio', function () {return view('inicio.inicio');})->name("inicio"); 
-//  
-Route::get('/inicio', function () {return view('inicio.inicio');})->name("Noticias"); 
+Route::get('/inicio', function () {return view('inicio.inicio');})->name("inicio"); 
+Route::post('/inicio', function () {return view('inicio.inicio');}); 
 
+Route::redirect("/","/inicio");
 
-
-
-
-Route::get('/reglamento', function () {return view('reglamento');})->name("reglamento"); 
-//Ampayers
+Route::get('/reglamento', function () {return view('Boxscore');})->name("reglamento"); 
+Route::get('/boxscore', function () {return view('Boxscore.boxscore');})->name("boxscore    "); 
 
 ?>

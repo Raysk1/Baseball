@@ -8,28 +8,38 @@
         <div class="w-75 mt-4">
             <form action={{ route('bateadoresStore') }} method="post">
                 @csrf
-                <div class="row">
-                    <div class="mb-3">
-                        <label for="idJuego" class="form-label">ID del juego:</label>
-                        <input type="text" class="form-control" name="idJuego" id="idJuego" required
-                            value={{ $lastId }} readonly>
+                <div class="row mb-3">
+                    <div class="row">
+                        <div class="col">
+                            <label for="idLanzadores" class="form-label">ID:</label>
+                            <input type="text" name="idLanzadores" class="form-control" id="idLanzadores" required
+                              value={{$datos["lastId"]}}  readonly>
+                        </div>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="idAfiliacion" class="form-label">Afiliacion:</label>
-                        <input type="text" class="form-control" name="idAfiliacion" id="idAfiliacion" required>
+                        <label for="idAfiliacion" class="form-label">Jugador:</label>
+                        <select class="form-control" name="idAfiliacion" id="idAfiliacion" required>
+                            @foreach ($datos["jugadores"] as $j)
+                                <option value={{$j->idAfiliacion}}>{{$j->nombre. " ". $j-> apellidos}}</option>
+                            @endforeach
+                        </select>
                     </div>
+                </div>
+                <div class="row mb-3">
                     <div class="col">
-                        <label for="presidente" class="form-label">Presidente:</label>
-                        <input type="text" name="presidente" class="form-control" id="presidente" required>
+                        <label for="idJuego" class="form-label">ID Juego:</label>
+                        <input type="text" class="form-control" name="idJuego" id="idJuego" required
+                            value={{ $datos["juegoId"] }} readonly>
                     </div>
+                </div>
+                <div class="row mb-3">
+                   
                     <div class="col">
                         <label for="AB" class="form-label">AB:</label>
                         <input type="text" name="AB" class="form-control" id="AB">
                     </div>
-            
-
                     <div class="col">
                         <label for="C" class="form-label">C:</label>
                         <input type="text" name="C" class="form-control" id="C" required>

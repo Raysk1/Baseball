@@ -19,7 +19,11 @@ class TemporadaControlador extends Controller {
      */
     public function create() {
         $t = Temporada::orderBy('idTemporada', 'DESC')->first();
-        $lastId = $t->idTemporada + 1;
+        if ($t == null) {
+            $lastId = 1;
+        } else {
+            $lastId = $t->idTemporada + 1;
+        }
         return response(view('Temporadas.create', compact('lastId')));
     }
 
@@ -32,7 +36,7 @@ class TemporadaControlador extends Controller {
         $t->grupo = $request->grupo;
         $t->categoria = $request->categoria;
         $t->momento = $request->momento;
-        $t->nombre = $request ->nombre;
+        $t->nombre = $request->nombre;
         $t->temporada;
         $t->save();
         return response()->redirectTo(route("temporadasIndex"))
@@ -64,8 +68,8 @@ class TemporadaControlador extends Controller {
         $t->grupo = $request->grupo;
         $t->categoria = $request->categoria;
         $t->momento = $request->momento;
-        $t->temporada = $request -> temporada;
-        $t->nombre = $request -> nombre;
+        $t->temporada = $request->temporada;
+        $t->nombre = $request->nombre;
         $t->save();
         return response()->redirectTo(route("temporadasIndex"))
             ->with(["success" => "Actualizado exitosamente"])

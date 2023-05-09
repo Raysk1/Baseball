@@ -18,26 +18,33 @@
                             </div>
                         </div>
                     </div>
-
+                   
                     <div class="row mb-3">
                         <div class="row">
                             <div class="col">
-                                <label for="idJuego" class="form-label">ID Juego:</label>
-                                <input type="text" class="form-control" name="idJuego" id="idJuego" required readonly>
-                            </div>
-                            <div class="col">
-                                <label for="idAfiliacion" class="form-label">ID Afiliacion:</label>
-                                <input type="text" name="idAfiliacion" class="form-control" id="idAfiliacion" required
-                                    readonly>
-                            </div>
-                            <div class="col">
-                                <label for="idLanzadores" class="form-label">ID Lanzadores:</label>
+                                <label for="idLanzadores" class="form-label">ID:</label>
                                 <input type="text" name="idLanzadores" class="form-control" id="idLanzadores" required
-                                    readonly>
+                                  value={{$datos["lastId"]}}  readonly>
                             </div>
                         </div>
                     </div>
-
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="idJuego" class="form-label">ID Juego:</label>
+                            <input type="text" class="form-control" name="idJuego" id="idJuego" required
+                                value={{ $datos["juegoId"] }} readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="idAfiliacion" class="form-label">Jugador:</label>
+                            <select class="form-control" name="idAfiliacion" id="idAfiliacion" required>
+                                @foreach ($datos["jugadores"] as $j)
+                                    <option value={{$j->idAfiliacion}}>{{$j->nombre. " ". $j-> apellidos}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
                     <div class="row mb-3">
                         <div class="row">
 

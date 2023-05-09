@@ -1,14 +1,17 @@
 <?php
+
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Jugador;
 use App\Http\Controllers\Controller;
 
-class JugadorControlador extends Controller {
+class JugadorControlador extends Controller
+{
 
-    public function vistaJugadoresTabla() {
-
+    public function vistaJugadoresTabla()
+    {
     }
 
 
@@ -16,38 +19,41 @@ class JugadorControlador extends Controller {
      * Display a listing of the resource. 
      * @return \Illuminate\Http\Response 
      */
-    public function index() {
+    public function index()
+    {
 
         //  
         $datos = Jugador::all(["idAfiliacion", "nombre", "apellidos", "posicion", "status", "rama"]);
         return response(view("Jugadores.index", compact("datos")));
-
     }
     /** 
-    * Show the form for creating a new resource. 
-    * @return \Illuminate\Http\Response 
+     * Show the form for creating a new resource. 
+     * @return \Illuminate\Http\Response 
     
-    */
-    public function create() {
+     */
+    public function create()
+    {
 
         //  
         $year = date("Y"); //Obtiene el año actual en formato de 4 dígitos
         $yearId = str_split($year, 2)[1] . "0000";
         $yearId = intval($yearId);
         $lastUser = Jugador::orderBy('idAfiliacion', 'DESC')->first();
-        $lastUserId = $lastUser->idAfiliacion;
         $id = 0;
-        if ($yearId > $lastUserId) {
+        if ($lastUser == null) {
             $id = $yearId;
         } else {
-            $id = $lastUserId + 1;
+            $lastUserId = $lastUser->idAfiliacion;
+            if ($yearId > $lastUserId) {
+                $id = $yearId;
+            } else {
+                $id = $lastUserId + 1;
+            }
         }
-
         $lastId = $id;
 
 
         return response(view('Jugadores.create', compact('lastId')));
-
     }
     /** 
      * Store a newly created resource in storage. 
@@ -55,7 +61,8 @@ class JugadorControlador extends Controller {
      * @param  \Illuminate\Http\Request   $request 
      * @return \Illuminate\Http\Response 
      */
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
 
         $j = new Jugador();
         $j->idAfiliacion = $request->idAfiliacion;
@@ -70,10 +77,20 @@ class JugadorControlador extends Controller {
         $j->abreviacion = $request->abreviacion;
         $j->status = $request->status;
         $j->rama = $request->rama;
+
+        if ($request->hasFile('imagen')) {
+            $file = $request->file('imagen');
+            $destino= "img/jugadores/";
+            $filename =$j->idAfiliacion.".png";
+            $uploadSuccess= $request->file('imagen')->move($destino,$filename);
+            
+        }
+
+
         $j->save();
-        return response() ->redirectTo(route("jugadoresIndex"))
-        ->with(["success" => "Creado exitosamente"])
-        ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
+        return response()->redirectTo(route("jugadoresIndex"))
+            ->with(["success" => "Creado exitosamente"])
+            ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
 
     }
     /** 
@@ -81,7 +98,8 @@ class JugadorControlador extends Controller {
      * @param  int  $id 
      * @return \Illuminate\Http\Response 
      */
-    public function show($id) {
+    public function show($id)
+    {
 
         //  
     }
@@ -90,11 +108,11 @@ class JugadorControlador extends Controller {
      * @param  int  $id 
      * @return  \Illuminate\Http\Response 
      */
-    public function edit($id) {
+    public function edit($id)
+    {
 
         $datos = Jugador::find($id);
         return response(view("Jugadores.edit", compact("datos")));
-
     }
     /** 
      * Update the specified resource in storage. 
@@ -102,9 +120,7 @@ class JugadorControlador extends Controller {
      * @param  int  $id 
      * @return \Illuminate\Http\Response 
      */
-    public function update(Request $request) {
-
-        //  
+    public function update(Request $request){
         $j = Jugador::find($request->idAfiliacion);
         $j->nombre = $request->nombre;
         $j->apellidos = $request->apellidos;
@@ -128,7 +144,12 @@ class JugadorControlador extends Controller {
      * @param  int  $id 
      * @return  \Illuminate\Http\Response 
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
+    }
 
+    public function listado(Request $request){
+        $jugadores = Jugador::all();
+        return response(view("Jugadores.listado", compact("jugadores")));
     }
 }

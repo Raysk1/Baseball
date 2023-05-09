@@ -13,7 +13,7 @@ class AmpayerControlador extends Controller
      */
     public function index() {
 
-        $datos = Ampayer::all(["idAmpayer","nombre","apellidos","fechaNacimiento","curp","abreviacion","activo"]);
+        $datos = Ampayer::all();
         return response(view("Ampayers.index", compact("datos")));
     }
     /** 
@@ -23,7 +23,7 @@ class AmpayerControlador extends Controller
     */
     public function create() {
         $j = Ampayer::orderBy('idAmpayer', 'DESC')->first();
-        $lastId = $j->idAmpayer + 1;
+        $lastId = $j == null ? 1 :  $j->idAmpayer + 1;
         return response(view('Ampayers.create', compact('lastId')));
     }
     /** 
@@ -43,7 +43,7 @@ class AmpayerControlador extends Controller
         $a -> activo = $request -> activo;
         $a -> save();
         return response()->redirectTo(route("ampayersIndex"))
-            ->with(["success" => "Actulizado exitosamente"])
+            ->with(["success" => "Actualizado exitosamente"])
             ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
 
     }
@@ -81,7 +81,7 @@ class AmpayerControlador extends Controller
         $a -> abreviacion = $request -> abreviacion;
         $a -> activo = $request -> activo;
         $a -> save();
-        return response() ->redirectTo(route("ampayersIndex"))
+        return response() ->redirectTo(route("AmpayersIndex"))
         ->with(["success" => "Actulizado exitosamente"])
         ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
 

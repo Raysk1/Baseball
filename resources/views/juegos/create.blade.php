@@ -41,8 +41,8 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="Fecha" class="form-label">Fecha:</label>
-                        <input type="date" name="Fecha" class="form-control" id="Fecha" required>
+                        <label for="fecha" class="form-label">Fecha:</label>
+                        <input type="date" name="fecha" class="form-control" id="fecha" required>
                     </div>
                     <div class="col">
                         <label for="curp" class="form-label">Hora:</label>
@@ -84,15 +84,6 @@
                     <div class="col">
                         <label for="final" class="form-label">Final:</label>
                         <input type="text" name="final" class="form-control" id="final" required>
-                    </div>
-                    <div class="col">
-                        <label for="idAviso" class="form-label">Aviso:</label>
-                        <input type="text" name="idAviso" class="form-control" id="idAviso" required>
-
-                    </div>
-                    <div class="col">
-                        <label for="idCuerpo" class="form-label">Cuerpo:</label>
-                        <input type="text" name="idCuerpo" class="form-control" id="idCuerpo" required>
                     </div>
                 </div>
 

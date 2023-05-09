@@ -6,6 +6,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -14,6 +15,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $idTecnico
  * @property string|null $nombre
  * @property string|null $tipo
+ * 
+ * @property Collection|Equipo[] $equipos
  *
  * @package App\Models
  */
@@ -27,4 +30,9 @@ class Manejador extends Model
 		'nombre',
 		'tipo'
 	];
+
+	public function equipos()
+	{
+		return $this->hasMany(Equipo::class, 'idTecnico');
+	}
 }

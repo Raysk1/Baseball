@@ -6,6 +6,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -13,6 +14,8 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property int $idCampo
  * @property string|null $descripcion
+ * 
+ * @property Collection|Juego[] $juegos
  *
  * @package App\Models
  */
@@ -25,4 +28,9 @@ class Parque extends Model
 	protected $fillable = [
 		'descripcion'
 	];
+
+	public function juegos()
+	{
+		return $this->hasMany(Juego::class, 'idCampo');
+	}
 }
