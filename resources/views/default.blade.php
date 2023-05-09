@@ -37,7 +37,7 @@
 <body>
     <header class="sticky-top " style="height: 10%">
         <!-- place navbar here -->
-        <nav class="navbar navbar-expand bg-warning">
+        <nav class="navbar navbar-expand-lg bg-warning">
             <div class="container-fluid">
             
 
