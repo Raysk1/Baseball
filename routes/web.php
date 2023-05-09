@@ -47,6 +47,7 @@ Route::post('/abc/jugadores/store', [JugadorControlador::class,'store'])->name("
 Route::get("/abc/jugadores",[JugadorControlador::class,"index"])->name("jugadoresIndex");
 Route::get("/abc/jugadores/edit/{id}",[JugadorControlador::class,"edit"])->name("jugadoresEdit");
 Route::post("/abc/jugadores/update",[JugadorControlador::class,"update"]) -> name("jugadoresUpdate");
+Route::get("/abc/jugadores/listado",[JugadorControlador::class,"listado"]) -> name("jugadoresListado");
 
 /**juegos */
 Route::get('/abc/juegos/create', [JuegoControlador::class,'create']) -> name('juegosCreate'); 
