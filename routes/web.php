@@ -96,6 +96,10 @@ Route::get('/abc/equipos', [EquipoControlador::class,'index']) -> name('equiposI
 Route::get('/abc/equipos/edit/{id}', [EquipoControlador::class,'edit']) -> name('EquiposEdit'); 
 Route::post('/abc/equipos/update', [EquipoControlador::class,'update']) -> name('equiposUpdate'); 
 
+Route::get('/equipos', function () {
+    return view('equipos.listado');
+});
+
 Route::get('/abc/Temporadas/create', [TemporadaControlador::class,'create']) -> name('TemporadasCreate'); 
 Route::post('/abc/Temporadas/store', [TemporadaControlador::class,'store']) -> name('TemporadasStore'); 
 Route::get('/abc/Temporadas', [TemporadaControlador::class,'index']) -> name('temporadasIndex'); 
@@ -129,6 +133,7 @@ Route::get('/abc/bateadores/edit/{id}', [BateadorControlador::class,'edit'])->na
 Route::post('/abc/bateadores/update', [BateadorControlador::class,'update']) -> name('bateadoresUpdate'); 
 
 
+
 /**Routes de informacion 
 Route::get('/abc/informacion/create', [InformacionControlador::class,'create']) -> name('turnoCreate'); 
 Route::post('/abc/informacion/store', [InformacionControlador::class,'store']) -> name('turnoStore');
@@ -155,6 +160,10 @@ Route::post('/inicio', function () {return view('inicio.inicio');})->name("inici
 Route::get('/inicio', function () {return view('inicio.inicio');})->name("Noticias"); 
 
 
+
+
+
 Route::get('/reglamento', function () {return view('reglamento');})->name("reglamento"); 
+//Ampayers
 
 ?>

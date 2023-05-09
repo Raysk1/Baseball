@@ -67,10 +67,10 @@ horizontalmente */
                                 <li><a class="dropdown-item" href={{ route('manejadoresIndex') }}>
                                         Manejadores</a></li>
                                 <li><a class="dropdown-item" href={{ route('temporadasIndex') }}>Temporadas</a></li>
-                                <li><a class="dropdown-item" href="#">Standing</a></li>
-                                <li><a class="dropdown-item" href="#">Lideres</a></li>
-                                <li><a class="dropdown-item" href="#">Estadisticas</a></li>
-                                <li><a class="dropdown-item" href="">Rooster</a></li>
+                                <li><a class="dropdown-item" href= {{ route('bateadoresIndex' ) }}>Bateadores</a></li>
+                                <li><a class="dropdown-item" href= {{ route('EntradaIndex' ) }}>Entradas</a></li>
+                                <li><a class="dropdown-item" href= "" >Rooster</a></li>
+                                <li><a class="dropdown-item" href= "">Turnos</a></li>
                             </ul>
                         </li>
 
@@ -83,7 +83,7 @@ horizontalmente */
                                 <li><a class="dropdown-item" href={{ route('jugadoresIndex') }}>Jugadores</a></li>
                                 <li><a class="dropdown-item" href={{ route('equiposIndex') }}>Equipos</a></li>
                                 <li><a class="dropdown-item" href={{ route('juegosIndex') }}>Juegos</a></li>
-                                <li><a class="dropdown-item" href={{ route('AmpayersIndex') }}>Ampayer</a></li>
+                                <li><a class="dropdown-item" href={{ route('AmpayersIndex') }}>Ampayers</a></li>
                                 <li><a class="dropdown-item" href={{ route('ligasIndex') }}>Ligas</a></li>
                             </ul>
                         </li>
