@@ -34,7 +34,7 @@
                     <div class="col">
                         <label for="imagen" class="form-label">Imagen:</label>
 
-                        <input type="file" name="imagen" class="form-control">
+                        <input type="file" name="imagen" class="form-control" required>
                     </div>
                 </div>
                 
