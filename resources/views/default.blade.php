@@ -41,7 +41,6 @@
         <!-- place navbar here -->
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container-fluid">
-                <h2 class="text-white">BASEBALL </h2>
 
                 <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -50,10 +49,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active text-warning " aria-current="page" href={{ route('inicio') }}><b> Inicio
-                                </b></a>
-                        </li>
+                      
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-warning  " href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -79,7 +75,7 @@
                                 <li><a class="dropdown-item" href={{ route('jugadoresIndex') }}>Jugadores</a></li>
                                 <li><a class="dropdown-item" href={{ route('equiposIndex') }}>Equipos</a></li>
                                 <li><a class="dropdown-item" href={{ route('juegosIndex') }}>Juegos</a></li>
-                                <li><a class="dropdown-item" href={{ route('ampayersIndex') }}>Ampayer</a></li>
+                                <li><a class="dropdown-item" href={{ route('AmpayersIndex') }}>Ampayer</a></li>
                                 <li><a class="dropdown-item" href={{ route('ligasIndex') }}>Ligas</a></li>
                             </ul>
                         </li>
