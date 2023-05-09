@@ -120,10 +120,7 @@ class JugadorControlador extends Controller
      * @param  int  $id 
      * @return \Illuminate\Http\Response 
      */
-    public function update(Request $request)
-    {
-
-        //  
+    public function update(Request $request){
         $j = Jugador::find($request->idAfiliacion);
         $j->nombre = $request->nombre;
         $j->apellidos = $request->apellidos;
@@ -149,5 +146,10 @@ class JugadorControlador extends Controller
      */
     public function destroy($id)
     {
+    }
+
+    public function listado(Request $request){
+        $jugadores = Jugador::all();
+        return response(view("Jugadores.listado", compact("jugadores")));
     }
 }
