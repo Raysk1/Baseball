@@ -160,6 +160,7 @@ Route::post('/inicio', function () {return view('inicio.inicio');});
 
 Route::redirect("/","/inicio");
 
-Route::get('/reglamento', function () {return view('reglamento');})->name("reglamento"); 
+Route::get('/reglamento', function () {return view('Boxscore');})->name("reglamento"); 
+Route::get('/boxscore', function () {return view('Boxscore.boxscore');})->name("boxscore    "); 
 
 ?>
