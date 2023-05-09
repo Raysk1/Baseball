@@ -41,7 +41,6 @@
         <!-- place navbar here -->
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container-fluid">
-                <h2 class="text-white">BASEBALL </h2>
 
                 <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
