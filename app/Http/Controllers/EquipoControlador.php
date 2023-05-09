@@ -42,7 +42,7 @@ class EquipoControlador extends Controller
             $destino= "img/equipo/";
             $filename =$e->idEquipo.".png";
             $uploadSuccess= $request->file('imagen')->move($destino,$filename);
-            $e->imagen=$request->imagen;
+           
         }
 
 
