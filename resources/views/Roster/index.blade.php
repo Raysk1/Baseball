@@ -5,11 +5,11 @@
 @endsection
 
 @section('createRoute')
-    {{ route('RoosterCreate') }}
+    {{ route('RosterCreate') }}
 @endsection
 
 @section('thead')
-    <tr>
+    <tr class="align-middle table-info">
         <th scope="col">ID</th>
         <th scope="col">Equipo</th>
         <th scope="col">Temporada</th>
@@ -20,12 +20,9 @@
 @endsection
 
 @section('tbody')
-
-    
-     
     
     @foreach ($datos as $dato)
-        <tr class="align-middle">
+        <tr class="align-middle table-light">
             <td scope="row">{{ $dato->idRoster }}</td>
             <td>{{ $dato->idEquipo }}</td>
             <td>{{ $dato->idTemporada }}</td>
@@ -33,7 +30,7 @@
             
             <td colspan="2">
                 <div class="d-flex justify-content-evenly">
-                    <a href={{ route('RoosterEdit', ['id' => $dato->idRoster]) }} class="btn btn-primary  ">
+                    <a href={{ route('RosterEdit', ['id' => $dato->idRoster]) }} class="btn btn-primary  ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-pencil-fill" viewBox="0 0 16 16">
                             <path

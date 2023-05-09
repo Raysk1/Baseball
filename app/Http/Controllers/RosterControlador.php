@@ -23,7 +23,7 @@ class RosterControlador extends Controller
         $lastId = $lastRoster == null ? 1 : $lastRoster->idRoster + 1;
 
 
-        return response(view('Rosters.create', compact('lastId')));
+        return response(view('Roster.create', compact('lastId')));
     }
     /** 
      * Store a newly created resource in storage. 

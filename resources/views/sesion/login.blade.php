@@ -27,38 +27,12 @@
     <form action='/inicio' method="post">
         @csrf
         <h1>Iniciar Sesión</h1>
-        <input type="email" name="email" id="email" class="form-control input_user" value=""
-            placeholder="Ingrese su Correo">
-        <input type="password" name="password" id="password" class="form-control input_pass" value=""
-            placeholder="Ingrese su contraseña">
-        <button type="submit" class="btn btn-danger btn-flat" onclick="validarUsuario()"> Iniciar Sesion </button>
+        <input type="email" name="email" id="email" class="form-control input_user" value="" placeholder="Ingrese su Correo">
+        <input type="password" name="password" id="password" class="form-control input_pass" value="" placeholder="Ingrese su contraseña">
+        <button type="submit" class="btn btn-danger btn-flat"> Iniciar Sesion </button>
         <p class="link"><a href="/registrologin">¿Aun no tienes cuenta?</a></p>
     </form>
 
-    <script >
-        function validarUsuario() {
-            // Obtener los valores de los campos de usuario y contraseña
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-
-            // Validar que los campos no estén vacíos
-            if (email == "" || password == "") {
-                alert("Por favor, ingrese usuario y contraseña.");
-                return false;
-            }
-
-            // Validar que el usuario y la contraseña sean correctos
-            // Aquí podrías hacer una petición AJAX al servidor para validar los datos
-            if (email != "email" || password != "password") {
-                alert("Usuario o contraseña incorrectos.");
-                return false;
-
-            } else {
-                // Si los datos son válidos, redirigir al usuario a la página de inicio
-                window.location.replace("{{ route('inicio') }}");
-            }
-        }
-    </script>
 </body>
 
 </html>

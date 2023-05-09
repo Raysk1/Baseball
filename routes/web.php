@@ -10,7 +10,7 @@ use App\Http\Controllers\LigaControlador;
 use App\Http\Controllers\TurnoControlador;
 use App\Http\Controllers\BateadorControlador;
 use App\Http\Controllers\EntradaControlador;
-use App\Http\Controllers\RoosterControlador;
+use App\Http\Controllers\RosterControlador;
 
 
 //use App\Http\Controllers\InformacionControlador;
@@ -71,11 +71,11 @@ Route::get("/abc/Ampayers/edit/{id}",[AmpayerControlador::class,"edit"])->name("
 Route::post("/abc/Ampayers/update",[AmpayerControlador::class,"update"]) -> name("AmpayersUpdate");
 
 /** Rooster */
-Route::get('/abc/Rooster/create', [RoosterControlador::class,'create']) -> name('RoosterCreate'); 
-Route::post('/abc/Rooster/store', [RoosterControlador::class,'store'])->name("RoosterStore"); 
-Route::get("/abc/Rooster",[RoosterControlador::class,"index"])->name('RoosterIndex');
-Route::get("/abc/Rooster/edit/{id}",[RoosterControlador::class,"edit"])->name("RoosterEdit");
-Route::post("/abc/Rooster/update",[RoosterControlador::class,"update"]) -> name("RoosterUpdate");
+Route::get('/abc/Roster/create', [RosterControlador::class,'create']) -> name('RosterCreate'); 
+Route::post('/abc/Roster/store', [RosterControlador::class,'store'])->name("RosterStore"); 
+Route::get("/abc/Roster",[RosterControlador::class,"index"])->name('RosterIndex');
+Route::get("/abc/Roster/edit/{id}",[RosterControlador::class,"edit"])->name("RosterEdit");
+Route::post("/abc/Roster/update",[RosterControlador::class,"update"]) -> name("RosterUpdate");
 
 
 //informacion
@@ -156,7 +156,7 @@ Route::get('/registrologin', [UserControlador::class,'create']) -> name('Registr
 Route::post('/sesion/store', [UserControlador::class,'store']) -> name('RegistroStore');
 //inicio
 Route::get('/inicio', function () {return view('inicio.inicio');})->name("inicio"); 
-
+Route::post('/inicio', function () {return view('inicio.inicio');}); 
 
 Route::redirect("/","/inicio");
 
