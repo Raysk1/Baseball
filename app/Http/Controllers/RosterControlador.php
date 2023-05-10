@@ -36,11 +36,13 @@ class RosterControlador extends Controller
     public function store(Request $request)
     {
         $r = new Roster();
+        $r->idRoster = $request->idRoster;
         $r->idEquipo = $request->idEquipo;
         $r -> idTemporada = $request ->idTemporada;
         $r-> idAfiliacion = $request->idAfiliacion;
+        $r-> save();
 
-        return response()->redirectTo(route("RostersIndex"))
+        return response()->redirectTo(route("RosterCreate"))
             ->with(["success" => "Creado exitosamente"])
             ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
 
@@ -80,7 +82,7 @@ class RosterControlador extends Controller
         $r -> idTemporada = $request ->idTemporada;
         $r-> idAfiliacion = $request->idAfiliacion;
 
-        return response() ->redirectTo(route("RosterIndex"))
+        return response() ->redirectTo(route("RosterCreate"))
         ->with(["success" => "Actulizado exitosamente"])
         ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
 

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use App\Models\Equipo;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 class EquipoControlador extends Controller
 {
@@ -39,7 +42,7 @@ class EquipoControlador extends Controller
         
         if ($request->hasFile('imagen')) {
             $file = $request->file('imagen');
-            $destino= "img/equipo/";
+            $destino= "img/equipos/";
             $filename =$e->idEquipo.".png";
             $uploadSuccess= $request->file('imagen')->move($destino,$filename);
 
