@@ -9,6 +9,8 @@ class RosterControlador extends Controller
 {
     public function index()
     {
+        $datos = Roster::all();
+        return view("Roster.index",compact("datos"));
     }
     /** 
      * Show the form for creating a new resource. 

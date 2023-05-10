@@ -42,13 +42,9 @@ class EquipoControlador extends Controller
             $destino= "img/equipo/";
             $filename =$e->idEquipo.".png";
             $uploadSuccess= $request->file('imagen')->move($destino,$filename);
-            $e->imagen=$request->imagen;
+
         }
-
-
-
-
-
+        
         $e -> save();
         return response()->redirectTo(route("equiposIndex"))
         ->with(["success" => "Creado exitosamente"])

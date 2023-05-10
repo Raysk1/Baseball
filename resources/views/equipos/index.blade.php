@@ -9,7 +9,7 @@
 @endsection
 
 @section('thead')
-    <tr>
+    <tr class="align-middle table-info">
         <th scope="col">ID</th>
         <th scope="col">Nombre</th>
         <th scope="col">Ciudad</th>

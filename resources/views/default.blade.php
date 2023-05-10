@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" >
 
 <head>
     <title>@yield('title')</title>
@@ -39,11 +39,11 @@
 <body>
     <header class="sticky-top " style="height: 10%">
         <!-- place navbar here -->
-        <nav class="navbar navbar-expand-lg bg-black">
+        <nav class="navbar navbar-dark navbar-expand-lg bg-black">
             <div class="container-fluid">
-                <h2 class="text-white">BASEBALL </h2>
+             
 
-                <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -51,15 +51,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href={{ route('inicio') }}><b> Inicio
+                            <a class="nav-link text-warning" aria-current="page" href={{ route('inicio') }}><b> Inicio
                                 </b></a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-warning  " href="#" role="button"
+                            <a class="nav-link dropdown-toggle  text-warning " href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <b> Consultas </b>
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item" href={{ route('manejadoresIndex') }}>
                                         Manejadores</a></li>
                                 <li><a class="dropdown-item" href={{ route('temporadasIndex') }}>Temporadas</a></li>
@@ -75,7 +75,7 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <b> Capturas</b>
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item" href={{ route('jugadoresIndex') }}>Jugadores</a></li>
                                 <li><a class="dropdown-item" href={{ route('equiposIndex') }}>Equipos</a></li>
                                 <li><a class="dropdown-item" href={{ route('juegosIndex') }}>Juegos</a></li>
@@ -89,7 +89,7 @@
                                 aria-expanded="false">
                                 <b> Informacion </b>
                             </a>
-                            <ul class="dropdown-menu ">
+                            <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item " href={{ route('contacto') }}>Contactos</a></li>
                                 <li><a class="dropdown-item" href={{ route('reglamento') }}>Reglamento</a></li>
                             </ul>
@@ -100,7 +100,7 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <b> Registros</b>
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item" href="#">Jugadores</a></li>
                             </ul>
                         </li>
