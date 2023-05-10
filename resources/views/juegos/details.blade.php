@@ -23,7 +23,7 @@
         <div class="row mt-1">
             <h3>Datos generales del juego</h3>
             <div class="table-responsive">
-                <table class="table text-center">
+                <table class="table table-dark text-center">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -91,7 +91,7 @@
                             Agregar
                         </a>
                         <div class="table-responsive text-center" style="height: 200px;">
-                            <table class="table">
+                            <table class="table table-dark">
                                 <thead class="bg-white border-white">
                                     <th scope="col">ID</th>
                                     <th scope="col">Ampayer</th>
@@ -150,7 +150,7 @@
                             Agregar
                         </a>
                         <div class="table-responsive text-center" style="height: 200px;">
-                            <table class="table">
+                            <table class="table table-dark">
                                 <thead class="bg-white border-white ">
                                     <th scope="col">Equipo</th>
                                     <th scope="col">Jugador</th>
@@ -216,7 +216,7 @@
                             Agregar
                         </a>
                         <div class="table-responsive text-center" style="height: 200px;">
-                            <table class="table">
+                            <table class="table table-dark">
                                 <thead class="bg-white border-white ">
                                     <th scope="col">Jugador</th>
                                     <th scope="col">AB</th>
@@ -286,7 +286,7 @@
                             Agregar
                         </a>
                         <div class="table-responsive text-center" style="height: 200px;">
-                            <table class="table">
+                            <table class="table table-dark">
                                 <thead class="bg-white border-white ">
                                     <th scope="col">Jugador</th>
                                     <th scope="col">IP</th>

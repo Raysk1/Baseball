@@ -9,7 +9,7 @@
 @endsection
 
 @section('thead')
-    <tr class="align-middle table-info">
+    <tr class=" ">
         <th scope="col">ID</th>
         <th scope="col">Nombre</th>
         <th scope="col">Apellidos</th>
@@ -24,7 +24,7 @@
 
 @section('tbody')
     @foreach ($datos as $dato)
-        <tr class="align-middle table-light">
+        <tr class=" ">
             <td scope="row">{{ $dato->idAmpayer }}</td>
             <td>{{ $dato->nombre }}</td>
             <td>{{ $dato->apellidos }}</td>

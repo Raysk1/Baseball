@@ -3,7 +3,7 @@
     @yield('title')
 @endsection
 @section('styles')
-    @yield('styles')
+    @yield('styles')    
 @endsection
 
 @section('script')
@@ -45,8 +45,8 @@
                 Agregar
             </a>
             <div class="table-responsive text-center">
-                <table class="table">
-                    <thead class="bg-white border-white ">
+                <table class="table table-dark">
+                    <thead class="border-white ">
                         @yield('thead')
                     </thead>
                     <tbody>

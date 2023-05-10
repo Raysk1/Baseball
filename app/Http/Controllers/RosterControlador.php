@@ -2,28 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jugador;
 use App\Models\Roster;
+use App\Models\Temporada;
 use Illuminate\Http\Request;
 
 class RosterControlador extends Controller
 {
     public function index()
     {
+        $datos = Roster::all();
+        return view("Roster.index",compact("datos"));
     }
     /** 
      * Show the form for creating a new resource. 
      * @return \Illuminate\Http\Response 
     
      */
-    public function create()
+    public function create($idEquipo)
     {
 
       
         $lastRoster = Roster::orderBy('idRoster', 'DESC')->first();
         $lastId = $lastRoster == null ? 1 : $lastRoster->idRoster + 1;
+        $datos = [
+            "lastId" => $lastId,
+            "idEquipo" => $idEquipo,
+            "temporadas" => Temporada::all(),
+            "jugadores" => Jugador::orderBy("nombre")->orderBy("apellidos")->get(),
+        ];
 
-
-        return response(view('Roster.create', compact('lastId')));
+        return response(view('Roster.create', compact('datos')));
     }
     /** 
      * Store a newly created resource in storage. 
@@ -40,7 +49,7 @@ class RosterControlador extends Controller
         $r-> idAfiliacion = $request->idAfiliacion;
         $r-> save();
 
-        return response()->redirectTo(route("RosterCreate"))
+        return response()->redirectTo(route("EquiposDetails",["id" => $r->idEquipo]))
             ->with(["success" => "Creado exitosamente"])
             ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
 

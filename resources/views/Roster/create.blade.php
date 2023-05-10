@@ -10,27 +10,38 @@
                 @csrf
                 <div class="row">
                     <div class="mb-3">
-                        <label for="idRoster" class="form-label">ID Rooster:</label>
+                        <label for="idRoster" class="form-label">ID:</label>
                         <input type="number" class="form-control" name="idRoster" id="idRoster" required
-                            value={{ $lastId }} readonly>
+                            value={{ $datos['lastId'] }} readonly>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="idEquipo" class="form-label">Equipo:</label>
-                        <input type="number" class="form-control" name="idEquipo" id="idEquipo" required>
+                        <label for="idEquipo" class="form-label">ID Equipo:</label>
+                        <input type="number" class="form-control" name="idEquipo" id="idEquipo"
+                            value={{ $datos['idEquipo'] }} readonly required>
                     </div>
                     <div class="col">
                         <label for="idTemporada" class="form-label">Temporada:</label>
-                        <input type="number" name="idTemporada" class="form-control" id="idTemporada" required>
+                        <select  class="form-select form-select" name="idTemporada" id="idTemporada" required>
+                            <option selected>Selecciona uno</option>
+                            @foreach ($datos["temporadas"] as $temporada)
+                                <option value={{$temporada->idTemporada}}>{{$temporada->nombre}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="col">
                         <label for="idAfiliacion" class="form-label">Afiliacion:</label>
-                        <input type="number" name="idAfiliacion" class="form-control" id="idAfiliacion" required>
+                        <select  class="form-select form-select" name="idAfiliacion" id="idAfiliacion" required>
+                            <option selected>Selecciona uno</option>
+                            @foreach ($datos["jugadores"] as $jugador)
+                                <option value={{$jugador->idAfiliacion}}>{{$jugador->nombre . " " . $jugador->apellidos}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
-               
-              
+
+
                 <div class="row">
                     <div class="col justify-content-center">
                         <button type="submit" class="btn btn-primary w-100">Guardar</button>

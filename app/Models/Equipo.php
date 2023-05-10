@@ -64,5 +64,5 @@ class Equipo extends Model
 		return $this->belongsToMany(Jugador::class,"Rosters","idEquipo","idAfiliacion");
 	}
 
-
+	
 }

@@ -8,69 +8,65 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 
-class EquipoControlador extends Controller
-{
+class EquipoControlador extends Controller {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
+    public function index() {
         $datos = Equipo::all();
         return response(view("Equipos.index", compact("datos")));
+    }
+
+    public function details($id) {
+        $equipo = Equipo::find($id);
+        $datos = ["equipo" => $equipo];
+        return response(view("equipos.details", compact("datos")));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
+    public function create() {
         $j = Equipo::orderBy('idEquipo', 'DESC')->first();
-        $lastId = $j == null ? 0 : $j->idEquipo + 1; 
+        $lastId = $j == null ? 0 : $j->idEquipo + 1;
         return response(view('Equipos.create', compact('lastId')));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $e = new Equipo();
-        $e -> idEquipo = $request->idEquipo;
-        $e ->nombre = $request->nombre;
-        $e ->ciudad = $request->ciudad;
-        $e ->idTecnico = $request -> idTecnico;
-        
+        $e->idEquipo = $request->idEquipo;
+        $e->nombre = $request->nombre;
+        $e->ciudad = $request->ciudad;
+        $e->idTecnico = $request->idTecnico;
+
         if ($request->hasFile('imagen')) {
             $file = $request->file('imagen');
-            $destino= "img/equipos/";
-            $filename =$e->idEquipo.".png";
-            $uploadSuccess= $request->file('imagen')->move($destino,$filename);
-           
+            $destino = "img/equipos/";
+            $filename = $e->idEquipo . ".png";
+            $uploadSuccess = $request->file('imagen')->move($destino, $filename);
+
         }
 
-
-
-
-
-        $e -> save();
+        $e->save();
         return response()->redirectTo(route("equiposIndex"))
-        ->with(["success" => "Creado exitosamente"])
-        ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
+            ->with(["success" => "Creado exitosamente"])
+            ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
+    public function show(string $id) {
         //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
+    public function edit(string $id) {
         $datos = Equipo::find($id);
         return response(view("Equipos.edit", compact("datos")));
     }
@@ -78,24 +74,22 @@ class EquipoControlador extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
-    {
+    public function update(Request $request) {
         $e = Equipo::find($request->idEquipo);
-        $e -> idEquipo = $request->idEquipo;
-        $e ->nombre = $request->nombre;
-        $e ->ciudad = $request->ciudad;
-        $e ->idTecnico = $request -> idTecnico;
-        $e -> save();
+        $e->idEquipo = $request->idEquipo;
+        $e->nombre = $request->nombre;
+        $e->ciudad = $request->ciudad;
+        $e->idTecnico = $request->idTecnico;
+        $e->save();
         return response()->redirectTo(route("equiposIndex"))
-        ->with(["success" => "Actualizado exitosamente"])
-        ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
+            ->with(["success" => "Actualizado exitosamente"])
+            ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
+    public function destroy(string $id) {
         //
     }
 }

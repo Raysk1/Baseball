@@ -1,107 +1,107 @@
 
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
 
-        body {
-            width: auto;
-            height: auto;
-            background: #009FFF;
-            /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #ec2F4B, #009FFF);
-            background-image: url("https://www.apple.com/newsroom/images/product/apple-tv-plus/standard/Apple-TV-plus-MLB-Friday-Night-Baseball-hero_big.jpg.slideshow-xlarge_2x.jpg");
-            background-position: center center;
+body {
+    width: auto;
+    height: auto;
+    background: #009FFF;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ec2F4B, #009FFF);
+    background-image: url("https://www.apple.com/newsroom/images/product/apple-tv-plus/standard/Apple-TV-plus-MLB-Friday-Night-Baseball-hero_big.jpg.slideshow-xlarge_2x.jpg");
+    background-position: center center;
 
-            /* Para que la imagen de fondo no se repita */
+    /* Para que la imagen de fondo no se repita */
 
-            background-repeat: no-repeat;
+    background-repeat: no-repeat;
 
-            /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+    /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
 
-            background-attachment: fixed;
+    background-attachment: fixed;
 
-            /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+    /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
 
-            background-size: cover;
+    background-size: cover;
 
-        }
+}
 
-        form {
-            position: absolute;
-            min-width: 280px;
-            max-width: 25%;
-            width: 25%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 15px;
-            box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(1rem);
-            border-radius: 5px;
-            color: #fff;
-        }
+form {
+    position: absolute;
+    min-width: 280px;
+    max-width: 25%;
+    width: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1rem);
+    border-radius: 5px;
+    color: #fff;
+}
 
-        h1 {
-            position: relative;
-            font-size: 18px;
-            margin-bottom: 15px;
-            padding-bottom: 7px;
-        }
+h1 {
+    position: relative;
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 7px;
+}
 
-        h1::after {
-            content: "";
-            position: absolute;
-            height: 3px;
-            border-radius: 3px;
-            background-color: #fff;
-            width: 120px;
-            left: 0;
-            bottom: 0;
-        }
+h1::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    border-radius: 3px;
+    background-color: #fff;
+    width: 120px;
+    left: 0;
+    bottom: 0;
+}
 
-        input {
-            display: block;
-            width: 100%;
-            height: 40px;
-            padding: 5px 6px;
-            margin-bottom: 15px;
-            border: none;
-            outline: none;
-            border-radius: 1px;
-        }
+input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 5px 6px;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    border-radius: 1px;
+}
 
-        button {
-            display: block;
-            margin: auto;
-            width: 100%;
-            height: 40px;
-            background-color: #5d5b5b96;
-            border: none;
-            cursor: pointer;
-            border-radius: 20px;
-            color: #fff;
-        }
+button {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 40px;
+    background-color: #5d5b5b96;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    color: #fff;
+}
 
-        .link {
-            text-align: center;
-            margin-top: 15px;
-            font-weight: bolder;
-        }
+.link {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bolder;
+}
 
-        .btn {
-            display: block;
-            margin: auto;
-            width: 100%;
-            height: 40px;
-            background-color: #201d1d96;
-            border: none;
-            cursor: pointer;
-            border-radius: 20px;
-            color: #fff;
-        }
+.btn {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 40px;
+    background-color: #201d1d96;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    color: #fff;
+}

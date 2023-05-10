@@ -60,7 +60,7 @@ class AmpayersJuegoControlador extends Controller {
      * @return  \Illuminate\Http\Response 
      */
     public function edit($id) {
-        $ampayers = Ampayer::orderBy("nombre")->get();
+        $ampayers = Ampayer::orderBy("nombre")->orderBy("apellidos")->get();
         $datos = ["ampayer" => Ampayersjuego::find($id),"ampayers" => $ampayers];
         return response(view("AmpayersJuegos.edit", compact("datos")));
     }
