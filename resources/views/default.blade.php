@@ -41,19 +41,18 @@
         <!-- place navbar here -->
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container-fluid">
-<<<<<<< HEAD
                 <h2 class="text-white"> </h2>
-=======
->>>>>>> a46699d9e8998b716952445b00e44b1516358f4c
-
                 <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
+                    
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      
+                        <li class="nav-item"><a class="dropdown-item text-warning " href={{ route('inicio') }}>Inicio</a></li>
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-warning  " href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
