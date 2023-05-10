@@ -8,7 +8,7 @@
         <div class="w-75 mt-4">
             <h1>Prueba</h1>
 
-            <table border="1px">
+            <table  border="1px">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -35,7 +35,7 @@
 
                     @foreach ($jugadores as $jugador)
                     <div class="card" style="width: 18rem;">
-                        <img src="../../../public/img/jugadores/230000.png" class="card-img-top" alt="...">
+                        <img src='img/jugadores/".$filename."png'  width='300' height='100'>"; 
                         <div class="card-body"><br>
                             <img src="" alt="">
                             ID: {{$jugador->idAfiliacion}}
