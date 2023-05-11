@@ -30,7 +30,7 @@
         <input type="password" name="password" id="password" class="form-control input_pass mb-2" value=""
             placeholder="Ingrese su contraseña">
         <button type="submit" class="btn btn-dark"> Iniciar Sesion </button>
-        <p class="link"><a href="/registrologin">¿Aun no tienes cuenta?</a></p>
+        <p class="link"><a href="/register">¿Aun no tienes cuenta?</a></p>
     </form>
 
 </body>
