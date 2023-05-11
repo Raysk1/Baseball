@@ -11,8 +11,8 @@
                 <div class="row justify-content-between">
 
                     @foreach ($jugadores as $jugador)
-                        <div class="card" style="width: 18rem;">
-                            <!--Validar imagen para que en caso que no exista la imagen del jugador se muestre una imagen por defecto si es varonil o femenil-->
+                        <div class="card" style="width: 20%;">
+                            <!--18 rem - Validar imagen para que en caso que no exista la imagen del jugador se muestre una imagen por defecto si es varonil o femenil-->
                             @if (file_exists('/img/jugadores/' . $jugador->idAfiliacion . '.png'))
                                 <img src="/img/jugadores/{{ $jugador->idAfiliacion }}.png" class="card-img-top img-fluid mt-2"
                                     style="max-width: 100%; height: 60%;">
@@ -23,13 +23,12 @@
 
                             <div class="card-body p-1">
                                 ID: {{ $jugador->idAfiliacion }}<br>
-                                <b>{{ $jugador->nombre }} {{ $jugador->apellidos }}<br></b><br>
+                                <b>{{ $jugador->nombre }} {{ $jugador->apellidos }}<br></b>
                                 <b>Ab: </b>{{ $jugador->abreviacion }}
                                 <b>Rama: </b>{{ $jugador->rama }}<br>
                                 <b>Posicion: </b>{{ $jugador->posicion }}<br>
                                 <b>Golpea: </b>{{ $jugador->golpea }}
                                 <b>Tira: </b> {{ $jugador->tira }}<br>
-
 
                             </div>
                         </div>
