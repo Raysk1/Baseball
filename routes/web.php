@@ -144,16 +144,6 @@ Route::post('/abc/bateadores/update', [BateadorControlador::class, 'update'])->m
 
 
 
-/**Routes de informacion 
-Route::get('/abc/informacion/create', [InformacionControlador::class,'create']) -> name('turnoCreate'); 
-Route::post('/abc/informacion/store', [InformacionControlador::class,'store']) -> name('turnoStore');
-Route::get('/Luis/informacion', [InformacionControlador::class,'index']) -> name('informacionIndex'); 
-Route::get('/abc/informacion/edit/{id}', [InformacionControlador::class,'edit'])->name("turnoEdit"); 
-Route::post('/abc/informacion/update', [InformacionControlador::class,'update']) -> name('turnoUpdate'); */
-
-Route::get('/informacion', function () {
-    return view('luis/informacion'); });
-
 //Login
 Route::get('/login', function () {
     return view('sesion.login'); })->name("login");
@@ -169,8 +159,6 @@ Route::post('/login', [LoginControlador::class, 'login'])->name('login');
 //inicio
 Route::get('/inicio', function () {
     return view('inicio.inicio'); })->name("inicio");
-Route::post('/inicio', function () {
-    return view('inicio.inicio'); });
 
 Route::redirect("/", "/inicio");
 

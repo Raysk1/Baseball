@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Jugador>
  */
 class JugadorFactory extends Factory {
-    public  $id = 230010;
+    public  $id = 230000;
  
     /**
      * Define the model's default state.
@@ -28,7 +28,8 @@ class JugadorFactory extends Factory {
             "golpea" => $this->dominio(),
             "tira" => $this->dominio(),
             "abreviacion" => $this->faker->lexify("???."),
-            "status" => 1
+            "status" => 1,
+            "rama" => $gender == 1 ? "Varonil" : "Femenil",
 
         ];
     }
