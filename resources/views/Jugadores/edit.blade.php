@@ -86,13 +86,6 @@
                         </select>
                     </div>
                 </div>
-                <div class="row ">
-                    <div class="mb-3">
-                        <label for="pagina" class="form-label">Página Web:</label>
-                        <input type="url" name="pagina" id="pagina" class="form-control"
-                            value={{ $datos->pagina }}>
-                    </div>
-                </div>
                 <div class="row mb-3">
                     <div class="col">
                         <label for="status" class="form-label">Estatus:</label>
