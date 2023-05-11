@@ -12,6 +12,7 @@
     @vite(['resources/js/app.js', 'resources/css/app.scss'])
  
     <link rel="stylesheet" href="{{ 'assets/login.css' }}">
+    
     @yield('styles')
     <title>Iniciar Sesion</title>
 
@@ -26,7 +27,7 @@
         <input type="email" name="email" id="email" class="form-control input_user mb-2" value="" placeholder="Ingrese su Correo">
         <input type="password" name="password" id="password" class="form-control input_pass mb-2" value="" placeholder="Ingrese su contraseña">
         <button type="submit" class="btn btn-dark"> Iniciar Sesion </button>
-        <p class="link"><a href="/registrologin">¿Aun no tienes cuenta?</a></p>
+        <p class="link"><a href="/register">¿Aun no tienes cuenta?</a></p>
     </form>
 
 </body>
