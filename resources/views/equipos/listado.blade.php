@@ -25,7 +25,7 @@
                                 @break
 
                                 @default
-                                    <img src="{{ asset('/img/equipos/28.png') }}" class="card-img-top img-fluid mt-2"
+                                    <img src="{{ asset('/img/equipos/0.png') }}" class="card-img-top img-fluid mt-2"
                                         style="max-width: 100%; height: 60%;">
                             @endswitch
 
