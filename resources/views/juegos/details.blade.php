@@ -134,13 +134,13 @@
                                 <tbody>
                                     @foreach ($datos['juego']->turnos as $turno)
                                         <tr>
-                                            <td>{{ $turno->equipo }}</td>
-                                            <td>{{ $turno->jugador }}</td>
+                                            <td>{{ $turno->equipo->nombre }}</td>
+                                            <td>{{ $turno->jugador->nombre }} {{ $turno->jugador->apellidos}}</td>
                                             <td>{{ $turno->turno }}</td>
                                             <td>{{ $turno->inning }}</td>
                                             <td>{{ $turno->carrera }}</td>
                                             <td>{{ $turno->resultado }}</td>
-                                            <td>{{ $turno->lanzador }}</td>
+                                            <td>{{ $turno->lanzador->nombre }}</td>
                                             <td colspan="2" style="width: 12%">
                                                 <x-actionButtons
                                                     route="{{ route('turnoEdit', ['id' => $turno->idTurno]) }}">

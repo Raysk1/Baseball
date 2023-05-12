@@ -73,7 +73,6 @@ class JugadorControlador extends Controller
         $j->posicion = $request->posicion;
         $j->golpea = $request->golpea;
         $j->tira = $request->tira;
-        $j->pagina = $request->pagina;
         $j->abreviacion = $request->abreviacion;
         $j->status = $request->status;
         $j->rama = $request->rama;
@@ -129,7 +128,6 @@ class JugadorControlador extends Controller
         $j->posicion = $request->posicion;
         $j->golpea = $request->golpea;
         $j->tira = $request->tira;
-        $j->pagina = $request->pagina;
         $j->abreviacion = $request->abreviacion;
         $j->status = $request->status;
         $j->rama = $request->rama;

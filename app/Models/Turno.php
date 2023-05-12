@@ -26,8 +26,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $idLanzador
  * 
  * @property Equipo $equipo
- * @property Jugador $jugadore
+ * @property Jugador $jugador
  * @property Juego $juego
+ * @property Lanzador $lanzador
  *
  * @package App\Models
  */
@@ -79,5 +80,9 @@ class Turno extends Model
 	public function juego()
 	{
 		return $this->belongsTo(Juego::class, 'idJuego');
+	}
+
+	public function lanzador(){
+		return $this->belongsTo(Lanzador::class,"idJuego");
 	}
 }

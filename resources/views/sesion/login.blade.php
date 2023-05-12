@@ -29,8 +29,12 @@
             placeholder="Ingrese su Correo">
         <input type="password" name="password" id="password" class="form-control input_pass mb-2" value=""
             placeholder="Ingrese su contraseña">
-        <button type="submit" class="btn btn-dark"> Iniciar Sesion </button>
-        <p class="link"><a href="/register">¿Aun no tienes cuenta?</a></p>
+        <div class="mb-2 d-flex">
+            <input type="checkbox" name="remember" id="remember" class=" form-check-input me-2">
+            <label for="remember">Recordarme</label>
+        </div>
+        <button type="submit" class="btn btn-dark mt-2"> Iniciar Sesion </button>
+        <p class="link"><a href={{ route('Register') }}>¿Aun no tienes cuenta?</a></p>
     </form>
 
 </body>
