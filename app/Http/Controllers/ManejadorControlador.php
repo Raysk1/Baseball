@@ -53,7 +53,8 @@ class ManejadorControlador extends Controller {
      */
     public function edit(string $id) {
         $datos = Manejador::find($id);
-        return response(view("Manejadores.edit", compact("datos")));
+        $manejadores = Manejador::all();
+        return response(view("Manejadores.edit", compact("datos"), compact('manejadores')));
     }
 
     /**
@@ -75,4 +76,5 @@ class ManejadorControlador extends Controller {
     public function destroy(string $id) {
         //
     }
+
 }

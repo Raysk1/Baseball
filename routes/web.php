@@ -1,27 +1,21 @@
 <?php
 
-use App\Http\Controllers\JugadorControlador;
 use App\Http\Controllers\AmpayerControlador;
 use App\Http\Controllers\AmpayersJuegoControlador;
-use App\Http\Controllers\EquipoControlador;
-use App\Http\Controllers\JuegoControlador;
-use App\Http\Controllers\LanzadorControlador;
-use App\Http\Controllers\LigaControlador;
-use App\Http\Controllers\TurnoControlador;
 use App\Http\Controllers\BateadorControlador;
 use App\Http\Controllers\EntradaControlador;
+use App\Http\Controllers\EquipoControlador;
+use App\Http\Controllers\JuegoControlador;
+use App\Http\Controllers\JugadorControlador;
+use App\Http\Controllers\LanzadorControlador;
+use App\Http\Controllers\LigaControlador;
 use App\Http\Controllers\LoginControlador;
+use App\Http\Controllers\ManejadorControlador;
 use App\Http\Controllers\RosterControlador;
 
-
 //use App\Http\Controllers\InformacionControlador;
-use App\Http\Controllers\ManejadorControlador;
 use App\Http\Controllers\TemporadaControlador;
-
-use App\Models\Ampayer;
-use App\Models\Jugador;
-use App\Models\Lanzador;
-use App\Models\User;
+use App\Http\Controllers\TurnoControlador;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,14 +27,11 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/
-
-
+ */
 
 Route::get('/Resultados', function () {
     return view('Resultados');
 });
-
 
 /** Jugadores routes */
 Route::get('/abc/jugadores/create', [JugadorControlador::class, 'create'])->middleware("auth")->name('jugadoresCreate');
@@ -79,11 +70,9 @@ Route::get("/abc/Roster", [RosterControlador::class, "index"])->middleware("auth
 Route::get("/abc/Roster/edit/{id}", [RosterControlador::class, "edit"])->middleware("auth")->name("RosterEdit");
 Route::post("/abc/Roster/update", [RosterControlador::class, "update"])->middleware("auth")->name("RosterUpdate");
 
-
 //informacion
 Route::get('/contacto', function () {
-    return view('contacto'); })->name("contacto");
-
+    return view('contacto');})->name("contacto");
 
 /** AmpayersJuego routes */
 Route::get('/abc/AmpayersJuego/create/{juegoId}', [AmpayersJuegoControlador::class, 'create'])->middleware("auth")->name('AmpayersJuegoCreate');
@@ -108,6 +97,8 @@ Route::post('/abc/equipos/update', [EquipoControlador::class, 'update'])->middle
 Route::get('/equipos', function () {
     return view('equipos.listado');
 });
+
+Route::get("/abc/equipos/listado", [EquipoControlador::class, "listado"])->name("equiposListado");
 
 //temporadas
 Route::get('/abc/Temporadas/create', [TemporadaControlador::class, 'create'])->middleware("auth")->name('TemporadasCreate');
@@ -142,29 +133,24 @@ Route::get('/abc/bateadores', [BateadorControlador::class, 'index'])->middleware
 Route::get('/abc/bateadores/edit/{id}', [BateadorControlador::class, 'edit'])->middleware("auth")->name("bateadoresEdit");
 Route::post('/abc/bateadores/update', [BateadorControlador::class, 'update'])->middleware("auth")->name('bateadoresUpdate');
 
-
-
 //Login
 Route::get('/login', function () {
-    return view('sesion.login'); })->name("login");
+    return view('sesion.login');
+})->name("login");
 Route::get('/register', function () {
-    return view('sesion.register'); });
+    return view('sesion.register');});
 //Route::get('/registrologin', [UserControlador::class,'create']) -> name('RegistroCreate');
 Route::post('/register', [LoginControlador::class, 'register'])->name('Register');
 Route::get('/logout', [LoginControlador::class, 'logout'])->name('logout');
 Route::post('/login', [LoginControlador::class, 'login'])->name('login');
 
-
-
 //inicio
 Route::get('/inicio', function () {
-    return view('inicio.inicio'); })->name("inicio");
+    return view('inicio.inicio');})->name("inicio");
 
 Route::redirect("/", "/inicio");
 
 Route::get('/reglamento', function () {
-    return view('Boxscore'); })->name("reglamento");
+    return view('Boxscore');})->name("reglamento");
 Route::get('/boxscore', function () {
-    return view('Boxscore.boxscore'); })->name("boxscore    ");
-
-?>
+    return view('Boxscore.boxscore');})->name("boxscore    ");

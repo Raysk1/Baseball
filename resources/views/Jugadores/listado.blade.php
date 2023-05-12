@@ -29,7 +29,6 @@
                                 <b>Posicion: </b>{{ $jugador->posicion }}<br>
                                 <b>Golpea: </b>{{ $jugador->golpea }}
                                 <b>Tira: </b> {{ $jugador->tira }}<br>
-
                             </div>
                         </div>
                     @endforeach
