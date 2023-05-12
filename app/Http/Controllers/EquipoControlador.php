@@ -51,7 +51,7 @@ class EquipoControlador extends Controller {
         }
 
         $e->save();
-        return response()->redirectTo(route("equiposIndex"))
+        return response()->redirectTo(route("EquiposDetails",["id" => $e->idEquipo]))
             ->with(["success" => "Creado exitosamente"])
             ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
     }
@@ -81,7 +81,7 @@ class EquipoControlador extends Controller {
         $e->ciudad = $request->ciudad;
         $e->idTecnico = $request->idTecnico;
         $e->save();
-        return response()->redirectTo(route("equiposIndex"))
+        return response()->redirectTo(route("EquiposDetails",["id" => $e->idEquipo]))
             ->with(["success" => "Actualizado exitosamente"])
             ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
     }
