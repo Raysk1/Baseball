@@ -8,14 +8,14 @@
         <div class="w-75 mt-4">
             <form action={{ route('juegosStore') }} method="post">
                 @csrf
-                <div class="row">
-                    <div class="mb-3">
+                <div class="row mb-2">
+                    <div class="col">
                         <label for="idJuego" class="form-label">ID de Juego:</label>
                         <input type="text" class="form-control" name="idJuego" id="idJuego" value={{ $datos['lastId'] }}
                             readonly required>
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="idTemporada" class="form-label">Temporada:</label>
                         <select name="idTemporada" id="idTemporada" class="form-select" required>
@@ -39,7 +39,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="fecha" class="form-label">Fecha:</label>
                         <input type="date" name="fecha" class="form-control" id="fecha" required>
@@ -60,7 +60,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="idEquipoVisitante" class="form-label">Equipo Visitante:</label>
                         <select name="idEquipoVisitante" id="idEquipoVisitante" class="form-select" required>
@@ -80,7 +80,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="final" class="form-label">Final:</label>
                         <input type="text" name="final" class="form-control" id="final" required>
@@ -88,7 +88,7 @@
                 </div>
 
 
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col justify-content-center">
                         <button type="submit" class="btn btn-primary w-100">guardar</button>
                     </div>

@@ -8,7 +8,7 @@
         <div class="w-75 mt-4">
             <form action={{ route('turnoStore') }} method="post">
                 @csrf
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="idTurno" class="form-label">ID:</label>
                         <input type="text" class="form-control" name="idTurno" id="idTurno" readonly required
@@ -16,7 +16,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="idJuego" class="form-label">ID Juego:</label>
                         <input type="text" class="form-control" name="idJuego" id="idJuego" readonly required
@@ -24,27 +24,27 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="idAfiliacion" class="form-label">Jugador:</label>
                         <select class="form-select" name="idAfiliacion" id="idAfiliacion">
                             @foreach ($datos['jugadores'] as $j)
-                                <option value={{ $j->idAfiliacion }}>{{ $j->nombre . ' ' . $j->apellidos }}</option>
+                                <option value={{ $j->idAfiliacion }}>{{ $j->jugador->nombre . ' ' . $j->jugador->apellidos }}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="idLanzador" class="form-label">Lanzador:</label>
                         <select name="idLanzador" id="idLanzador" class="form-select">
                             @foreach ($datos['lanzadores'] as $l)
-                                <option value={{ $l->idAfiliacion }}>{{ $l->nombre . ' ' . $l->apellidos }}</option>
+                                <option value={{ $l->idAfiliacion }}>{{ $l->jugador->nombre . ' ' . $l->jugador->apellidos }}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="turno" class="form-label">Turno:</label>
                         <input type="number" min="1" class="form-control" name="turno" id="turno" required>
@@ -63,7 +63,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="inning" class="form-label">Inning:</label>
                         <input min="0" type="number" class="form-control" name="inning" id="inning" required>
@@ -81,19 +81,19 @@
                             id="producciones" required>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="resultado" class="form-label">Resultado:</label>
                         <input type="text" class="form-control" name="resultado" id="resultado" required>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="detalles" class="form-label">Detalles:</label>
                         <textarea name="detalles" id="detalles" cols="30" rows="3" maxlength="20" class="form-control"></textarea>
                     </div>
                 </div>
-                <div class="row mt-3">
+                <div class="row mb-2">
                     <div class="col justify-content-center">
                         <button type="submit" class="btn btn-primary w-100">Guardar</button>
                     </div>

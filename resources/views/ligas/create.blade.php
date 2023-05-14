@@ -8,14 +8,14 @@
         <div class="w-75 mt-4">
             <form action={{ route('ligasStore') }} method="post">
                 @csrf
-                <div class="row">
-                    <div class="mb-3">
+                <div class="row mb-2">
+                    <div class="col">
                         <label for="idLiga" class="form-label">ID de la liga:</label>
                         <input type="text" class="form-control" name="idLiga" id="idLiga" required
                             value={{ $lastId }} readonly>
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="descripcion" class="form-label">Descripcion:</label>
                         <input type="text" class="form-control" name="descripcion" id="descripcion" required>
@@ -29,7 +29,7 @@
                         <input type="text" name="coordinador" class="form-control" id="coordinador">
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="mapa" class="form-label">Mapa:</label>
                         <input type="text" name="mapa" class="form-control" id="mapa" required>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col justify-content-center">
                         <button type="submit" class="btn btn-primary w-100">guardar</button>
                     </div>

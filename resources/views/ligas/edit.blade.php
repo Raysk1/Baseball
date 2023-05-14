@@ -8,7 +8,7 @@
         <div class="w-75 mt-4">
             <form action={{ route('ligasUpdate') }} method="post">
                 @csrf
-                <div class="row mb-3">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="idLiga" class="form-label">Liga:</label>
                         <input type="text" class="form-control" name="idLiga" id="idLiga" required
@@ -20,7 +20,7 @@
                          value={{ $datos-> descripcion }}>
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                     
                     <div class="col">
                         <label for="presidente" class="form-label">Presidente:</label>
@@ -38,7 +38,7 @@
                             value={{ $datos-> mapa }} >
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                    
                     <div class="col">
                         <label for="direccion" class="form-label">Direccion:</label>
@@ -58,7 +58,7 @@
                     
                 </div>
                 
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col justify-content-center">
                         <button type="submit" class="btn btn-primary w-100">guardar</button>
                     </div>

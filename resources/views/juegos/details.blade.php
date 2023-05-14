@@ -140,7 +140,7 @@
                                             <td>{{ $turno->inning }}</td>
                                             <td>{{ $turno->carrera }}</td>
                                             <td>{{ $turno->resultado }}</td>
-                                            <td>{{ $turno->lanzador->nombre }}</td>
+                                            <td>{{ $turno->lanzador->jugador->nombre }}</td>
                                             <td colspan="2" style="width: 12%">
                                                 <x-actionButtons
                                                     route="{{ route('turnoEdit', ['id' => $turno->idTurno]) }}">

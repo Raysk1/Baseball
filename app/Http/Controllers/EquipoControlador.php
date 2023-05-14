@@ -6,7 +6,7 @@ use Illuminate\Support\Str;
 use App\Models\Equipo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Models\Manejador;
 
 class EquipoControlador extends Controller {
     /**
@@ -29,7 +29,9 @@ class EquipoControlador extends Controller {
     public function create() {
         $j = Equipo::orderBy('idEquipo', 'DESC')->first();
         $lastId = $j == null ? 0 : $j->idEquipo + 1;
-        return response(view('Equipos.create', compact('lastId')));
+        $manejadores = Manejador::all();
+        $datos = ["lastId" => $lastId, "manejadores" => $manejadores];
+        return response(view('Equipos.create', compact('datos')));
     }
 
     /**
@@ -67,7 +69,9 @@ class EquipoControlador extends Controller {
      * Show the form for editing the specified resource.
      */
     public function edit(string $id) {
-        $datos = Equipo::find($id);
+        $e = Equipo::find($id);
+        $manejadores = Manejador::all();
+        $datos = ["equipo" => $e, "manejadores" => $manejadores];
         return response(view("Equipos.edit", compact("datos")));
     }
 

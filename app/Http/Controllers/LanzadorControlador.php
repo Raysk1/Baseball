@@ -23,7 +23,7 @@ class LanzadorControlador extends Controller {
         $lastId = $t == null ? 1 : $t->idLanzadores + 1;
         $j = Juego::find($juegoId);
         $jugadores = $j->equipoVisitante->jugadores;
-        $jugadores->merge($j->equipoLocal->jugadores);
+        $jugadores = $jugadores->merge($t->juego->equipoLocal->jugadores);
         $datos =["lastId" => $lastId, "jugadores" => $jugadores,"juegoId" => $juegoId]; 
         return response(view('Lanzadores.create', compact('datos')));
     }
@@ -61,7 +61,10 @@ class LanzadorControlador extends Controller {
      * Show the form for editing the specified resource.
      */
     public function edit(string $id) {
-        $datos = Lanzador::find($id);
+        $t = Lanzador::find($id);
+        $jugadores = $t->juego->equipoVisitante->jugadores;
+        $jugadores = $jugadores->merge($t->juego->equipoLocal->jugadores);
+        $datos =["jugadores" => $jugadores,"lanzador" => $t]; 
         return response(view("Lanzadores.edit", compact("datos")));
     }
 

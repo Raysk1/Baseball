@@ -13,7 +13,7 @@
     @yield('styles')
     <style>
         body {
-            background-image: url("https://www.shutterstock.com/image-vector/vector-baseball-background-600w-593309054.jpg");
+            background-image: url("/img/fondo.webp");
 
 
             /* Para dejar la imagen de fondo centrada, vertical ynhorizontalmente */

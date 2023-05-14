@@ -25,7 +25,7 @@ class BateadorControlador extends Controller
         $lastId = $t == null ? 1 : $t->idBateadores + 1;
         $j = Juego::find($idJuego);
         $jugadores = $j->equipoVisitante->jugadores;
-        $jugadores->merge($j->equipoLocal->jugadores);
+        $jugadores = $jugadores->merge($j->equipoLocal->jugadores);
         $datos =["lastId" => $lastId, "jugadores" => $jugadores,"juegoId" => $idJuego]; 
         return response(view('Bateadores.create', compact('datos')));
     }
@@ -66,7 +66,7 @@ class BateadorControlador extends Controller
         $b = Bateador::find($id);
         $j = $b->juego;
         $jugadores = $j->equipoVisitante->jugadores;
-        $jugadores->merge($j->equipoLocal->jugadores);
+        $jugadores = $jugadores->merge($j->equipoLocal->jugadores);
         $datos =["bateador"=>$b, "jugadores" => $jugadores];
         return response(view("Bateadores.edit", compact("datos")));
     }

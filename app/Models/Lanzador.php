@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property float|null $PCA
  * @property float|null $POP
  * 
- * @property Jugador $jugadore
+ * @property Jugador $jugador
  * @property Juego $juego
  *
  * @package App\Models

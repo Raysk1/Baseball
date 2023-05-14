@@ -8,27 +8,21 @@
         <div class="w-75 mt-4">
             <form action={{ route('AmpayersJuegoStore') }} method="post">
                 @csrf
-
-                <div class="row">
-                    <div class="col">
-                        <h1 class="text-center">AMPAYERS JUEGO</h1><br>
-                    </div>
-                </div>
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="idCuerpo" class="form-label">ID:</label>
                         <input type="text" class="form-control" name="idCuerpo" id="idCuerpo" required @readonly(true)
                             value={{ $datos['lastId'] }}>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="idJuego" class="form-label">ID Juego:</label>
                         <input type="text" class="form-control" name="idJuego" id="idJuego"
                             value={{ $datos['juegoId'] }} required @readonly(true)>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="idAmpayer" class="form-label">Ampayer:</label>
                         <select type="text" name="idAmpayer" class="form-select" id="idAmpayer" required>
@@ -38,7 +32,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="ubicacion" class="form-label">Ubicacion:</label>
                         <select type="text" name="ubicacion" class="form-select" id="ubicacion" required>
@@ -56,7 +50,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col justify-content-center">
                         <button type="submit" class="btn btn-primary w-100">GUARDAR</button>
                     </div>

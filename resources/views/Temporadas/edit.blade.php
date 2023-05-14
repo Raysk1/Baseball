@@ -8,14 +8,14 @@
         <div class="w-75 mt-4">
             <form action={{ route('TemporadasUpdate') }} method="post">
                 @csrf
-                <div class="row">
-                    <div class="mb-3">
+                <div class="row mb-2">
+                    <div class="col">
                         <label for="idTemporada" class="form-label">ID de Temporada:</label>
                         <input type="text" class="form-control" name="idTemporada" id="idTemporada" required
                             value={{ $datos-> idTemporada }} >
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="idLiga" class="form-label">Liga:</label>
                         <input type="text" class="form-control" name="idLiga" id="idLiga" 
@@ -33,7 +33,7 @@
                             value={{ $datos-> categoria }} >
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="momento" class="form-label">Momento:</label>
                         <input type="text" name="momento" class="form-control" id="momento"
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col justify-content-center">
                         <button type="submit" class="btn btn-primary w-100">guardar</button>
                     </div>

@@ -1,91 +1,91 @@
 @extends('default')
 @section('title')
-    Editar Lanzadores
+    Editar de Lanzadores
 @endsection
 
 @section('content')
-    <div class="d-flex justify-content-center">
-        <div class="w-75 mt-4">
-            <form action={{ route('LanzadorUpdate') }} method="post">
-                @csrf
+    <form action={{ route('LanzadorStore') }} method="post">
+        @csrf
+        <div class="d-flex justify-content-center">
+            <div class="w-75 mt-4">
+                <form action={{ 'LanzadorUpdate' }} method="POST">
+                    <div class="row mb-2">
 
-                <div class="row mb-3">
-                    <div class="row">
                         <div class="col">
-                            <h1 class="text-center">EDITAR LANZADORES</h1><br>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="idLanzadores" class="form-label">ID Lanzadores:</label>
+                            <label for="idLanzadores" class="form-label">ID:</label>
                             <input type="text" name="idLanzadores" class="form-control" id="idLanzadores" required
-                                value={{ $datos->idLanzadores }} @readonly(true)>
+                                value={{ $datos['lanzador']->idLanzadores }} readonly>
+                        </div>
+
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <label for="idJuego" class="form-label">ID Juego:</label>
+                            <input type="text" class="form-control" name="idJuego" id="idJuego" required
+                                value={{ $datos['lanzador']->juego->idJuego }} readonly>
                         </div>
                     </div>
-                    <div class="col">
-                        <label for="idJuego" class="form-label">ID Juego:</label>
-                        <input type="text" class="form-control" name="idJuego" id="idJuego" required
-                            value={{ $datos->idJuego }} @readonly(true)>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <label for="idAfiliacion" class="form-label">Jugador:</label>
+                            <select class="form-control" name="idAfiliacion" id="idAfiliacion" required>
+                                @foreach ($datos['jugadores'] as $j)
+                                    <option value={{ $j->idAfiliacion }}>{{ $j->nombre . ' ' . $j->apellidos }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
-
-                    <div class="col">
-                        <label for="idAfiliacion" class="form-label">ID Afiliacion:</label>
-                        <input type="text" name="idAfiliacion" class="form-control" id="idAfiliacion" required
-                            value={{ $datos->idAfiliacion }} @readonly(true)>
-                    </div>
+                    <div class="row mb-2">
 
 
-                    <div class="row">
                         <div class="col">
                             <label for="IP" class="form-label">IP:</label>
-                            <input type="number" name="IP" class="form-control" id="IP" required
-                                value={{ $datos->IP }}>
+                            <input type="number" class="form-control" name="IP" min="0"
+                                value={{ $datos['lanzador']->IP }} id="IP" required>
                         </div>
                         <div class="col">
                             <label for="BA" class="form-label">BA:</label>
-                            <input type="number" name="BA" class="form-control" id="BA" required
-                                value={{ $datos->BA }}>
+                            <input type="number" name="BA" class="form-control" value={{ $datos['lanzador']->BA }}
+                                min="0" id="BA" required>
                         </div>
+
                         <div class="col">
                             <label for="C" class="form-label">C:</label>
-                            <input type="number" name="C" class="form-control" id="C" required
-                                value={{ $datos->C }}>
+                            <input type="number" name="C" class="form-control" min="0" id="C"
+                                value={{ $datos['lanzador']->C }} required>
                         </div>
                         <div class="col">
                             <label for="H" class="form-label">H:</label>
-                            <input type="number" name="H" class="form-control" id="H" required
-                                value={{ $datos->H }}>
+                            <input type="number" class="form-control" min="0" name="H" id="H"
+                                value={{ $datos['lanzador']->H }} required>
                         </div>
                         <div class="col">
                             <label for="BB" class="form-label">BB:</label>
-                            <input type="number" name="BB" class="form-control" id="BB" required
-                                value={{ $datos->BB }}>
+                            <input type="number" name="BB" class="form-control" min="0"
+                                value={{ $datos['lanzador']->BB }} id="BB" required>
                         </div>
+
                         <div class="col">
                             <label for="K" class="form-label">K:</label>
-                            <input type="number" name="K" class="form-control" id="K" required
-                                value={{ $datos->K }}>
+                            <input type="number" name="K" class="form-control" min="0" id="K"
+                                value={{ $datos['lanzador']->K }} required>
                         </div>
                         <div class="col">
                             <label for="PCA" class="form-label">PCA:</label>
-                            <input type="number" name="PCA" class="form-control" id="PCA" required
-                                value={{ $datos->PCA }}>
+                            <input type="number" class="form-control" name="PCA" min="0" id="PCA"
+                                value={{ $datos['lanzador']->PCA }} required>
                         </div>
                         <div class="col">
                             <label for="POP" class="form-label">POP:</label>
-                            <input type="number" name="POP" class="form-control" id="POP" required
-                                value={{ $datos->POP }}>
+                            <input type="number" name="POP" class="form-control" min="0" id="POP"
+                                value={{ $datos['lanzador']->POP }} required>
                         </div>
                     </div>
-
-
-                    <div class="row">
-                        <div class="col justify-content-center"> <br><br> <br><br>
-                            <button type="submit" class="btn btn-primary w-100">EDITAR</button>
+                    <div class="row mb-2">
+                        <div class="col justify-content-center">
+                            <button type="submit" class="btn btn-primary w-100">GUARDAR</button>
                         </div>
                     </div>
-                </div>
-            </form>
-        </div>
-    </div>
+            </div>
+    </form>
 @endsection

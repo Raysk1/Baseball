@@ -8,14 +8,14 @@
         <div class="w-75 mt-4">
             <form action={{ route('TemporadasStore') }} method="post">
                 @csrf
-                <div class="row">
-                    <div class="mb-3">
+                <div class="row mb-2">
+                    <div class="col">
                         <label for="idTemporada" class="form-label">ID de la Temporada:</label>
                         <input type="text" class="form-control" name="idTemporada" id="idTemporada" required
                             value={{ $lastId }} readonly>
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="idLiga" class="form-label">id de la liga:</label>
                         <input type="text" class="form-control" name="idLiga" id="idLiga" required>
@@ -29,7 +29,7 @@
                         <input type="text" name="categoria" class="form-control" id="categoria">
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="momento" class="form-label">Momento:</label>
                         <input type="text" name="momento" class="form-control" id="momento" required>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col justify-content-center">
                         <button type="submit" class="btn btn-primary w-100">guardar</button>
                     </div>

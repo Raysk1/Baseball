@@ -8,14 +8,14 @@
         <div class="w-75 mt-4">
             <form action={{ route('RosterStore') }} method="post">
                 @csrf
-                <div class="row">
-                    <div class="mb-3">
+                <div class="row mb-2">
+                    <div class="col">
                         <label for="idRoster" class="form-label">ID:</label>
                         <input type="number" class="form-control" name="idRoster" id="idRoster" required
                             value={{ $datos['lastId'] }} readonly>
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-2">
                     <div class="col">
                         <label for="idEquipo" class="form-label">ID Equipo:</label>
                         <input type="number" class="form-control" name="idEquipo" id="idEquipo"
@@ -42,7 +42,7 @@
                 </div>
 
 
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col justify-content-center">
                         <button type="submit" class="btn btn-primary w-100">Guardar</button>
                     </div>
