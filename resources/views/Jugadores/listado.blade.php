@@ -13,13 +13,20 @@
                     @foreach ($jugadores as $jugador)
                         <div class="card" style="width: 20%;">
                             <!--18 rem - Validar imagen para que en caso que no exista la imagen del jugador se muestre una imagen por defecto si es varonil o femenil-->
-                            @if (file_exists('/img/jugadores/' . $jugador->idAfiliacion . '.png'))
-                                <img src="/img/jugadores/{{ $jugador->idAfiliacion }}.png" class="card-img-top img-fluid mt-2"
-                                    style="max-width: 100%; height: 60%;">
-                            @else
+                            @php
+                            $ruta_imagen = '/img/jugadores/'.$jugador->idAfiliacion.'.png';
+                        @endphp
+                        
+                        @switch(true)
+                            @case(file_exists(public_path($ruta_imagen)))
+                                <img src="{{ asset($ruta_imagen) }}" class="card-img-top img-fluid mt-2" style="max-width: 100%; height: 60%;">
+                                @break
+                        
+                            @default
                                 <img src="{{ $jugador->rama == 'Varonil' ? '/img/jugadores/Varonil.jpg' : '/img/jugadores/Femenil.jpg' }}"
                                     class="card-img-top img-fluid mt-2" style="max-width: 100%; height: 60%;">
-                            @endif
+                        @endswitch
+                        
 
                             <div class="card-body p-1">
                                 ID: {{ $jugador->idAfiliacion }}<br>
@@ -29,7 +36,6 @@
                                 <b>Posicion: </b>{{ $jugador->posicion }}<br>
                                 <b>Golpea: </b>{{ $jugador->golpea }}
                                 <b>Tira: </b> {{ $jugador->tira }}<br>
-
                             </div>
                         </div>
                     @endforeach

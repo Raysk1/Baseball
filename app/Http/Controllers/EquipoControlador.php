@@ -96,4 +96,9 @@ class EquipoControlador extends Controller {
     public function destroy(string $id) {
         //
     }
+
+    public function listado(Request $request){
+        $equipos = Equipo::all();
+        return response(view("Equipos.listado", compact("equipos")));
+    }
 }
