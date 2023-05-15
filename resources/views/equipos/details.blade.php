@@ -82,7 +82,7 @@
                                             <td>{{ $roster->jugador->tira }}</td>
                                             <td>{{ $roster->jugador->golpea }}</td>
                                             <td colspan="2"  style="width: 12%">
-                                                <x-actionButtons route="{{route('RosterEdit', ['id' => $roster->idEquipo])}}"></x-actionButtons>
+                                                <x-actionButtons route="{{route('RosterEdit', ['id' => $roster->idRoster])}}"></x-actionButtons>
                                             </td>
                                         </tr>
                                     @endforeach

@@ -10,34 +10,41 @@
                 @csrf
                 <div class="row mb-2">
                     <div class="col">
-                        <label for="idRoster" class="form-label">ID Rooster:</label>
+                        <label for="idRoster" class="form-label">ID:</label>
                         <input type="number" class="form-control" name="idRoster" id="idRoster" required
-                            value={{ $datos->idRoster }} readonly>
+                            value={{ $datos['roster']->idRoster }} readonly>
                     </div>
                 </div>
                 <div class="row mb-2">
                     <div class="col">
-                        <label for="idEquipo" class="form-label">Equipo:</label>
-                        <input type="number" class="form-control" name="idEquipo" id="idEquipo" required
-                            value={{ $datos->idEquipo }}>
+                        <label for="idEquipo" class="form-label">ID Equipo:</label>
+                        <input type="number" class="form-control" name="idEquipo" id="idEquipo"
+                            value={{ $datos['roster']->idEquipo }} readonly required>
                     </div>
                     <div class="col">
                         <label for="idTemporada" class="form-label">Temporada:</label>
-                        <input type="number" name="idTemporada" class="form-control" id="idTemporada" required
-                            value={{ $datos->idTemporada }}>
+                        <select  class="form-select form-select" name="idTemporada" id="idTemporada" required>
+                            <option selected>Selecciona uno</option>
+                            @foreach ($datos["temporadas"] as $temporada)
+                                <option value={{$temporada->idTemporada}} {{$datos["roster"]->idTemporada == $temporada->idTemporada ? "selected" : "" }}>{{$temporada->nombre}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="col">
                         <label for="idAfiliacion" class="form-label">Afiliacion:</label>
-                        <input type="number" name="idAfiliacion" class="form-control" id="idAfiliacion" required
-                            value={{ $datos->idAfiliacion }}>
+                        <select  class="form-select form-select" name="idAfiliacion" id="idAfiliacion" required>
+                            <option selected>Selecciona uno</option>
+                            @foreach ($datos["jugadores"] as $jugador)
+                                <option value={{$jugador->idAfiliacion}} {{$datos["roster"]->idAfiliacion == $jugador->idAfiliacion ? "selected" : ""}}>{{$jugador->nombre . " " . $jugador->apellidos}}</option>
+                            @endforeach
+                        </select>
                     </div>
-                    
-            
                 </div>
-             
+
+
                 <div class="row mb-2">
                     <div class="col justify-content-center">
-                        <button type="submit" class="btn btn-primary w-100">guardar</button>
+                        <button type="submit" class="btn btn-primary w-100">Guardar</button>
                     </div>
                 </div>
             </form>

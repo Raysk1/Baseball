@@ -71,9 +71,14 @@ class RosterControlador extends Controller
      */
     public function edit($id)
     {
-
+        $r = Roster::find($id);
+        $datos = [
+            "roster" => $r,
+            "temporadas" => Temporada::all(),
+            "jugadores" => Jugador::orderBy("nombre")->orderBy("apellidos")->get(),
+        ];
        
-        return response(view("Jugadores.edit", compact("datos")));
+        return response(view("Roster.edit", compact("datos")));
     }
     /** 
      * Update the specified resource in storage. 

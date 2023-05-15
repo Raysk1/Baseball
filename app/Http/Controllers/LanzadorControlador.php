@@ -23,7 +23,7 @@ class LanzadorControlador extends Controller {
         $lastId = $t == null ? 1 : $t->idLanzadores + 1;
         $j = Juego::find($juegoId);
         $jugadores = $j->equipoVisitante->jugadores;
-        $jugadores = $jugadores->merge($t->juego->equipoLocal->jugadores);
+        $jugadores = $jugadores->merge($j->equipoLocal->jugadores);
         $datos =["lastId" => $lastId, "jugadores" => $jugadores,"juegoId" => $juegoId]; 
         return response(view('Lanzadores.create', compact('datos')));
     }

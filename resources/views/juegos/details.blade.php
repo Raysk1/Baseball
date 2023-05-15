@@ -138,7 +138,7 @@
                                             <td>{{ $turno->jugador->nombre }} {{ $turno->jugador->apellidos}}</td>
                                             <td>{{ $turno->turno }}</td>
                                             <td>{{ $turno->inning }}</td>
-                                            <td>{{ $turno->carrera }}</td>
+                                            <td>{{ $turno->carrera == 1 ? "Si" : "No" }}</td>
                                             <td>{{ $turno->resultado }}</td>
                                             <td>{{ $turno->lanzador->jugador->nombre }}</td>
                                             <td colspan="2" style="width: 12%">
