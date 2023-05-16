@@ -26,7 +26,8 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property Temporada $temporada
  * @property Parque $parque
- * @property Equipo $equipo
+ * @property Equipo $equipoLocal
+ * @property Equipo $equipoVisitante
  * @property Collection|Ampayer[] $ampayers
  * @property Collection|Bateador[] $bateadores
  * @property Collection|Lanzador[] $lanzadores
@@ -43,14 +44,11 @@ class Juego extends Model {
 		'idTemporada' => 'int',
 		'jornada' => 'int',
 		'idCampo' => 'int',
+		'fecha' => 'datetime',
+		'hora' => 'datetime',
 		'idEquipoVisitante' => 'int',
 		'idEquipoLocal' => 'int',
 		'final' => 'int'
-	];
-
-	protected $dates = [
-		'fecha',
-		'hora'
 	];
 
 	protected $fillable = [
@@ -72,19 +70,15 @@ class Juego extends Model {
 	public function parque() {
 		return $this->belongsTo(Parque::class, 'idCampo');
 	}
-
-	public function equipoLocal()
-	{
+	public function equipoLocal() {
 		return $this->belongsTo(Equipo::class, 'idEquipoLocal');
 	}
 
-	public function equipoVisitante()
-	{
+	public function equipoVisitante() {
 		return $this->belongsTo(Equipo::class, 'idEquipoVisitante');
 	}
 
-	public function ampayers()
-	{
+	public function ampayers() {
 		return $this->belongsToMany(Ampayer::class, 'ampayersjuego', 'idJuego', 'idAmpayer')
 			->withPivot('idCuerpo', 'ubicacion');
 	}
@@ -97,8 +91,8 @@ class Juego extends Model {
 		return $this->hasMany(Lanzador::class, 'idJuego');
 	}
 
-	public function ampayersJuego(){
-		return $this->hasMany(Ampayersjuego::class,'idJuego');
+	public function ampayersJuego() {
+		return $this->hasMany(Ampayersjuego::class, 'idJuego');
 	}
 
 	public function turnos() {

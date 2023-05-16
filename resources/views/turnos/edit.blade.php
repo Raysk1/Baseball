@@ -41,8 +41,8 @@
                         <label for="idLanzador" class="form-label">Lanzador:</label>
                         <select name="idLanzador" id="idLanzador" class="form-select">
                             @foreach ($datos['lanzadores'] as $l)
-                                <option value={{ $l->idAfiliacion }}
-                                    {{ $datos['turno']->idLanzador == $l->idAfiliacion ? 'selected' : '' }}>
+                                <option value={{ $l->idLanzadores }}
+                                    {{ $datos['turno']->idLanzadores == $l->idLanzador ? 'selected' : '' }}>
                                     {{ $l->jugador->nombre . ' ' . $l->jugador->apellidos }}</option>
                             @endforeach
                         </select>

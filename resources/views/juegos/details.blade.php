@@ -140,7 +140,7 @@
                                             <td>{{ $turno->inning }}</td>
                                             <td>{{ $turno->carrera == 1 ? "Si" : "No" }}</td>
                                             <td>{{ $turno->resultado }}</td>
-                                            <td>{{ $turno->lanzador->jugador->nombre }}</td>
+                                            <td>{{ $turno->lanzador->jugador->nombre ." ". $turno->lanzador->jugador->apellidos }}</td>
                                             <td colspan="2" style="width: 12%">
                                                 <x-actionButtons
                                                     route="{{ route('turnoEdit', ['id' => $turno->idTurno]) }}">
@@ -154,6 +154,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row mt-3">
+            <h1 class="text-black fw-bold">Equipo Local</h1>
         </div>
         <div class="row mt-1">
             <div class="col">

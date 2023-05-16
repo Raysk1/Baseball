@@ -14,13 +14,13 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property int $idTemporada
  * @property string|null $nombre
- * @property int $idLiga
+ * @property int|null $idLiga
  * @property string|null $grupo
  * @property string|null $categoria
  * @property string|null $momento
  * @property string|null $temporada
  * 
- * @property Liga $liga
+ * @property Liga|null $liga
  * @property Collection|Juego[] $juegos
  * @property Collection|Roster[] $rosters
  *

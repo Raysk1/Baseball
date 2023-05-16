@@ -6,10 +6,11 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Lanzadore
+ * Class Lanzador
  * 
  * @property int $idLanzadores
  * @property int $idJuego
@@ -23,8 +24,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property float|null $PCA
  * @property float|null $POP
  * 
- * @property Jugador $jugador
  * @property Juego $juego
+ * @property Jugador $jugador
+ * @property Collection|Turno[] $turnos
  *
  * @package App\Models
  */
@@ -60,13 +62,18 @@ class Lanzador extends Model
 		'POP'
 	];
 
+	public function juego()
+	{
+		return $this->belongsTo(Juego::class, 'idJuego');
+	}
+
 	public function jugador()
 	{
 		return $this->belongsTo(Jugador::class, 'idAfiliacion');
 	}
 
-	public function juego()
+	public function turnos()
 	{
-		return $this->belongsTo(Juego::class, 'idJuego');
+		return $this->hasMany(Turno::class, 'idLanzador');
 	}
 }

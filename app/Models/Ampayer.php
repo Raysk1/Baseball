@@ -32,11 +32,8 @@ class Ampayer extends Model
 	public $timestamps = false;
 
 	protected $casts = [
+		'fechaNacimiento' => 'datetime',
 		'activo' => 'bool'
-	];
-
-	protected $dates = [
-		'fechaNacimiento'
 	];
 
 	protected $fillable = [

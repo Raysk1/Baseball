@@ -22,9 +22,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $posicion
  * @property string|null $golpea
  * @property string|null $tira
- * @property string|null $pagina
  * @property string|null $abreviacion
- * @property bool|null $status
+ * @property int|null $status
  * @property string|null $rama
  * 
  * @property Collection|Bateador[] $bateadores
@@ -39,15 +38,14 @@ class Jugador extends Model
 	use HasFactory;
 	protected $table = 'jugadores';
 	protected $primaryKey = 'idAfiliacion';
+	public $incrementing = false;
 	public $timestamps = false;
 
 	protected $casts = [
+		'idAfiliacion' => 'int',
+		'fechaNacimiento' => 'datetime',
 		'posicion' => 'int',
-		'status' => 'bool'
-	];
-
-	protected $dates = [
-		'fechaNacimiento'
+		'status' => 'int'
 	];
 
 	protected $fillable = [
@@ -58,11 +56,9 @@ class Jugador extends Model
 		'posicion',
 		'golpea',
 		'tira',
-		'pagina',
 		'abreviacion',
 		'status',
-		'rama',
-		'imagen'
+		'rama'
 	];
 
 	public function bateadores()

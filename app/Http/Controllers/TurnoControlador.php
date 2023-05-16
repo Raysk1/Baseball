@@ -70,8 +70,8 @@ class TurnoControlador extends Controller {
     public function edit(string $id) {
         $t = Turno::find($id);
         $j = Juego::find($t->idJuego);
-        $jugadores = Equipo::find($j->idEquipoVisitante)->jugadores;
-        $jugadores->merge(Equipo::find($j->idEquipoLocal)->jugadores);
+        $jugadores = $j->equipoLocal->jugadores;
+        $jugadores = $jugadores->merge($j->equipoVisitante->jugadores);
         $lanzadores = $j->lanzadores;
         $datos = ["turno" => $t, "jugadores" => $jugadores, "lanzadores" => $lanzadores];
         return response(view("Turnos.edit", compact("datos")));
@@ -83,7 +83,7 @@ class TurnoControlador extends Controller {
     public function update(Request $request) {
         $j = Jugador::find($request->idAfiliacion);
         $juego = Juego::find($request->idJuego);
-        $r = Roster::all()->where("idTemporada", "=", $juego->idTemporada)->where("idAfiliacion", "=", $request->idAfiliacion)->first();
+        $r = $j->rosters->where("idTemporada", "=", $juego->idTemporada)->first();
         $t = Turno::find($request->idTurno);
         $t->idJuego = $request->idJuego;
         $t->idEquipo = $r->idEquipo;

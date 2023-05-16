@@ -16,8 +16,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $idAmpayer
  * @property string|null $ubicacion
  * 
- * @property Ampayer $ampayer
  * @property Juego $juego
+ * @property Ampayer $ampayer
  *
  * @package App\Models
  */
@@ -38,13 +38,13 @@ class Ampayersjuego extends Model
 		'ubicacion'
 	];
 
-	public function ampayer()
-	{
-		return $this->belongsTo(Ampayer::class, 'idAmpayer');
-	}
-
 	public function juego()
 	{
 		return $this->belongsTo(Juego::class, 'idJuego');
+	}
+
+	public function ampayer()
+	{
+		return $this->belongsTo(Ampayer::class, 'idAmpayer');
 	}
 }

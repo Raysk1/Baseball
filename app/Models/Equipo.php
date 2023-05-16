@@ -59,10 +59,8 @@ class Equipo extends Model
 	{
 		return $this->hasMany(Turno::class, 'idEquipo');
 	}
-
 	public function jugadores(){
 		return $this->belongsToMany(Jugador::class,"Rosters","idEquipo","idAfiliacion");
 	}
 
-	
 }

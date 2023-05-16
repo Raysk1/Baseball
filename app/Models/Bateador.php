@@ -23,8 +23,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property float|null $PJE
  * @property float|null $OBP
  * 
- * @property Juego $juego
  * @property Jugador $jugador
+ * @property Juego $juego
  *
  * @package App\Models
  */
@@ -60,13 +60,13 @@ class Bateador extends Model
 		'OBP'
 	];
 
-	public function juego()
-	{
-		return $this->belongsTo(Juego::class, 'idJuego');
-	}
-
 	public function jugador()
 	{
 		return $this->belongsTo(Jugador::class, 'idAfiliacion');
+	}
+
+	public function juego()
+	{
+		return $this->belongsTo(Juego::class, 'idJuego');
 	}
 }
