@@ -20,10 +20,9 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
 
-                        <li><a class="dropdown-item" href="#">Standing</a></li>
-                        <li><a class="dropdown-item" href="#">Lideres</a></li>
-                        <li><a class="dropdown-item" href="#">Estadisticas</a></li>
-
+                        <li><a class="dropdown-item" >Ampayers Juegos</a></li>
+                        <li><a class="dropdown-item" href="#">Entradas</a></li>
+                        <li><a class="dropdown-item" href={{ route('ligasIndex') }}>Liga</a></li>
                     </ul>
                 </li>
 
