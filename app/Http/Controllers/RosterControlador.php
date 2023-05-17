@@ -93,7 +93,7 @@ class RosterControlador extends Controller
         $r->idEquipo = $request->idEquipo;
         $r -> idTemporada = $request ->idTemporada;
         $r-> idAfiliacion = $request->idAfiliacion;
-
+        $r-> save();
         return response()->redirectTo(route("EquiposDetails",["id" => $r->idEquipo]))
         ->with(["success" => "Actulizado exitosamente"])
         ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
