@@ -135,7 +135,7 @@
                                     @foreach ($datos['juego']->turnos as $turno)
                                         <tr>
                                             <td>{{ $turno->equipo->nombre }}</td>
-                                            <td>{{ $turno->jugador->nombre }} {{ $turno->jugador->apellidos}}</td>
+                                            <td>{{ $turno->bateador->jugador->nombre }} {{ $turno->bateador->jugador->apellidos}}</td>
                                             <td>{{ $turno->turno }}</td>
                                             <td>{{ $turno->inning }}</td>
                                             <td>{{ $turno->carrera == 1 ? "Si" : "No" }}</td>
@@ -155,10 +155,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-3">
-            <h1 class="text-black fw-bold">Equipo Local</h1>
-        </div>
-        <div class="row mt-1">
+        <div class="row">
             <div class="col">
                 <h3>Bateadores</h3>
                 <div class="justify-content-center">

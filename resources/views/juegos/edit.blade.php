@@ -55,7 +55,7 @@
                     <div class="col">
                         <label for="hora" class="form-label">Hora:</label>
                         <input type="time" name="hora" class="form-control" id="hora" required
-                            value={{ $datos['juego']->hora }}>
+                            value="{{ $datos['juego']->hora }}">
 
                     </div>
                     <div class="col">
