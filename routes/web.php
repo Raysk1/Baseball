@@ -152,5 +152,4 @@ Route::redirect("/", "/inicio");
 
 Route::get('/reglamento', function () {
     return view('Boxscore');})->name("reglamento");
-Route::get('/boxscore', function () {
-    return view('Boxscore.boxscore');})->name("boxscore    ");
+Route::get('/boxscore/{id}', [JuegoControlador::class,"show"])->name("boxscore");
