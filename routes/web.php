@@ -48,6 +48,7 @@ Route::get("/abc/juegos", [JuegoControlador::class, "index"])->middleware("auth"
 Route::get("/abc/juegos/edit/{id}", [JuegoControlador::class, "edit"])->middleware("auth")->name("juegosEdit");
 Route::post("/abc/juegos/update", [JuegoControlador::class, "update"])->middleware("auth")->name("juegosUpdate");
 Route::get("/abc/juegos/details/{id}", [JuegoControlador::class, "details"])->middleware("auth")->name("juegosDetails");
+Route::get("/abc/juegos/listado", [JuegoControlador::class, "listado"])->name("juegosListado");
 
 /**Entradas */
 Route::get('/abc/Entrada/create/{juegoId}', [EntradaControlador::class, 'create'])->middleware("auth")->name('EntradaCreate');

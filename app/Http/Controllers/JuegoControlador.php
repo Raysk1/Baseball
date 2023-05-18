@@ -179,4 +179,9 @@ class JuegoControlador extends Controller {
     public function destroy($id) {
 
     }
+
+    public function listado(Request $request){
+        $juegos = Juego::all();
+        return response(view("Juegos.listado", compact("juegos")));
+    }
 }
