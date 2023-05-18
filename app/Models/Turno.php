@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $idTurno
  * @property int $idJuego
  * @property int $idEquipo
- * @property int $idAfiliacion
+ * @property int $idBateadores
  * @property int|null $turno
  * @property int|null $inning
  * @property int|null $posicion
@@ -27,8 +27,8 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property Juego $juego
  * @property Equipo $equipo
- * @property Jugador $jugador
  * @property Lanzador $lanzador
+ * @property Bateador $bateador
  *
  * @package App\Models
  */
@@ -41,7 +41,7 @@ class Turno extends Model
 	protected $casts = [
 		'idJuego' => 'int',
 		'idEquipo' => 'int',
-		'idAfiliacion' => 'int',
+		'idBateadores' => 'int',
 		'turno' => 'int',
 		'inning' => 'int',
 		'posicion' => 'int',
@@ -53,7 +53,7 @@ class Turno extends Model
 	protected $fillable = [
 		'idJuego',
 		'idEquipo',
-		'idAfiliacion',
+		'idBateadores',
 		'turno',
 		'inning',
 		'posicion',
@@ -75,13 +75,13 @@ class Turno extends Model
 		return $this->belongsTo(Equipo::class, 'idEquipo');
 	}
 
-	public function jugador()
-	{
-		return $this->belongsTo(Jugador::class, 'idAfiliacion');
-	}
-
 	public function lanzador()
 	{
 		return $this->belongsTo(Lanzador::class, 'idLanzador');
+	}
+
+	public function bateador()
+	{
+		return $this->belongsTo(Bateador::class, 'idBateadores');
 	}
 }

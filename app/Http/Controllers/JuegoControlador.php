@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\Juego;
 use App\Models\Lanzador;
 use App\Models\Parque;
+use App\Models\Roster;
 use App\Models\Turno;
 use Illuminate\Support\Facades\DB;
 
@@ -47,7 +48,10 @@ class JuegoControlador extends Controller {
     public function details($id) {
         $juego = Juego::find($id);
 
-        $datos = array("juego" => $juego);
+        $datos = array(
+            "juego" => $juego,
+
+        );
         return response(view("juegos.details", compact("datos")));
     }
 
@@ -87,7 +91,7 @@ class JuegoControlador extends Controller {
         $j->idEquipoLocal = $request->idEquipoLocal;
         $j->final = $request->final;
         $j->save();
-        return response()->redirectTo(route("juegosDetails",["id" => $j -> idJuego]));
+        return response()->redirectTo(route("juegosDetails", ["id" => $j->idJuego]));
 
     }
     /** 
@@ -96,9 +100,43 @@ class JuegoControlador extends Controller {
      * @return \Illuminate\Http\Response 
      */
     public function show($id) {
+        $juego = Juego::find($id);
+        $carrerasLocal = $juego->turnos->where('idEquipo', $juego->idEquipoLocal)->where("carrera", 1)->count();
+        $carrerasVisitante = $juego->turnos->where('idEquipo', $juego->idEquipoVisitante)->where("carrera", 1)->count();
+        $entradas = $juego->turnos->sortByDesc("inning")->first()->inning;
+        $hitsLocal = $juego->turnos->where('idEquipo', $juego->idEquipoLocal)->filter(
+            function ($elemento) {
+                return str_starts_with($elemento->resultado, 'H') || str_starts_with($elemento->resultado, 'h');
+            }
+        )->count();
+        $hitsVisitante = $juego->turnos->where('idEquipo', $juego->idEquipoVisitante)->filter(
+            function ($elemento) {
+                return str_starts_with($elemento->resultado, 'H') || str_starts_with($elemento->resultado, 'h');
+            }
+        )->count();
 
-        //  
+        $erroresVisitante = $juego->turnos->where('idEquipo', $juego->idEquipoVisitante)->filter(
+            function ($elemento) {
+                return str_starts_with($elemento->resultado, 'E') || str_starts_with($elemento->resultado, 'e');
+            }
+        )->count();
+
+        $erroresLocal = $juego->turnos->where('idEquipo', $juego->idEquipoLocal)->filter(
+            function ($elemento) {
+                return str_starts_with($elemento->resultado, 'E') || str_starts_with($elemento->resultado, 'e');
+            }
+        )->count();
+
+        $lanzadorLocal = $juego->turnos->where("idEquipo", $juego->idEquipoVisitante)->first()->lanzador;
+        $lanzadorVisitante = $juego->turnos->where("idEquipo", $juego->idEquipoLocal)->first()->lanzador;
+        
+
+        return response(view('juegos.boxscore', compact("juego", "carrerasLocal",
+            "carrerasVisitante", "entradas", "hitsLocal", "hitsVisitante", "erroresLocal", "erroresVisitante",
+            "lanzadorLocal", "lanzadorVisitante")));
     }
+
+
     /** 
      * Show the form for editing the specified resource. 
      * @param  int  $id 
@@ -130,7 +168,7 @@ class JuegoControlador extends Controller {
         $j->idEquipoLocal = $request->idEquipoLocal;
         $j->final = $request->final;
         $j->save();
-        return response()->redirectTo(route("juegosDetails",["id" => $j->idJuego]));
+        return response()->redirectTo(route("juegosDetails", ["id" => $j->idJuego]));
 
     }
     /** 
