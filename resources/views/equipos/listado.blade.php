@@ -12,10 +12,9 @@
 
                     @foreach ($equipos as $equipo)
                         <div class="card" style="width: 20%;">
-                            <!--18 rem - Validar imagen para que en caso que no exista la imagen del jugador se muestre una imagen por defecto si es varonil o femenil-->
-
+                            
                             @php
-                                $ruta_imagen = '/img/equipos/' . $equipo->idEquipo . '.png';
+                                $ruta_imagen = '/img/equipos/'. $equipo->idEquipo. '.png';
                             @endphp
 
                             @switch(true)
@@ -28,8 +27,6 @@
                                     <img src="{{ asset('/img/equipos/0.png') }}" class="card-img-top img-fluid mt-2"
                                         style="max-width: 100%; height: 60%;">
                             @endswitch
-
-
 
                             <div class="card-body p-1">
                                 ID: {{ $equipo->idEquipo }}<br>
