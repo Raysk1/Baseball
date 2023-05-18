@@ -10,8 +10,8 @@
                 @csrf
                 <div class="row mb-2">
                     <div class="col">
-                        <label for="idLanzadores" class="form-label">ID:</label>
-                        <input type="text" name="idLanzadores" class="form-control" id="idLanzadores" required
+                        <label for="idBateadores" class="form-label">ID:</label>
+                        <input type="text" name="idBateadores" class="form-control" id="idBateadores" required
                           value={{$datos["bateador"] ->idBateadores}}  readonly>
                     </div>
                 </div>

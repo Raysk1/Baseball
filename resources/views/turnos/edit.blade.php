@@ -26,11 +26,11 @@
 
                 <div class="row mb-2">
                     <div class="col">
-                        <label for="idAfiliacion" class="form-label">Jugador:</label>
-                        <select class="form-select" name="idAfiliacion" id="idAfiliacion">
+                        <label for="idBateadores" class="form-label">Jugador:</label>
+                        <select class="form-select" name="idBateadores" id="idBateadores">
                             @foreach ($datos['jugadores'] as $j)
-                                <option value={{ $j->idAfiliacion }}
-                                    {{ $datos['turno']->idAfiliacion == $j->idAfiliacion ? 'selected' : '' }}>
+                                <option value={{ $j->idBateadores }}
+                                    {{ $datos['turno']->idBateadores == $j->idBateadores ? 'selected' : '' }}>
                                     {{ $j->nombre . ' ' . $j->apellidos }}</option>
                             @endforeach
                         </select>

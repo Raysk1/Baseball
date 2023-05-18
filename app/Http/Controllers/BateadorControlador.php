@@ -36,7 +36,6 @@ class BateadorControlador extends Controller
     public function store(Request $request) {
         $t = new Bateador();
         $t->idJuego = $request->idJuego;
-        $t->idAfiliacion = $request->idAfiliacion;
         $t->AB = $request->AB;
         $t->C = $request ->C;
         $t->H = $request -> H;
@@ -47,7 +46,7 @@ class BateadorControlador extends Controller
         $t->OBP = $request -> OBP;
         $t->idBateadores  = $request -> idBateadores ;
         $t->save();
-        return response()->redirectTo(route("juegosDetails", ["id" => $t->idJuego]))
+        return response()->redirectTo(route("juegosDetails", ["juegoId" => $t->idJuego]))
         ->with(["success" => "Actulizado exitosamente"])
         ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
     }
@@ -77,7 +76,7 @@ class BateadorControlador extends Controller
     public function update(Request $request) {
         $t = Bateador::find($request->idBateadores );
         $t->idJuego = $request->idJuego;
-        $t->idAfiliacion = $request->idAfiliacion;
+        $t->idBateadores = $request->idBateadores;
         $t->AB = $request->AB;
         $t->C = $request ->C;
         $t->H = $request -> H;
@@ -86,7 +85,6 @@ class BateadorControlador extends Controller
         $t->K = $request -> K;
         $t->PJE = $request -> PJE;
         $t->OBP = $request -> OBP;
-        $t->idBateadores  = $request -> idBateadores ;
         $t->save();
         return response()->redirectTo(route("juegosDetails", ["id" => $t->idJuego]))
             ->with(["success" => "Actulizado exitosamente"])
