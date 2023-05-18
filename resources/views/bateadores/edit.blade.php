@@ -60,14 +60,7 @@
                         <label for="K" class="form-label">K</label>
                         <input type="number" min="0" name="K" class="form-control" id="K"  value={{$datos["bateador"]->K}} required>
                     </div>
-                    <div class="col">
-                        <label for="PJE" class="form-label">PJE</label>
-                        <input type="number" min="0" name="PJE" class="form-control" id="PJE"  value={{$datos["bateador"]->PJE}} required>
-                    </div>
-                    <div class="col">
-                        <label for="OBP" class="form-label">OBP</label>
-                        <input type="number" min="0" name="OBP" class="form-control" id="OBP"  value={{$datos["bateador"]->OBP}} required>
-                    </div>
+                   
                 </div>
 
                 <div class="row mb-2">

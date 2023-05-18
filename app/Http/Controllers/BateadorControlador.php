@@ -86,8 +86,13 @@ class BateadorControlador extends Controller
         $t->CP = $request -> CP;
         $t->BB = $request -> BB;
         $t->K = $request -> K;
-        $t->PJE = $request -> PJE;
-        $t->OBP = $request -> OBP;
+        $t->PJE = ($t->AB != 0) ? number_format($t->H / $t->AB, 3)  : 0; // Calcula el promedio de bateo
+        $total_bases = $t->H + $t->BB;
+        $turnos_plato = $t->AB + $t->BB;
+        $t->OBP = ($turnos_plato != 0) ?number_format( $total_bases / $turnos_plato,3) : 0;
+
+
+
         $t->save();
         return response()->redirectTo(route("juegosDetails", ["id" => $t->idJuego]))
             ->with(["success" => "Actulizado exitosamente"])
