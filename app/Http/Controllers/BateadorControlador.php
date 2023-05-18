@@ -68,6 +68,9 @@ class BateadorControlador extends Controller
         $jugadores = $j->equipoVisitante->jugadores;
         $jugadores = $jugadores->merge($j->equipoLocal->jugadores);
         $datos =["bateador"=>$b, "jugadores" => $jugadores];
+
+     
+
         return response(view("Bateadores.edit", compact("datos")));
     }
 
