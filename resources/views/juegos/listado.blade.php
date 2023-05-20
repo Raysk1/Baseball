@@ -2,7 +2,6 @@
 @section('title')
     Listado de Juegos
 @endsection
-
 @section('content')
     <div class="d-flex justify-content-center">
         <div class="w-75 mt-4">
@@ -10,54 +9,41 @@
             <div class="container">
                 <div class="row justify-content-between">
 
+                    <div class="card" style="width: 33%;">
 
+                        <table class="table table-responsive table-hover">
+                            <tr>
+                                <th colspan="5">FINAL</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>C</th>
+                                <th>H</th>
+                                <th>E</th>
+                            </tr>
 
-                    <div class="table-responsive">
-                        <table class="table table-responsive table-sm table-dark table-striped table-bordered table-hover">
                             <tr>
-                                <th>Celda 1</th>
-                                <th>Celda 2</th>
-                                <th>Celda 3</th>
-                                <th>Celda 4</th>
-                                <th>Celda 5</th>
+                                <td><img src="/img/juegos/1.png"></td>
+                                <td>Local</td>
+                                @foreach ($juegos as $j)
+                                    <td>{{ $j->carrerasLocal }}</td>
+                                    <td>{{ $j->hitsLocal }}</td>
+                                    <td>{{ $j->erroresLocal }}</td>
+                                @endforeach
                             </tr>
+
                             <tr>
-                                <td>Celda 1</td>
-                                <td>Celda 2</td>
-                                <td>Celda 3</td>
-                                <td>Celda 4</td>
-                                <td>Celda 5</td>
+                                <td><img src="/img/juegos/1.png"></td>
+                                <td>Visitante</td>
+                                @foreach ($juegos as $j)
+                                    <td>{{ $j->carrerasVisitante }}</td>
+                                    <td>{{ $j->hitsVisitante }}</td>
+                                    <td>{{ $j->erroresVisitante }}</td>
+                                @endforeach
                             </tr>
-                            <tr>
-                                <td>Celda 1</td>
-                                <td>Celda 2</td>
-                                <td>Celda 3</td>
-                                <td>Celda 4</td>
-                                <td>Celda 5</td>
-                            </tr>		
-                            <tr>
-                                <td>Celda 1</td>
-                                <td>Celda 2</td>
-                                <td>Celda 3</td>
-                                <td>Celda 4</td>
-                                <td>Celda 5</td>
-                            </tr>
-                            <tr>
-                                <td>Celda 1</td>
-                                <td>Celda 2</td>
-                                <td>Celda 3</td>
-                                <td>Celda 4</td>
-                                <td>Celda 5</td>
-                            </tr>		
                         </table>
-                        </div>
-
-
-
-
-
-
-
+                    </div>
 
                 </div>
             </div>
