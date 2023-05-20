@@ -16,8 +16,7 @@
                                 <th colspan="5">FINAL</th>
                             </tr>
                             <tr>
-                                <th></th>
-                                <th></th>
+                                <th colspan="2"></th>
                                 <th>C</th>
                                 <th>H</th>
                                 <th>E</th>
