@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Bateador;
 use App\Models\Equipo;
 use App\Models\Juego;
 use App\Models\Lanzador;
@@ -129,7 +128,6 @@ class JuegoControlador extends Controller
 
         $lanzadorLocal = $juego->turnos->where("idEquipo", $juego->idEquipoVisitante)->first()->lanzador;
         $lanzadorVisitante = $juego->turnos->where("idEquipo", $juego->idEquipoLocal)->first()->lanzador;
-        
 
         return response(view('juegos.boxscore', compact("juego", "carrerasLocal",
             "carrerasVisitante", "entradas", "hitsLocal", "hitsVisitante", "erroresLocal", "erroresVisitante",
@@ -186,9 +184,9 @@ class JuegoControlador extends Controller
     {
         $juegos = Juego::all();
         foreach ($juegos as $juego) {
-            $juego->carrerasLocal =  $juego->turnos->where('idEquipo', $juego->idEquipoLocal)->where("carrera", 1)->count();
+            $juego->carrerasLocal = $juego->turnos->where('idEquipo', $juego->idEquipoLocal)->where("carrera", 1)->count();
             $juego->carrerasVisitante = $juego->turnos->where('idEquipo', $juego->idEquipoVisitante)->where("carrera", 1)->count();
-            $juego-> hitsLocal = $juego->turnos->where('idEquipo', $juego->idEquipoLocal)->filter(
+            $juego->hitsLocal = $juego->turnos->where('idEquipo', $juego->idEquipoLocal)->filter(
                 function ($elemento) {
                     return str_starts_with($elemento->resultado, 'H') || str_starts_with($elemento->resultado, 'h');
                 }
@@ -208,17 +206,13 @@ class JuegoControlador extends Controller
                     return str_starts_with($elemento->resultado, 'E') || str_starts_with($elemento->resultado, 'e');
                 }
             )->count();
-    
         }
 
         return response(view("Juegos.listado", compact("juegos")));
     }
 
-    public function promedios() {
-        
-     
-
-    
+    public function promedios()
+    {
 
     }
 
