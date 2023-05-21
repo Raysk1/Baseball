@@ -14,7 +14,7 @@
                         <div class="card" style="width: 33%;">
                             <div class="table-responsive">
 
-                                <table class="table table-responsive table-hover">
+                                <table class="table table-responsive table-hover mt-3">
                                     <tr>
                                         <th colspan="5">FINAL</th>
                                     </tr>
@@ -40,6 +40,9 @@
                                         <td>{{ $j->carrerasVisitante }}</td>
                                         <td>{{ $j->hitsVisitante }}</td>
                                         <td>{{ $j->erroresVisitante }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan ="5"><button>Boxscore</button></td>
                                     </tr>
                                 </table>
 
