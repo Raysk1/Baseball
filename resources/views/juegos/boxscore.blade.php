@@ -128,7 +128,7 @@
                                         {{ $t->bateador->jugador->nombre }} {{ $t->bateador->jugador->apellidos }}
                                     </td>
                                     <td>
-                                        @switch($t->bateador->jugador->posicion)
+                                        @switch($t->posicion)
                                             @case(1)
                                                 P
                                             @break
