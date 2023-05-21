@@ -7,9 +7,8 @@ use App\Models\Equipo;
 use App\Models\Juego;
 use Illuminate\Http\Request;
 
-class BateadorControlador extends Controller
-{
-     /**
+class BateadorControlador extends Controller {
+    /**
      * Display a listing of the resource.
      */
     public function index() {
@@ -26,7 +25,7 @@ class BateadorControlador extends Controller
         $j = Juego::find($idJuego);
         $jugadores = $j->equipoVisitante->jugadores;
         $jugadores = $jugadores->merge($j->equipoLocal->jugadores);
-        $datos =["lastId" => $lastId, "jugadores" => $jugadores,"juegoId" => $idJuego]; 
+        $datos = ["lastId" => $lastId, "jugadores" => $jugadores, "juegoId" => $idJuego];
         return response(view('Bateadores.create', compact('datos')));
     }
 
@@ -37,18 +36,18 @@ class BateadorControlador extends Controller
         $t = new Bateador();
         $t->idJuego = $request->idJuego;
         $t->AB = $request->AB;
-        $t->C = $request ->C;
-        $t->H = $request -> H;
-        $t->CP = $request -> CP;
-        $t->BB = $request -> BB;
-        $t->K = $request -> K;
-        $t->PJE = $request -> PJE;
-        $t->OBP = $request -> OBP;
-        $t->idBateadores  = $request -> idBateadores ;
+        $t->C = $request->C;
+        $t->H = $request->H;
+        $t->CP = $request->CP;
+        $t->BB = $request->BB;
+        $t->K = $request->K;
+        $t->PJE = $request->PJE;
+        $t->OBP = $request->OBP;
+        $t->idBateadores = $request->idBateadores;
         $t->save();
         return response()->redirectTo(route("juegosDetails", ["juegoId" => $t->idJuego]))
-        ->with(["success" => "Actulizado exitosamente"])
-        ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
+            ->with(["success" => "Actulizado exitosamente"])
+            ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
     }
 
     /**
@@ -61,15 +60,12 @@ class BateadorControlador extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit( $id) {
+    public function edit($id) {
         $b = Bateador::find($id);
         $j = $b->juego;
         $jugadores = $j->equipoVisitante->jugadores;
         $jugadores = $jugadores->merge($j->equipoLocal->jugadores);
-        $datos =["bateador"=>$b, "jugadores" => $jugadores];
-
-     
-
+        $datos = ["bateador" => $b, "jugadores" => $jugadores];
         return response(view("Bateadores.edit", compact("datos")));
     }
 
@@ -77,17 +73,17 @@ class BateadorControlador extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request) {
-        $t = Bateador::find($request->idBateadores );
+        $t = Bateador::find($request->idBateadores);
         $t->idJuego = $request->idJuego;
         $t->idBateadores = $request->idBateadores;
         $t->AB = $request->AB;
-        $t->C = $request ->C;
-        $t->H = $request -> H;
-        $t->CP = $request -> CP;
-        $t->BB = $request -> BB;
-        $t->K = $request -> K;
-        $t->PJE = $request -> PJE;
-        $t->OBP = $request -> OBP;
+        $t->C = $request->C;
+        $t->H = $request->H;
+        $t->CP = $request->CP;
+        $t->BB = $request->BB;
+        $t->K = $request->K;
+        $t->PJE = $request->PJE;
+        $t->OBP = $request->OBP;
         $t->save();
         return response()->redirectTo(route("juegosDetails", ["id" => $t->idJuego]))
             ->with(["success" => "Actulizado exitosamente"])

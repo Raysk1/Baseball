@@ -69,7 +69,8 @@ class JuegoControlador extends Controller {
             "lastId" => $lastId,
             "equipos" => Equipo::all(["idEquipo", "nombre"]),
             "temporadas" => Temporada::all(["idTemporada", "nombre"]),
-            "campos" => Parque::all());
+            "campos" => Parque::all(),
+        );
         return response(view('Juegos.create', compact('datos')));
     }
     /** 
@@ -129,7 +130,7 @@ class JuegoControlador extends Controller {
 
         $lanzadorLocal = $juego->turnos->where("idEquipo", $juego->idEquipoVisitante)->first()->lanzador;
         $lanzadorVisitante = $juego->turnos->where("idEquipo", $juego->idEquipoLocal)->first()->lanzador;
-        
+
 
         return response(view('juegos.boxscore', compact("juego", "carrerasLocal",
             "carrerasVisitante", "entradas", "hitsLocal", "hitsVisitante", "erroresLocal", "erroresVisitante",
