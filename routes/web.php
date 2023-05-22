@@ -11,6 +11,7 @@ use App\Http\Controllers\LanzadorControlador;
 use App\Http\Controllers\LigaControlador;
 use App\Http\Controllers\LoginControlador;
 use App\Http\Controllers\ManejadorControlador;
+use App\Http\Controllers\ParqueControlador;
 use App\Http\Controllers\RosterControlador;
 
 //use App\Http\Controllers\InformacionControlador;
@@ -134,6 +135,13 @@ Route::get('/abc/bateadores', [BateadorControlador::class, 'index'])->middleware
 Route::get('/abc/bateadores/edit/{id}', [BateadorControlador::class, 'edit'])->middleware("auth")->name("bateadoresEdit");
 Route::post('/abc/bateadores/update', [BateadorControlador::class, 'update'])->middleware("auth")->name('bateadoresUpdate');
 
+/*PARQUES*/
+Route::get('/abc/parques/create', [ParqueControlador::class, 'create'])->middleware("auth")->name('parquesCreate');
+Route::post('/abc/parques/store', [ParqueControlador::class, 'store'])->middleware("auth")->name('parquesStore');
+Route::get('/abc/parques', [ParqueControlador::class, 'index'])->middleware("auth")->name('parquesIndex');
+Route::get('/abc/parques/edit/{id}', [ParqueControlador::class, 'edit'])->middleware("auth")->name('parquesEdit');
+Route::post('/abc/parques/update', [ParqueControlador::class, 'update'])->middleware("auth")->name('parquesUpdate');
+
 //Login
 Route::get('/login', function () {
     return view('sesion.login');
@@ -153,4 +161,4 @@ Route::redirect("/", "/inicio");
 
 Route::get('/reglamento', function () {
     return view('Boxscore');})->name("reglamento");
-Route::get('/boxscore/{id}', [JuegoControlador::class,"show"])->name("boxscore");
+Route::get('/boxscore/{id}', [JuegoControlador::class, "show"])->name("boxscore");
