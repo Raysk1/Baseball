@@ -100,7 +100,7 @@
                 </div>
                 <div class="row mb-2">
                     <div class="col justify-content-center">
-                        <button type="submit" class="btn btn-primary w-100">guardar</button>
+                        <button type="submit" class="btn btn-primary w-100">GUARDAR</button>
                     </div>
                 </div>
             </form>

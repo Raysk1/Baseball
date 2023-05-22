@@ -107,9 +107,7 @@ class JugadorControlador extends Controller
      * @param  int  $id 
      * @return  \Illuminate\Http\Response 
      */
-    public function edit($id)
-    {
-
+    public function edit($id){
         $datos = Jugador::find($id);
         return response(view("Jugadores.edit", compact("datos")));
     }

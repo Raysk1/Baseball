@@ -142,6 +142,13 @@ Route::get('/abc/parques', [ParqueControlador::class, 'index'])->middleware("aut
 Route::get('/abc/parques/edit/{id}', [ParqueControlador::class, 'edit'])->middleware("auth")->name('parquesEdit');
 Route::post('/abc/parques/update', [ParqueControlador::class, 'update'])->middleware("auth")->name('parquesUpdate');
 
+
+
+
+
+
+
+
 //Login
 Route::get('/login', function () {
     return view('sesion.login');
