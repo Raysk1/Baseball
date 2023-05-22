@@ -30,7 +30,7 @@
                             <label for="idAfiliacion" class="form-label">Jugador:</label>
                             <select class="form-control" name="idAfiliacion" id="idAfiliacion" required>
                                 @foreach ($datos['jugadores'] as $j)
-                                    <option value={{ $j->idAfiliacion }}>{{ $j->nombre . ' ' . $j->apellidos }}</option>
+                                    <option value={{ $j->idAfiliacion }}   {{$j->idAfiliacion == $datos["lanzador"]->idAfiliacion ? "selected" : ''}}>{{ $j->nombre . ' ' . $j->apellidos }}</option>
                                 @endforeach
                             </select>
                         </div>

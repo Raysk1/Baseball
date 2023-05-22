@@ -103,167 +103,341 @@
                     </div>
                 </div>
             </div>
-
         </div>
-        <div class="row mt-1">
-            <div class="col">
-                <h3>Turnos</h3>
-                <div class="justify-content-center">
-                    <div class=" mt-1">
-                        <a href={{ route('turnoCreate', ['juegoId' => $datos['juego']->idJuego]) }}
-                            class="btn btn-primary mb-3 w-100">
-                            <svg width="32" height="32" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                            </svg>
-                            Agregar
-                        </a>
-                        <div class="table-responsive text-center" style="height: 200px;">
-                            <table class="table table-dark">
-                                <thead class="bg-white border-white ">
-                                    <th scope="col">Equipo</th>
-                                    <th scope="col">Jugador</th>
-                                    <th scope="col">No. turno</th>
-                                    <th scope="col">Inning</th>
-                                    <th scope="col">Carrera</th>
-                                    <th scope="col">Resultado</th>
-                                    <th scope="col">Lanzador</th>
-                                    <th scope="col" class="text-center" colspan="2">Accion</th>
-
-                                </thead>
-                                <tbody>
-                                    @foreach ($datos['juego']->turnos as $turno)
-                                        <tr>
-                                            <td>{{ $turno->equipo->nombre }}</td>
-                                            <td>{{ $turno->bateador->jugador->nombre }} {{ $turno->bateador->jugador->apellidos}}</td>
-                                            <td>{{ $turno->turno }}</td>
-                                            <td>{{ $turno->inning }}</td>
-                                            <td>{{ $turno->carrera == 1 ? "Si" : "No" }}</td>
-                                            <td>{{ $turno->resultado }}</td>
-                                            <td>{{ $turno->lanzador->jugador->nombre ." ". $turno->lanzador->jugador->apellidos }}</td>
-                                            <td colspan="2" style="width: 12%">
-                                                <x-actionButtons
-                                                    route="{{ route('turnoEdit', ['id' => $turno->idTurno]) }}">
-                                                </x-actionButtons>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+        <div>
+            <div class="row mt-3">
+                <h1 class="text-black fw-bold">Equipo Local</h1>
+                <h2 class="text-black fw-bold">{{$datos["juego"]->equipoLocal->nombre}}</h2>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h3>Bateadores</h3>
+                    <div class="justify-content-center">
+                        <div class=" mt-1">
+                            <a href={{ route('bateadoresCreate', ['juegoId' => $datos['juego']->idJuego]) }}
+                                class="btn btn-primary mb-3 w-100">
+                                <svg width="32" height="32" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg>
+                                Agregar
+                            </a>
+                            <div class="table-responsive text-center" style="height: 200px;">
+                                <table class="table table-dark">
+                                    <thead class="bg-white border-white ">
+                                        <th scope="col">Jugador</th>
+                                        <th scope="col">AB</th>
+                                        <th scope="col">C</th>
+                                        <th scope="col">H</th>
+                                        <th scope="col">CP</th>
+                                        <th scope="col">BB</th>
+                                        <th scope="col">K</th>
+                                        <th scope="col">PJE</th>
+                                        <th scope="col">OBP</th>
+                                        <th scope="col" class="text-center" colspan="2">Accion</th>
+    
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($datos["juego"]->turnos->unique('idBateadores')->where('idEquipo',$datos["juego"]->idEquipoLocal) as $t)
+                                            <tr>
+                                                <td>{{ $t->bateador->jugador->abreviacion }}</td>
+                                                <td>{{ $t->bateador->AB }}</td>
+                                                <td>{{ $t->bateador->C }}</td>
+                                                <td>{{ $t->bateador->H }}</td>
+                                                <td>{{ $t->bateador->CP }}</td>
+                                                <td>{{ $t->bateador->BB }}</td>
+                                                <td>{{ $t->bateador->K }}</td>
+                                                <td>{{ $t->bateador->PJE }}</td>
+                                                <td>{{ $t->bateador->OBP }}</td>
+                                                <td colspan="2" style="width: 12%">
+                                                    <x-actionButtons
+                                                        route="{{ route('bateadoresEdit', ['id' => $t->bateador->idBateadores]) }}">
+                                                    </x-actionButtons>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col">
+                    <h3>Lanzadores</h3>
+                    <div class="justify-content-center">
+                        <div class=" mt-1">
+                            <a href={{ route('LanzadorCreate', ['juegoId' => $datos['juego']->idJuego]) }}
+                                class="btn btn-primary mb-3 w-100" href="">
+                                <svg width="32" height="32" fill="currentColor" class="bi bi-plus"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg>
+                                Agregar
+                            </a>
+                            <div class="table-responsive text-center" style="height: 200px;">
+                                <table class="table table-dark">
+                                    <thead class="bg-white border-white ">
+                                        <th scope="col">Jugador</th>
+                                        <th scope="col">IP</th>
+                                        <th scope="col">BA</th>
+                                        <th scope="col">C</th>
+                                        <th scope="col">H</th>
+                                        <th scope="col">BB</th>
+                                        <th scope="col">K</th>
+                                        <th scope="col">PCA</th>
+                                        <th scope="col">POP</th>
+                                        <th scope="col" class="text-center" colspan="2">Accion</th>
+    
+                                    </thead>
+                                    <tbody>
+    
+                                        @foreach ($datos["juego"]->turnos->unique('idLanzador')->where('idEquipo',$datos["juego"]->idEquipoVisitante) as $t)
+                                            <tr>
+    
+                                                <td>{{ $t->lanzador->jugador->abreviacion }}</td>
+                                                <td>{{ $t->lanzador->IP }}</td>
+                                                <td>{{ $t->lanzador->BA }}</td>
+                                                <td>{{ $t->lanzador->C }}</td>
+                                                <td>{{ $t->lanzador->H }}</td>
+                                                <td>{{ $t->lanzador->BB }}</td>
+                                                <td>{{ $t->lanzador->K }}</td>
+                                                <td>{{ $t->lanzador->PCA }}</td>
+                                                <td>{{ $t->lanzador->POP }}</td>
+                                                <td colspan="2" style="width: 12%">
+                                                    <x-actionButtons
+                                                        route="{{ route('LanzadorEdit', ['id' => $t->lanzador->idLanzadores]) }}">
+                                                    </x-actionButtons>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col">
+                    <h3>Turnos</h3>
+                    <div class="justify-content-center">
+                        <div class=" mt-1">
+                            <a href={{ route('turnoCreate', ['juegoId' => $datos['juego']->idJuego]) }}
+                                class="btn btn-primary mb-3 w-100">
+                                <svg width="32" height="32" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg>
+                                Agregar
+                            </a>
+                            <div class="table-responsive text-center" style="height: 200px;">
+                                <table class="table table-dark">
+                                    <thead class="bg-white border-white ">
+                                        <th scope="col">Equipo</th>
+                                        <th scope="col">Jugador</th>
+                                        <th scope="col">No. turno</th>
+                                        <th scope="col">Inning</th>
+                                        <th scope="col">Carrera</th>
+                                        <th scope="col">Resultado</th>
+                                        <th scope="col">Lanzador</th>
+                                        <th scope="col" class="text-center" colspan="2">Accion</th>
+    
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($datos['juego']->turnos->where("idEquipo",$datos['juego']->idEquipoLocal) as $turno)
+                                            <tr>
+                                                <td>{{ $turno->equipo->nombre }}</td>
+                                                <td>{{ $turno->bateador->jugador->nombre }} {{ $turno->bateador->jugador->apellidos}}</td>
+                                                <td>{{ $turno->turno }}</td>
+                                                <td>{{ $turno->inning }}</td>
+                                                <td>{{ $turno->carrera == 1 ? "Si" : "No" }}</td>
+                                                <td>{{ $turno->resultado }}</td>
+                                                <td>{{ $turno->lanzador->jugador->nombre ." ". $turno->lanzador->jugador->apellidos }}</td>
+                                                <td colspan="2" style="width: 12%">
+                                                    <x-actionButtons
+                                                        route="{{ route('turnoEdit', ['id' => $turno->idTurno]) }}">
+                                                    </x-actionButtons>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <h3>Bateadores</h3>
-                <div class="justify-content-center">
-                    <div class=" mt-1">
-                        <a href={{ route('bateadoresCreate', ['juegoId' => $datos['juego']->idJuego]) }}
-                            class="btn btn-primary mb-3 w-100">
-                            <svg width="32" height="32" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                            </svg>
-                            Agregar
-                        </a>
-                        <div class="table-responsive text-center" style="height: 200px;">
-                            <table class="table table-dark">
-                                <thead class="bg-white border-white ">
-                                    <th scope="col">Jugador</th>
-                                    <th scope="col">AB</th>
-                                    <th scope="col">C</th>
-                                    <th scope="col">H</th>
-                                    <th scope="col">CP</th>
-                                    <th scope="col">BB</th>
-                                    <th scope="col">K</th>
-                                    <th scope="col">PJE</th>
-                                    <th scope="col">OBP</th>
-                                    <th scope="col" class="text-center" colspan="2">Accion</th>
-
-                                </thead>
-                                <tbody>
-                                    @foreach ($datos['juego']->bateadores as $bateador)
-                                        <tr>
-                                            <td>{{ $bateador->jugador->abreviacion }}</td>
-                                            <td>{{ $bateador->AB }}</td>
-                                            <td>{{ $bateador->C }}</td>
-                                            <td>{{ $bateador->H }}</td>
-                                            <td>{{ $bateador->CP }}</td>
-                                            <td>{{ $bateador->BB }}</td>
-                                            <td>{{ $bateador->K }}</td>
-                                            <td>{{ $bateador->PJE }}</td>
-                                            <td>{{ $bateador->OBP }}</td>
-                                            <td colspan="2" style="width: 12%">
-                                                <x-actionButtons
-                                                    route="{{ route('bateadoresEdit', ['id' => $bateador->idBateadores]) }}">
-                                                </x-actionButtons>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+        <div>
+            <div class="row mt-3">
+                <h1 class="text-black fw-bold">Equipo Visitante</h1>
+                <h2 class="text-black fw-bold">{{$datos["juego"]->equipoVisitante->nombre}}</h2>
+            </div>
+           
+            <div class="row mt-2">
+                <div class="col">
+                    <h3>Bateadores</h3>
+                    <div class="justify-content-center">
+                        <div class=" mt-1">
+                            <a href={{ route('bateadoresCreate', ['juegoId' => $datos['juego']->idJuego]) }}
+                                class="btn btn-primary mb-3 w-100">
+                                <svg width="32" height="32" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg>
+                                Agregar
+                            </a>
+                            <div class="table-responsive text-center" style="height: 200px;">
+                                <table class="table table-dark">
+                                    <thead class="bg-white border-white ">
+                                        <th scope="col">Jugador</th>
+                                        <th scope="col">AB</th>
+                                        <th scope="col">C</th>
+                                        <th scope="col">H</th>
+                                        <th scope="col">CP</th>
+                                        <th scope="col">BB</th>
+                                        <th scope="col">K</th>
+                                        <th scope="col">PJE</th>
+                                        <th scope="col">OBP</th>
+                                        <th scope="col" class="text-center" colspan="2">Accion</th>
+    
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($datos["juego"]->turnos->unique('idBateadores')->where('idEquipo',$datos["juego"]->idEquipoVisitante) as $t)
+                                            <tr>
+                                                <td>{{ $t->bateador->jugador->abreviacion }}</td>
+                                                <td>{{ $t->bateador->AB }}</td>
+                                                <td>{{ $t->bateador->C }}</td>
+                                                <td>{{ $t->bateador->H }}</td>
+                                                <td>{{ $t->bateador->CP }}</td>
+                                                <td>{{ $t->bateador->BB }}</td>
+                                                <td>{{ $t->bateador->K }}</td>
+                                                <td>{{ $t->bateador->PJE }}</td>
+                                                <td>{{ $t->bateador->OBP }}</td>
+                                                <td colspan="2" style="width: 12%">
+                                                    <x-actionButtons
+                                                        route="{{ route('bateadoresEdit', ['id' => $t->bateador->idBateadores]) }}">
+                                                    </x-actionButtons>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col">
+                    <h3>Lanzadores</h3>
+                    <div class="justify-content-center">
+                        <div class=" mt-1">
+                            <a href={{ route('LanzadorCreate', ['juegoId' => $datos['juego']->idJuego]) }}
+                                class="btn btn-primary mb-3 w-100" href="">
+                                <svg width="32" height="32" fill="currentColor" class="bi bi-plus"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg>
+                                Agregar
+                            </a>
+                            <div class="table-responsive text-center" style="height: 200px;">
+                                <table class="table table-dark">
+                                    <thead class="bg-white border-white ">
+                                        <th scope="col">Jugador</th>
+                                        <th scope="col">IP</th>
+                                        <th scope="col">BA</th>
+                                        <th scope="col">C</th>
+                                        <th scope="col">H</th>
+                                        <th scope="col">BB</th>
+                                        <th scope="col">K</th>
+                                        <th scope="col">PCA</th>
+                                        <th scope="col">POP</th>
+                                        <th scope="col" class="text-center" colspan="2">Accion</th>
+    
+                                    </thead>
+                                    <tbody>
+    
+                                        @foreach ($datos["juego"]->turnos->unique('idLanzador')->where('idEquipo',$datos["juego"]->idEquipoLocal) as $t)
+                                            <tr>
+    
+                                                <td>{{ $t->lanzador->jugador->abreviacion }}</td>
+                                                <td>{{ $t->lanzador->IP }}</td>
+                                                <td>{{ $t->lanzador->BA }}</td>
+                                                <td>{{ $t->lanzador->C }}</td>
+                                                <td>{{ $t->lanzador->H }}</td>
+                                                <td>{{ $t->lanzador->BB }}</td>
+                                                <td>{{ $t->lanzador->K }}</td>
+                                                <td>{{ $t->lanzador->PCA }}</td>
+                                                <td>{{ $t->lanzador->POP }}</td>
+                                                <td colspan="2" style="width: 12%">
+                                                    <x-actionButtons
+                                                        route="{{ route('LanzadorEdit', ['id' => $t->lanzador->idLanzadores]) }}">
+                                                    </x-actionButtons>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1 mb-3">
+                <div class="col">
+                    <h3>Turnos</h3>
+                    <div class="justify-content-center">
+                        <div class=" mt-1">
+                            <a href={{ route('turnoCreate', ['juegoId' => $datos['juego']->idJuego]) }}
+                                class="btn btn-primary mb-3 w-100">
+                                <svg width="32" height="32" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg>
+                                Agregar
+                            </a>
+                            <div class="table-responsive text-center" style="height: 200px;">
+                                <table class="table table-dark">
+                                    <thead class="bg-white border-white ">
+                                        <th scope="col">Equipo</th>
+                                        <th scope="col">Jugador</th>
+                                        <th scope="col">No. turno</th>
+                                        <th scope="col">Inning</th>
+                                        <th scope="col">Carrera</th>
+                                        <th scope="col">Resultado</th>
+                                        <th scope="col">Lanzador</th>
+                                        <th scope="col" class="text-center" colspan="2">Accion</th>
+    
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($datos['juego']->turnos->where("idEquipo",$datos['juego']->idEquipoVisitante) as $turno)
+                                            <tr>
+                                                <td>{{ $turno->equipo->nombre }}</td>
+                                                <td>{{ $turno->bateador->jugador->nombre }} {{ $turno->bateador->jugador->apellidos}}</td>
+                                                <td>{{ $turno->turno }}</td>
+                                                <td>{{ $turno->inning }}</td>
+                                                <td>{{ $turno->carrera == 1 ? "Si" : "No" }}</td>
+                                                <td>{{ $turno->resultado }}</td>
+                                                <td>{{ $turno->lanzador->jugador->nombre ." ". $turno->lanzador->jugador->apellidos }}</td>
+                                                <td colspan="2" style="width: 12%">
+                                                    <x-actionButtons
+                                                        route="{{ route('turnoEdit', ['id' => $turno->idTurno]) }}">
+                                                    </x-actionButtons>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row mt-1">
-            <div class="col">
-                <h3>Lanzadores</h3>
-                <div class="justify-content-center">
-                    <div class=" mt-1">
-                        <a href={{ route('LanzadorCreate', ['juegoId' => $datos['juego']->idJuego]) }}
-                            class="btn btn-primary mb-3 w-100" href="">
-                            <svg width="32" height="32" fill="currentColor" class="bi bi-plus"
-                                viewBox="0 0 16 16">
-                                <path
-                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                            </svg>
-                            Agregar
-                        </a>
-                        <div class="table-responsive text-center" style="height: 200px;">
-                            <table class="table table-dark">
-                                <thead class="bg-white border-white ">
-                                    <th scope="col">Jugador</th>
-                                    <th scope="col">IP</th>
-                                    <th scope="col">BA</th>
-                                    <th scope="col">C</th>
-                                    <th scope="col">H</th>
-                                    <th scope="col">BB</th>
-                                    <th scope="col">K</th>
-                                    <th scope="col">PCA</th>
-                                    <th scope="col">POP</th>
-                                    <th scope="col" class="text-center" colspan="2">Accion</th>
-
-                                </thead>
-                                <tbody>
-
-                                    @foreach ($datos['juego']->lanzadores as $lanzador)
-                                        <tr>
-
-                                            <td>{{ $lanzador->jugador->abreviacion }}</td>
-                                            <td>{{ $lanzador->IP }}</td>
-                                            <td>{{ $lanzador->BA }}</td>
-                                            <td>{{ $lanzador->C }}</td>
-                                            <td>{{ $lanzador->H }}</td>
-                                            <td>{{ $lanzador->BB }}</td>
-                                            <td>{{ $lanzador->K }}</td>
-                                            <td>{{ $lanzador->PCA }}</td>
-                                            <td>{{ $lanzador->POP }}</td>
-                                            <td colspan="2" style="width: 12%">
-                                                <x-actionButtons
-                                                    route="{{ route('LanzadorEdit', ['id' => $lanzador->idLanzadores]) }}">
-                                                </x-actionButtons>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endsection
+    </div>
+@endsection
