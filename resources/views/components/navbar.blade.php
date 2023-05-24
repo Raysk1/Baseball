@@ -20,9 +20,10 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
 
-                        <li><a class="dropdown-item" >Ampayers Juegos</a></li>
-                        <li><a class="dropdown-item" href="#">Entradas</a></li>
-                        <li><a class="dropdown-item" href={{ route('ligasIndex') }}>Liga</a></li>
+                        <li><a class="dropdown-item"  href="{{route('equiposListado')}}">Equipos</a></li>
+                        <li><a class="dropdown-item" href="{{route('juegosListado')}}">Juegos</a></li>
+                        <li><a class="dropdown-item" href="{{route('jugadoresListado')}}">Jugadores</a></li>
+
                     </ul>
                 </li>
 
@@ -41,6 +42,8 @@
                             <li><a class="dropdown-item" href={{ route('manejadoresIndex') }}>
                                     Manejadores</a></li>
                             <li><a class="dropdown-item" href={{ route('temporadasIndex') }}>Temporadas</a></li>
+                            <li><a class="dropdown-item" href={{ route('ligasIndex') }}>Liga</a></li>
+
                         </ul>
                     </li>
                 @endauth

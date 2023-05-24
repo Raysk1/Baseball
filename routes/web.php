@@ -73,8 +73,7 @@ Route::get("/abc/Roster/edit/{id}", [RosterControlador::class, "edit"])->middlew
 Route::post("/abc/Roster/update", [RosterControlador::class, "update"])->middleware("auth")->name("RosterUpdate");
 
 //informacion
-Route::get('/contacto', function () {
-    return view('contacto');})->name("contacto");
+Route::get('/contacto', function () {    return view('contacto');})->name("contacto");
 
 /** AmpayersJuego routes */
 Route::get('/abc/AmpayersJuego/create/{juegoId}', [AmpayersJuegoControlador::class, 'create'])->middleware("auth")->name('AmpayersJuegoCreate');
@@ -96,9 +95,7 @@ Route::get('/abc/equipos/edit/{id}', [EquipoControlador::class, 'edit'])->middle
 Route::get('/abc/equipos/details/{id}', [EquipoControlador::class, 'details'])->middleware("auth")->name('EquiposDetails');
 Route::post('/abc/equipos/update', [EquipoControlador::class, 'update'])->middleware("auth")->name('equiposUpdate');
 
-Route::get('/equipos', function () {
-    return view('equipos.listado');
-});
+Route::get('/equipos', function () {    return view('equipos.listado');});
 
 Route::get("/abc/equipos/listado", [EquipoControlador::class, "listado"])->name("equiposListado");
 
@@ -150,11 +147,9 @@ Route::post('/abc/parques/update', [ParqueControlador::class, 'update'])->middle
 
 
 //Login
-Route::get('/login', function () {
-    return view('sesion.login');
-})->name("login");
-Route::get('/register', function () {
-    return view('sesion.register');});
+Route::get('/login', function () {return view('sesion.login');})->name("login");
+
+Route::get('/register', function () {return view('sesion.register');});
 //Route::get('/registrologin', [UserControlador::class,'create']) -> name('RegistroCreate');
 Route::post('/register', [LoginControlador::class, 'register'])->name('Register');
 Route::get('/logout', [LoginControlador::class, 'logout'])->name('logout');
