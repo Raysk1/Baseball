@@ -56,7 +56,7 @@ class BateadorControlador extends Controller
             ->with(["success" => "Actulizado exitosamente"])
             ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
     }
-0
+
     /**
      * Display the specified resource.
      */
