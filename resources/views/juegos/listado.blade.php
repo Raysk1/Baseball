@@ -25,28 +25,30 @@
                                     </tr>
                                     <tr>
                                         <th colspan="2"></th>
-                                        <th>C</th>
-                                        <th>H</th>
-                                        <th>E</th>
-                                    </tr>
-
-                                    <tr>
-                                        <td><img src="{{ asset($rutaImagenL) }}" class="img-fluid rounded"
-                                                style="width: 25px; height: 25px;"></td>
-                                        <td>Local: {{ $j->equipoLocal->nombre }}</td>
-                                        <td>{{ $j->carrerasLocal }}</td>
-                                        <td>{{ $j->hitsLocal }}</td>
-                                        <td>{{ $j->erroresLocal }}</td>
+                                        <th class="text-center">C</th>
+                                        <th class="text-center">H</th>
+                                        <th class="text-center">E</th>
                                     </tr>
 
                                     <tr>
                                         <td><img src="{{ asset($rutaImagenV) }}" class="img-fluid rounded"
                                                 style="width: 25px; height: 25px;"></td>
                                         <td>Visitante: {{ $j->equipoVisitante->nombre }}</td>
-                                        <td>{{ $j->carrerasVisitante }}</td>
-                                        <td>{{ $j->hitsVisitante }}</td>
-                                        <td>{{ $j->erroresVisitante }}</td>
+                                        <td class="fw-bold bg-success text-center">{{ $j->carrerasVisitante }}</td>
+                                        <td class="fw-bold bg-success text-center">{{ $j->hitsVisitante }}</td>
+                                        <td class="fw-bold bg-success text-center">{{ $j->erroresVisitante }}</td>
                                     </tr>
+
+                                    <tr>
+                                        <td><img src="{{ asset($rutaImagenL) }}" class="img-fluid rounded"
+                                                style="width: 25px; height: 25px;"></td>
+                                        <td>Local: {{ $j->equipoLocal->nombre }}</td>
+                                        <td class="fw-bold bg-success text-center">{{ $j->carrerasLocal }}</td>
+                                        <td class="fw-bold bg-success text-center">{{ $j->hitsLocal }}</td>
+                                        <td class="fw-bold bg-success text-center">{{ $j->erroresLocal }}</td>
+                                    </tr>
+
+
                                 </table>
                                 <a href="{{ route('boxscore', ['id' => $j->idJuego]) }} "
                                     class="btn btn-primary w-100 mb-3">Boxscore</a>
