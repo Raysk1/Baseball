@@ -13,25 +13,28 @@
     @yield('styles')
     <style>
         body {
-            background-image: url("/img/fondo.webp");
+            width: auto;
+    height: auto;
+    background: #009FFF;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ec2F4B, #009FFF);
+    background-image: url("/img/fondos/fondo3.jpg");
 
+    background-position: center center;
 
-            /* Para dejar la imagen de fondo centrada, vertical ynhorizontalmente */
+    /* Para que la imagen de fondo no se repita */
 
-            background-position: center center;
+    background-repeat: no-repeat;
 
-            /* Para que la imagen de fondo no se repita */
+    /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
 
-            background-repeat: no-repeat;
+    background-attachment: fixed;
 
-            /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+    /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
 
-            background-attachment: fixed;
-
-            /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
-
-            background-size: cover;
-
+    background-size: cover;
         }
     </style>
 </head>
