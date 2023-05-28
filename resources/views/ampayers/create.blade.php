@@ -6,7 +6,7 @@
 @section('content')
     <div class="d-flex justify-content-center">
         <div class="w-75 mt-4">
-            <form action={{ route('AmpayersStore') }} method="post">
+            <form action={{ route('AmpayersStore') }} method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="mb-2">
@@ -48,7 +48,11 @@
                             <option value="0">Inactivo</option>
                         </select>
                     </div>
-                   
+                    <div class="col">
+                        <label for="imagen" class="form-label">Imagen:</label>
+
+                        <input type="file" name="imagen" class="form-control">
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col justify-content-center">

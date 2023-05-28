@@ -64,6 +64,8 @@ Route::post('/abc/Ampayers/store', [AmpayerControlador::class, 'store'])->middle
 Route::get("/abc/Ampayers", [AmpayerControlador::class, "index"])->middleware("auth")->name('AmpayersIndex');
 Route::get("/abc/Ampayers/edit/{id}", [AmpayerControlador::class, "edit"])->middleware("auth")->name("AmpayersEdit");
 Route::post("/abc/Ampayers/update", [AmpayerControlador::class, "update"])->middleware("auth")->name("AmpayersUpdate");
+Route::get("/abc/Ampayers/listado", [AmpayerControlador::class, "listado"])->name("AmpayersListado");
+
 
 /** Rooster */
 Route::get('/abc/Roster/create/{idEquipo}', [RosterControlador::class, 'create'])->middleware("auth")->name('RosterCreate');

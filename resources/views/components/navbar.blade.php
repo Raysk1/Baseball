@@ -23,7 +23,9 @@
                         <li><a class="dropdown-item"  href="{{route('equiposListado')}}">Equipos</a></li>
                         <li><a class="dropdown-item" href="{{route('juegosListado')}}">Juegos</a></li>
                         <li><a class="dropdown-item" href="{{route('jugadoresListado')}}">Jugadores</a></li>
+                        <li><a class="dropdown-item" href="{{route('AmpayersListado')}}">Ampayers</a></li>
 
+                        
                     </ul>
                 </li>
 
