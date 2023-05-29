@@ -5,13 +5,13 @@
 
 @section('content')
     <div class="d-flex justify-content-center">
-        <div class="w-75 mt-4">
+        <div >
             <h1>Listado de Equipos</h1>
             <div class="container">
-                <div class="row justify-content-between">
+                <div class="row justify-content-center">
 
                     @foreach ($equipos as $equipo)
-                        <div class="card" style="width: 20%;">
+                    <div class="card" style="width: 20%; margin: 5px">
                             
                             @php
                                 $ruta_imagen = '/img/equipos/'. $equipo->idEquipo. '.png';
@@ -29,10 +29,9 @@
                             @endswitch
 
                             <div class="card-body p-1">
-                                ID: {{ $equipo->idEquipo }}<br>
                                 <b>Nombre: </b>{{ $equipo->nombre }}<br>
                                 <b>Ciudad: </b>{{ $equipo->ciudad }}<br>
-                                <b>ID Tecnico: </b>{{ $equipo->idTecnico }}
+                                <b>{{$equipo->manejador->tipo}}: </b>{{ $equipo->manejador->nombre }}
                             </div>
                         </div>
                     @endforeach

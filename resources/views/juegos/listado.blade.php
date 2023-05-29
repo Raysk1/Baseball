@@ -8,10 +8,10 @@
         <div class="w-75 mt-4">
             <h1>Listado de Juegos</h1>
             <div class="container">
-                <div class="row justify-content-between">
+                <div class="row justify-content-center">
 
                     @foreach ($juegos as $j)
-                        <div class="card" style="width: 33%;">
+                    <div class="card" style="width: 33%; margin: 5px">
                             <div class="table-responsive">
 
                                 <table class="table table-responsive table-hover mt-3">

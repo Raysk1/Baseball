@@ -8,10 +8,10 @@
         <div class="w-75 mt-4">
             <h1>Listado de Ampayers</h1>
             <div class="container">
-                <div class="row justify-content-between">
+                <div class="row justify-content-center">
 
                     @foreach ($ampayer as $ampayer)
-                        <div class="card" style="width: 20%;">
+                        <div class="card" style="width: 20%; margin: 5px">
                             <!--18 rem - Validar imagen para que en caso que no exista la imagen del jugador se muestre una imagen por defecto si es varonil o femenil-->
                             @php
                                 $ruta_imagen = '/img/ampayers/' . $ampayer->idAmpayer . '.png';
@@ -34,7 +34,7 @@
                                 <b>{{ $ampayer->nombre }} {{ $ampayer->apellidos }}<br></b>
                                 <b>Ab: </b>{{ $ampayer->abreviacion }}
                                 <b>Status: </b>{{ $ampayer->status }}<br>
-                             
+
                             </div>
                         </div>
                     @endforeach
