@@ -5,6 +5,7 @@ use App\Http\Controllers\AmpayersJuegoControlador;
 use App\Http\Controllers\BateadorControlador;
 use App\Http\Controllers\EntradaControlador;
 use App\Http\Controllers\EquipoControlador;
+use App\Http\Controllers\InicioControlador;
 use App\Http\Controllers\JuegoControlador;
 use App\Http\Controllers\JugadorControlador;
 use App\Http\Controllers\LanzadorControlador;
@@ -158,11 +159,11 @@ Route::get('/logout', [LoginControlador::class, 'logout'])->name('logout');
 Route::post('/login', [LoginControlador::class, 'login'])->name('login');
 
 //inicio
-Route::get('/inicio', function () {
-    return view('inicio.inicio');})->name("inicio");
+Route::get('/inicio',[InicioControlador::class,"index"])->name("inicio");
 
 Route::redirect("/", "/inicio");
 
 Route::get('/reglamento', function () {
-    return view('Boxscore');})->name("reglamento");
+    return view('reglamento');})->name("reglamento");
+
 Route::get('/boxscore/{id}', [JuegoControlador::class, "show"])->name("boxscore");
