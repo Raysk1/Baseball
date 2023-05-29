@@ -8,6 +8,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class Lanzador
@@ -76,4 +77,15 @@ class Lanzador extends Model
 	{
 		return $this->hasMany(Turno::class, 'idLanzador');
 	}
+
+	public static function obtenerLanzadores($idJuego, $idEquipo) {
+        return DB::table("lanzadores as l")
+            ->join("jugadores as ju", "l.idAfiliacion", "=", "ju.idAfiliacion")
+            ->join("rosters as r", "l.idAfiliacion", "=", "r.idAfiliacion")
+            ->join("equipos as e", "r.idEquipo", "=", "e.idEquipo")
+            ->select(["l.*", "ju.nombre", "ju.apellidos"])
+            ->where("l.idJuego", $idJuego)
+            ->where("e.idEquipo", $idEquipo)
+            ->get();
+    }
 }

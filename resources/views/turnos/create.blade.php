@@ -25,11 +25,11 @@
                 </div>
 
                 <div class="row mb-2">
-                    <div class="col">
+                    <div class="col">   
                         <label for="idBateadores" class="form-label">Jugador:</label>
                         <select class="form-select" name="idBateadores" id="idBateadores">
                             @foreach ($datos['jugadores'] as $j)
-                                <option value={{ $j->idBateadores }}>{{ $j->jugador->nombre . ' ' . $j->jugador->apellidos }}</option>
+                                <option value={{ $j->idBateadores }}>{{ $j->nombre . ' ' . $j->apellidos }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -39,7 +39,7 @@
                         <label for="idLanzador" class="form-label">Lanzador:</label>
                         <select name="idLanzador" id="idLanzador" class="form-select">
                             @foreach ($datos['lanzadores'] as $l)
-                                <option value={{ $l->idLanzadores }}>{{ $l->jugador->nombre . ' ' . $l->jugador->apellidos }}</option>
+                                <option value={{ $l->idLanzadores }}>{{ $l->nombre . ' ' . $l->apellidos }}</option>
                             @endforeach
                         </select>
                     </div>

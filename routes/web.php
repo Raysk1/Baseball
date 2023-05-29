@@ -82,7 +82,7 @@ Route::get("/abc/AmpayersJuego/edit/{id}", [AmpayersJuegoControlador::class, "ed
 Route::post("/abc/AmpayersJuego/update", [AmpayersJuegoControlador::class, "update"])->middleware("auth")->name("AmpayersJuegoUpdate");
 
 /* Lanzadores routes */
-Route::get('/abc/Lanzadores/create/{juegoId}', [LanzadorControlador::class, 'create'])->middleware("auth")->name('LanzadorCreate');
+Route::get('/abc/Lanzadores/create/{juegoId}/{equipoId}', [LanzadorControlador::class, 'create'])->middleware("auth")->name('LanzadorCreate');
 Route::post('/abc/Lanzadores/store', [LanzadorControlador::class, 'store'])->middleware("auth")->name('LanzadorStore');
 Route::get("/abc/Lanzadores/edit/{id}", [LanzadorControlador::class, "edit"])->middleware("auth")->name("LanzadorEdit");
 Route::post("/abc/Lanzadores/update", [LanzadorControlador::class, "update"])->middleware("auth")->name("LanzadorUpdate");
@@ -121,14 +121,14 @@ Route::get('/abc/manejadores/edit/{id}', [ManejadorControlador::class, 'edit'])-
 Route::post('/abc/manejadores/update', [ManejadorControlador::class, 'update'])->middleware("auth")->name('manejadoresUpdate');
 
 /**Routes de Turnos */
-Route::get('/abc/turnos/create/{juegoId}', [TurnoControlador::class, 'create'])->middleware("auth")->name('turnoCreate');
+Route::get('/abc/turnos/create/{juegoId}/{equipoId}', [TurnoControlador::class, 'create'])->middleware("auth")->name('turnoCreate');
 Route::post('/abc/turnos/store', [TurnoControlador::class, 'store'])->middleware("auth")->name('turnoStore');
 Route::get('/abc/turnos', [TurnoControlador::class, 'index'])->middleware("auth")->name('turnoIndex');
 Route::get('/abc/turnos/edit/{id}', [TurnoControlador::class, 'edit'])->middleware("auth")->name("turnoEdit");
 Route::post('/abc/turnos/update', [TurnoControlador::class, 'update'])->middleware("auth")->name('turnoUpdate');
 
 /**BATEADORES*/
-Route::get('/abc/bateadores/create/{juegoId}', [BateadorControlador::class, 'create'])->middleware("auth")->name('bateadoresCreate');
+Route::get('/abc/bateadores/create/{juegoId}/{equipoId}', [BateadorControlador::class, 'create'])->middleware("auth")->name('bateadoresCreate');
 Route::post('/abc/bateadores/store', [BateadorControlador::class, 'store'])->middleware("auth")->name('bateadoresStore');
 Route::get('/abc/bateadores', [BateadorControlador::class, 'index'])->middleware("auth")->name('bateadoresIndex');
 Route::get('/abc/bateadores/edit/{id}', [BateadorControlador::class, 'edit'])->middleware("auth")->name("bateadoresEdit");

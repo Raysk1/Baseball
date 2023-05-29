@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bateador;
 use App\Models\Equipo;
 use App\Models\Juego;
 use App\Models\Lanzador;
@@ -10,15 +11,13 @@ use App\Models\Temporada;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class JuegoControlador extends Controller
-{
+class JuegoControlador extends Controller {
 
     /**
      * Display a listing of the resource.
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
 
         $datos = DB::table("juegos")
             ->select(array(
@@ -41,24 +40,28 @@ class JuegoControlador extends Controller
         return response(view("Juegos.index", compact("datos")));
     }
 
-    public function details($id)
-    {
+    public function details($id) {
         $juego = Juego::find($id);
 
         $datos = array(
             "juego" => $juego,
-
+            "bateadoresLocales" => Bateador::obtenerBateadores($id, $juego->idEquipoLocal),
+            "bateadoresVisitantes" => Bateador::obtenerBateadores($id, $juego->idEquipoVisitante),
+            "lanzadoresLocales" => Lanzador::obtenerLanzadores($id, $juego->idEquipoLocal),
+            "lanzadoresVisitantes" => Lanzador::obtenerLanzadores($id, $juego->idEquipoVisitante)
         );
         return response(view("juegos.details", compact("datos")));
     }
 
+
+
+ 
     /**
      * Show the form for creating a new resource.
      * @return \Illuminate\Http\Response
 
      */
-    public function create()
-    {
+    public function create() {
         $j = Juego::orderBy('idJuego', 'DESC')->first();
         $lastId = $j != null ? $j->idJuego + 1 : 0;
         $datos = array(
@@ -75,8 +78,7 @@ class JuegoControlador extends Controller
      * @param  \Illuminate\Http\Request   $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
 
         $j = new Juego();
         $j->idTemporada = $request->idTemporada;
@@ -97,8 +99,7 @@ class JuegoControlador extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         $juego = Juego::find($id);
         $carrerasLocal = $juego->turnos->where('idEquipo', $juego->idEquipoLocal)->where("carrera", 1)->count();
         $carrerasVisitante = $juego->turnos->where('idEquipo', $juego->idEquipoVisitante)->where("carrera", 1)->count();
@@ -139,8 +140,7 @@ class JuegoControlador extends Controller
      * @param  int  $id
      * @return  \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         $datos = array(
             "juego" => Juego::find($id),
             "equipos" => Equipo::all(),
@@ -154,8 +154,7 @@ class JuegoControlador extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
-    {
+    public function update(Request $request) {
         $j = Juego::find($request->idJuego);
         $j->idTemporada = $request->idTemporada;
         $j->jornada = $request->jornada;
@@ -175,13 +174,11 @@ class JuegoControlador extends Controller
      * @param  int  $id
      * @return  \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
 
     }
 
-    public function listado(Request $request)
-    {
+    public function listado(Request $request) {
         $juegos = Juego::all();
         foreach ($juegos as $juego) {
             $juego->carrerasLocal = $juego->turnos->where('idEquipo', $juego->idEquipoLocal)->where("carrera", 1)->count();
@@ -211,8 +208,7 @@ class JuegoControlador extends Controller
         return response(view("Juegos.listado", compact("juegos")));
     }
 
-    public function promedios()
-    {
+    public function promedios() {
 
     }
 

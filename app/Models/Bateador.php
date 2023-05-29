@@ -7,6 +7,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class Bateadore
@@ -69,4 +70,15 @@ class Bateador extends Model
 	{
 		return $this->belongsTo(Juego::class, 'idJuego');
 	}
+
+	public static function obtenerBateadores($idJuego, $idEquipo) {
+        return DB::table("bateadores as b")
+            ->join("jugadores as ju", "b.idAfiliacion", "=", "ju.idAfiliacion")
+            ->join("rosters as r", "b.idAfiliacion", "=", "r.idAfiliacion")
+            ->join("equipos as e", "r.idEquipo", "=", "e.idEquipo")
+            ->select(["b.*", "ju.nombre", "ju.apellidos"])
+            ->where("b.idJuego", $idJuego)
+            ->where("e.idEquipo", $idEquipo)
+            ->get();
+    }
 }

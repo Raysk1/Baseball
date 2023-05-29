@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bateador;
 use App\Models\Equipo;
 use App\Models\Juego;
 use App\Models\Jugador;
+use App\Models\Lanzador;
 use App\Models\Roster;
 use App\Models\Turno;
 use Illuminate\Http\Request;
@@ -21,12 +23,13 @@ class TurnoControlador extends Controller {
     /**
      * Show the form for creating a new resource.
      */
-    public function create($juegoId) {
+    public function create($juegoId, $equipoId) {
         $t = Turno::orderBy('idTurno', 'DESC')->first();
         $idTurno = $t != null ? $t->idTurno : 0;
         $j = Juego::find($juegoId);
-        $jugadores = $j->bateadores;
-        $lanzadores = $j->lanzadores;
+        $jugadores = Bateador::obtenerBateadores($juegoId,$equipoId);
+        $equipoRival = $j->idEquipoLocal == $equipoId ? $j->idEquipoVisitante : $j->idEquipoLocal;
+        $lanzadores = Lanzador::obtenerLanzadores($juegoId,$equipoRival);
         $datos = ["lastId" => $idTurno + 1, "juegoId" => $juegoId, "jugadores" => $jugadores, "lanzadores" => $lanzadores];
         return response(view('Turnos.create', compact('datos')));
     }
@@ -35,13 +38,13 @@ class TurnoControlador extends Controller {
      * Store a newly created resource in storage.
      */
     public function store(Request $request) {
-        $j = Jugador::find($request->idAfiliacion);
+        $j = Bateador::find($request->idBateadores) -> jugador;
         $juego = Juego::find($request->idJuego);
         $r = $j->rosters->where("idTemporada", "=", $juego->idTemporada)->first();
         $t = new Turno();
         $t->idJuego = $request->idJuego;
         $t->idEquipo = $r->idEquipo;
-        $t->idAfiliacion = $request->idAfiliacion;
+        $t->idBateadores = $request->idBateadores;
         $t->turno = $request->turno;
         $t->inning = $request->inning;
         $t->posicion = $request->posicion;
