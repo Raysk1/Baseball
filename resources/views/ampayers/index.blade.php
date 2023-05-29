@@ -33,7 +33,7 @@
             <td>{{ $dato->abreviacion }}</td>
             
             <td>
-                @if ($dato->status == 1)
+                @if ($dato->activo)
                     Activo
                 @else
                     Inactivo

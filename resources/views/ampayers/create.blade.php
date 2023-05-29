@@ -41,11 +41,11 @@
                 </div>
                 <div class="row mb-2">
                     <div class="col">
-                        <label for="status" class="form-label">Estatus:</label>
-                        <select name="status" id="status" class="form-select" required>
+                        <label for="activo" class="form-label">Estatus:</label>
+                        <select name="activo" id="activo" class="form-select" required>
                             <option value="">Seleccione una opción</option>
-                            <option value="1">Activo</option>
-                            <option value="0">Inactivo</option>
+                            <option value="{{true}}">Activo</option>
+                            <option value="{{false}}">Inactivo</option>
                         </select>
                     </div>
                     <div class="col">

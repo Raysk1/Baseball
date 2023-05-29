@@ -89,7 +89,7 @@ class AmpayerControlador extends Controller
         $a -> fechaNacimiento = $request -> fechaNacimiento;
         $a -> curp = $request -> curp;
         $a -> abreviacion = $request -> abreviacion;
-        $a -> activo = $request -> activo;
+        $a -> activo =  $request -> activo;
         $a -> save();
         return response() ->redirectTo(route("AmpayersIndex"))
         ->with(["success" => "Actulizado exitosamente"])

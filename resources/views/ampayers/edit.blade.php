@@ -46,11 +46,11 @@
                 </div>
                 <div class="row mb-2">
                     <div class="col">
-                        <label for="status" class="form-label">Estatus:</label>
-                        <select name="status" id="status" class="form-select" required>
+                        <label for="activo" class="form-label">Estatus:</label>
+                        <select name="activo" id="activo" class="form-select" required>
                             <option value="">Seleccione una opción</option>
-                            <option value="1" {{ $datos->status == 1 ? "selected" : ""}}>Activo</option>
-                            <option value="0" {{ $datos->status == 0 ? "selected" : ""}}>Inactivo</option>
+                            <option value="1" {{ $datos->activo ? "selected" : ""}}>Activo</option>
+                            <option value="0" {{ !$datos->activo ? "selected" : ""}}>Inactivo</option>
                         </select>
                     </div>
 
