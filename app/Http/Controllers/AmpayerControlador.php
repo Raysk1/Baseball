@@ -35,12 +35,22 @@ class AmpayerControlador extends Controller
     public function store(Request $request) {
 
         $a = new Ampayer();
+        $a->idAmpayer = $request->idAmpayer;
         $a -> nombre = $request -> nombre;
         $a ->apellidos = $request -> apellidos;
         $a -> fechaNacimiento = $request -> fechaNacimiento;
         $a -> curp = $request -> curp;
         $a -> abreviacion = $request -> abreviacion;
         $a -> activo = $request -> activo;
+
+        if ($request->hasFile('imagen')) {
+            $file = $request->file('imagen');
+            $destino= "img/ampayers/";
+            $filename =$a->idAmpayer.".png";
+            $uploadSuccess= $request->file('imagen')->move($destino,$filename);
+            
+        }
+
         $a -> save();
         return response()->redirectTo(route("AmpayersIndex"))
             ->with(["success" => "Actualizado exitosamente"])
@@ -91,7 +101,8 @@ class AmpayerControlador extends Controller
      * @param  int  $id 
      * @return  \Illuminate\Http\Response 
      */
-    public function destroy($id) {
-
+    public function listado(Request $request){
+        $ampayer = Ampayer::all();
+        return response(view("ampayers.listado", compact("ampayer")));
     }
 }

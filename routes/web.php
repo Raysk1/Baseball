@@ -11,6 +11,7 @@ use App\Http\Controllers\LanzadorControlador;
 use App\Http\Controllers\LigaControlador;
 use App\Http\Controllers\LoginControlador;
 use App\Http\Controllers\ManejadorControlador;
+use App\Http\Controllers\ParqueControlador;
 use App\Http\Controllers\RosterControlador;
 
 //use App\Http\Controllers\InformacionControlador;
@@ -63,6 +64,8 @@ Route::post('/abc/Ampayers/store', [AmpayerControlador::class, 'store'])->middle
 Route::get("/abc/Ampayers", [AmpayerControlador::class, "index"])->middleware("auth")->name('AmpayersIndex');
 Route::get("/abc/Ampayers/edit/{id}", [AmpayerControlador::class, "edit"])->middleware("auth")->name("AmpayersEdit");
 Route::post("/abc/Ampayers/update", [AmpayerControlador::class, "update"])->middleware("auth")->name("AmpayersUpdate");
+Route::get("/abc/Ampayers/listado", [AmpayerControlador::class, "listado"])->name("AmpayersListado");
+
 
 /** Rooster */
 Route::get('/abc/Roster/create/{idEquipo}', [RosterControlador::class, 'create'])->middleware("auth")->name('RosterCreate');
@@ -72,8 +75,7 @@ Route::get("/abc/Roster/edit/{id}", [RosterControlador::class, "edit"])->middlew
 Route::post("/abc/Roster/update", [RosterControlador::class, "update"])->middleware("auth")->name("RosterUpdate");
 
 //informacion
-Route::get('/contacto', function () {
-    return view('contacto');})->name("contacto");
+Route::get('/contacto', function () {    return view('contacto');})->name("contacto");
 
 /** AmpayersJuego routes */
 Route::get('/abc/AmpayersJuego/create/{juegoId}', [AmpayersJuegoControlador::class, 'create'])->middleware("auth")->name('AmpayersJuegoCreate');
@@ -95,9 +97,7 @@ Route::get('/abc/equipos/edit/{id}', [EquipoControlador::class, 'edit'])->middle
 Route::get('/abc/equipos/details/{id}', [EquipoControlador::class, 'details'])->middleware("auth")->name('EquiposDetails');
 Route::post('/abc/equipos/update', [EquipoControlador::class, 'update'])->middleware("auth")->name('equiposUpdate');
 
-Route::get('/equipos', function () {
-    return view('equipos.listado');
-});
+Route::get('/equipos', function () {    return view('equipos.listado');});
 
 Route::get("/abc/equipos/listado", [EquipoControlador::class, "listado"])->name("equiposListado");
 
@@ -134,12 +134,24 @@ Route::get('/abc/bateadores', [BateadorControlador::class, 'index'])->middleware
 Route::get('/abc/bateadores/edit/{id}', [BateadorControlador::class, 'edit'])->middleware("auth")->name("bateadoresEdit");
 Route::post('/abc/bateadores/update', [BateadorControlador::class, 'update'])->middleware("auth")->name('bateadoresUpdate');
 
+/*PARQUES*/
+Route::get('/abc/parques/create', [ParqueControlador::class, 'create'])->middleware("auth")->name('parquesCreate');
+Route::post('/abc/parques/store', [ParqueControlador::class, 'store'])->middleware("auth")->name('parquesStore');
+Route::get('/abc/parques', [ParqueControlador::class, 'index'])->middleware("auth")->name('parquesIndex');
+Route::get('/abc/parques/edit/{id}', [ParqueControlador::class, 'edit'])->middleware("auth")->name('parquesEdit');
+Route::post('/abc/parques/update', [ParqueControlador::class, 'update'])->middleware("auth")->name('parquesUpdate');
+
+
+
+
+
+
+
+
 //Login
-Route::get('/login', function () {
-    return view('sesion.login');
-})->name("login");
-Route::get('/register', function () {
-    return view('sesion.register');});
+Route::get('/login', function () {return view('sesion.login');})->name("login");
+
+Route::get('/register', function () {return view('sesion.register');});
 //Route::get('/registrologin', [UserControlador::class,'create']) -> name('RegistroCreate');
 Route::post('/register', [LoginControlador::class, 'register'])->name('Register');
 Route::get('/logout', [LoginControlador::class, 'logout'])->name('logout');
@@ -153,4 +165,4 @@ Route::redirect("/", "/inicio");
 
 Route::get('/reglamento', function () {
     return view('Boxscore');})->name("reglamento");
-Route::get('/boxscore/{id}', [JuegoControlador::class,"show"])->name("boxscore");
+Route::get('/boxscore/{id}', [JuegoControlador::class, "show"])->name("boxscore");
