@@ -20,7 +20,7 @@
     background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #ec2F4B, #009FFF);
-    background-image: url("/img/fondos/fondo3.jpg");
+    background-image: url("/img/fondos/fondo.webp");
 
     background-position: center center;
 
