@@ -6,7 +6,7 @@
 @section('content')
     <div class="d-flex justify-content-center">
         <div >
-            <h1>Listado de Equipos</h1>
+            <h1 class="text-white">Listado de Equipos</h1>
             <div class="container">
                 <div class="row justify-content-center">
 

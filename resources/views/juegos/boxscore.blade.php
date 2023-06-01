@@ -8,7 +8,7 @@
     <div class="mx-2  mt-3 bg-white">
         <div class="text-center">
             <h1 class="fw-bold">Boxscore</h1>
-            <h4>Liga de softball</h4>
+            <h4>Liga de Beisbol Sabatina</h4>
         </div>
         <div class="d-flex ">
             <div class="w-25 me-2">
@@ -30,7 +30,7 @@
             </div>
             <div class="w-50">
                 <div class="border-primary text-center fw-bold border border-3 ">
-                    <span>wdad</span>
+                    <span>VS</span>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-sm text-center">
