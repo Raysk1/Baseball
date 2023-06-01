@@ -171,9 +171,10 @@
                                             @case(9)
                                                 JD
                                             @break
+
                                             @case(10)
-                                            BD
-                                        @break
+                                                BD
+                                            @break
 
                                             @default
                                         @endswitch
