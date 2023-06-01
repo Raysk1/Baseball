@@ -33,7 +33,7 @@
                                 ID: {{ $ampayer->idAmpayer }}<br>
                                 <b>{{ $ampayer->nombre }} {{ $ampayer->apellidos }}<br></b>
                                 <b>Ab: </b>{{ $ampayer->abreviacion }}
-                                <b>Status: </b>{{ $ampayer->status }}<br>
+                                <b>Status: </b>{{ $ampayer->activo ? "Activo" : "No activo"}}<br>
 
                             </div>
                         </div>
